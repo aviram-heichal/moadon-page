@@ -3,6 +3,19 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;800;900&family=Assistant:wght@400;600;700&display=swap">
 <style>
 html,body{margin:0;padding:0}body{font-size:14px;background:#fff}img{max-width:100%}[hidden]{display:none!important}
+#ravForm .RMFORM,#ravForm form,#ravForm .multyparent,#ravForm .inner_multyfields,#ravForm .multyfield,#ravForm .multyinner,#ravForm .field,#ravForm .submitbuttonbox{display:block!important;width:100%!important;max-width:100%!important;min-width:0!important;height:auto!important;padding:0!important;margin:0!important;background:none!important;box-shadow:none!important;border:0!important;position:static!important;float:none!important;flex:none!important}
+#ravForm .ravxx_backgroundSpace{display:none!important}
+#ravForm .multyfield{margin-bottom:12px!important}
+#ravForm input[type=text],#ravForm input[type=tel]{display:block!important;box-sizing:border-box!important;width:100%!important;min-height:52px!important;height:52px!important;background:#fff!important;color:#1b2430!important;border:2px solid #b9c4d2!important;border-radius:8px!important;padding:8px 14px!important;font:400 19px Assistant,system-ui,sans-serif!important;text-align:right!important;box-shadow:none!important;-webkit-text-fill-color:#1b2430!important}
+#ravForm input::placeholder{color:#5d6b7c!important;-webkit-text-fill-color:#5d6b7c!important;opacity:1!important}
+#ravForm .checkboxoption{display:flex!important;align-items:flex-start!important;gap:10px!important;text-align:right!important}
+#ravForm .checkbox_styled{flex:none!important;width:24px!important;height:24px!important;position:relative!important;margin:2px 0 0!important}
+#ravForm .checkbox_styled input{display:block!important;position:static!important;opacity:1!important;width:24px!important;height:24px!important;margin:0!important;accent-color:#10233f!important;appearance:auto!important;-webkit-appearance:checkbox!important}
+#ravForm .checkbox_styled>div{display:none!important}
+#ravForm .checkboxlabel{font:400 16px/1.4 Assistant,system-ui,sans-serif!important;color:#1b2430!important;text-align:right!important;flex:1!important}
+#ravForm .submitbuttonbox button{display:block!important;box-sizing:border-box!important;width:100%!important;min-height:60px!important;margin:6px 0 0!important;background:#e3b23c!important;color:#10233f!important;border:0!important;border-bottom:4px solid #a97c12!important;border-radius:10px!important;font:900 23px Rubik,system-ui,sans-serif!important;cursor:pointer!important;text-shadow:none!important}
+#ravForm .submitbuttonbox button~button{display:none!important}
+#ravForm label.error,#ravForm .error_message{color:#b3122a!important;font:700 15px Assistant,system-ui,sans-serif!important}
 /* Layout: centered column, navy and gold by client's choice. Fixed reading order set by Aviram: what it is, pain and solution, value (real parents), how easy, how to join, price, what else, new app. */
 :root{
   --navy:#10233f; --navy2:#1b3459; --gold:#e3b23c; --gold-deep:#a97c12; --gold-soft:#fff5d9;
@@ -609,7 +622,7 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
       <span class="newtag">🎁 המאמן הדיגיטלי לחשבון של הילד שלך</span>
       <p>אפליקציית התרגול החדשה לחשבון שפיתחתי כדי לעזור לילדים להשלים פערים במהירות - הילדים עפים על זה...</p>
       <div class="app-pair">
-              <figure><img src="https://aviram-heichal.github.io/moadon-page/img/app2.jpg" alt="מסך המאמן הדיגיטלי: השבוע של הילדה מוכן" loading="lazy"><figcaption>המאמן הדיגיטלי: שבוע אישי לילד, תוך דקה</figcaption></figure>
+              <figure><img src="https://aviram-heichal.github.io/moadon-page/img/app2.jpg" alt="מסך המאמן הדיגיטלי: השבוע של הילדה מוכן" loading="lazy"><figcaption>המאמן הדיגיטלי: שבוע אישי לילד</figcaption></figure>
               <figure><img src="https://aviram-heichal.github.io/moadon-page/img/app_ex.jpg" alt="עמוד התרגילים של הילד, תרגילי כפל בעיצוב צבעוני" loading="lazy"><figcaption>ומבפנים: ככה הילד מתרגל</figcaption></figure>
             </div>
     </div>
@@ -858,11 +871,11 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
     <h2>המאמן הדיגיטלי לחשבון של הילד שלך</h2>
     <p class="joinline">{זוכרת|זוכר} את אפליקציית התרגול שראית למעלה? הנה מה יש בה:</p>
     <div class="app-pair">
-              <figure><img src="https://aviram-heichal.github.io/moadon-page/img/app2.jpg" alt="מסך המאמן הדיגיטלי: השבוע של הילדה מוכן" loading="lazy"><figcaption>המאמן הדיגיטלי: שבוע אישי לילד, תוך דקה</figcaption></figure>
+              <figure><img src="https://aviram-heichal.github.io/moadon-page/img/app2.jpg" alt="מסך המאמן הדיגיטלי: השבוע של הילדה מוכן" loading="lazy"><figcaption>המאמן הדיגיטלי: שבוע אישי לילד</figcaption></figure>
               <figure><img src="https://aviram-heichal.github.io/moadon-page/img/app_ex.jpg" alt="עמוד התרגילים של הילד, תרגילי כפל בעיצוב צבעוני" loading="lazy"><figcaption>ומבפנים: ככה הילד מתרגל</figcaption></figure>
             </div>
     <ul class="ticks">
-      <li>כל שבוע מייצר תוכנית אימונים מותאמת אישית לילד, תוך דקה</li>
+      <li>כל שבוע מייצר תוכנית אימונים מותאמת אישית לילד</li>
       <li>5-10 דקות ביום, 6 ימים בשבוע</li>
       <li>בטלפון, במחשב ובדפים להדפסה</li>
       <li>משחק "חטוף לפני הרובוט", שילדים לא רוצים להפסיק</li>
@@ -899,7 +912,7 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
 
 <dialog class="joinform" id="joinForm" aria-labelledby="jfTitle">
   <div class="jf-top"><button class="jf-back" id="jfBack" type="button">→ חזרה לדף</button></div>
-  <div class="jf-body"><h2 id="jfTitle">עוד צעד קטן, {ואת|ואתה} בפנים</h2><p>משאירים פרטים, ומיד עוברים לדף התשלום.</p><div id="ravForm"><!--RAV_FORM--></div><p class="fine">אחר כך 97 ש"ח לחודש, ללא התחייבות. אפשר לעצור בכל רגע.</p></div>
+  <div class="jf-body"><h2 id="jfTitle">עוד צעד קטן, {ואת|ואתה} בפנים</h2><p>משאירים פרטים, ומיד עוברים לדף התשלום.</p><div id="ravForm"><script src='https://form2.ravpage.co.il/6349079998a0d66aa0e0ad1e717ce4f66AEB8D27?__external_ai__=true'></script></div><p class="fine">אחר כך 97 ש"ח לחודש, ללא התחייבות. אפשר לעצור בכל רגע.</p></div>
 </dialog>
 <script>
 (function(){
