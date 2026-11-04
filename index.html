@@ -1,0 +1,1124 @@
+<!doctype html>
+<html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex"><title>מועדון הדור הבא: הרצף החדש</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;800;900&family=Assistant:wght@400;600;700&display=swap">
+<style>
+html,body{margin:0;padding:0}body{font-size:14px;background:#fff}img{max-width:100%}[hidden]{display:none!important}
+/* Layout: centered column, navy and gold by client's choice. Fixed reading order set by Aviram: what it is, pain and solution, value (real parents), how easy, how to join, price, what else, new app. */
+:root{
+  --navy:#10233f; --navy2:#1b3459; --gold:#e3b23c; --gold-deep:#a97c12; --gold-soft:#fff5d9;
+  --paper:#ffffff; --mist:#f2f5f9; --ink:#1b2738; --muted:#55637a; --line:#d8dfe9;
+  --head:"Rubik","Arial Hebrew",Arial,sans-serif; --body:"Assistant","Arial Hebrew",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:19px;line-height:1.6;direction:rtl;text-align:center;padding-bottom:calc(88px + env(safe-area-inset-bottom,0px));overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--ink)}
+h1,h2,h3{font-family:var(--head);margin:0;text-wrap:balance;line-height:1.2}
+p{margin:0}
+.wrap{max-width:680px;margin-inline:auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.wrap>*{min-width:0}
+.wide{max-width:1120px}
+.band{padding-block:56px}
+.band>.wrap{display:grid;gap:22px}
+.mist{background:var(--mist)}
+.dark{background:var(--navy);color:#fff}
+.lines{display:grid;gap:14px;font-size:21px}
+.lines b{font-weight:700}
+h2{font-size:clamp(28px,6vw,38px);font-weight:800;color:var(--navy)}
+.dark h2{color:var(--gold)}
+.hook{font-family:var(--head);font-weight:700;color:var(--gold-deep);font-size:22px}
+.dark .hook{color:#fff}
+.big{font-size:21px}
+
+/* review bar: draft only */
+.review{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--ink);color:#fff;font-size:14px;padding:6px max(10px,env(safe-area-inset-left,0px)) 7px max(10px,env(safe-area-inset-right,0px))}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:5px}
+.tabs a{color:#fff;text-decoration:none;border:1px solid #6d7c93;border-radius:8px;padding:3px 10px;font-weight:600}
+.tabs a[aria-current="true"]{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+/* hero: Aviram and the headline fit the first screen */
+.hero{background:var(--navy);color:#fff;padding-block:16px 0;overflow:hidden}
+.hero .wrap{display:grid;gap:12px;justify-items:center}
+.who{display:flex;align-items:center;justify-content:center;gap:8px;font-size:16px;font-weight:600;color:#d8e2f1;margin-bottom:14px}
+.hero .ctabox{margin-top:22px}
+.who div{display:flex;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.who button{background:transparent;color:#fff;border:0;font-family:var(--head);font-weight:700;font-size:17px;padding:4px 16px;min-height:38px;cursor:pointer}
+.who button[aria-pressed="true"]{background:var(--gold);color:var(--navy)}
+.brand{display:grid;justify-items:center;gap:7px}
+.faces{position:relative;width:clamp(84px,24vw,120px);aspect-ratio:1}
+.av{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%;box-shadow:0 0 0 4px var(--gold)}
+.logo{position:absolute;bottom:-4px;inset-inline-end:-10px;width:40%;height:40%;border-radius:50%;box-shadow:0 0 0 3px var(--gold)}
+.brand span{font-size:16px;font-weight:600;color:#aebcd2}
+.lead{display:grid;gap:8px;justify-items:center}
+.pre{font-size:18px;font-weight:600;color:#d8e2f1;line-height:1.3;text-wrap:balance;max-width:30em}
+h1{font-size:clamp(44px,14vw,88px);font-weight:900;color:var(--gold);line-height:1.08}
+h1.lines{font-size:clamp(32px,10vw,66px)}
+.sub{font-size:19px;line-height:1.4;color:#fff}
+
+/* library strip */
+.strip-label{font-family:var(--head);font-weight:700;font-size:18px;color:#d8e2f1;margin-top:28px;margin-bottom:12px;padding-inline:18px}
+.strip{overflow:hidden;direction:ltr;padding-bottom:30px}
+.strip-run{display:flex;gap:12px;width:max-content;animation:run 90s linear infinite}
+.strip img{width:300px;aspect-ratio:15/8;border-radius:8px;display:block;background:var(--navy2)}
+.strip:hover .strip-run{animation-play-state:paused}
+@keyframes run{to{transform:translateX(calc(-50% - 6px))}}
+@media (prefers-reduced-motion:reduce){.strip-run{animation:none}.strip{overflow-x:auto}html{scroll-behavior:auto}}
+
+/* step 1: what it is + proof */
+.proof{background:var(--navy2);color:#fff;padding-block:44px 48px}
+.proof .wrap{display:grid;gap:20px}
+.proof h2{color:var(--gold)}
+.proof-label{font-family:var(--head);font-weight:800;font-size:clamp(24px,5.6vw,32px);color:#fff;margin-top:14px}
+#whatIs{margin-bottom:14px;color:#fff}
+#whatIs span{display:block;font-size:clamp(30px,8vw,44px);font-weight:800;line-height:1.15;margin-bottom:6px}
+#whatIs b{display:block;font-size:clamp(56px,16vw,100px);font-weight:900;line-height:1.02;color:#ff9b2e;text-wrap:balance}
+.pillars-lead{margin:40px 0 18px;padding-top:30px;border-top:2px solid rgba(227,178,60,.55);font-family:var(--head);font-size:clamp(25px,6.4vw,34px);font-weight:800;line-height:1.25;color:#fff;text-align:center}
+.pillars-lead b{display:block;color:var(--gold);font-weight:900;font-size:1.14em;text-wrap:balance}
+.pillars{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.pillars>li{background:var(--paper);color:var(--ink);border:3px solid var(--gold);border-radius:10px;overflow:hidden;display:grid}
+.pillars h3{display:flex;align-items:center;gap:12px;background:var(--navy);color:var(--gold);font-size:clamp(21px,5vw,25px);font-weight:800;line-height:1.25;text-align:right;padding:12px 14px}
+.pillars h3 span{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--gold);color:var(--navy);font-weight:900}
+.pillar-body{display:grid;gap:12px;padding:16px 16px 18px;font-size:21px;font-weight:600;line-height:1.35;color:var(--navy)}
+.topics-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.topics-list li{color:var(--navy);background:var(--mist);border:1px solid var(--line);border-radius:30px;padding:5px 14px;font-size:18px;font-weight:700;line-height:1.3}
+.tr-count{margin:8px 0 0;font-family:var(--head);font-weight:800;font-size:19px;color:var(--navy);text-align:center}
+.pillar-pics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.pillar-pics.two{grid-template-columns:1fr 1fr}
+.pillar-pics img{width:100%;aspect-ratio:15/8;border-radius:5px;display:block;background:var(--navy2)}
+.slider{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:6px;align-items:center}
+.slides{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.slides::-webkit-scrollbar{display:none}
+.slides img{flex:none;width:100%;aspect-ratio:15/8;border-radius:6px;scroll-snap-align:center;display:block;background:var(--navy2)}
+.arr{width:44px;height:44px;border-radius:50%;border:0;background:var(--navy);color:var(--gold);font-family:var(--head);font-size:24px;font-weight:800;line-height:1;cursor:pointer;display:grid;place-items:center;padding:0}
+.arr:disabled{opacity:.3;cursor:default}
+.pillar-photo{width:min(72%,340px);justify-self:center;border-radius:6px;display:block}
+.results-h{font-family:var(--head);font-weight:900;font-size:clamp(38px,10vw,58px);line-height:1.12;color:var(--gold);margin-top:18px}
+.results-line{font-family:var(--head);font-weight:800;font-size:clamp(30px,8vw,46px);line-height:1.22;color:#fff;text-wrap:balance}
+.proof .stories{color:var(--ink)}
+@media (min-width:640px){.proof .stories{grid-template-columns:1fr 1fr}}
+.wa-shot{margin:0;display:grid;gap:6px;justify-items:center}
+.pillars-sub{font-family:var(--head);font-weight:800;font-size:21px;line-height:1.3;margin-top:8px}
+.phone-stage{width:100%;background:#000;border-radius:10px;padding:22px 12px;display:grid;justify-items:center}
+.phone{width:min(82%,280px);background:#1c1c1e;border-radius:34px;padding:12px 9px;box-shadow:0 0 0 2px #55585e}
+.phone-screen{background:#fff;border-radius:24px;overflow:hidden}
+.phone-bar{background:#fff;color:#1fa855;font-family:var(--body);font-weight:700;font-size:19px;line-height:1;text-align:right;padding:20px 14px 10px;border-bottom:1px solid var(--line);direction:ltr}
+.phone-screen img{width:100%;display:block}
+.wa-shot figcaption{font-size:15px;font-weight:600;color:var(--muted);line-height:1.3}
+.app-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start}
+.app-pair figure{margin:0;display:grid;gap:6px;min-width:0}
+.app-pair img{width:100%;height:clamp(240px,62vw,360px);object-fit:cover;object-position:top;border-radius:12px;border:3px solid var(--gold);display:block}
+.app-pair figcaption{font-size:16px;font-weight:700;line-height:1.3}
+.at-home{background:var(--gold-soft);border-top:1px solid var(--gold);padding:14px 16px;font-family:var(--head);font-weight:700;font-size:clamp(21px,5.6vw,25px);line-height:1.3;color:var(--navy)}
+.pillar-photo.wide{width:100%;max-width:none;height:auto;max-height:none;justify-self:stretch}
+.at-home b{color:var(--gold-deep)}
+.together{font-size:clamp(25px,6.2vw,31px);font-weight:800;line-height:1.25;margin:0;text-wrap:balance}
+.pillars-end{font-family:var(--head);font-weight:900;font-size:clamp(25px,6vw,34px);line-height:1.25;color:var(--gold);text-wrap:balance}
+.pressimg{width:min(100%,380px);justify-self:center;border-radius:8px;display:block}
+.tv{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.tv figure{margin:0;display:grid;gap:5px;min-width:0}
+.tv figure:first-child{grid-column:1/-1}
+.tv img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:top;border-radius:6px;display:block;border:2px solid var(--gold)}
+.tv figcaption{font-size:16px;color:#d8e2f1;line-height:1.3}
+@media (min-width:780px){.tv{grid-template-columns:repeat(3,1fr)}.tv figure:first-child{grid-column:auto}}
+.stage-pics{display:grid;gap:10px}
+.stage-pics img{width:100%;border-radius:6px;display:block;border:2px solid var(--gold)}
+@media (min-width:780px){.stage-pics{grid-template-columns:1fr 1fr}.stage-pics img{height:100%;object-fit:cover}}
+.listen{display:flex;justify-content:center;gap:8px;width:100%}
+.listen figure{flex:1 1 0;min-width:0;max-width:150px;margin:0;display:grid;gap:4px;align-content:start}
+.listen img{display:block;width:100%;height:auto;aspect-ratio:1;border:2px solid var(--gold);border-radius:8px}
+.listen figcaption{font-family:var(--head);font-weight:700;font-size:15px;line-height:1.2;color:#fff;text-align:center}
+.clip-why{margin:0 0 14px;font-weight:700}
+.now{font-family:var(--head);font-weight:900;font-size:clamp(28px,7vw,42px);line-height:1.18;color:var(--gold);text-wrap:balance;margin-top:10px}
+
+/* button */
+.cta{display:inline-block;width:100%;max-width:440px;background:var(--gold);color:var(--navy);font-family:var(--head);font-weight:900;font-size:clamp(28px,7.6vw,32px);line-height:1.2;border:0;border-radius:10px;padding:14px 18px;cursor:pointer;box-shadow:0 5px 0 var(--gold-deep)}
+.cta:hover{filter:brightness(1.05)}
+.cta small{display:block;font-size:15px;font-weight:500;margin-top:2px}
+.fine{font-size:16px;color:inherit;opacity:.85}
+.ctabox{display:grid;justify-items:center;gap:10px;width:100%}
+
+/* step 2: pain and solution */
+.scene{display:grid;gap:12px;background:var(--mist);border-radius:6px;padding:24px 18px;font-size:clamp(23px,6vw,26px);line-height:1.35}
+#painH{font-size:clamp(34px,9.4vw,50px);font-weight:900;line-height:1.15;margin-bottom:6px}
+#after{font-size:clamp(23px,6vw,26px);line-height:1.35}
+.mark{display:inline-block;font-family:var(--head);font-weight:900;font-size:clamp(28px,7vw,40px);line-height:1.2;color:#fff;padding:6px 16px 8px;border-radius:12px 5px 14px 6px;transform:rotate(-1deg);margin-top:8px}
+.mark.red{background:#d7263d}
+.mark.green{background:#12813c}
+.scene time{font-family:var(--head);font-weight:800;color:var(--gold-deep);margin-inline-end:8px}
+.joinline{font-family:var(--head);font-weight:800;font-size:clamp(23px,5.4vw,29px);line-height:1.3;color:var(--navy);text-wrap:balance}
+.swap{display:grid;gap:10px;text-align:right}
+.swap-head,.swap-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.swap-head span{font-family:var(--head);font-weight:800;font-size:17px;text-align:center;line-height:1.25}
+.swap-head span:first-child{color:var(--muted)}
+.swap-head span:last-child{color:var(--gold-deep)}
+.swap-row p{padding:14px 12px;border-radius:6px;font-size:18px;line-height:1.35;display:flex;align-items:center;justify-content:center;text-align:center}
+.swap-row p:first-child{background:var(--navy2);color:#d8e2f1}
+.swap-row p:last-child{background:var(--gold);color:var(--navy);font-family:var(--head);font-weight:800;font-size:clamp(20px,5.2vw,23px);line-height:1.25}
+/* what the parent gets: always the loudest thing in its section */
+.band h2:has(+#learn){font-size:clamp(32px,8.4vw,46px);font-weight:900}
+#learn{gap:12px}
+#learn li{background:var(--navy);color:#fff;border:3px solid var(--gold);border-radius:10px;padding:16px;padding-inline-start:52px;font-family:var(--head);font-weight:800;font-size:clamp(24px,6.2vw,31px);line-height:1.25;text-wrap:balance}
+#learn li::before{content:"✓";inset-inline-start:15px;top:14px;color:var(--gold);font-size:28px;font-weight:900}
+
+/* series blocks (step 2 and step 7) */
+.series{display:grid;gap:12px;text-align:center}
+.series h3{justify-self:center;font-size:21px;font-weight:800;color:#0b0b0d;background:var(--c);padding:5px 18px 6px;border-radius:30px}
+.series .what{font-size:21px;font-weight:600;line-height:1.35}
+.series .topics{font-size:18px;color:var(--muted);line-height:1.4}
+.dark .series .topics{color:#d8e2f1}
+.series .hero-card{width:100%;max-width:560px;justify-self:center;aspect-ratio:15/8;border-radius:10px;display:block;background:var(--navy2)}
+.series .more-t{font-size:16px;font-weight:700;color:var(--muted)}
+.dark .series .more-t{color:#d8e2f1}
+.row{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:8px;scrollbar-width:thin;scrollbar-color:#6d7c93 transparent;text-align:right}
+.row img{flex:none;width:min(52vw,200px);aspect-ratio:15/8;border-radius:6px;scroll-snap-align:start;display:block;background:var(--navy2)}
+
+/* step 7: everything you get, as a bullet list */
+.gets{gap:24px}
+.gets li{padding-inline-start:36px;font-size:19px;line-height:1.35;display:grid;gap:5px}
+.gets li::before{top:2px;font-size:24px}
+.gets h3{font-size:clamp(23px,6vw,28px);font-weight:900;color:var(--gold);line-height:1.2}
+.gets .res{font-family:var(--head);font-weight:700;font-size:clamp(20px,5.2vw,23px);line-height:1.3;color:#fff}
+.gets .res b{color:var(--gold)}
+/* step 7: a numbered path, one line joins the series */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.steps>li{position:relative;padding:0 0 44px}
+.steps>li:last-child{padding-bottom:0}
+.steps>li:not(:last-child)::after{content:"";position:absolute;bottom:10px;inset-inline-start:50%;width:2px;height:24px;background:var(--gold)}
+.num{display:grid;place-items:center;width:44px;height:44px;margin:0 auto 8px;border-radius:50%;background:var(--gold);color:var(--navy);font-family:var(--head);font-weight:900;font-size:22px}
+.bridge{font-family:var(--head);font-weight:800;font-size:clamp(23px,5.4vw,28px);color:var(--gold);margin-bottom:12px;line-height:1.25;text-wrap:balance}
+
+
+/* value clip per door + about video */
+.clipbox{display:grid;gap:14px}
+.clipbox video{width:100%;display:block;border:16px solid var(--navy);border-radius:16px;background:var(--navy);aspect-ratio:16/9;box-shadow:0 0 0 10px var(--gold),0 0 0 14px var(--navy),0 18px 40px 10px rgba(16,35,63,.55);margin:18px 0 22px}
+#clipHook{color:var(--navy);margin:0;font-size:clamp(26px,6.6vw,36px);font-weight:900;line-height:1.28;text-wrap:balance}
+#clipHook span{background:var(--gold);border-radius:8px;padding:0 10px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+#clipV,#aboutV{margin:0}
+.vslide.vplay{background:transparent;padding:0}
+.vslide.vplay i,.vslide.vplay:hover i{transform:translate(-50%,-50%) scale(1.4)}
+.vwrap{position:relative;margin:18px 0 22px}
+.vslide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:4px;padding:3.5% 4% 3%;border:0;border-radius:15px;background:linear-gradient(160deg,var(--navy2),var(--navy));color:#fff;font-family:var(--head);cursor:pointer;text-align:center}
+.vslide[hidden]{display:none}
+.vslide b{font-size:min(4.3vw,29px);font-weight:800;line-height:1.2;text-wrap:balance}
+.vslide small{font-size:min(3.4vw,21px);font-weight:700;color:var(--gold);line-height:1.2}
+.vslide i{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(14vw,92px);height:min(14vw,92px);border-radius:50%;background:var(--gold);box-shadow:0 0 0 6px rgba(227,178,60,.3),0 6px 16px rgba(0,0,0,.45);animation:vpulse 1.4s ease-in-out infinite}
+.vslide i::after{content:'';position:absolute;top:50%;left:54%;transform:translate(-50%,-50%);border-style:solid;border-width:min(3.6vw,24px) 0 min(3.6vw,24px) min(5.6vw,37px);border-color:transparent transparent transparent var(--navy)}
+.vslide:hover i{transform:translate(-50%,-50%) scale(1.06)}
+@keyframes vpulse{50%{box-shadow:0 0 0 12px rgba(227,178,60,.18),0 6px 16px rgba(0,0,0,.45)}}
+@media (prefers-reduced-motion:reduce){.vslide i{animation:none}}
+.clip-sub{font-size:18px;color:var(--muted);margin:0}
+.clip-more{text-align:center;margin:6px 0 0;padding-top:14px;border-top:2px solid var(--gold);font-size:21px;font-weight:800;line-height:1.4;color:var(--navy)}
+.clip-more[hidden]{display:none}
+.try{background:var(--paper);border:2px solid var(--gold);border-radius:8px;padding:20px;display:grid;gap:10px;text-align:right}
+.try h3{font-size:clamp(23px,5.6vw,28px);color:var(--navy);font-weight:900;margin:0}
+.try ol{margin:0;padding-inline-start:24px;display:grid;gap:8px;font-size:20px;line-height:1.4}
+/* step 3: value */
+.home h2{font-size:clamp(34px,8vw,54px);font-weight:900;line-height:1.12}
+.deal{background:var(--paper);color:var(--ink);border-radius:8px;padding:26px 20px;display:grid;gap:12px}
+.deal h3{font-size:clamp(25px,6vw,32px);color:var(--navy);font-weight:900}
+.deal blockquote{margin:0;font-size:21px;font-weight:600;line-height:1.45;color:var(--navy)}
+.deal cite{font-style:normal;font-size:16px;color:var(--muted)}
+.next{font-family:var(--head);font-weight:800;font-size:clamp(18px,5.2vw,32px);color:var(--gold);white-space:nowrap}
+
+.stories{display:grid;gap:50px 22px;padding-top:44px}
+@media (min-width:780px){.stories{grid-template-columns:1fr 1fr}}
+.story{position:relative;border:2px solid var(--gold);border-radius:8px;padding:66px 20px 22px;display:grid;gap:8px;align-content:start;background:var(--paper)}
+.story img{position:absolute;top:-44px;inset-inline-start:calc(50% - 50px);width:100px;height:100px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 4px var(--gold),0 0 0 7px var(--paper)}
+.story .ini{position:absolute;top:-44px;inset-inline-start:calc(50% - 50px);width:100px;height:100px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:var(--gold);font-family:var(--head);font-weight:900;font-size:44px;box-shadow:0 0 0 4px var(--gold),0 0 0 7px var(--paper)}
+.story h3{font-size:22px;color:var(--navy);font-weight:800}
+.story cite{font-style:normal;font-weight:700;color:var(--gold-deep)}
+.more{display:grid;gap:44px}
+.more>summary{justify-self:center;background:var(--mist);border:1px solid var(--line);border-radius:30px;padding:9px 22px;font-weight:700;color:var(--navy);cursor:pointer;font-size:19px}
+.poster{position:relative;display:block;width:100%;aspect-ratio:16/9;border:3px solid var(--gold);border-radius:6px;overflow:hidden;background:var(--navy2);color:#fff;text-decoration:none}
+.poster img{width:100%;height:100%;object-fit:cover;display:block;opacity:.62}
+.play{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:8px;padding:12px;font-weight:700;font-size:17px;line-height:1.3;text-shadow:0 1px 6px rgba(0,0,0,.8)}
+.play i{display:block;width:68px;height:68px;border-radius:50%;background:var(--gold);position:relative}
+.play i::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-38%,-50%);border-style:solid;border-width:14px 0 14px 22px;border-color:transparent transparent transparent var(--navy)}
+.ideas{display:grid;gap:26px}
+.ideas h3{font-size:25px;color:var(--navy);font-weight:800;margin-bottom:5px}
+.ideas h3 span{color:var(--gold-deep)}
+.fit{display:grid;gap:18px;text-align:right}
+@media (min-width:640px){.fit{grid-template-columns:1fr 1fr}}
+.fit>div{display:grid;gap:12px;align-content:start;padding:20px;border-radius:8px;background:var(--paper);border:1px solid var(--line)}
+.fit h3{font-size:22px;color:var(--navy);text-align:center}
+.fit ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.fit li{position:relative;padding-inline-start:26px;font-size:19px;line-height:1.4}
+.fit li::before{position:absolute;inset-inline-start:0;font-weight:800;color:var(--gold-deep);content:"✓"}
+.fit .no li::before{content:"✕";color:var(--muted)}
+.fit>div{background:#e4f6ea;border:3px solid #12813c}
+.fit h3{margin:-20px -20px 4px;padding:12px;background:#12813c;color:#fff;border-radius:4px 4px 0 0}
+.fit li::before{color:#12813c}
+.fit>div.no{background:#fdeaea;border-color:#b3122a}
+.fit .no h3{background:#b3122a}
+.fit .no li::before{color:#b3122a}
+.wa{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:10px;text-align:right}
+.wa img{flex:none;height:440px;width:auto;border-radius:8px;scroll-snap-align:center;display:block}
+.nums{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 14px}
+.nums b{display:block;direction:ltr;font-family:var(--head);font-size:clamp(30px,7vw,40px);font-weight:900;color:var(--gold);font-variant-numeric:tabular-nums;line-height:1.1}
+.nums span{font-size:17px}
+#aboutSec .nums b{color:var(--gold-deep)}
+#aboutSec .gallery figcaption{color:var(--muted)}
+.me{width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid var(--gold);justify-self:center}
+.gallery{display:grid;gap:10px}
+.gallery figure{margin:0;display:grid;gap:5px;min-width:0}
+.gallery img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:6px;display:block}
+.gallery figcaption{font-size:16px;color:#d8e2f1;line-height:1.3}
+.say{font-size:22px;font-weight:600;line-height:1.45;color:#fff;margin:0}
+.say cite{display:block;font-style:normal;font-size:16px;font-weight:400;color:#d8e2f1;margin-top:6px}
+
+/* lists */
+.ticks{list-style:none;margin:0;padding:0;display:grid;gap:12px;text-align:right}
+.ticks li{position:relative;padding-inline-start:34px;font-size:20px;line-height:1.4}
+.ticks li::before{content:"✦";position:absolute;inset-inline-start:0;top:0;color:var(--gold-deep);font-size:22px}
+.dark .ticks li::before,.proof .ticks li::before{color:var(--gold)}
+
+/* step 4 + 5: timeline and joining */
+.path{list-style:none;margin:0;padding:0;display:grid;gap:0;text-align:right}
+.path li{display:grid;grid-template-columns:96px 1fr;gap:14px;padding-block:15px;border-bottom:1px solid var(--line)}
+.path li:last-child{border-bottom:0}
+.path b{font-family:var(--head);color:var(--gold-deep);font-size:18px;line-height:1.3}
+.dark .path li{border-color:#3a5176}
+.dark .path b{color:var(--gold)}
+.joinsteps{list-style:none;margin:0;padding:0;display:grid;gap:14px;text-align:right;counter-reset:s}
+.joinsteps li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:center;font-size:20px;line-height:1.35}
+.joinsteps li::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--navy);color:var(--gold);font-family:var(--head);font-weight:800}
+
+/* step 6: price */
+.compare{width:100%;border-collapse:collapse;font-size:19px;background:#fff}
+.compare td{border:1px solid var(--line);padding:12px 10px;text-align:right}
+.compare td:last-child{font-family:var(--head);font-weight:800;text-align:center;white-space:nowrap;font-variant-numeric:tabular-nums}
+.compare tr.us td{background:var(--navy);color:var(--gold);border-color:var(--navy)}
+.price{font-family:var(--head);font-weight:900;font-size:clamp(50px,13vw,74px);color:var(--navy);line-height:1}
+.live{border:2px dashed var(--gold-deep);border-radius:6px;padding:18px;display:grid;gap:4px;background:#fff}
+.live b{font-family:var(--head);color:var(--navy);font-size:21px}
+/* details form: shown before the checkout page */
+.joinform{width:min(480px,calc(100vw - 24px));max-height:calc(100dvh - 24px);border:3px solid var(--gold);border-radius:14px;padding:0;color:var(--ink);background:var(--paper);font-family:var(--body);overflow:auto}
+.joinform::backdrop{background:rgba(16,35,63,.8)}
+.jf-top{position:sticky;top:0;z-index:1;background:var(--paper);border-bottom:1px solid var(--line);padding:8px 12px;text-align:start}
+.jf-back{background:transparent;border:2px solid var(--navy);border-radius:8px;color:var(--navy);font-family:var(--head);font-weight:700;font-size:17px;min-height:44px;padding:4px 14px;cursor:pointer}
+.jf-body{display:grid;gap:15px;padding:18px 20px 22px}
+.jf-body h2{font-size:28px}
+.jf-field{display:grid;gap:4px;text-align:start}
+.jf-field label{font-weight:700;font-size:18px}
+.jf-field input{width:100%;min-height:50px;border:2px solid var(--line);border-radius:8px;padding:8px 12px;font:inherit;font-size:19px;color:var(--ink);background:#fff;text-align:right}
+.jf-field input:focus{outline:3px solid var(--gold);outline-offset:1px;border-color:var(--navy)}
+.jf-field input[aria-invalid="true"]{border-color:#b3122a}
+.jf-err{color:#b3122a;font-weight:600;font-size:16px}
+.jf-err:empty{display:none}
+.jf-ok{display:flex;gap:10px;align-items:flex-start;text-align:start;font-size:16px;line-height:1.4;cursor:pointer}
+.jf-ok input{width:22px;height:22px;flex:none;margin:1px 0 0;accent-color:var(--navy)}
+#turnHook{font-size:clamp(30px,7.6vw,44px);font-weight:800;line-height:1.2;text-wrap:balance}
+#turnH{font-size:clamp(32px,8.2vw,48px);font-weight:900;line-height:1.2}
+#turn{gap:16px;font-family:var(--head);font-weight:800;font-size:clamp(24px,6.4vw,30px);line-height:1.3;color:var(--navy);text-wrap:balance}
+#turn b{display:block;margin-top:4px;background:var(--navy);color:var(--gold);border-radius:10px;padding:14px 16px;font-weight:900}
+.notcourse{font-family:var(--head);font-weight:800;font-size:clamp(24px,6vw,30px);line-height:1.3;color:#fff;text-wrap:balance}
+.home-change{font-family:var(--head);font-weight:900;font-size:clamp(29px,7.6vw,40px);line-height:1.2;color:#fff;text-wrap:balance}
+.about-punch{font-family:var(--head);font-weight:900;font-size:clamp(27px,7vw,38px);line-height:1.22;color:var(--navy);text-wrap:balance}
+.about-tools{font-family:var(--head);font-weight:900;font-size:clamp(26px,6.8vw,36px);line-height:1.3;color:var(--navy);text-wrap:balance;margin-top:6px}
+.about-tools span{background:var(--gold);border-radius:8px;padding:0 10px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.about-gets{background:var(--navy);border:3px solid var(--gold);border-radius:10px;padding:18px 16px;gap:14px}
+.about-gets li{font-family:var(--head);font-weight:800;font-size:clamp(23px,6vw,29px);line-height:1.25;color:#fff;padding-inline-start:38px;text-wrap:balance}
+.about-gets li::before{color:var(--gold);font-size:25px;top:1px}
+@media (min-width:680px){.about-gets li{font-size:23px;white-space:nowrap}}
+.homeline{border:2px solid var(--gold);border-radius:10px;padding:14px 16px;font-family:var(--head);font-weight:700;font-size:clamp(20px,5vw,24px);line-height:1.35;color:var(--gold);text-wrap:balance}
+.nocommit{justify-self:center;background:var(--gold-soft);border:2px solid var(--gold);border-radius:10px;padding:10px 16px;color:var(--navy);font-family:var(--head);font-weight:800;font-size:clamp(20px,5vw,24px);line-height:1.3;text-wrap:balance}
+.note{display:none;background:var(--gold-soft);color:var(--ink);border-radius:8px;padding:12px;font-size:17px;max-width:440px}
+.note.show{display:block}
+
+/* step 8: the app */
+.newtag{justify-self:center;background:#d7263d;color:#fff;font-family:var(--head);font-weight:900;font-size:clamp(22px,6vw,28px);line-height:1.2;padding:8px 20px 10px;border-radius:30px}
+.phones{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:480px;width:100%;justify-self:center}
+.phones img{width:100%;border-radius:14px;border:3px solid var(--gold);display:block}
+
+/* faq */
+.faq{display:grid;gap:10px;text-align:right}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+.faq summary{font-weight:700;cursor:pointer;font-size:20px;color:var(--navy)}
+.faq details p{margin-top:8px}
+
+.foot{background:var(--mist);color:var(--muted);font-size:15px;padding-block:24px}
+.foot .wrap{display:grid;gap:6px}
+
+/* sticky bottom bar */
+.stick{position:fixed;inset:auto 0 0;z-index:15;background:var(--navy);border-top:2px solid var(--gold);padding:9px max(14px,env(safe-area-inset-left,0px)) calc(9px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-right,0px));text-align:center}
+.stick .cta{font-size:24px;padding:4px 10px 5px;max-width:560px;background:#e6112e;color:#fff;animation:glow 1.1s ease-in-out infinite}
+@keyframes glow{0%,100%{background:#e6112e;box-shadow:0 0 4px 0 rgba(255,45,70,.5)}50%{background:#ff2a47;box-shadow:0 0 22px 7px rgba(255,45,70,.95)}}
+@media (prefers-reduced-motion:reduce){.stick .cta{animation:none;box-shadow:0 0 14px 4px rgba(255,45,70,.8)}}
+.stick .cta small{font-size:13px;margin-top:0}
+
+/* clean sections system: one background, one heading size, one rhythm per section */
+.band{padding-block:clamp(52px,9vw,84px)}
+.band>.wrap{gap:24px}
+.s-white{background:#fff;color:var(--ink)}
+.s-mist{background:var(--mist);color:var(--ink)}
+.s-navy{background:var(--navy);color:#fff}
+.s-navy h2{color:var(--gold)}
+.s-navy .hook{color:#fff}
+.band h2,#painH,#turnH,.home h2{font-family:var(--head);font-size:clamp(30px,7.6vw,42px);font-weight:900;line-height:1.18;text-wrap:balance;margin:0}
+.band h2:has(+#learn){font-size:clamp(30px,7.6vw,42px);margin-top:18px}
+.band h2:not(.two)::after,.band h2.two::after{content:"";display:block;width:64px;height:4px;margin:14px auto 0;background:var(--gold);border-radius:2px}
+#whatIs{margin:0;color:#fff}
+#whatIs span{font-size:clamp(26px,6.6vw,34px);margin-bottom:4px}
+#whatIs b{font-size:clamp(44px,12.5vw,76px)}
+#whatIs::after{margin-top:18px}
+h2.two{color:var(--navy)}
+h2.two b{display:block;color:var(--navy);font-weight:900}
+.results-line{color:var(--navy);font-size:clamp(25px,6.6vw,34px);line-height:1.25}
+.punch{font-family:var(--head);font-weight:900;font-size:clamp(25px,6.4vw,32px);line-height:1.25;color:var(--navy);text-wrap:balance}
+.pillars-end{color:var(--navy);margin:0}
+.stories{padding-top:50px}
+.s-navy .big,.s-navy .lines,.s-navy p{color:inherit}
+.s-navy .topics-list li{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);color:#fff}
+.s-navy .tv figcaption{color:#d8e2f1}
+.s-navy .pressimg{background:#fff;padding:8px}
+.s-navy .deal{color:var(--ink)}
+.s-navy .deal p{color:var(--ink)}
+.s-navy .gets p{color:#fff}
+.s-navy .gets .res b{color:var(--gold)}
+.listen figcaption{color:var(--navy)}
+.clipbox{gap:18px}
+.vwrap{margin:6px 0 10px}
+.scene{background:#fff;border:1px solid var(--line)}
+#after{gap:12px}
+.rec{font-family:var(--head);font-weight:700;font-size:clamp(21px,5.6vw,25px);line-height:1.4;color:var(--navy);text-wrap:pretty}
+.lead-card{width:100%;max-width:560px;margin-inline:auto;aspect-ratio:15/8;border-radius:10px;display:block;background:var(--navy2);border:3px solid var(--gold)}
+.easy{list-style:none;margin:0;padding:0;display:grid;gap:20px}
+.easy li{background:#fff;color:var(--navy);border:4px solid var(--gold);border-radius:14px;padding:0 18px 22px;display:grid;gap:10px;justify-items:center}
+.easy .when{background:var(--gold);color:var(--navy);font-family:var(--head);font-weight:900;font-size:clamp(25px,6.8vw,32px);line-height:1.2;padding:8px 22px 10px;border-radius:0 0 12px 12px;margin-top:-4px}
+.easy h3{font-size:clamp(28px,7.6vw,38px);font-weight:900;line-height:1.18;color:var(--navy);text-wrap:balance}
+.easy p{font-size:clamp(21px,5.6vw,24px);font-weight:600;line-height:1.35;color:var(--ink);text-wrap:balance}
+.easy-time{border:4px solid var(--gold);border-radius:14px;padding:20px 18px 22px;display:grid;gap:8px;font-size:clamp(21px,5.6vw,24px);font-weight:600;line-height:1.35}
+.easy-time b{font-family:var(--head);font-weight:900;font-size:clamp(36px,10vw,52px);line-height:1.1;color:var(--gold)}
+#aboutSec .hook{font-size:clamp(27px,7vw,32px);font-weight:800}
+.then{font-family:var(--head);font-weight:800;font-size:clamp(25px,6.6vw,32px);line-height:1.2;color:var(--navy);text-wrap:balance}
+.bonus-line{justify-self:center;background:#d7263d;color:#fff;border-radius:10px;padding:10px 16px;font-family:var(--head);font-weight:800;font-size:clamp(20px,5vw,24px);line-height:1.3;text-wrap:balance}
+.bonus-res{background:var(--gold-soft);border:2px solid var(--gold);border-radius:10px;padding:14px 16px;font-family:var(--head);font-weight:700;font-size:clamp(21px,5.6vw,25px);line-height:1.3;color:var(--navy)}
+.bonus-res b{color:var(--gold-deep)}
+.gets{gap:0}
+.gets>li{padding-block:30px;gap:12px;border-bottom:2px solid rgba(227,178,60,.45)}
+.gets>li:first-child{padding-top:6px}
+.gets>li:last-child{border-bottom:0;padding-bottom:6px}
+.gets>li::before{top:32px}
+.gets>li:first-child::before{top:8px}
+.compare s{text-decoration-color:#d7263d;text-decoration-thickness:3px;color:var(--muted)}
+.club-price{background:var(--navy);color:#fff;border:4px solid var(--gold);border-radius:14px;padding:22px 16px 24px;display:grid;gap:6px}
+.club-price h3{color:#fff;font-size:clamp(30px,8vw,42px);font-weight:900;line-height:1.15;text-wrap:balance}
+.club-price p{font-family:var(--head);font-weight:700;font-size:clamp(21px,5.6vw,25px);line-height:1.3}
+.club-price b{font-family:var(--head);font-weight:900;font-size:clamp(30px,8vw,38px);line-height:1.1;color:var(--gold)}
+.first-h{font-size:clamp(28px,7.4vw,36px);font-weight:900}
+#join .price{font-size:clamp(84px,24vw,120px)}
+.s-white .gets h3{color:var(--navy)}
+.s-white .gets .res{color:var(--navy)}
+.s-white .gets .res b{color:var(--gold-deep)}
+.s-white .gets>li{border-color:var(--gold)}
+.fit~.deal{border:3px solid var(--gold)}
+.brand-row{display:flex;align-items:center;justify-content:center;gap:14px}
+.brand-row{gap:10px}
+.brand-row .faces{width:clamp(62px,17vw,88px);flex:none}
+.club-id{display:grid;gap:2px;text-align:start}
+.club-id b{font-family:var(--head);font-weight:900;font-size:clamp(24px,6.4vw,34px);line-height:1.05;color:#fff;white-space:nowrap}
+.club-id span{font-family:var(--head);font-size:clamp(19px,5vw,24px);font-weight:800;color:var(--gold);line-height:1.15}
+.club-what{font-family:var(--head);font-weight:700;font-size:clamp(19px,5vw,23px);line-height:1.3;color:#fff;text-wrap:balance;border-bottom:2px solid rgba(227,178,60,.55);padding-bottom:12px}
+.hero h1{font-size:min(17.4vw,136px);line-height:1.04}
+.hero h1.lines{font-size:min(16vw,136px);white-space:nowrap;line-height:1.08}
+.hero .wrap{gap:9px}
+.hero .who{margin-bottom:4px}
+.hero .ctabox{margin-top:8px}
+.hero{padding-block:0}
+.hero-first{max-width:1240px;display:flex!important;flex-direction:column;align-items:center;gap:clamp(18px,3svh,30px);padding-block:12px 0}
+.hero-first h1{margin-block:auto;width:calc(100% + 32px);margin-inline:-16px;letter-spacing:-.02em}
+.clip-offer .js-open{background:#e6112e;color:#fff;animation:glow 1.1s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.clip-offer .js-open{animation:none;box-shadow:0 0 14px 4px rgba(255,45,70,.8)}}
+.hero-more{padding-block:18px 0}
+.hero .sub{font-family:var(--head);font-weight:700;font-size:clamp(21px,5.6vw,26px);line-height:1.3}
+.offer-h{font-family:var(--head);font-weight:800;font-size:clamp(24px,6.4vw,32px);line-height:1.25;color:var(--navy);text-wrap:balance}
+.clip-offer .price{font-size:clamp(70px,19vw,100px)}
+.hero .ctabox{margin-top:0}
+.stick[hidden]{display:none}
+.watch{display:grid;gap:14px;text-align:center}
+.clip-watch{font-family:var(--head);font-weight:800;font-size:clamp(23px,6vw,28px);line-height:1.3;color:var(--navy);text-wrap:balance}
+.pain-pre{font-family:var(--head);font-weight:700;font-size:clamp(21px,5.6vw,25px);color:var(--navy);justify-self:center}
+.bonus-mini{background:#fff;border:4px solid #d7263d;border-radius:14px;padding:18px 14px 20px;display:grid;gap:12px}
+.bonus-mini>p{font-family:var(--head);font-weight:700;font-size:clamp(21px,5.6vw,25px);line-height:1.3;color:var(--navy);text-wrap:balance}
+.strip-label{font-size:clamp(25px,6.8vw,34px);font-weight:900;line-height:1.2;color:#ff9b2e;margin-top:22px;margin-bottom:14px}
+.cta small.cta-price{font-size:clamp(19px,5vw,22px);font-weight:700;line-height:1.25;margin-top:6px;text-wrap:balance}
+.until{font-family:var(--head);font-weight:800;font-size:clamp(21px,5.6vw,25px);line-height:1.25;color:#d7263d}
+.cta-note.offer-note{font-size:clamp(22px,5.8vw,26px)}
+.short-pain{font-family:var(--head);font-weight:800;font-size:clamp(23px,6.2vw,30px);line-height:1.35;color:#fff;margin-bottom:12px}
+.clip-top{font-family:var(--head);font-weight:900;font-size:clamp(30px,7.8vw,44px);line-height:1.2;color:var(--navy);text-wrap:balance}
+.not-must{display:block;margin-top:14px;color:var(--gold);font-weight:900;font-size:1.15em}
+.hero .sub{text-wrap:balance}
+#clipStart{background:linear-gradient(to left,rgba(16,35,63,0) 20%,rgba(16,35,63,.9) 58%),url(https://aviram-heichal.github.io/moadon-page/img/lecture.jpg) center top/cover no-repeat}
+#clipStart b,#clipStart small{align-self:flex-end;width:60%;text-align:center}
+#clipStart i{top:64%;width:min(11vw,92px);height:min(11vw,92px)}
+#clipStart i::after{border-width:min(2.8vw,24px) 0 min(2.8vw,24px) min(4.4vw,37px)}
+.clip-more-h{margin:6px 0 0;padding-top:20px;border-top:2px solid var(--gold);font-family:var(--head);font-weight:900;font-size:clamp(30px,8vw,44px);line-height:1.2;color:#d7263d;text-wrap:balance}
+.clip-more-h:not([hidden])+.clip-more{margin:0;padding-top:0;border-top:0;font-family:var(--head);font-size:clamp(24px,6.4vw,30px);line-height:1.35;text-wrap:pretty}
+.offer-less{font-family:var(--head);font-weight:900;font-size:clamp(27px,7vw,38px);line-height:1.22;color:var(--navy);text-wrap:balance}
+#clipSec{padding-bottom:26px}
+.clip-offer{padding-top:26px}
+#clipHook.hook-small{font-size:clamp(19px,5vw,23px);font-weight:700;line-height:1.35;margin-top:-8px}
+.watch-small{display:block;margin-top:6px;font-size:clamp(17px,4.4vw,19px);font-weight:600;color:var(--muted)}
+.joined{justify-self:center;background:var(--navy);color:#fff;border:3px solid var(--gold);border-radius:12px;padding:10px 18px 12px;font-family:var(--head);font-weight:800;font-size:clamp(22px,5.8vw,28px);line-height:1.25;text-wrap:balance}
+.joined b{color:var(--gold);font-weight:900;font-size:1.15em}
+.band:has(#painH){padding-bottom:24px}
+.band:has(#turnHook){padding-top:24px}
+.band:has(#earlyStories){padding-bottom:24px}
+.band:has(#painH){padding-top:24px}
+.band:has(#turnHook){padding-bottom:8px}
+.band:has(#learn){padding-top:14px}
+.band h2:has(+#learn){margin-top:0}
+.band{padding-block:clamp(26px,5vw,40px)}
+.band>.wrap{gap:20px}
+.band:has(#teacherStories){padding-bottom:14px}
+.band:has(.fit){padding-top:16px}
+.band:has(.fit){padding-bottom:14px}
+.band:has(.stage-pics){padding-top:16px}
+.compare-h{font-family:var(--head);font-weight:900;font-size:clamp(26px,6.8vw,34px);line-height:1.22;color:var(--navy);text-wrap:balance}
+.club-def{font-family:var(--head);font-weight:500;font-size:clamp(22px,5.6vw,28px);line-height:1.4;color:#fff;text-wrap:balance}
+.cta-note{font-family:var(--head);font-weight:700;font-size:clamp(18px,4.8vw,21px);line-height:1.3;color:var(--navy);text-wrap:balance;margin-top:4px}
+.hero .cta-note,.s-navy .cta-note{color:var(--gold)}
+#firstSeries{display:grid;gap:12px}
+.press-top{display:grid;gap:8px;justify-items:center;margin-top:6px}
+.press-top span{font-family:var(--head);font-weight:700;font-size:clamp(17px,4.4vw,20px);color:var(--gold)}
+.press-top img{width:min(100%,340px);height:auto;border-radius:10px;display:block}
+.band.guy-band{padding-top:0}
+.guy-big .story{border:3px solid var(--gold);background:var(--gold-soft);margin-top:40px}
+.guy-big .story h3{font-size:clamp(25px,6.4vw,32px);line-height:1.25}
+.guy-big .story p{font-size:clamp(20px,5.2vw,24px);line-height:1.45;color:var(--ink)}
+.guy-big .story cite{font-size:clamp(18px,4.6vw,21px);font-weight:800}
+.guy-big .story.guy-t{display:block;padding:20px;margin-top:0}
+.guy-big .guy-t h3{margin:0 0 8px}
+.guy-head{display:flex;align-items:center;gap:14px;text-align:right;padding-bottom:14px;margin-bottom:14px;border-bottom:2px solid var(--gold)}
+.guy-big .guy-head img{position:static;width:84px;height:84px;flex:none;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px var(--gold)}
+.guy-head b{display:block;font-family:var(--head);font-weight:800;font-size:clamp(24px,6.2vw,30px);line-height:1.2;color:var(--navy)}
+.guy-head span{display:block;margin-top:4px;font-size:clamp(16px,4.2vw,19px);line-height:1.35;color:var(--ink)}
+.cost-box{display:grid;gap:16px;justify-items:center;text-align:center;background:var(--gold-soft);border:5px solid var(--navy);border-radius:16px;box-shadow:0 0 0 4px var(--gold),0 10px 28px rgba(16,35,63,.22);padding:0 clamp(12px,4vw,26px) 26px;overflow:hidden;width:100%;max-width:100%;box-sizing:border-box}
+.cost-box>h2{justify-self:stretch;margin:0 calc(-1*clamp(12px,4vw,26px)) 6px;padding:14px 12px 16px;background:var(--navy);color:var(--gold);text-align:center}
+.cost-box .compare{background:#fff}
+.cost-box .price{white-space:nowrap;font-size:clamp(60px,17vw,96px)}
+.clip-who{font-family:var(--head);font-weight:700;font-size:clamp(18px,4.6vw,21px);line-height:1.35;color:var(--navy);text-wrap:balance;text-align:center}
+</style></head><body>
+<div class="review" hidden>
+  <nav class="tabs" id="tabs"></nav>
+</div>
+
+<header class="hero">
+  <div class="wrap hero-first">
+    <div class="who" role="group" aria-label="איך לפנות אליך"><span>אני:</span><div><button type="button" data-g="f">אמא</button><button type="button" data-g="m">אבא</button></div></div>
+    <div class="brand brand-row">
+      <div class="faces">
+        <img class="av" src="https://aviram-heichal.github.io/moadon-page/img/aviram_hero.jpg" alt="אבירם היכל">
+      </div>
+      <div class="club-id"><b>מועדון הדור הבא</b><span>של אבירם היכל</span></div>
+    </div>
+    <h1 id="h1"></h1>
+  </div>
+  <div class="wrap hero-more">
+    <p class="short-pain" id="short"></p>
+    <p class="sub" id="sub"></p>
+    <div class="press-top"><span>כפי שהוצג ב:</span><img src="https://aviram-heichal.github.io/moadon-page/img/press.jpg" alt="כאן 11, ערוץ 12, NTD"></div>
+  </div>
+  <p class="strip-label">הצצה למה שמחכה לך במועדון הדור הבא להורים:</p>
+  <div class="strip" aria-hidden="true"><div class="strip-run" id="strip"></div></div>
+</header>
+
+<!-- 0. value clip for this door, right after the hero -->
+<section class="band s-white" id="clipSec">
+  <div class="wrap clipbox">
+        <p class="clip-top" id="clipTop" hidden></p>
+    <p class="hook" id="clipHook"><span>טעימה קטנה</span> מכל האוצר שמחכה לך במועדון הדור הבא</p>
+    <div class="vwrap"><video id="clipV" controls playsinline preload="metadata"></video><button class="vslide" id="clipStart" type="button"><b id="clipSlide"></b><i aria-hidden="true"></i><small>טעימה קטנה מתוך אחת ההדרכות במועדון</small></button></div>
+    <p class="clip-sub" id="clipSub"></p>
+    <div class="watch"><p class="clip-watch" id="clipWatch"></p><p class="clip-more-h" id="clipMoreH" hidden></p><p class="clip-more" id="clipMore"></p></div>
+  </div>
+</section>
+
+<section class="band s-white guy-band">
+  <div class="wrap"><div class="guy-big" id="guyBig"></div></div>
+</section>
+
+<section class="band s-mist clip-offer">
+  <div class="wrap">
+    <p class="offer-less">והכול בפחות ממחיר של שיעור פרטי אחד בחשבון או שפה</p>
+    <p class="offer-h">החודש הראשון שלך במועדון:</p>
+    <p class="price">29 ש"ח</p>
+    <p class="then">אחר כך 97 ש"ח לחודש. אפשר לעצור בכל רגע.</p>
+    <p class="until">ההטבה בתוקף עד 20 בנובמבר</p>
+    <p class="joined"><b>מעל 1,600 הורים</b> כבר הצטרפו למועדון</p>
+    <div class="ctabox"><button class="cta js-open" type="button">אבירם, אני בפנים!<small>חודש ראשון ב-29 ש"ח, ללא התחייבות</small></button>
+    <p class="cta-note offer-note">ההדרכות נפתחות לך תוך כמה דקות, גם בטלפון.</p></div>
+  </div>
+</section>
+
+<section class="band s-navy">
+  <div class="wrap">
+    <h2 id="whatIs">אבל רגע - מה בעצם מקבלים במועדון?</h2>
+      <p class="club-def">מועדון הדור הבא הוא מועדון ההורים הכי פרקטי שיש היום בישראל - מקום אחד, בטלפון ובמחשב, שבו הורים לומדים מה ואיך עושים, ומקבלים תוצאות עם הילד בכל נושא:</p>
+      <ul class="topics-list"><li>למידה</li><li>קשב וריכוז בלי תרופות</li><li>שיפור התנהגות</li><li>חשבון</li><li>הורות בלי מאבק</li><li>התפתחות אישית</li><li>לימוד קריאה</li><li>שגיאות כתיב</li><li>פחות מסכים</li><li>בוקר בלי ריבים</li><li>כבוד להורים</li><li>תקשורת טובה בבית</li><li>פחות ריבים בין האחים</li></ul>
+      
+  </div>
+</section>
+
+<section class="band s-mist">
+  <div class="wrap">
+    <h2 class="two">הצטרפות אחת ו...<b>4 דברים שישנו לך את הבית:</b></h2>
+    <ol class="pillars">
+        <li>
+          <h3><span>1</span>האוצר: מאגר של מעל 45 הדרכות, סופר מעשיות</h3>
+          <div class="pillar-body">
+            <p>נפתח לך כבר עכשיו, {ואת יכולה|ואתה יכול} להקשיב.</p>
+            <div class="slider" id="trSlider"><button class="arr" type="button" data-dir="-1" aria-label="ההדרכה הקודמת">→</button><div class="slides" id="trSlides" tabindex="0" aria-label="ההדרכות שמחכות בפנים"></div><button class="arr" type="button" data-dir="1" aria-label="ההדרכה הבאה">←</button></div>
+          </div>
+          <p class="at-home"><b>והתוצאה בבית:</b> כשמשהו בוער, כבר יש על זה הדרכה. במקום לנחש, {את יודעת|אתה יודע} מה לעשות.</p>
+        </li>
+        <li>
+          <h3><span>2</span>תוכנית ללימוד חשבון וקריאה</h3>
+          <div class="pillar-body">
+            <p>צעד אחר צעד.</p>
+            <div class="slider" id="planSlider">
+              <button class="arr" type="button" data-dir="-1" aria-label="ההדרכה הקודמת">→</button>
+              <div class="slides" id="planSlides" tabindex="0" aria-label="הדרכות בחשבון ובקריאה"></div>
+              <button class="arr" type="button" data-dir="1" aria-label="ההדרכה הבאה">←</button>
+            </div>
+          </div>
+          <p class="at-home"><b>והתוצאה בבית:</b> לא צריך ידע של מורה. הולכים לפי הצעדים, ורואים אותו מתחיל להצליח.</p>
+        </li>
+        <li>
+          <h3><span>3</span>הדרכה חיה בזום, אחת לחודש</h3>
+          <div class="pillar-body">
+            <p class="together">ביחד עם כל קהילת ההורים במועדון!</p>
+            <img class="pillar-photo wide" src="https://aviram-heichal.github.io/moadon-page/img/zoom_live.jpg" alt="אבירם מדריך בזום, ועל המסך קהל של הורים" loading="lazy">
+          </div>
+          <p class="at-home"><b>והתוצאה:</b> לומדים ומשתפרים כהורים כל הזמן עם הידע והכלים הכי חדשים!</p>
+        </li>
+        <li>
+          <h3><span>4</span>קבוצת ווטסאפ אישית איתי, למענה על כל שאלה והנחיות להתחלה</h3>
+          <div class="pillar-body">
+            <figure class="wa-shot"><div class="phone-stage"><div class="phone"><div class="phone-screen"><p class="phone-bar">WhatsApp</p><img src="https://aviram-heichal.github.io/moadon-page/img/wa_groups.png" alt="רשימת הקבוצות האישיות בווטסאפ של אבירם, שמות המשפחה מוסתרים" loading="lazy"></div></div></div><figcaption>צילום מהווטסאפ שלי: קבוצה אישית לכל נרשם. שמות המשפחה הוסתרו.</figcaption></figure>
+            <p class="pillars-sub">ככה נראית התייעצות אמיתית בקבוצה:</p>
+            <figure class="wa-shot"><div class="phone-stage"><div class="phone"><div class="phone-screen"><img src="https://aviram-heichal.github.io/moadon-page/img/wa_consult.jpg" alt="הודעה של אבא בקבוצה האישית, ששואל איך מתמודדים כשיש אחים" loading="lazy"></div></div></div><figcaption>השם שונה, והטלפון ושמות הילדים הוסתרו לשמירה על פרטיות.</figcaption></figure>
+          </div>
+          <p class="at-home"><b>{את לא לבד|אתה לא לבד}:</b> נתקעת? כותבים בקבוצה ומקבלים תשובה על כל בעיה עם הילד.</p>
+        </li>
+      </ol>
+    <div class="ctabox"><button class="cta js-form" type="button">אבירם, אני בפנים!<small class="cta-price">97 ש"ח לחודש ו-29 ש"ח בלבד לחודש הראשון, בלי התחייבות</small></button></div>
+    <p class="pillars-end">הכול במנוי אחד - ומי שמצטרף עד 20 בנובמבר מקבל גם בונוס:</p>
+    <div class="bonus-mini">
+      <span class="newtag">🎁 המאמן הדיגיטלי לחשבון של הילד שלך</span>
+      <p>אפליקציית התרגול החדשה לחשבון שפיתחתי כדי לעזור לילדים להשלים פערים במהירות - הילדים עפים על זה...</p>
+      <div class="app-pair">
+              <figure><img src="https://aviram-heichal.github.io/moadon-page/img/app2.jpg" alt="מסך המאמן הדיגיטלי: השבוע של הילדה מוכן" loading="lazy"><figcaption>המאמן הדיגיטלי: שבוע אישי לילד, תוך דקה</figcaption></figure>
+              <figure><img src="https://aviram-heichal.github.io/moadon-page/img/app_ex.jpg" alt="עמוד התרגילים של הילד, תרגילי כפל בעיצוב צבעוני" loading="lazy"><figcaption>ומבפנים: ככה הילד מתרגל</figcaption></figure>
+            </div>
+    </div>
+  </div>
+</section>
+
+<section class="band s-white">
+  <div class="wrap wide">
+    <h2>מעל 1,600 הורים כבר הצטרפו.<br>ככה נראה הבית אצלם, אחרי שהתחילו ללמוד:</h2>
+    <div class="stories" id="earlyStories"></div>
+  </div>
+</section>
+
+<section class="band s-mist">
+  <div class="wrap">
+    <p class="pre pain-pre" id="pre"></p>
+    <h2 id="painH"></h2>
+    <div class="scene" id="scene"></div>
+    <div class="lines" id="after"></div>
+  </div>
+</section>
+
+<section class="band s-white">
+  <div class="wrap">
+    <p class="hook" id="turnHook"></p>
+    <h2 id="turnH"></h2>
+    <div class="lines" id="turn"></div>
+    <p class="punch">{את לא צריכה|אתה לא צריך} להיות המורה שלו,<br>{את צריכה|אתה צריך} רק לדעת איך לפתור<br>את מה שבאמת חוסם אותו!</p>
+    
+  </div>
+</section>
+
+<section class="band s-mist">
+  <div class="wrap">
+    <h2>{ואת יכולה|ואתה יכול} ללמוד את זה כבר עכשיו:</h2>
+    <ul class="ticks" id="learn"></ul>
+    <p class="joinline" id="joinline"></p>
+    <p class="rec" id="first"></p>
+    <div id="firstSeries"></div>
+    <div class="swap">
+      <div class="swap-head"><span>מה קורה עכשיו</span><span id="swapHead"></span></div>
+      <div id="swap" style="display:grid;gap:10px"></div>
+    </div>
+    <div class="ctabox"><button class="cta js-join" type="button">אבירם, אני בפנים!<small>חודש ראשון ב-29 ש"ח, ללא התחייבות</small></button><p class="cta-note">ההדרכה הראשונה מחכה לך כבר היום.</p></div>
+  </div>
+</section>
+
+<section class="band s-navy home">
+  <div class="wrap">
+    <p class="hook" id="homeHook" hidden></p>
+    <h2>הבית שלך יכול<br>להיות מקום אחר</h2>
+    <div class="lines">
+      <p class="notcourse">המועדון הזה הוא לא עוד קורס.</p>
+      <p class="home-change">הוא משנה את כל מה שקורה אצלכם בבית:</p>
+      <p class="homeline">הופך את הבית לרגוע יותר</p>
+      <p class="homeline">ומשנה את הדימוי העצמי של הילד,<br>ואת מה שהוא חושב על עצמו</p>
+    </div>
+  </div>
+</section>
+
+<section class="band s-white">
+  <div class="wrap wide">
+    <h2>הנה מה שהורים מספרים<br>על התוצאות בבית:</h2>
+    <p class="results-line">פחות מאבקים, יותר שקט, וילד שמאמין בעצמו.</p>
+    <div class="stories" id="homeStories"></div>
+    <div class="ctabox"><button class="cta js-join" type="button">אבירם, אני בפנים!<small>חודש ראשון ב-29 ש"ח, ללא התחייבות</small></button><p class="cta-note">ההורים האלו התחילו בדיוק מכאן. ההדרכות ייפתחו גם לך תוך כמה דקות, מיד {אחרי שתירשמי|אחרי שתירשם}.</p></div>
+  </div>
+</section>
+
+<section class="band s-mist" id="aboutSec">
+  <div class="wrap clipbox">
+    <p class="hook">אז מי אני?</p>
+    <h2>מהרחפן הכי גדול בכיתה,<br>למעל 27,000 הורים, ילדים ומורים שעזרתי להם</h2>
+    <p class="clip-sub">הסיפור שלי ובמה אני מאמין, מתוך הדרכה בזום. שתי דקות וחצי.</p>
+    <div class="vwrap"><video id="aboutV" controls playsinline preload="metadata" poster="https://aviram-heichal.github.io/moadon-page/clips/about.jpg" src="https://aviram-heichal.github.io/moadon-page/clips/about.mp4"></video><button class="vslide vplay" id="aboutStart" type="button" aria-label="הפעלת הסרטון"><i aria-hidden="true"></i></button></div>
+    <div class="lines">
+      <p>אני מומחה לטכנולוגיית למידה, ומאז שנת 2000 אני עובד עם ילדים, הורים ומורים.</p>
+      <p>הידע שלנו מבוסס על שיטת טכנולוגיית הלמידה, שיטה עולמית שמיישמים במעל אלף בתי ספר ומרכזי למידה פרטיים ברחבי העולם.</p>
+    </div>
+    <div class="nums">
+      <div><b>27,000+</b><span>הורים, ילדים ומורים שעברו אצלנו הרצאות והכשרות</span></div>
+      <div><b>5,430</b><span>הורים קנו את תוכנית לוח הכפל</span></div>
+      <div><b>350+</b><span>מאמנים שהוכשרו</span></div>
+      <div><b>1,600+</b><span>הורים הצטרפו למועדון עד היום</span></div>
+    </div>
+    <div class="gallery">
+      <figure><img src="https://aviram-heichal.github.io/moadon-page/img/hall.jpg" alt="אבירם מרצה מול אולם מלא הורים" loading="lazy"><figcaption>אולם מלא בהורים ומורים, בהדרכה על שיפור למידה וטיפול בקשב וריכוז בלי תרופות</figcaption></figure>
+      <figure><img src="https://aviram-heichal.github.io/moadon-page/img/grads.jpg" alt="מסיימי הכשרת המורים עם התעודות" loading="lazy"><figcaption>מסיימי הכשרת המורים</figcaption></figure>
+    </div>
+    <div class="lines">
+      <p class="about-punch">הילד שלך לא צריך עוד תווית.<br>הוא צריך אותך, עם הכלים הנכונים.</p>
+      <p class="about-tools">ואת הכלים האלו אנחנו מלמדים, צעד אחר צעד, <span>במועדון הדור הבא:</span></p>
+      <ul class="ticks about-gets"><li>איך לעזור לו ללמוד טוב יותר</li><li>איך לשפר את התקשורת בבית</li><li>איך הוא מתחיל להרגיש ביטחון, ולדעת שהוא מסוגל</li></ul>
+    </div>
+    <div class="ctabox"><button class="cta js-join" type="button">אבירם, אני בפנים!<small>חודש ראשון ב-29 ש"ח, ללא התחייבות</small></button><p class="cta-note">{קבלי|קבל} גישה להדרכות, תוך כמה דקות.</p></div>
+  </div>
+</section>
+
+<section class="band s-navy">
+  <div class="wrap">
+    <h2>הכלים והשיטות שעוזרים לילדים לרצות ללמוד ואפילו ליהנות מזה - כפי שהוצגו ב:</h2>
+    <img class="pressimg" src="https://aviram-heichal.github.io/moadon-page/img/press.jpg" alt="כאן 11, ערוץ 12, NTD">
+    <div class="tv">
+      <figure><img src="https://aviram-heichal.github.io/moadon-page/img/tv12.jpg" alt="אבירם באולפן בתוכנית עושים סדר"><figcaption>באולפן, בתוכנית "עושים סדר"</figcaption></figure>
+      <figure><img src="https://aviram-heichal.github.io/moadon-page/img/tv2.jpg" alt="אבירם מחייך בכתבה בחדשות ערוץ 2"><figcaption>בכתבה בחדשות ערוץ 2</figcaption></figure>
+      <figure><img src="https://aviram-heichal.github.io/moadon-page/img/ntd.jpg" alt="אבירם בראיון לרשת NTD"><figcaption>בראיון לרשת NTD</figcaption></figure>
+    </div>
+    
+  </div>
+</section>
+
+<section class="band s-white">
+  <div class="wrap wide">
+    <h2>עוד הורים ואנשי מקצוע מספרים:</h2>
+    <div class="stories" id="moreStories"></div>
+    <div class="wrap" style="padding:0;width:100%;max-width:560px">
+      <a class="poster" style="aspect-ratio:640/537" href="https://vimeo.com/558500154" target="_blank" rel="noopener">
+        <img src="https://aviram-heichal.github.io/moadon-page/img/hanna.jpg" alt="חנה שוסטר, סבתא, מספרת על הנכד שלה" loading="lazy">
+        <span class="play"><i></i><span>חנה שוסטר, סבתא. עדות וידאו, דקה וחצי</span></span>
+      </a>
+    </div>
+    <div class="ctabox"><button class="cta js-join" type="button">אבירם, אני בפנים!<small>חודש ראשון ב-29 ש"ח, ללא התחייבות</small></button><p class="cta-note">הסיפור הבא יכול להיות שלך. ההדרכות נפתחות תוך כמה דקות.</p></div>
+  </div>
+</section>
+
+<section class="band s-mist">
+  <div class="wrap wide">
+    <h2>ולא רק הורים. גם מורים, שזה המקצוע שלהם, מגלים כאן ידע חדש:</h2>
+    <div class="stories" id="teacherStories"></div>
+  </div>
+</section>
+
+<section class="band s-white">
+  <div class="wrap">
+    <h2>{ואת|ואתה}? האם זה מתאים לך?</h2>
+    <div class="fit">
+      <div>
+        <h3>זה מתאים לך אם</h3>
+        <ul>
+          <li>{את רוצה|אתה רוצה} לעזור לו, ולא {בטוחה|בטוח} איך</li>
+          <li>נמאס לך מהוויכוחים, {ואת מחפשת|ואתה מחפש} דרך אחרת</li>
+          <li>{את מוכנה|אתה מוכן} ללמוד נושא בחצי שעה, ואז לשבת איתו עליו</li>
+          <li>{את רוצה|אתה רוצה} מישהו שיגיד לך מה הצעד הבא</li>
+        </ul>
+      </div>
+      <div class="no">
+        <h3>זה פחות מתאים לך אם</h3>
+        <ul>
+          <li>{את מחפשת|אתה מחפש} שמישהו אחר יעשה את העבודה במקומך</li>
+          <li>{את רוצה|אתה רוצה} רק לשמוע, בלי לנסות עם הילד</li>
+          <li>{את לא מוכנה|אתה לא מוכן} לנסות דרך חדשה</li>
+        </ul>
+      </div>
+    </div>
+    <div class="deal">
+      <h3>יש רק תנאי אחד</h3>
+      <p class="big">{את מוכנה|אתה מוכן} להשקיע בעצמך וללמוד.</p>
+      <blockquote>"אם אתם אוהבים ללמוד ואתם מוכנים להשקיע שעה בשבוע ללמוד, ניתן לכם תכנית מסודרת מה לעשות, ותעשו אותה."</blockquote>
+      <cite>אבירם, באירוע "סודות הקשב והריכוז", 30.10</cite>
+    </div>
+  </div>
+</section>
+
+<section class="band s-mist">
+  <div class="wrap">
+    <h2>ומאיפה לוקחים שעה בשבוע?</h2>
+    <p class="big">בהרצאות החיות היה צריך לצאת מהבית כדי לשמוע אותי...</p>
+    <div class="stage-pics">
+      <img src="https://aviram-heichal.github.io/moadon-page/img/lecture.jpg" alt="אבירם מרצה מול הורים ומורים" loading="lazy">
+      <img src="https://aviram-heichal.github.io/moadon-page/img/hall2.jpg" alt="אולם מלא בהורים ומורים בהרצאה של אבירם" loading="lazy">
+    </div>
+    
+    <h2>במועדון הכול אצלך בסמארטפון ובמחשב,<br>לצפייה מיידית!</h2>
+    <p class="big">{את יכולה|אתה יכול} להקשיב להדרכות במועדון מכל מקום...</p>
+    <div class="listen"><figure><img data-listen="sofa" data-where="בבית" alt="" loading="lazy" width="800" height="800"><figcaption>בבית</figcaption></figure><figure><img data-listen="car" data-where="בדרך לעבודה" alt="" loading="lazy" width="800" height="800"><figcaption>בדרך לעבודה</figcaption></figure><figure><img data-listen="kitchen" data-where="בבישולים" alt="" loading="lazy" width="800" height="800"><figcaption>בבישולים</figcaption></figure><figure><img data-listen="gym" data-where="בחדר הכושר" alt="" loading="lazy" width="800" height="800"><figcaption>בחדר הכושר</figcaption></figure></div>
+  
+  </div>
+</section>
+
+<section class="band s-navy">
+  <div class="wrap">
+    <h2>כמה קל להתחיל?<br>ככה זה הולך אחרי שנרשמים:</h2>
+    <ol class="easy">
+      <li><span class="when">תוך כמה דקות</span><h3>ההדרכות נפתחות לך</h3><p>הקישור מגיע אליך למייל. לוחצים ורואים, בטלפון או במחשב, בלי סיסמה.</p></li>
+      <li><span class="when">תוך 24 שעות</span><h3>קבוצת ווטסאפ אישית איתי ועם אורית</h3><p>שואלים כל שאלה, ומקבלים תשובה והכוונה.</p></li>
+      <li><span class="when">בשבוע הראשון</span><h3>התחלה קלה</h3><p>מתחילים בהדרכה אחת. אורית, אשתי, מתקשרת ובונה לך באופן אישי את ההמשך, לפי מה שמתאים לכם.</p></li>
+      <li><span class="when">כל חודש</span><h3>הדרכה חיה בזום</h3><p>ובין לבין עולות עוד הדרכות וקורסים.</p></li>
+    </ol>
+    <div class="easy-time">
+      <p>כמה זמן זה דורש ממך?</p>
+      <b>בערך שעה בשבוע</b>
+      <p>(אבל רבים מקשיבים הרבה יותר...)</p>
+    </div>
+  </div>
+</section>
+
+<section class="band s-white" id="library">
+  <div class="wrap">
+    <h2>הנה שוב כל מה {שתקבלי|שתקבל}<br>{כשתצטרפי|כשתצטרף} למועדון:</h2>
+    <ul class="ticks gets">
+      <li><h3>סדרת הורות בלי מאבק</h3><p>{למדי|למד} איך ליצור בוקר מנצח בלי עצבים, פחות מסכים, פחות ריבים בין אחים, ואיך להגביר את הביטחון של הילד ולהפוך אותו למאושר ושמח יותר.</p><p class="res"><b>והתוצאה:</b> בית רגוע ושיתוף פעולה, בלי צעקות ובלי עונשים, והתנהלות בלי ייסורי מצפון.</p></li>
+      <li><h3>סדרת קשב וריכוז</h3><p>{למדי|למד} איך לעזור לילד לשפר את הקשב והריכוז גם בלי כדורים, ואיך להתמודד נכון עם הטלפונים מהמורה והלחץ מבית הספר לאבחון. כלים שיעזרו לך להימנע מטעויות מול המערכת - עם ד"ר שולמית לוריא, נועה אדם גרוס ואיתי.</p><p class="res"><b>והתוצאה:</b> {את יודעת|אתה יודע} איך לשפר את הקשב בלי תרופות, {ומקבלת|ומקבל} פחות טלפונים לא נעימים מהמורה.</p></li>
+      <li><h3>סדרת הצלחה בלימודים</h3><p>{למדי|למד} איך להגביר מוטיבציה בלימודים, להצליח יותר במבחנים ולעזור לילד להבין באמת כל נושא שהוא לומד.</p><p class="res"><b>והתוצאה:</b> ילד שרוצה ללמוד, מצליח בכוחות עצמו ומרגיש הרבה יותר בטוח.</p></li>
+      <li><h3>סדרת השיעורים שלא לומדים בבית הספר</h3><p>עם עוזי מירון. הורים וילדים צופים יחד ולומדים שיעורים חשובים לחיים!</p><p class="res"><b>והתוצאה:</b> הילד לומד לקחת אחריות, להיות עצמאי יותר, להתנהג אחרת ולבחור בחירות נכונות.</p></li>
+      <li><h3>סדרת חשבון וקריאה, צעד אחר צעד</h3><p>{למדי|למד} איך לעזור לילד לזכור את לוח הכפל, לחבר ולחסר בלי אצבעות, שברים, משוואות, סדר פעולות ועוד נושאים חשובים בחשבון והנדסה, וגם איך ללמד את הילד לקרוא, לשפר את הבנת הנקרא ולהפחית שגיאות כתיב.</p><p class="res"><b>והתוצאה:</b> לא צריך ידע של מורה. הולכים לפי הצעדים בלי לשבור את הראש, ורואים אותו מתחיל להצליח.</p></li>
+      <li><h3>קבוצת ווטסאפ אישית איתי</h3><p>מקבלים הנחיה איך להתחיל צעד אחר צעד ומענה לכל שאלה בנוגע לילד.</p><p class="res"><b>והתוצאה:</b> {את לא לבד|אתה לא לבד} - כותבים, ומקבלים תשובה.</p></li>
+      <li><h3>הדרכה חיה בזום, אחת לחודש</h3><p>ביחד עם כל קהילת ההורים במועדון.</p><p class="res"><b>והתוצאה:</b> לומדים ומשתפרים כל הזמן, עם הידע והכלים הכי חדשים.</p></li>    </ul>
+    <p class="big"><b>כל זה במנוי אחד.</b> ועוד הדרכות עולות כל הזמן.</p>
+  </div>
+</section>
+
+<section class="band s-mist" id="join">
+  <div class="wrap">
+    <div class="cost-box">
+    <h2>כמה זה עולה?</h2>
+    <p class="compare-h">בשביל להשוות:<br>כמה עולה עזרה מקצועית אחרת?</p>
+    <table class="compare">
+      <tr><td>שיעור פרטי אחד</td><td><s>כ-150 ש"ח</s></td></tr>
+      <tr><td>4 שיעורים פרטיים בחודש, במקצוע אחד</td><td><s>כ-600 ש"ח</s></td></tr>
+      <tr><td>שעה אחת עם יועץ הורים</td><td><s>כ-450 ש"ח</s></td></tr>
+      <tr><td>טיפול רגשי אחד</td><td><s>כ-350 ש"ח</s></td></tr>
+      <tr><td>4 טיפולים רגשיים בחודש</td><td><s>כ-1,400 ש"ח</s></td></tr>
+    </table>
+    <div class="club-price">
+      <h3>חודש במועדון הדור הבא</h3>
+      <p>עם {כל מה שאת צריכה|כל מה שאתה צריך} כדי להקפיץ את הילד ולהרגיע את הבית:</p>
+      <b>97 ש"ח לחודש</b>
+    </div>
+    <p class="hook first-h">אבל החודש הראשון שלך רק</p>
+    <p class="price">29 ש"ח</p>
+    <p class="until">ההטבה בתוקף עד 20 בנובמבר</p>
+    <p class="then">{תנסי ותראי|תנסה ותראה} אם מתאים לך -<br>ומהחודש השני: 97 ש"ח לחודש</p>
+    <p class="nocommit">אין התחייבות:<br>אפשר לעצור את המנוי בכל רגע, בהודעה אחת</p>
+    <p class="joined"><b>מעל 1,600 הורים</b> כבר הצטרפו למועדון</p>
+    <div class="ctabox">
+      <button class="cta js-pay" type="button">אבירם, אני בפנים!<small>29 ש"ח לחודש הראשון</small></button>
+      <p class="cta-note">ההדרכות נפתחות לך תוך כמה דקות.</p>
+    </div>
+    </div>
+    <p class="bonus-line">🎁 ורגע, מחכה לך גם בונוס:</p>
+  </div>
+</section>
+
+<section class="band s-white">
+  <div class="wrap">
+    <span class="newtag">🎁 בונוס למצטרפים עד 20 בנובמבר</span>
+    <h2>המאמן הדיגיטלי לחשבון של הילד שלך</h2>
+    <p class="joinline">{זוכרת|זוכר} את אפליקציית התרגול שראית למעלה? הנה מה יש בה:</p>
+    <div class="app-pair">
+              <figure><img src="https://aviram-heichal.github.io/moadon-page/img/app2.jpg" alt="מסך המאמן הדיגיטלי: השבוע של הילדה מוכן" loading="lazy"><figcaption>המאמן הדיגיטלי: שבוע אישי לילד, תוך דקה</figcaption></figure>
+              <figure><img src="https://aviram-heichal.github.io/moadon-page/img/app_ex.jpg" alt="עמוד התרגילים של הילד, תרגילי כפל בעיצוב צבעוני" loading="lazy"><figcaption>ומבפנים: ככה הילד מתרגל</figcaption></figure>
+            </div>
+    <ul class="ticks">
+      <li>שבוע אימונים אישי לילד, תוך דקה</li>
+      <li>5-10 דקות ביום, 6 ימים בשבוע</li>
+      <li>בטלפון, במחשב ובדפים להדפסה</li>
+      <li>משחק "חטוף לפני הרובוט", שילדים לא רוצים להפסיק</li>
+      <li>כל התשובות אצלך, כדי לבדוק בשנייה</li>
+    </ul>
+    <p class="bonus-res"><b>והתוצאה בבית:</b> במקום ריב על תרגול, 5 עד 10 דקות שהוא מתרגל הרבה ובהתלהבות!</p>
+    <div class="ctabox"><button class="cta js-join" type="button">אבירם, אני בפנים!<small>חודש ראשון ב-29 ש"ח, ללא התחייבות</small></button><p class="cta-note">הבונוס נפתח לך תוך יום.</p></div>
+  </div>
+</section>
+
+<section class="band s-mist">
+  <div class="wrap">
+    <h2>שאלות שהורים שואלים</h2>
+    <div class="faq">
+      <details><summary>אין לי זמן. זה יעבוד גם ככה?</summary><p>מתחילים בהדרכה אחת, לא בכל המועדון. אורית, אשתי, בונה לך את ההמשך, ובערך שעה בשבוע מספיקה.</p></details>
+      <details><summary>אני לא {חזקה|חזק} בחשבון. זה בשבילי?</summary><p>כן. כל נושא מפורק לצעדים, עם סרטון הדגמה וצ'ק ליסט. קודם {את רואה|אתה רואה} איך עושים, ואז עושה עם הילד.</p></details>
+      <details><summary>לאיזה גיל זה מתאים?</summary><p>יש הדרכות מהגן ועד גיל ההתבגרות. תוכניות החשבון מתחילות ביסודות, ומתקדמות צעד אחר צעד.</p></details>
+      <details><summary>זה במקום מורה פרטי?</summary><p>תלוי בך. אם {תעבדי|תעבוד} לפי התוכנית, {תוכלי|תוכל} לעזור לילד בחשבון בכל נושא חשוב, גם בעצמך. וגם אם תמשיכו בשיעורים הפרטיים, בסוף תצטרכו פחות שיעורים כדי להשלים את הפערים.</p></details>
+      <details><summary>ואם זה לא בשבילי?</summary><p>כותבים לנו בקבוצה האישית או למייל service@a-h.co.il, ואנחנו עוצרים את המנוי ואת הוראת הקבע.</p></details>
+    </div>
+    <div class="ctabox"><button class="cta js-join" type="button">אבירם, אני בפנים!<small>חודש ראשון ב-29 ש"ח, ללא התחייבות</small></button><p class="cta-note">לא מתאים? עוצרים בכל רגע, בהודעה אחת.</p><p>מחכה לראות אותך בפנים,<br>אבירם 💙</p></div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>אבירם היכל - העוצמה בחינוך. התכנים הם הדרכה לימודית והורית, ואינם ייעוץ או טיפול רפואי.</p>
+    <p>התוצאות שבעדויות הן של הורים שעבדו עם הכלים, ומשתנות מילד לילד.</p>
+    <p>© 2026 כל הזכויות שמורות לאבירם היכל - העוצמה בחינוך</p>
+  </div>
+</footer>
+
+<div class="stick"><button class="cta js-join" type="button">אבירם, אני בפנים!<small>חודש ראשון ב-29 ש"ח, ללא התחייבות</small></button></div>
+
+<dialog class="joinform" id="joinForm" aria-labelledby="jfTitle">
+  <div class="jf-top"><button class="jf-back" id="jfBack" type="button">→ חזרה לדף</button></div>
+  <div class="jf-body"><h2 id="jfTitle">עוד צעד קטן, {ואת|ואתה} בפנים</h2><p>משאירים פרטים, ומיד עוברים לדף התשלום.</p><div id="ravForm"><!--RAV_FORM--></div><p class="fine">אחר כך 97 ש"ח לחודש, ללא התחייבות. אפשר לעצור בכל רגע.</p></div>
+</dialog>
+<script>
+(function(){
+document.title='מועדון הדור הבא: הרצף החדש';
+
+const Q={
+  shmani:{t:'"אמא, את כבר לא צועקת עליי"',q:'זה מטורף, היום הבת שלי ניגשה אליי ואמרה את זה. וזה קרה כמה ימים אחרי מה שלמדתי בהדרכות של אבירם על שיתוף פעולה ותקשורת עם הילדים.',c:'נעמה שמני',a:'shmani'},
+  bokai:{t:'"אני מקבלת מהם פידבק אחר לגמרי"',q:'מאז שהצטרפתי למועדון החוויה עם הילדים שלי שונה מאוד. אני יודעת היום איך לרתום אותם ללמידה ולעזור להם.',c:'שירי בוקעי, תל אביב',a:'bokai'},
+  sherman:{t:'"היא משלימה סוף סוף את הפערים"',q:'במשך שנים ניסינו בעלי ואני ללמד את הבת שלנו עברית וחשבון, אבל היא לא רצתה. היום, עם הכלים של אבירם, אנחנו מצליחים לגרום לה לרצות ללמוד ולתרגל.',c:'אביבית שרמן',a:'sherman'},
+  broidy:{t:'"שבוע וחצי, ו-100 עגול במבחן"',q:'הבת שלי בכיתה ג\', ותוך שבוע וחצי עם הכלים במועדון היא אלופה בלוח הכפל. היא חזרה מאושרת עם 100 עגול מהמבחן.',c:'נעמה שמש ברוידי',a:'broidy'},
+  shuster:{t:'"גם באמצע הלילה, בלי להתבלבל"',q:'אני יכולה להעיר את הנכד שלי באמצע הלילה, והוא ידקלם את התשובות בלי להתבלבל. כיף שאני יודעת איך לעזור לו.',c:'חנה שוסטר, סבתא',a:'shuster'},
+  malul:{t:'"אני רואה אותה סוף סוף מצליחה ומסוגלת"',q:'הביטחון העצמי של נויה ותחושת הסיפוק שלה מעצמה עולים וגוברים. היא מצליחה לפתור את התרגילים, ורוצה ללמוד עוד ועוד. היום אני יודע איך לעזור לה.',c:'אבישי מלול, עפולה, אבא של נויה',a:'malul'},
+  eitan:{t:'"המציאות עולה על כל דמיון"',q:'התהליך היה מופלא ופשוט. מההתחלה הילה היתה כל כולה בעניין. היא למדה את השפה של חשבון שאבירם מלמד בשקיקה, בוטחת לגמרי בתהליך ובי. אפילו "המריחה" הרגילה על השולחן כשאני יושב איתה, שכל כך אופיינית לבת שלי, נעלמה כלא היתה.',c:'איתן, אבא של הילה',a:'eitan'},
+  shein:{t:'"סוף סוף יש לנו סדר, בהירות"',q:'היינו אבודים. הלימודים בבית הפכו למקור של מתח ועצבים, גם עבורם וגם עבורנו. סוף סוף יש לנו סדר, בהירות, והכי חשוב, הרבה פחות מתחים! הלמידה הפכה לחוויה הרבה יותר נעימה, וההשפעה על הילדים פשוט מדהימה.',c:'תמר שיין',a:'shein'},
+  guy:{t:'"ההורים יוצאים עם כלים פרקטיים"',q:'בסוף ההדרכה ההורים יוצאים עם כלים פרקטיים. עם הכלים האלו הם יכולים להביא למיצוי הפוטנציאל של הילד. ראיתי הורים שמגיעים מבולבלים, והתוכניות של אבירם עושות להם סדר!',c:'גיא בן צבי, מנכ"ל אומגה 3 גליל',a:'guy'},
+  talia:{t:'"המתנה הכי גדולה שהענקתי לעצמי השנה"',q:'ההצטרפות למועדון שלך היא המתנה הכי גדולה שהענקתי לעצמי השנה. כל ערב שבו אני רואה הרצאה, הוא ערב שמח! והיום למחרת כבר מתחיל באנרגיה שונה. כל יום שעובר אני נהנית יותר ויותר מהזמן שלנו יחד, וגם הילד מבטא את התחושות הטובות שלו בעקבות השינויים. משתף פעולה איתם, וזה מרגש. פשוט מרגש.',c:'טליה ג\'ורג\''},
+  rivka:{t:'"לראות את האושר בעיניים של הילדים"',q:'צדקת, השיעורים שלך ממש מעולים. צפיתי בשני נושאים, חיבור עד 10, וחיבור עד 20, וכבר יישמתי את מה שלמדתי עם ילדה אחת בכיתה ב. אז, שוב, ממש תודה על שפקחת את עיניי לראות את העושר שאני יכולה לקבל ממך, ולהעלות את טיב השיעורים שלי, ואז לראות את האושר בעיניים של הילדים.',c:'רבקה סימס, מורה פרטנית לחשבון'},
+  barnea:{t:'"קיבלתי בדיוק מה שחיפשתי"',q:'הרגשתי שאני מאבדת את הבן שלי בלימודים. בדור הבא של אבירם קיבלתי כלים פרקטיים שאפשר ליישם מייד עם הילדים. גם בלהביא אותם ללמוד ולרצות, וגם באיך ללמד אותם כדי שיבינו באמת.',c:'שרון ברנע',a:'barnea'},
+  kazes:{t:'"ההרצאות מרתקות"',q:'אני מורה כבר מעל 20 שנה. עברתי הרבה השתלמויות שלא הועילו לי כלל. בהדרכות של אבירם אני עוברת חוויה מיוחדת במינה. תודה על ההדרכות המרתקות והכלים המעשיים.',c:'עירית קזס, מורה',a:'kazes'}
+};
+const LIB={
+  math:[['kefel','פשוט לזכור את לוח הכפל'],['add10','חיבור וחיסור עד 10'],['add20','חיבור וחיסור עד 20'],['vertical','חיבור וחיסור במאונך'],['order','סדר פעולות חשבון'],['frac1','מבוא לשברים'],['frac2','שברים, חלק שני'],['big','מספרים גדולים'],['neg','חיוביים ושליליים'],['eq','משוואות בנעלם אחד'],['geo','ילד מצליח בהנדסה'],['zeros','כפל עם אפסים'],['lang','השפה של חשבון'],['secrets','3 הסודות להצלחה בחשבון']],
+  parents:[['calm','איך הופכים את הבית לרגוע'],['morning','בוקר מנצח'],['screens','מסכים בצורה חכמה'],['coop','שיתוף פעולה מהילדים'],['siblings','פחות מריבות בין אחים'],['mistakes','הטעויות שאסור לעשות'],['happy','ילד מאושר ובטוח בעצמו'],['time','להספיק יותר וזמן לעצמך'],['family','הנוסחה ליצירת הבנה במשפחה, עם ספי'],['ups','התגברות על עליות וירידות בחיים, עם ספי'],['discipline','משמעת מובילה לחופש'],['money','מה ללמד על כסף'],['drugs','להרחיק מסמים בלי הפחדות']],
+  focus:[['secrets_f','סודות הקשב והריכוז, עם נועה אדם גרוס'],['lurie','קשב וריכוז עם ד"ר שולמית לוריא'],['ofir','קשב וריכוז עם ד"ר יעקב אופיר'],['listen','להקשיב לך בלי לשבור אותו, עם שלומי לייבוביץ'],['phones','טלפונים מבית הספר']],
+  learn:[['want','לרצות ללמוד'],['barrier','המחסום הגדול בלימודים'],['exams','להצליח במבחנים'],['read','ללמד את הילד לקרוא בקלות, עם אורלי חיון'],['simple','פשוט לקרוא'],['comp','הבנת הנקרא במהירות האור'],['spell','מחסלים שגיאות כתיב'],['motive','מוטיבציה בלימודים'],['list','הרשימה: מה חייבים לעשות'],['year','שנת לימודים מוצלחת'],['kinder','להתחיל את הגן בקלות, עם אורלי חיון']],
+  school:[['uzi1','הוא רק רצה לעזור, עם עוזי מירון'],['uzi2','מילה זה מילה, עם עוזי מירון']]
+};
+const D={
+  shiurim:{tab:'שיעורי בית',clip:{f:'shiurim',top:'אמא, אבא, זו הבעיה הראשונה כשאתם יושבים עם הילד שלכם ללמוד, ואיך לפתור אותה:',hook:'(לחצו עכשיו על הסרטון וקבלו טעימה קטנה מכל האוצר שמחכה לכם במועדון הדור הבא)',watch:'צפו עד הסוף, וכבר בפעם הבאה שתשבו ללמוד תוכלו לנסות את התרגיל הזה.<small class="watch-small">(אפשר גם בלי קול, יש כתוביות)</small>',slide:'הבעיה הראשונה שצריך לטפל בה, עוד לפני שמתיישבים ללמוד עם הילד',h:'הגוף שלו הגיע. הראש שלו לא.',sub:'קטע קצר מתוך ההדרכה לרצות ללמוד במועדון הדור הבא (4 דקות)',why:'למה בכלל צריך את זה? כי גם כשהילד כבר יושב מולך, הגוף שלו הגיע, אבל הראש עדיין בפורטנייט, בחברים או בפחד מהמתמטיקה. ככה הוא לא קולט את החומר. קודם מביאים אותו להיות פה, ורק אז לומדים.',tryH:'{נסי|נסה} כבר בפעם הבאה שתשבו ללמוד:',try:['לפני שפותחים מחברת, {בקשי|בקש} ממנו לעמוד.','{תני|תן} לו משימות מהירות, אחת אחרי השנייה: לגעת בכל הקירות, לגעת ב-3 דברים לבנים, לקפוץ על רגל אחת.','אחרי כל משימה: "יופי, מצוין". אחרי שתי דקות: "אתה פה?". ועכשיו מתיישבים ללמוד.'],moreH:'אבל זה ממש לא הכול, אלא רק ההתחלה',more:'במועדון הדור הבא {תלמדי|תלמד} את כל הכלים שעובדים ושיעזרו לילד שלך לשתף פעולה, ללמוד בלי תסכולים ולרצות ללמוד. כשעושים את זה נכון - הילד מוכן ללמוד וכבר לא {תרגישי|תרגיש} כמו "המורה" של הילד!'},lead:'want',shelf:['learn','parents','math','focus','school'],strip:['want','morning','kefel','calm','exams','coop','add10','secrets_f','barrier','siblings','read','uzi1','comp','screens'],
+    pre:'אצלם הערב כבר נראה אחרת. ואצלך?',
+    short:'"תפתח מחברת" "עוד מעט"<br>{את אומרת|אתה אומר} את זה בפעם הרביעית.<br>ובסוף {את מאבדת|אתה מאבד} את זה, והוא מתוסכל.<span class="not-must">אבל זה לא חייב להיות ככה...</span>',h1:'הסוף למלחמות<br>על שיעורי הבית',
+    sub:'{למדי|למד} עכשיו את הכלים המעשיים שיעזרו לך לגרום לילד לרצות ללמוד -<br>בלי צעקות, ובלי להיות המורה שלו.',
+    painH:'{אמא יקרה, אני יודע שאת מכירה|אבא יקר, אני יודע שאתה מכיר} את הערב הזה...',
+    scene:[['17:30','"תפתח מחברת" "עוד מעט"'],['17:50','{את אומרת|אתה אומר} את זה בפעם הרביעית.'],['18:15','מישהו בוכה או מתעצבן. לפעמים הוא, לפעמים {את|אתה}.']],
+    after:['ומחר ב-17:30...','<span class="mark red">הסרט הזה יחזור על עצמו?</span>','<span class="mark green">{את יכולה|אתה יכול} לדאוג שלא!!!</span>'],
+    leadLine:'{הרשמי|הירשם} למועדון, {והקשיבי|והקשב} כבר היום להדרכה המלאה: לרצות ללמוד.',
+    learn:['איך גורמים לו לשבת ללמוד בלי ריב','איך מוצאים בדיוק מה הוא לא מבין ומה חוסם אותו','איך עוזרים לו, בלי להרגיש כמו המורה שלו'],
+    join:'כל זה ועוד הרבה הרבה יותר מחכה לך במועדון.',
+    swapHead:'מה יכול להיות מחר בערב',
+    swap:[['"תפתח מחברת", בפעם הרביעית','הוא מתיישב, {ואת יודעת|ואתה יודע} מה עושים'],['{את בודקת, מתקנת ומתעצבנת|אתה בודק, מתקן ומתעצבן}','הוא פותר, ומסביר לך מה עשה'],['הערב נגמר בעצבים, בבכי או בתסכולים','במקום להרוס את היחסים, הלמידה מקרבת']],
+    turnHook:'האמת היא ש...<br>{את|אתה} לא הורה גרוע והוא לא באמת עצלן.',
+    homeHook:'וזה לא נגמר בשיעורי הבית.',
+    turnH:'הילד לא בורח מהמחברת ונמנע מהלימודים בלי סיבה',
+    turn:['מאחורי ה-"לא בא לי" יש כמעט תמיד משהו קטן:','מילה שלא הבין, פער ישן, או הדרך שבה מדברים איתו.','<b>כשיודעים למצוא את זה, הריב נגמר מעצמו.</b>'],
+    first:'אם הילד לא רוצה ללמוד, אני ממליץ לך להתחיל כבר עכשיו עם ההדרכה לרצות ללמוד, {ותראי איך את מצליחה|ותראה איך אתה מצליח} לרתום אותו הרבה יותר בקלות, ולגרום לו לזכור את החומר, ליהנות ולרצות הרבה יותר.',
+    quotes:['shmani','sherman','bokai','barnea']},
+  heshbon:{tab:'חשבון',clip:{f:'heshbon',watch:'{צפי|צפה} עד הסוף, וכבר הערב {תוכלי|תוכל} לעשות את זה עם הילד.',h:'מה זה כפל? {תראי|תראה} איך הוא מבין את זה',sub:'הדגמה אמיתית שלי עם ילד, מתוך תוכנית לוח הכפל במועדון. 6 דקות.',tryH:'{נסי|נסה} את זה הערב:',try:['{קחי|קח} כמה אבנים או מטבעות, ו{שבי|שב} איתו ליד השולחן.','{עשי|עשה} איתו בדיוק מה שרואים בסרטון.','רק אחרי שהוא הבין מה זה כפל, עוברים לתרגילים.'],more:'בהדרכות החשבון במועדון {תלמדי|תלמד}, בין היתר, איך ללמד את הילד את לוח הכפל בעל פה, במהירות (בממוצע תוך כמה ימים), בלי שישכח אותו יותר!'},lead:'kefel',shelf:['math','learn','parents','focus','school'],strip:['kefel','add10','frac1','order','morning','add20','eq','want','vertical','neg','calm','big','secrets'],
+    pre:'{לאמא שיושבת|לאבא שיושב} ליד התרגיל {ושואלת|ושואל}: רגע, איך מלמדים את זה?',
+    short:'אתמול 7 כפול 8. תשובה נכונה.<br>היום הוא סופר על האצבעות.<br>ובערב {את מחפשת|אתה מחפש} ביוטיוב איך מסבירים שברים.',h1:'לוח הכפל בעל פה.<br>בשבועיים⁠-⁠שלושה.<br>בלי מאבק.',
+    sub:'ואחריו שברים, סדר פעולות וכל היסודות.<br>גם אם {את|אתה} לא "{טובה|טוב} בחשבון".',
+    painH:'זה נשמע לך מוכר?',
+    scene:[['אתמול','7 כפול 8. תשובה נכונה. כולם שמחים.'],['היום','הוא סופר על האצבעות.'],['בערב','{את מחפשת|אתה מחפש} ביוטיוב איך מסבירים שברים.']],
+    after:['וככל שעובר הזמן,','הוא אומר שהוא <b>"לא טוב בחשבון".</b>','{ואת מתחילה|ואתה מתחיל} לפחד שהוא מאמין לזה.'],
+    learn:['מאיפה מתחילים עם הילד','איך מלמדים לוח כפל בעל פה, בלי מאבק','איך סוגרים פערים, נושא אחרי נושא'],
+    join:'כל זה ועוד הרבה הרבה יותר מחכה לך במועדון.',
+    swapHead:'מה יכול להיות בקרוב',
+    swap:[['סופר על האצבעות','שולף בעל פה'],['"אני לא טוב בחשבון"','"{תשאלי|תשאל} אותי, אני יודע!"'],['{את מחפשת|אתה מחפש} ביוטיוב איך מסבירים','{את יודעת|אתה יודע} מה הצעד הבא']],
+    turnHook:'חשבון נבנה קומה על קומה.',
+    turnH:'מספיק פער אחד למטה, וכל מה שמעל מתנדנד',
+    turn:['לכן עוד תרגילים על אותו נושא לא תמיד עוזרים.','קודם מוצאים איפה הפער.','<b>אחר כך סוגרים אותו נכון, נושא אחרי נושא.</b>'],
+    first:'אם הילד מתקשה בלוח הכפל, אני ממליץ לך להתחיל כבר עכשיו עם ההדרכה פשוט לזכור את לוח הכפל, {ותראי איך את מלמדת|ותראה איך אתה מלמד} אותו בקלות, והוא זוכר בעל פה.',
+    quotes:['broidy','malul','shuster','sherman']},
+  boker:{tab:'בוקר',clip:{f:'boker',watch:'{צפי|צפה} עד הסוף, וכבר מחר בבוקר {תוכלי|תוכל} לנסות את זה.<small class="watch-small">(אפשר גם בלי קול, יש כתוביות)</small>',h:'הם ניסו הכל. ואז שאלתי שאלה אחת.',sub:'קטע אמיתי מתוך ההדרכה "בוקר מנצח" במועדון. 4 דקות.',tryH:'{נסי|נסה} את זה מחר בבוקר:',try:['{שימי|שים} רמקול קטן בחדר שלו.','מרחוק, {הפעילי|הפעל} מוזיקה קצבית שהוא אוהב.','לא נכנסים לחדר. {ותראי|ותראה} מה קורה.']},lead:'morning',shelf:['parents','learn','focus','math','school'],strip:['morning','calm','coop','siblings','time','want','kefel','happy','screens','mistakes','secrets_f','add10','uzi1','discipline'],
+    pre:'{לאמא שהבוקר שלה|לאבא שהבוקר שלו} נגמר עוד לפני שהתחיל',
+    short:'קראת לו שלוש פעמים.<br>"איפה הנעל?" ואחיו כבר מציק לו.<br>{ואת צועקת|ואתה צועק} במסדרון.',h1:'בוקר מנצח.<br>בלי ריבים,<br>בלי ויכוחים<br>ובלי עצבים.',
+    sub:'הכלים שמוציאים את כל הבית לדרך ברוגע.<br>ואותם כלים עובדים גם בערב.',
+    painH:'{את מכירה|אתה מכיר} את הבוקר הזה',
+    scene:[['7:10','קראת לו שלוש פעמים.'],['7:25','"איפה הנעל?" ואחיו כבר מציק לו.'],['7:40','{את צועקת|אתה צועק} במסדרון, ולא {אוהבת|אוהב} את הקול שלך.']],
+    after:['הוא יוצא ככה לבית הספר.','{ואת יוצאת|ואתה יוצא} ככה לעבודה.','ובדרך {את חושבת|אתה חושב}: <b>זה לא מה שרציתי שהוא יקבל ממני.</b>'],
+    learn:['איך יוצרים בית רגוע בבוקר','איך גורמים לו לקום בלי מריבות','איך יוצאים מהבית בזמן, בלי עצבים'],
+    join:'כל זה ועוד הרבה הרבה יותר מחכה לך במועדון.',
+    swapHead:'מה יכול להיות מחר בבוקר',
+    swap:[['קוראים לו שלוש פעמים','הוא קם ומתארגן'],['צעקות במסדרון','יוצאים מהבית רגועים'],['הוא יוצא ככה לבית הספר','הוא מגיע לכיתה עם ראש פנוי']],
+    turnHook:'הזמנתי מנהל מכירות בכיר ללמד הורים.',
+    turnH:'איך "מוכרים" לילד ללכת להתקלח',
+    turn:['נשמע מצחיק. זו אחת ההדרכות הכי מעשיות במועדון.','כי ילד לא זז כשצועקים חזק יותר.','<b>הוא זז כשיודעים איך לדבר איתו.</b>'],
+    first:'אם הבקרים אצלכם מתחילים בריב, אני ממליץ לך להתחיל כבר עכשיו עם ההדרכה בוקר מנצח, {ותראי איך את מוציאה|ותראה איך אתה מוציא} את כל הבית לדרך ברוגע, בלי צעקות.',
+    quotes:['shmani','bokai','barnea','sherman']},
+  masachim:{tab:'מסכים',lead:'screens',shelf:['parents','focus','learn','math','school'],strip:['screens','coop','calm','happy','siblings','want','secrets_f','kefel','morning','listen','time','uzi1','mistakes','barrier'],
+    pre:'{לאמא שכבר ניסתה|לאבא שכבר ניסה} לקחת את הטלפון, {והחזירה|והחזיר} אותו אחרי חצי שעה',
+    short:'"עוד דקה." זו הדקה החמישית.<br>{את לוקחת|אתה לוקח} את הטלפון. צרחות.<br>{ואת מחזירה|ואתה מחזיר}, כי צריך לבשל.',h1:'הילד יורד מהמסך.<br>בלי מלחמה.',
+    sub:'לא עוד עונש ולא עוד ויכוח.<br>כלים שגורמים לו להיות מוכן לרדת.',
+    painH:'זה נשמע לך מוכר?',
+    scene:[['14:00','חוזר מבית הספר. מסך.'],['17:30','"עוד דקה." זו הדקה החמישית.'],['18:00','{את לוקחת|אתה לוקח} את הטלפון. צרחות.'],['18:30','{את מחזירה|אתה מחזיר}, כי צריך לבשל.']],
+    after:['ואז באים רגשות האשם.','<b>"אני הרי {יודעת|יודע} שזה לא טוב לו."</b>','כן. {את יודעת|אתה יודע}. מה שחסר הוא איך.'],
+    learn:['איך מורידים זמן מסך, בלי מלחמה','איך הוא נעשה מוכן לרדת','איך מחזירים את הקשר ביניכם'],
+    join:'כל זה ועוד הרבה הרבה יותר מחכה לך במועדון.',
+    swapHead:'מה יכול להיות מחר אחר הצהריים',
+    swap:[['"עוד דקה", בפעם החמישית','הוא יורד מהמסך בלי צרחות'],['{את לוקחת, ואז מחזירה|אתה לוקח, ואז מחזיר}','יש כלל בבית, ואף אחד לא נלחם עליו'],['הערב עובר מול המסך','יש לכם שוב על מה לדבר']],
+    turnHook:'לקחת טלפון זה קל.',
+    turnH:'הקושי הוא שהוא יהיה מוכן לרדת',
+    turn:['ילד יורד מהמסך כשיש קשר, כשיש לו הצלחות, וכשמדברים איתו נכון.','<b>שם מתחיל השינוי, לפני כל כלל חדש בבית.</b>'],
+    first:'אם קשה להוריד אותו מהמסך, אני ממליץ לך להתחיל כבר עכשיו עם ההדרכה מסכים בצורה חכמה, {ותראי|ותראה} איך הוא נעשה מוכן לרדת, בלי מלחמה.',
+    quotes:['shmani','bokai','barnea','malul']},
+  keshev:{tab:'קשב',lead:'secrets_f',shelf:['focus','learn','parents','math','school'],strip:['secrets_f','listen','lurie','ofir','want','comp','phones','calm','barrier','kefel','coop','exams','morning','uzi2'],
+    pre:'"כל דבר אני {אומרת|אומר} הרבה פעמים"',
+    short:'אמרת לו שלוש פעמים.<br>הוא הביט בך ושאל: "מה?"<br>והמורה כותבת: "מפוזר, לא מסיים משימות".',h1:'קשב וריכוז<br>אפשר לאמן.<br>גם בבית.',
+    sub:'כלים מעשיים שמלמדים ילד להיות נוכח, להקשיב ולסיים משימה. בלי מאבק.',
+    painH:'{את מכירה|אתה מכיר} את זה?',
+    scene:[['בבית','אמרת לו שלוש פעמים. הוא הביט בך ושאל: "מה?"'],['בכיתה','המורה כותבת: "מפוזר, לא מסיים משימות".'],['בערב','"הוא כזה חכם. למה זה ככה?"']],
+    after:['וזה בדיוק העניין.','<b>הוא באמת חכם.</b>','ויש דברים שאפשר לעשות עם זה, כבר השבוע.'],
+    learn:['איך משפרים את הקשב, בלי תרופות','איך הוא מתחיל להקשיב לך','מה עושים עם הטלפונים מהמורה'],
+    join:'כל זה ועוד הרבה הרבה יותר מחכה לך במועדון.',
+    swapHead:'מה יכול להיות בקרוב',
+    swap:[['{אומרת|אומר} שלוש פעמים, והוא שואל "מה?"','{אומרת|אומר} פעם אחת, והוא איתך'],['"מפוזר, לא מסיים משימות"','הוא יושב על משימה ומסיים'],['{את דואגת, ולא יודעת|אתה דואג, ולא יודע} מה לעשות','יש לך כלים, {ואת רואה|ואתה רואה} התקדמות']],
+    turnHook:'קשב הוא לא רק משהו שיש או אין.',
+    turnH:'אפשר לתרגל אותו, כמו כל מיומנות',
+    turn:['ילד שמבין את מה שהוא לומד נשאר איתו יותר זמן.','ילד שתרגל להיות "כאן ועכשיו" מחזיק יותר.','<b>{את לא צריכה להיות מומחית|אתה לא צריך להיות מומחה}.</b> {את צריכה|אתה צריך} כמה כלים פשוטים, ומישהו שיראה לך איך.'],
+    first:'אם הוא מתקשה להקשיב ולהתרכז, אני ממליץ לך להתחיל כבר עכשיו עם ההדרכה סודות הקשב והריכוז, {ותראי|ותראה} איך הוא מתחיל להיות איתך, להקשיב ולסיים משימות.',
+    quotes:['malul','shmani','bokai','kazes']}
+};
+// the strip opens with the range of lecturers, then the door's own topics follow
+const STRIP_MIX=['want','uzi1','coop','listen','kefel','secrets_f','read','morning','ofir','calm','uzi2','exams','screens','comp','siblings'];
+const $=id=>document.getElementById(id);
+const HOOK0=$('clipHook').innerHTML;
+let G='f';try{const u=new URLSearchParams(location.search).get('g');G=u==='m'||u==='f'?u:(localStorage.getItem('moadon-g')==='m'?'m':'f')}catch(e){}
+const g=t=>t.replace(/\{([^{}|]*)\|([^{}|]*)\}/g,(_,f,m)=>G==='m'?m:f);
+const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);const STATIC=[];
+while(walker.nextNode()){const n=walker.currentNode;if(n.parentNode.nodeName!=='SCRIPT'&&n.nodeValue.includes('{'))STATIC.push([n,n.nodeValue])}
+function setListen(){document.querySelectorAll('[data-listen]').forEach(i=>{i.src=`https://aviram-heichal.github.io/moadon-page/img/listen/${G}_${i.dataset.listen}.jpg`;i.alt=`${G==='m'?'אבא מקשיב':'אמא מקשיבה'} להדרכה ${i.dataset.where}`})}
+setListen();
+function setG(v,keep){G=v;try{localStorage.setItem('moadon-g',v)}catch(e){}STATIC.forEach(([n,t])=>n.nodeValue=g(t));setListen();document.querySelectorAll('.who button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.g===G));if(keep)fromHash()}
+const ALT=Object.fromEntries(Object.values(LIB).flat());
+const pic=(k,cls)=>`<img${cls?` class="${cls}"`:''} src="https://aviram-heichal.github.io/moadon-page/img/lib/${k}.jpg" alt="${ALT[k].replace(/"/g,'&quot;')}" loading="lazy">`;
+const story=k=>{const q=Q[k];return `<div class="story">${q.a?`<img src="https://aviram-heichal.github.io/moadon-page/img/p_${q.a}.jpg" alt="${q.c}" loading="lazy">`:`<span class="ini" aria-hidden="true">${q.c[0]}</span>`}<h3>${q.t}</h3><p>${q.q}</p><cite>${q.c}</cite></div>`};
+// a long word in the headline must never run off a phone screen
+function fitH1(){const h=$('h1');h.style.fontSize='';let fs=parseFloat(getComputedStyle(h).fontSize);while(h.scrollWidth>h.clientWidth&&fs>24){fs-=1;h.style.fontSize=fs+'px'}}
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitH1);
+addEventListener('resize',fitH1);
+function render(key){
+  if(!D[key]) return; const d=JSON.parse(g(JSON.stringify(D[key])));
+  $('pre').textContent=d.pre; $('pre').hidden=!d.pre; $('h1').innerHTML=d.h1; $('h1').classList.toggle('lines',d.h1.includes('<br>')); fitH1(); $('short').innerHTML=d.short; $('sub').innerHTML=d.sub;
+  const stripKeys=[...new Set(['lurie',d.lead,...STRIP_MIX])];
+  $('strip').innerHTML=[...stripKeys,...stripKeys].map(k=>`<img src="https://aviram-heichal.github.io/moadon-page/img/lib/${k}.jpg" alt="">`).join('');
+  $('painH').textContent=d.painH;
+  $('scene').innerHTML=d.scene.map(s=>`<p><time>${s[0]}</time>${s[1]}</p>`).join('');
+  // when the pain ends with "join and hear lecture X", the lecture card sits right under that line
+  const cardInAfter=d.after.some(x=>x.includes('joinline'));
+  $('after').innerHTML=d.after.map(x=>`<p>${x}</p>`).join('')+(cardInAfter?pic(d.lead,'lead-card'):'');
+  $('learn').innerHTML=d.learn.map(x=>`<li>${x}</li>`).join('');
+  $('joinline').textContent=d.join;
+  const cv=$('clipV'); cv.pause();
+  $('clipSec').hidden=!d.clip;
+  if(d.clip){ cv.poster=`https://aviram-heichal.github.io/moadon-page/clips/${d.clip.f}.jpg`; cv.src=`https://aviram-heichal.github.io/moadon-page/clips/${d.clip.f}.mp4`; $('clipSlide').textContent=d.clip.slide||d.clip.h; $('clipStart').hidden=false; $('clipTop').textContent=d.clip.top||''; $('clipTop').hidden=!d.clip.top; if(d.clip.hook){$('clipHook').textContent=d.clip.hook;$('clipHook').classList.add('hook-small')}else{$('clipHook').innerHTML=HOOK0;$('clipHook').classList.remove('hook-small')} $('clipSub').textContent=d.clip.sub; $('clipWatch').innerHTML=d.clip.watch; $('clipMore').textContent=d.clip.more||''; $('clipMore').hidden=!d.clip.more; $('clipMoreH').textContent=d.clip.moreH||''; $('clipMoreH').hidden=!d.clip.moreH; }
+  else cv.removeAttribute('src');
+  const dp=document.getElementById('demoPoster'); if(dp) dp.hidden=key==='heshbon';
+  $('firstSeries').innerHTML=(d.leadLine?`<p class="joinline">${d.leadLine}</p>`:'')+(cardInAfter?'':pic(d.lead,'lead-card'));
+  $('first').textContent=d.first;
+  $('swapHead').textContent=d.swapHead;
+  $('swap').innerHTML=d.swap.map(r=>`<div class="swap-row"><p>${r[0]}</p><p>${r[1]}</p></div>`).join('');
+  // Hanna Shuster has her own video under the stories
+  const noV=k=>!['shuster','rivka','kazes'].includes(k);
+  const firstQ=[...new Set([...d.quotes,'talia','shein'])].filter(noV).slice(0,4);
+  $('earlyStories').innerHTML=firstQ.slice(0,2).map(story).join('');
+  $('homeStories').innerHTML=firstQ.slice(2).map(story).join('');
+  $('moreStories').innerHTML=[...new Set(['talia','guy','rivka','shein','broidy','malul','eitan','sherman','bokai','barnea',...Object.keys(Q)])].filter(k=>noV(k)&&k!=='guy'&&!firstQ.includes(k)).map(story).join('');
+  $('turnHook').innerHTML=d.turnHook; $('turnH').textContent=d.turnH; $('homeHook').textContent=d.homeHook||''; $('homeHook').hidden=!d.homeHook;
+  $('turn').innerHTML=d.turn.map(x=>`<p>${x}</p>`).join('');
+  $('tabs').querySelectorAll('a').forEach(a=>a.setAttribute('aria-current',a.dataset.k===key));
+}
+$('tabs').innerHTML=Object.keys(D).map(k=>`<a href="#${k}" data-k="${k}">${D[k].tab}</a>`).join('');
+$('teacherStories').innerHTML=['rivka','kazes'].map(story).join('');
+$('guyBig').innerHTML=(()=>{const q=Q.guy,i=q.c.indexOf(',');return `<div class="story guy-t"><div class="guy-head"><img src="https://aviram-heichal.github.io/moadon-page/img/p_${q.a}.jpg" alt="גיא בן צבי" loading="lazy"><div><b>עדות של ${q.c.slice(0,i)}</b><span>${q.c.slice(i+1).trim()}</span></div></div><h3>${q.t}</h3><p>${q.q}</p></div>`})();
+$('clipStart').addEventListener('click',()=>{ $('clipStart').hidden=true; const p=$('clipV').play(); if(p) p.catch(()=>{}); });
+$('clipV').addEventListener('play',()=>{ $('clipStart').hidden=true; });
+$('aboutStart').addEventListener('click',()=>{ $('aboutStart').hidden=true; const p=$('aboutV').play(); if(p) p.catch(()=>{}); });
+$('aboutV').addEventListener('play',()=>{ $('aboutStart').hidden=true; });
+// two lecture sliders: arrows + slow auto change until the parent touches it
+const SLIDE_KEYS={
+  trSlider:['calm','secrets_f','coop','morning','uzi1','screens','lurie','siblings','happy','listen','family','mistakes','ofir','time','uzi2','discipline','phones','ups','money','drugs'],
+  planSlider:['kefel','read','add10','spell','frac1','comp','vertical','simple','order','secrets','add20','eq','big','geo','frac2','neg','zeros','lang','want','exams','barrier','motive','list','year','kinder']
+};
+Object.entries(SLIDE_KEYS).forEach(([id,keys])=>{const box=$(id),s=box.querySelector('.slides'),btns=[...box.querySelectorAll('.arr')];
+s.innerHTML=keys.map(k=>pic(k)).join('');
+const step=()=>s.clientWidth+10,show=()=>{const x=Math.abs(s.scrollLeft),max=s.scrollWidth-s.clientWidth;btns[0].disabled=x<4;btns[1].disabled=x>max-4};
+let auto=null,seen=false;const stop=()=>{clearInterval(auto);auto=null;seen=true};
+btns.forEach(b=>b.addEventListener('click',()=>{stop();s.scrollBy({left:-Number(b.dataset.dir)*step(),behavior:'smooth'})}));
+// scrolling the page past the slider must not stop it: only a real sideways move or a mouse press does
+s.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse')stop()},{passive:true});
+s.addEventListener('keydown',stop,{passive:true});
+s.addEventListener('wheel',e=>{if(Math.abs(e.deltaX)>Math.abs(e.deltaY))stop()},{passive:true});
+let tx=0,ty=0;s.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});
+s.addEventListener('touchmove',e=>{const dx=Math.abs(e.touches[0].clientX-tx),dy=Math.abs(e.touches[0].clientY-ty);if(dx>12&&dx>dy)stop()},{passive:true});
+s.addEventListener('scroll',show,{passive:true});show();
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches&&'IntersectionObserver' in window)new IntersectionObserver(es=>{const on=es[0].isIntersecting;if(on&&!auto&&!seen)auto=setInterval(()=>{const x=Math.abs(s.scrollLeft),max=s.scrollWidth-s.clientWidth;if(x>max-4)s.scrollTo({left:0,behavior:'auto'});else s.scrollBy({left:-step(),behavior:'smooth'})},2500);if(!on&&auto){clearInterval(auto);auto=null}},{threshold:.5}).observe(s);
+});
+function fromHash(){const k=location.hash.slice(1);render(D[k]?k:'shiurim')}
+addEventListener('hashchange',()=>{if(!D[location.hash.slice(1)])return;fromHash();scrollTo(0,0)});
+setG(G);
+document.querySelectorAll('.who button').forEach(b=>b.addEventListener('click',()=>setG(b.dataset.g,true)));
+fromHash();
+const jf=$('joinForm');let jfHist=false;
+function openForm(){
+  jf.showModal();document.body.style.overflow='hidden';
+  try{history.pushState({jf:1},'');jfHist=true}catch(e){jfHist=false}
+}
+function closeForm(){if(jf.open)jf.close()}
+jf.addEventListener('close',()=>{document.body.style.overflow='';if(jfHist){jfHist=false;try{history.back()}catch(e){}}});
+addEventListener('popstate',()=>{jfHist=false;closeForm()});
+$('jfBack').addEventListener('click',closeForm);
+jf.addEventListener('click',e=>{if(e.target===jf)closeForm()});
+const payBtn=document.querySelector('.js-pay');
+document.querySelectorAll('.js-join').forEach(b=>b.addEventListener('click',()=>{const r=payBtn.getBoundingClientRect();if(r.top>=0&&r.bottom<=innerHeight-70)openForm();else goJoin()}));
+/* images load during the jump and push the price down, so re-align until the user scrolls */
+function goJoin(){
+  const go=()=>$('join').scrollIntoView({behavior:'instant'});go();
+  const ts=[300,800,1500,2500].map(t=>setTimeout(go,t));
+  const stop=()=>{ts.forEach(clearTimeout);removeEventListener('wheel',stop);removeEventListener('touchstart',stop)};
+  addEventListener('wheel',stop,{passive:true});addEventListener('touchstart',stop,{passive:true});
+}
+payBtn.addEventListener('click',openForm);
+// the price comes right after the taste: that button opens the form, and the bottom bar joins only once it has been passed
+const offerBtn=document.querySelector('.js-open'),stick=document.querySelector('.stick');
+offerBtn.addEventListener('click',openForm);
+document.querySelectorAll('.js-form').forEach(b=>b.addEventListener('click',openForm));
+function stickShow(){const r=offerBtn.getBoundingClientRect();stick.hidden=r.top<innerHeight&&r.bottom>0||r.top>=innerHeight}
+addEventListener('scroll',stickShow,{passive:true});addEventListener('resize',stickShow);stickShow();
+
+})();
+</script>
+</body></html>
