@@ -3,20 +3,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;800;900&family=Assistant:wght@400;600;700&display=swap">
 <style>
 html,body{margin:0;padding:0}body{font-size:14px;background:#fff}img{max-width:100%}[hidden]{display:none!important}
-#ravForm .RMFORM,#ravForm form,#ravForm .multyparent,#ravForm .inner_multyfields,#ravForm .multyfield,#ravForm .multyinner,#ravForm .field,#ravForm .submitbuttonbox{display:block!important;width:100%!important;max-width:100%!important;min-width:0!important;height:auto!important;padding:0!important;margin:0!important;background:none!important;box-shadow:none!important;border:0!important;position:static!important;float:none!important;flex:none!important}
-#ravForm .ravxx_backgroundSpace{display:none!important}
-#ravForm .multyfield{margin-bottom:12px!important}
-#ravForm input[type=text],#ravForm input[type=tel]{display:block!important;box-sizing:border-box!important;width:100%!important;min-height:52px!important;height:52px!important;background:#fff!important;color:#1b2430!important;border:2px solid #b9c4d2!important;border-radius:8px!important;padding:8px 14px!important;font:400 19px Assistant,system-ui,sans-serif!important;text-align:right!important;box-shadow:none!important;-webkit-text-fill-color:#1b2430!important}
-#ravForm input::placeholder{color:#5d6b7c!important;-webkit-text-fill-color:#5d6b7c!important;opacity:1!important}
-#ravForm .checkboxoption{display:flex!important;align-items:flex-start!important;gap:10px!important;text-align:right!important}
-#ravForm .checkbox_styled{flex:none!important;width:24px!important;height:24px!important;position:relative!important;margin:2px 0 0!important}
-#ravForm .checkbox_styled input{display:block!important;position:static!important;opacity:1!important;width:24px!important;height:24px!important;margin:0!important;accent-color:#10233f!important;appearance:auto!important;-webkit-appearance:checkbox!important}
-#ravForm .checkbox_styled>div{display:none!important}
-#ravForm .checkboxlabel{font:400 16px/1.4 Assistant,system-ui,sans-serif!important;color:#1b2430!important;text-align:right!important;flex:1!important}
-#ravForm .submitbuttonbox button{display:block!important;box-sizing:border-box!important;width:100%!important;min-height:60px!important;margin:6px 0 0!important;background:#e3b23c!important;color:#10233f!important;border:0!important;border-bottom:4px solid #a97c12!important;border-radius:10px!important;font:900 23px Rubik,system-ui,sans-serif!important;cursor:pointer!important;text-shadow:none!important}
-#ravForm .ravxx_hover{display:none!important}
-#ravForm .submitbuttonbox a{display:block!important;text-decoration:none!important;background:none!important;border:0!important;box-shadow:none!important;padding:0!important;height:auto!important}
-#ravForm label.error,#ravForm .error_message{color:#b3122a!important;font:700 15px Assistant,system-ui,sans-serif!important}
 /* Layout: centered column, navy and gold by client's choice. Fixed reading order set by Aviram: what it is, pain and solution, value (real parents), how easy, how to join, price, what else, new app. */
 :root{
   --navy:#10233f; --navy2:#1b3459; --gold:#e3b23c; --gold-deep:#a97c12; --gold-soft:#fff5d9;
@@ -336,6 +322,9 @@ h1.lines{font-size:clamp(32px,10vw,66px)}
 .about-gets li::before{color:var(--gold);font-size:25px;top:1px}
 @media (min-width:680px){.about-gets li{font-size:23px;white-space:nowrap}}
 .homeline{border:2px solid var(--gold);border-radius:10px;padding:14px 16px;font-family:var(--head);font-weight:700;font-size:clamp(20px,5vw,24px);line-height:1.35;color:var(--gold);text-wrap:balance}
+.calm{justify-self:stretch;background:#fff;border:3px solid var(--navy);border-radius:12px;padding:16px;color:var(--navy);text-align:center;display:grid;gap:8px}
+.calm h3{font-family:var(--head);font-weight:900;font-size:clamp(26px,6.8vw,32px);line-height:1.2;color:var(--navy)}
+.calm p{font-size:clamp(19px,4.9vw,22px);line-height:1.4;color:var(--ink);text-wrap:balance}
 .nocommit{justify-self:center;background:var(--gold-soft);border:2px solid var(--gold);border-radius:10px;padding:10px 16px;color:var(--navy);font-family:var(--head);font-weight:800;font-size:clamp(20px,5vw,24px);line-height:1.3;text-wrap:balance}
 .note{display:none;background:var(--gold-soft);color:var(--ink);border-radius:8px;padding:12px;font-size:17px;max-width:440px}
 .note.show{display:block}
@@ -700,7 +689,7 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
     <p class="clip-sub">הסיפור שלי ובמה אני מאמין, מתוך הדרכה בזום. שתי דקות וחצי.</p>
     <div class="vwrap"><video id="aboutV" controls playsinline preload="metadata" poster="https://aviram-heichal.github.io/moadon-page/clips/about.jpg" src="https://aviram-heichal.github.io/moadon-page/clips/about.mp4"></video><button class="vslide vplay" id="aboutStart" type="button" aria-label="הפעלת הסרטון"><i aria-hidden="true"></i></button></div>
     <div class="lines">
-      <p>אני מומחה לטכנולוגיית למידה, ומאז שנת 2000 אני עובד עם ילדים, הורים ומורים.</p>
+      <p>אני מומחה לטכנולוגיית למידה, ומאז שנת 2000 אני עובד עם ילדים, הורים ומורים. את השיטה אני מלמד גם בעמותת המורים ובבתי ספר, והכשרתי צוות מורים שמלמדים בה ילדים בכל הארץ.</p>
       <p>הידע שלנו מבוסס על שיטת טכנולוגיית הלמידה, שיטה עולמית שמיישמים במעל אלף בתי ספר ומרכזי למידה פרטיים ברחבי העולם.</p>
     </div>
     <div class="nums">
@@ -715,7 +704,7 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
     </div>
     <div class="lines">
       <p class="about-punch">הילד שלך לא צריך עוד תווית.<br>הוא צריך אותך, עם הכלים הנכונים.</p>
-      <p class="about-tools">ואת הכלים האלו אנחנו מלמדים, צעד אחר צעד, <span>במועדון הדור הבא:</span></p>
+      <p class="about-tools">ואת הכלים האלו, בלי אבחונים ובלי כדורים, אנחנו מלמדים צעד אחר צעד <span>במועדון הדור הבא:</span></p>
       <ul class="ticks about-gets"><li>איך לעזור לו ללמוד טוב יותר</li><li>איך לשפר את התקשורת בבית</li><li>איך הוא מתחיל להרגיש ביטחון, ולדעת שהוא מסוגל</li></ul>
     </div>
     <div class="ctabox"><button class="cta js-join" type="button">אבירם, אני בפנים!<small>חודש ראשון ב-29 ש"ח, ללא התחייבות</small></button><p class="cta-note">{קבלי|קבל} גישה להדרכות, תוך כמה דקות.</p></div>
@@ -856,7 +845,7 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
     <p class="price">29 ש"ח</p>
     <p class="until">ההטבה בתוקף עד 20 בנובמבר</p>
     <p class="then">{תנסי ותראי|תנסה ותראה} אם מתאים לך -<br>ומהחודש השני: 97 ש"ח לחודש</p>
-    <p class="nocommit">אין התחייבות:<br>אפשר לעצור את המנוי בכל רגע, בהודעה אחת</p>
+    <div class="calm"><h3>100% ראש שקט</h3><p><b>אין התחייבות.</b> רוצים לעצור? שולחים הודעת ווטסאפ או מייל, ותוך 48 שעות אנחנו מפסיקים את החיוב.</p><p>בלי שאלות מעצבנות, ובלי "לשכנע" אותך להישאר.</p></div>
     <p class="joined"><b>מעל 1,600 הורים</b> כבר הצטרפו למועדון</p>
     <div class="ctabox">
       <button class="cta js-pay" type="button">אבירם, אני בפנים!<small>29 ש"ח לחודש הראשון</small></button>
@@ -895,7 +884,7 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
       <details><summary>אני לא {חזקה|חזק} בחשבון. זה בשבילי?</summary><p>כן. כל נושא מפורק לצעדים, עם סרטון הדגמה וצ'ק ליסט. קודם {את רואה|אתה רואה} איך עושים, ואז עושה עם הילד.</p></details>
       <details><summary>לאיזה גיל זה מתאים?</summary><p>יש הדרכות מהגן ועד גיל ההתבגרות. תוכניות החשבון מתחילות ביסודות, ומתקדמות צעד אחר צעד.</p></details>
       <details><summary>זה במקום מורה פרטי?</summary><p>תלוי בך. אם {תעבדי|תעבוד} לפי התוכנית, {תוכלי|תוכל} לעזור לילד בחשבון בכל נושא חשוב, גם בעצמך. וגם אם תמשיכו בשיעורים הפרטיים, בסוף תצטרכו פחות שיעורים כדי להשלים את הפערים.</p></details>
-      <details><summary>ואם זה לא בשבילי?</summary><p>כותבים לנו בקבוצה האישית או למייל service@a-h.co.il, ואנחנו עוצרים את המנוי ואת הוראת הקבע.</p></details>
+      <details><summary>ואם זה לא בשבילי?</summary><p>כותבים לנו בקבוצה האישית או למייל service@a-h.co.il, ותוך 48 שעות אנחנו מפסיקים את החיוב. בלי שאלות מעצבנות, ובלי "לשכנע" אותך להישאר.</p></details>
     </div>
     <div class="ctabox"><button class="cta js-join" type="button">אבירם, אני בפנים!<small>חודש ראשון ב-29 ש"ח, ללא התחייבות</small></button><p class="cta-note">לא מתאים? עוצרים בכל רגע, בהודעה אחת.</p><p>מחכה לראות אותך בפנים,<br>אבירם 💙</p></div>
   </div>
@@ -910,11 +899,6 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
 </footer>
 
 <div class="stick"><button class="cta js-join" type="button">אבירם, אני בפנים!<small>חודש ראשון ב-29 ש"ח, ללא התחייבות</small></button></div>
-
-<dialog class="joinform" id="joinForm" aria-labelledby="jfTitle">
-  <div class="jf-top"><button class="jf-back" id="jfBack" type="button">→ חזרה לדף</button></div>
-  <div class="jf-body"><h2 id="jfTitle">עוד צעד קטן, {ואת|ואתה} בפנים</h2><p>משאירים פרטים, ומיד עוברים לדף התשלום.</p><div id="ravForm"><script src='https://form2.ravpage.co.il/6349079998a0d66aa0e0ad1e717ce4f66AEB8D27?__external_ai__=true'></script></div><p class="fine">אחר כך 97 ש"ח לחודש, ללא התחייבות. אפשר לעצור בכל רגע.</p></div>
-</dialog>
 <script>
 (function(){
 function boot(){
@@ -1025,7 +1009,7 @@ const D={
     turnH:'אפשר לתרגל אותו, כמו כל מיומנות',
     turn:['ילד שמבין את מה שהוא לומד נשאר איתו יותר זמן.','ילד שתרגל להיות "כאן ועכשיו" מחזיק יותר.','<b>{את לא צריכה להיות מומחית|אתה לא צריך להיות מומחה}.</b> {את צריכה|אתה צריך} כמה כלים פשוטים, ומישהו שיראה לך איך.'],
     first:'אם הוא מתקשה להקשיב ולהתרכז, אני ממליץ לך להתחיל כבר עכשיו עם ההדרכה סודות הקשב והריכוז, {ותראי|ותראה} איך הוא מתחיל להיות איתך, להקשיב ולסיים משימות.',
-    quotes:['malul','shmani','bokai','kazes']}
+    quotes:['fokshner','malul','shmani','bokai','kazes']}
 };
 // the strip opens with the range of lecturers, then the door's own topics follow
 const STRIP_MIX=['want','uzi1','coop','listen','kefel','secrets_f','read','morning','ofir','calm','uzi2','exams','screens','comp','siblings'];
@@ -1067,11 +1051,11 @@ function render(key){
   $('swapHead').textContent=d.swapHead;
   $('swap').innerHTML=d.swap.map(r=>`<div class="swap-row"><p>${r[0]}</p><p>${r[1]}</p></div>`).join('');
   // Hanna Shuster has her own video under the stories
-  const noV=k=>!['shuster','rivka','kazes','shein'].includes(k);
+  const noV=k=>!['shuster','rivka','kazes','shein'].includes(k)&&(k!=='fokshner'||key==='keshev');
   const firstQ=[...new Set([...d.quotes,'talia','eitan'])].filter(noV).slice(0,4);
   $('earlyStories').innerHTML=firstQ.slice(0,2).map(story).join('');
   $('homeStories').innerHTML=firstQ.slice(2).map(story).join('');
-  const moreQ=[...new Set(['talia','fokshner','eitan','malul','broidy','sherman','bokai','barnea',...Object.keys(Q)])].filter(k=>noV(k)&&k!=='guy'&&!firstQ.includes(k));
+  const moreQ=[...new Set(['talia','eitan','malul','broidy','sherman','bokai','barnea',...Object.keys(Q)])].filter(k=>noV(k)&&k!=='guy'&&!firstQ.includes(k));
   $('moreStories').innerHTML=moreQ.slice(0,moreQ.length-moreQ.length%2).map(story).join('');
   $('turnHook').innerHTML=d.turnHook; $('turnH').textContent=d.turnH; $('homeHook').textContent=d.homeHook||''; $('homeHook').hidden=!d.homeHook;
   $('turn').innerHTML=d.turn.map(x=>`<p>${x}</p>`).join('');
@@ -1110,16 +1094,8 @@ addEventListener('hashchange',()=>{if(!D[location.hash.slice(1)])return;fromHash
 setG(G);
 document.querySelectorAll('.who button').forEach(b=>b.addEventListener('click',()=>setG(b.dataset.g,true)));
 fromHash();
-const jf=$('joinForm');let jfHist=false;
-function openForm(){
-  jf.showModal();document.body.style.overflow='hidden';
-  try{history.pushState({jf:1},'');jfHist=true}catch(e){jfHist=false}
-}
-function closeForm(){if(jf.open)jf.close()}
-jf.addEventListener('close',()=>{document.body.style.overflow='';if(jfHist){jfHist=false;try{history.back()}catch(e){}}});
-addEventListener('popstate',()=>{jfHist=false;closeForm()});
-$('jfBack').addEventListener('click',closeForm);
-jf.addEventListener('click',e=>{if(e.target===jf)closeForm()});
+const PAY='https://secure.cardcom.solutions/u/ocd3X5lcKEq6xW9wJPJeQ';
+function openForm(){location.href=PAY}
 const payBtn=document.querySelector('.js-pay');
 document.querySelectorAll('.js-join').forEach(b=>b.addEventListener('click',()=>{const r=payBtn.getBoundingClientRect();if(r.top>=0&&r.bottom<=innerHeight-70)openForm();else goJoin()}));
 /* images load during the jump and push the price down, so re-align until the user scrolls */
