@@ -311,7 +311,13 @@ h1.lines{font-size:clamp(32px,10vw,66px)}
 .joinform::backdrop{background:rgba(16,35,63,.8)}
 .jf-top{position:sticky;top:0;z-index:1;background:var(--paper);border-bottom:1px solid var(--line);padding:8px 12px;text-align:start}
 .jf-back{background:transparent;border:2px solid var(--navy);border-radius:8px;color:var(--navy);font-family:var(--head);font-weight:700;font-size:17px;min-height:44px;padding:4px 14px;cursor:pointer}
-.jf-body{display:grid;gap:15px;padding:18px 20px 22px}
+.jf-steps{padding:14px 20px 0}
+.jf-steps-t{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--head);color:var(--navy);font-size:19px;margin-bottom:6px}
+.jf-steps-t b{font-weight:800}
+.jf-steps-t span{font-weight:700}
+.jf-bar{height:12px;border-radius:99px;background:#dfe5ec;overflow:hidden}
+.jf-bar i{display:block;width:50%;height:100%;background:var(--gold);border-radius:99px}
+.jf-body{display:grid;gap:15px;padding:14px 20px 22px}
 .jf-body h2{font-size:28px}
 .jf-field{display:grid;gap:4px;text-align:start}
 .jf-field label{font-weight:700;font-size:18px}
@@ -921,7 +927,7 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
 
 
 <dialog class="joinform" id="joinForm" aria-labelledby="jfTitle">
-  <div class="jf-top"><button class="jf-back" id="jfBack" type="button">→ חזרה לדף</button></div>
+  <div class="jf-top"><button class="jf-back" id="jfBack" type="button">→ חזרה לדף</button></div><div class="jf-steps"><div class="jf-steps-t"><b>שלב 1 מתוך 2</b><span>50%</span></div><div class="jf-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="שלב 1 מתוך 2"><i></i></div></div>
   <div class="jf-body"><h2 id="jfTitle">עוד צעד קטן, {ואת|ואתה} בפנים</h2><p>משאירים פרטים, ומיד עוברים לדף התשלום.</p><div id="ravForm"><script src='https://form2.ravpage.co.il/6349079998a0d66aa0e0ad1e717ce4f66AEB8D27?__external_ai__=true'></script></div><p class="fine">אחר כך 97 ש"ח לחודש, ללא התחייבות. אפשר לעצור בכל רגע.</p></div>
 </dialog>
 <script>
