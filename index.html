@@ -740,10 +740,10 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
     <h2>עוד הורים ואנשי מקצוע מספרים:</h2>
     <div class="stories" id="moreStories"></div>
     <div class="wrap" style="padding:0;width:100%;max-width:560px">
-      <a class="poster" style="aspect-ratio:640/537" href="https://vimeo.com/558500154" target="_blank" rel="noopener">
+      <button class="poster" id="hannaVideo" style="aspect-ratio:940/788;padding:0;cursor:pointer;font:inherit" type="button">
         <img src="https://aviram-heichal.github.io/moadon-page/img/hanna.jpg" alt="חנה שוסטר, סבתא, מספרת על הנכד שלה" loading="lazy">
         <span class="play"><i></i><span>חנה שוסטר, סבתא. עדות וידאו, דקה וחצי</span></span>
-      </a>
+      </button>
     </div>
     <div class="ctabox"><button class="cta js-join" type="button">אבירם, אני בפנים!<small>חודש ראשון ב-29 ש"ח, ללא התחייבות</small></button><p class="cta-note">הסיפור הבא יכול להיות שלך. ההדרכות נפתחות תוך כמה דקות.</p></div>
   </div>
@@ -932,6 +932,7 @@ const Q={
   guy:{t:'"ההורים יוצאים עם כלים פרקטיים"',q:'בסוף ההדרכה ההורים יוצאים עם כלים פרקטיים. עם הכלים האלו הם יכולים להביא למיצוי הפוטנציאל של הילד. ראיתי הורים שמגיעים מבולבלים, והתוכניות של אבירם עושות להם סדר!',c:'גיא בן צבי, מנכ"ל אומגה 3 גליל',a:'guy'},
   talia:{t:'"המתנה הכי גדולה שהענקתי לעצמי השנה"',q:'ההצטרפות למועדון שלך היא המתנה הכי גדולה שהענקתי לעצמי השנה. כל ערב שבו אני רואה הרצאה, הוא ערב שמח! והיום למחרת כבר מתחיל באנרגיה שונה. כל יום שעובר אני נהנית יותר ויותר מהזמן שלנו יחד, וגם הילד מבטא את התחושות הטובות שלו בעקבות השינויים. משתף פעולה איתם, וזה מרגש. פשוט מרגש.',c:'טליה ג\'ורג\''},
   rivka:{t:'"לראות את האושר בעיניים של הילדים"',q:'צדקת, השיעורים שלך ממש מעולים. צפיתי בשני נושאים, חיבור עד 10, וחיבור עד 20, וכבר יישמתי את מה שלמדתי עם ילדה אחת בכיתה ב. אז, שוב, ממש תודה על שפקחת את עיניי לראות את העושר שאני יכולה לקבל ממך, ולהעלות את טיב השיעורים שלי, ואז לראות את האושר בעיניים של הילדים.',c:'רבקה סימס, מורה פרטנית לחשבון'},
+  fokshner:{t:'"התחלנו לקבל שבחים מהמורים במקום תלונות"',q:'בכיתה א\' עברנו מורה מורה באסיפת ההורים וקיבלנו רק תלונות. עברנו אבחון והמליצו לליאור כדור. בזכות העזרה שקיבלנו מאבירם במועדון הדור הבא ועם הכלים שלמדנו, ליאור היום מצליח בכיתה ואנחנו מקבלים שבחים. והכול בלי כדור אחד של ריטלין.',c:'תומר פוקשנר',a:'fokshner'},
   barnea:{t:'"קיבלתי בדיוק מה שחיפשתי"',q:'הרגשתי שאני מאבדת את הבן שלי בלימודים. בדור הבא של אבירם קיבלתי כלים פרקטיים שאפשר ליישם מייד עם הילדים. גם בלהביא אותם ללמוד ולרצות, וגם באיך ללמד אותם כדי שיבינו באמת.',c:'שרון ברנע',a:'barnea'},
   kazes:{t:'"ההרצאות מרתקות"',q:'אני מורה כבר מעל 20 שנה. עברתי הרבה השתלמויות שלא הועילו לי כלל. בהדרכות של אבירם אני עוברת חוויה מיוחדת במינה. תודה על ההדרכות המרתקות והכלים המעשיים.',c:'עירית קזס, מורה',a:'kazes'}
 };
@@ -1078,6 +1079,7 @@ function render(key){
 $('tabs').innerHTML=Object.keys(D).map(k=>`<a href="#${k}" data-k="${k}">${D[k].tab}</a>`).join('');
 $('teacherStories').innerHTML=['rivka','kazes'].map(story).join('');
 $('guyBig').innerHTML=(()=>{const q=Q.guy,i=q.c.indexOf(',');return `<div class="story guy-t"><div class="guy-head"><img src="https://aviram-heichal.github.io/moadon-page/img/p_${q.a}.jpg" alt="גיא בן צבי" loading="lazy"><div><b>עדות של ${q.c.slice(0,i)}</b><span>${q.c.slice(i+1).trim()}</span></div></div><h3>${q.t}</h3><p>${q.q}</p></div>`})();
+$('hannaVideo').addEventListener('click',()=>{const b=$('hannaVideo'),w=document.createElement('div');w.className='poster';w.style.aspectRatio='940/788';w.innerHTML='<iframe src="https://player.vimeo.com/video/558500154?autoplay=1&title=0&byline=0&portrait=0&badge=0&vimeo_logo=0&dnt=1&playsinline=1" title="חנה שוסטר, עדות וידאו" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="width:100%;height:100%;border:0;display:block"></iframe>';b.replaceWith(w)});
 $('clipStart').addEventListener('click',()=>{ $('clipStart').hidden=true; const p=$('clipV').play(); if(p) p.catch(()=>{}); });
 $('clipV').addEventListener('play',()=>{ $('clipStart').hidden=true; });
 $('aboutStart').addEventListener('click',()=>{ $('aboutStart').hidden=true; const p=$('aboutV').play(); if(p) p.catch(()=>{}); });
