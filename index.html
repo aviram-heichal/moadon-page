@@ -550,7 +550,7 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
 </section>
 
 <section class="band s-white guy-band">
-  <div class="wrap"><div class="guy-big" id="guyBig"></div></div>
+  <div class="wrap"><div class="guy-big" id="homeBig" style="margin-bottom:24px"></div><div class="guy-big" id="guyBig"></div></div>
 </section>
 
 <section class="band s-mist clip-offer">
@@ -1067,17 +1067,19 @@ function render(key){
   $('swapHead').textContent=d.swapHead;
   $('swap').innerHTML=d.swap.map(r=>`<div class="swap-row"><p>${r[0]}</p><p>${r[1]}</p></div>`).join('');
   // Hanna Shuster has her own video under the stories
-  const noV=k=>!['shuster','rivka','kazes'].includes(k);
-  const firstQ=[...new Set([...d.quotes,'talia','shein'])].filter(noV).slice(0,4);
+  const noV=k=>!['shuster','rivka','kazes','shein'].includes(k);
+  const firstQ=[...new Set([...d.quotes,'talia','eitan'])].filter(noV).slice(0,4);
   $('earlyStories').innerHTML=firstQ.slice(0,2).map(story).join('');
   $('homeStories').innerHTML=firstQ.slice(2).map(story).join('');
-  $('moreStories').innerHTML=[...new Set(['talia','guy','rivka','shein','broidy','malul','eitan','sherman','bokai','barnea',...Object.keys(Q)])].filter(k=>noV(k)&&k!=='guy'&&!firstQ.includes(k)).map(story).join('');
+  const moreQ=[...new Set(['talia','fokshner','eitan','malul','broidy','sherman','bokai','barnea',...Object.keys(Q)])].filter(k=>noV(k)&&k!=='guy'&&!firstQ.includes(k));
+  $('moreStories').innerHTML=moreQ.slice(0,moreQ.length-moreQ.length%2).map(story).join('');
   $('turnHook').innerHTML=d.turnHook; $('turnH').textContent=d.turnH; $('homeHook').textContent=d.homeHook||''; $('homeHook').hidden=!d.homeHook;
   $('turn').innerHTML=d.turn.map(x=>`<p>${x}</p>`).join('');
   $('tabs').querySelectorAll('a').forEach(a=>a.setAttribute('aria-current',a.dataset.k===key));
 }
 $('tabs').innerHTML=Object.keys(D).map(k=>`<a href="#${k}" data-k="${k}">${D[k].tab}</a>`).join('');
 $('teacherStories').innerHTML=['rivka','kazes'].map(story).join('');
+$('homeBig').innerHTML=(()=>{const q=Q.shein;return `<div class="story guy-t"><div class="guy-head"><img src="https://aviram-heichal.github.io/moadon-page/img/p_${q.a}.jpg" alt="${q.c}" loading="lazy"><div><b>עדות של ${q.c}</b><span>אמא במועדון הדור הבא</span></div></div><h3>${q.t}</h3><p>${q.q}</p></div>`})();
 $('guyBig').innerHTML=(()=>{const q=Q.guy,i=q.c.indexOf(',');return `<div class="story guy-t"><div class="guy-head"><img src="https://aviram-heichal.github.io/moadon-page/img/p_${q.a}.jpg" alt="גיא בן צבי" loading="lazy"><div><b>עדות של ${q.c.slice(0,i)}</b><span>${q.c.slice(i+1).trim()}</span></div></div><h3>${q.t}</h3><p>${q.q}</p></div>`})();
 $('hannaVideo').addEventListener('click',()=>{const b=$('hannaVideo'),w=document.createElement('div');w.className='poster';w.style.aspectRatio='940/788';w.innerHTML='<iframe src="https://player.vimeo.com/video/558500154?autoplay=1&title=0&byline=0&portrait=0&badge=0&vimeo_logo=0&dnt=1&playsinline=1" title="חנה שוסטר, עדות וידאו" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="width:100%;height:100%;border:0;display:block"></iframe>';b.replaceWith(w)});
 $('clipStart').addEventListener('click',()=>{ $('clipStart').hidden=true; const p=$('clipV').play(); if(p) p.catch(()=>{}); });
