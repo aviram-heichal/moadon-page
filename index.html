@@ -15,7 +15,7 @@ html,body{margin:0;padding:0}body{font-size:14px;background:#fff}img{max-width:1
 #ravForm .checkboxlabel{font:400 16px/1.4 Assistant,system-ui,sans-serif!important;color:#1b2430!important;text-align:right!important;flex:1!important}
 #ravForm .submitbuttonbox button{display:block!important;box-sizing:border-box!important;width:100%!important;min-height:60px!important;margin:6px 0 0!important;background:#e3b23c!important;color:#10233f!important;border:0!important;border-bottom:4px solid #a97c12!important;border-radius:10px!important;font:900 23px Rubik,system-ui,sans-serif!important;cursor:pointer!important;text-shadow:none!important}
 #ravForm .ravxx_hover{display:none!important}
-#ravForm .submitbuttonbox a{display:block!important;text-decoration:none!important}
+#ravForm .submitbuttonbox a{display:block!important;text-decoration:none!important;background:none!important;border:0!important;box-shadow:none!important;padding:0!important;height:auto!important}
 #ravForm label.error,#ravForm .error_message{color:#b3122a!important;font:700 15px Assistant,system-ui,sans-serif!important}
 /* Layout: centered column, navy and gold by client's choice. Fixed reading order set by Aviram: what it is, pain and solution, value (real parents), how easy, how to join, price, what else, new app. */
 :root{
@@ -917,6 +917,7 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
 </dialog>
 <script>
 (function(){
+function boot(){
 document.title='מועדון הדור הבא של אבירם היכל';
 
 const Q={
@@ -1132,6 +1133,8 @@ document.querySelectorAll('.js-form').forEach(b=>b.addEventListener('click',open
 function stickShow(){const r=offerBtn.getBoundingClientRect();stick.hidden=r.top<innerHeight&&r.bottom>0||r.top>=innerHeight}
 addEventListener('scroll',stickShow,{passive:true});addEventListener('resize',stickShow);stickShow();
 
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
 </script>
 </body></html>
