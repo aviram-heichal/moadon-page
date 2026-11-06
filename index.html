@@ -478,6 +478,9 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
 .not-must{display:block;margin-top:14px;color:var(--gold);font-weight:900;font-size:1.15em}
 .hero .sub{text-wrap:balance}
 #clipStart{background:linear-gradient(to left,rgba(16,35,63,0) 20%,rgba(16,35,63,.9) 58%),url(https://aviram-heichal.github.io/moadon-page/img/lecture.jpg) center top/cover no-repeat}
+#clipStart.kslide{background:linear-gradient(to bottom,rgba(16,35,63,.9) 0,rgba(16,35,63,0) 30%,rgba(16,35,63,0) 70%,rgba(16,35,63,.9) 100%),url(https://aviram-heichal.github.io/moadon-page/clips/heshbon_slide.jpg) center/cover no-repeat}
+#clipStart.kslide b,#clipStart.kslide small{align-self:center;width:100%;text-shadow:0 2px 6px rgba(0,0,0,.6)}
+#clipStart.kslide i{top:52%}
 #clipStart b,#clipStart small{align-self:flex-end;width:60%;text-align:center}
 #clipStart i{top:64%;width:min(11vw,92px);height:min(11vw,92px)}
 #clipStart i::after{border-width:min(2.8vw,24px) 0 min(2.8vw,24px) min(4.4vw,37px)}
@@ -535,6 +538,9 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
 .hero-quote cite{display:block;font-style:normal;font-weight:600;font-size:clamp(15px,3.9vw,17px);color:#fff;margin-top:4px}
 #secBridge .lines p{font-size:clamp(21px,5.4vw,26px);line-height:1.45}
 #secBridge .lines b{color:var(--navy)}
+.h1-hook{font-family:var(--head);font-weight:800;font-size:clamp(25px,6.8vw,34px);line-height:1.3;color:#fff;margin:4px 0 6px;text-wrap:balance}
+.cta.cta-long{font-size:clamp(23px,6vw,27px);line-height:1.25}
+.cta .cta-also{display:block;font-size:clamp(18px,4.8vw,21px);font-weight:700;margin-top:4px}
 .clip-who{font-family:var(--head);font-weight:700;font-size:clamp(18px,4.6vw,21px);line-height:1.35;color:var(--navy);text-wrap:balance;text-align:center}
 </style></head><body>
 <div class="review" hidden>
@@ -550,6 +556,7 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
       </div>
       <div class="club-id"><b>מועדון הדור הבא</b><span>של אבירם היכל</span></div>
     </div>
+    <p class="h1-hook" id="h1Hook" hidden></p>
     <h1 id="h1" class="lines">הסוף למלחמות<br>על שיעורי הבית</h1>
     <button type="button" class="clip-jump" id="clipJump" hidden>▶ באתם בשביל התרגיל? לחצו כאן לצפייה (4 דקות)</button>
   </div>
@@ -559,8 +566,8 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
     <p class="sub" id="sub">למדי עכשיו את הכלים המעשיים שיעזרו לך לגרום לילד לרצות ללמוד -<br>בלי צעקות, ובלי להיות המורה שלו.</p>
     <div class="press-top"><span>כפי שהוצג ב:</span><img src="https://aviram-heichal.github.io/moadon-page/img/press.jpg" alt="כאן 11, ערוץ 12, NTD"></div>
   </div>
-  <p class="strip-label">הצצה למה שמחכה לך במועדון הדור הבא להורים:</p>
-  <div class="strip" aria-hidden="true"><div class="strip-run" id="strip"></div></div>
+  <p class="strip-label" id="stripLabel">הצצה למה שמחכה לך במועדון הדור הבא להורים:</p>
+  <div class="strip" id="stripBox" aria-hidden="true"><div class="strip-run" id="strip"></div></div>
 </header>
 
 <!-- 0. value clip for this door, right after the hero -->
@@ -979,6 +986,7 @@ const Q={
   esh:{door:'heshbon',t:'"זה שונה לגמרי לדעת את החומר ולדעת איך ללמד אותו!"',q:'למרות שאני יודעת את לוח הכפל ואת החומר בחשבון - לא ידעתי איך להסביר אותו לילדים שלי כמו שצריך. בקורס הזה קיבלתי את השיטה המדויקת איך ללמד אותם את לוח הכפל במהירות! מהרגע הראשון שהתחלתי ליישם איתם - זה עבד כמו קסם. אני הפכתי להרבה יותר סבלנית והילדים הרבה יותר מרוכזים ומשתפים איתי פעולה - והכי כיף זה שרואים שהם מבינים ומצליחים.',c:'אורטל אש, אמא שגרה בלונדון'},
   shilo:{door:'heshbon',t:'"הבן שלי שאל: אמא, למה לא מלמדים ככה בבית הספר?"',q:'הלכתי ללמוד שיטות להוראה מותאמת כדי לעזור לילד שלי בחשבון - אבל אף תוכנית לא היתה כל כך פרקטית כמו התוכנית הזו. זו שיטה שעובדת וכיף ללמוד עם הילדים. הבן שלי כל כך נהנה ושאל: "אמא, למה לא מלמדים ככה גם בבית ספר?" ממליצה בחום!',c:'אורית שילו, מעלה אדומים'},
   tsvik:{door:'heshbon',t:'"אבירם פיצח את השיטה איך לגרום לילדים להבין ולרצות!"',q:'אבירם היכל פתר את החידה: כיצד להצליח ללמד ילדים את לוח הכפל וחשבון בכלל בצורה שהם יבינו ויפנימו! רואים את האסימונים נופלים למקומות הנכונים ואת ההנאה בלימודים. זה מהיר כמו מטאור. תודה לך אבירם',c:'מאיה צויק, אמא ל-3 משוהם'},
+  eitan2:{door:'heshbon',t:'"התלהבתי כשלמדתי את השיטה, אבל המציאות עולה על כל דמיון"',q:'התהליך היה מופלא ופשוט. מההתחלה הילה היתה כל כולה בעניין. אבירם הוא גאון! התלהבתי כשלמדתי את השיטה אבל המציאות עולה על כל דמיון.',c:'איתן דוד, אבא של הילה שבכיתה ה\'',a:'eitan'},
   teitelbaum:{door:'heshbon',t:'"בשום מקום לא למדתי את הכלים שלמדתי עם אבירם"',q:'אלו כלים פשוטים להבנה ומאוד מאוד פרקטיים שכל מורה והורה יכולים וחייבים להשתמש בהם. היום, בעקבות הקורס עם אבירם, אני מלמדת שונה בכיתה ובצורה שהילדים הרבה יותר רוצים ללמוד!!! ממליצה בחום רב גם למורים וגם להורים!',c:'עדי טיטלבוים, מורה לחינוך מיוחד בבית ספר יסודי'},
   kazes:{t:'"ההרצאות מרתקות"',q:'אני מורה כבר מעל 20 שנה. עברתי הרבה השתלמויות שלא הועילו לי כלל. בהדרכות של אבירם אני עוברת חוויה מיוחדת במינה. תודה על ההדרכות המרתקות והכלים המעשיים.',c:'עירית קזס, מורה',a:'kazes'}
 };
@@ -1008,7 +1016,7 @@ const D={
     turn:['מאחורי ה-"לא בא לי" יש כמעט תמיד משהו קטן:','מילה שלא הבין, פער ישן, או הדרך שבה מדברים איתו.','<b>כשיודעים למצוא את זה, הריב נגמר מעצמו.</b>'],
     first:'אם הילד לא רוצה ללמוד, אני ממליץ לך להתחיל כבר עכשיו עם ההדרכה לרצות ללמוד, {ותראי איך את מצליחה|ותראה איך אתה מצליח} לרתום אותו הרבה יותר בקלות, ולגרום לו לזכור את החומר, ליהנות ולרצות הרבה יותר.',
     quotes:['shmani','sherman','bokai','barnea']},
-  heshbon:{tab:'לוח הכפל',clip:{f:'heshbon',top:'למה הוא לומד את לוח הכפל, ולמחרת שוכח? כי הוא עוד לא הבין מה זה כפל. ככה מתחילים:',hook:'(לחצו על הסרטון וראו איך זה נראה עם ילד אמיתי)',watch:'{צפי|צפה} עד הסוף, וכבר בפעם הבאה שתשבו ללמוד {תוכלי|תוכל} לעשות את זה עם הילד.',slide:'מה זה כפל? ככה ילד מבין את זה באמת',h:'מה זה כפל? ככה ילד מבין את זה באמת',sub:'הדגמה אמיתית שלי עם ילד, מתוך תוכנית לוח הכפל במועדון (6 דקות)',moreH:'וזה רק הצעד הראשון בתוכנית',more:'בתוכנית לוח הכפל {תלמדי|תלמד} צעד אחר צעד איך ללמד אותו את כל לוח הכפל בעל פה, בממוצע תוך 10 ימים, בכיף ובלי שישכח אותו.'},lead:'kefel',shelf:['math','learn','parents','focus','school'],strip:['kefel','add10','frac1','order','morning','add20','eq','want','vertical','neg','calm','big','secrets'],
+  heshbon:{tab:'לוח הכפל',h1Hook:'הילד לומד את לוח הכפל ולמחרת שוכח הכל?',cta:'אבירם, אני רוצה לעזור לילד לזכור את לוח הכפל לתמיד',ctaAlso:'(וגם את כל שאר היסודות בחשבון)',clip:{f:'heshbon',top:'למה הוא לומד את לוח הכפל, ולמחרת שוכח? כי הוא עוד לא הבין מה זה כפל. ככה מתחילים:',hook:'(לחצו על הסרטון וראו איך זה נראה עם ילד אמיתי)',watch:'{צפי|צפה} עד הסוף, וכבר בפעם הבאה שתשבו ללמוד {תוכלי|תוכל} לעשות את זה עם הילד.',slide:'מה זה כפל? ככה ילד מבין את זה באמת',h:'מה זה כפל? ככה ילד מבין את זה באמת',sub:'הדגמה אמיתית שלי עם ילד, מתוך תוכנית לוח הכפל במועדון (6 דקות)',moreH:'וזה רק הצעד הראשון בתוכנית',more:'בתוכנית לוח הכפל {תלמדי|תלמד} צעד אחר צעד איך ללמד אותו את כל לוח הכפל בעל פה, בממוצע תוך 10 ימים, בכיף ובלי שישכח אותו.'},lead:'kefel',shelf:['math','learn','parents','focus','school'],strip:['kefel','add10','frac1','order','morning','add20','eq','want','vertical','neg','calm','big','secrets'],
     order:['secEarly','secLearn','secPain','secTurn','secBridge','secWhat','secPillars','secOffer','secEasy','secShein','secHome','secHomeStories'],
     heroQuote:'"הבת שלי תוך שבוע וחצי אלופה בלוח הכפל! המעבר מתסכול להצלחה היה פשוט קסום"<cite>נעמה שמש ברוידי, אמא לילדה בכיתה ג\'</cite>',
     earlyH:'מעל 5,400 הורים כבר לימדו את לוח הכפל בשיטה הזו.<br>הנה מה שהם מספרים:',
@@ -1030,7 +1038,7 @@ const D={
     bridge:['מעל 40% מהילדים בכיתות ה\' ומעלה עדיין לא שולטים בלוח הכפל.','וילד שלא שולט בלוח הכפל מתקשה גם בחילוק, בשברים, באחוזים ובבעיות מילוליות.','<b>לכן במועדון, לוח הכפל הוא רק ההתחלה.</b>'],
     homeHook:'וזה לא נגמר בחשבון.',
     first:'אם הילד מתקשה בלוח הכפל, אני ממליץ לך להתחיל כבר עכשיו עם ההדרכה פשוט לזכור את לוח הכפל, {ותראי איך את מלמדת|ותראה איך אתה מלמד} אותו בקלות, והוא זוכר בעל פה.',
-    quotes:['malul2','sherman2','moshe','esh','shilo','tsvik','broidy'],hide:['malul','sherman'],teachers:['rivka','teitelbaum']},
+    quotes:['malul2','broidy','eitan2','sherman2','moshe','esh','shilo','tsvik'],earlyN:3,noStrip:true,hide:['malul','sherman','eitan'],teachers:['rivka','teitelbaum']},
   boker:{tab:'בוקר',clip:{f:'boker',watch:'{צפי|צפה} עד הסוף, וכבר מחר בבוקר {תוכלי|תוכל} לנסות את זה.<small class="watch-small">(אפשר גם בלי קול, יש כתוביות)</small>',h:'הם ניסו הכל. ואז שאלתי שאלה אחת.',sub:'קטע אמיתי מתוך ההדרכה "בוקר מנצח" במועדון. 4 דקות.',tryH:'{נסי|נסה} את זה מחר בבוקר:',try:['{שימי|שים} רמקול קטן בחדר שלו.','מרחוק, {הפעילי|הפעל} מוזיקה קצבית שהוא אוהב.','לא נכנסים לחדר. {ותראי|ותראה} מה קורה.']},lead:'morning',shelf:['parents','learn','focus','math','school'],strip:['morning','calm','coop','siblings','time','want','kefel','happy','screens','mistakes','secrets_f','add10','uzi1','discipline'],
     pre:'{לאמא שהבוקר שלה|לאבא שהבוקר שלו} נגמר עוד לפני שהתחיל',
     short:'קראת לו שלוש פעמים.<br>"איפה הנעל?" ואחיו כבר מציק לו.<br>{ואת צועקת|ואתה צועק} במסדרון.',h1:'בוקר מנצח.<br>בלי ריבים,<br>בלי ויכוחים<br>ובלי עצבים.',
@@ -1102,9 +1110,14 @@ addEventListener('resize',fitH1);
 const SECS=['secShein','secOffer','secBridge','secWhat','secPillars','secEarly','secEasy','secPain','secTurn','secLearn','secHome','secHomeStories'];
 const EARLY0=$('earlyH').innerHTML;
 function placeSecs(order){const list=order||SECS;let at=$('clipSec');list.forEach(id=>{const el=$(id);at.after(el);at=el});SECS.filter(id=>!list.includes(id)).forEach(id=>{const el=$(id);at.after(el);at=el})}
+// door-specific button wording (kefel door); the first text of each button is swapped, the small line under it stays
+const CTAS=[...document.querySelectorAll('button.cta:not([type=submit])')].map(b=>[b,b.firstChild.nodeValue]);
 function render(key){
   if(!D[key]) return; const d=JSON.parse(g(JSON.stringify(D[key])));
   placeSecs(d.order);
+  $('stripLabel').hidden=$('stripBox').hidden=!!d.noStrip;
+  $('h1Hook').textContent=d.h1Hook||''; $('h1Hook').hidden=!d.h1Hook;
+  CTAS.forEach(([b,t])=>{b.firstChild.nodeValue=d.cta?d.cta+' ':t;b.classList.toggle('cta-long',!!d.cta);let a=b.querySelector('.cta-also');if(d.ctaAlso){if(!a){a=document.createElement('span');a.className='cta-also';b.firstChild.after(a)}a.textContent=d.ctaAlso}else if(a)a.remove()});
   $('heroQuote').innerHTML=d.heroQuote||''; $('heroQuote').hidden=!d.heroQuote;
   $('earlyH').innerHTML=d.earlyH||EARLY0;
   $('secBridge').hidden=!d.bridge; $('bridgeH').textContent=d.bridgeH||''; $('bridge').innerHTML=(d.bridge||[]).map(x=>`<p>${x}</p>`).join('');
@@ -1121,7 +1134,7 @@ function render(key){
   $('joinline').textContent=d.join;
   const cv=$('clipV'); cv.pause();
   $('clipSec').hidden=!d.clip;
-  if(d.clip){ cv.poster=`https://aviram-heichal.github.io/moadon-page/clips/${d.clip.f}.jpg`; cv.src=`https://aviram-heichal.github.io/moadon-page/clips/${d.clip.f}.mp4`; $('clipSlide').textContent=d.clip.slide||d.clip.h; $('clipStart').hidden=false; $('clipTop').textContent=d.clip.top||''; $('clipTop').hidden=!d.clip.top; if(d.clip.hook){$('clipHook').textContent=d.clip.hook;$('clipHook').classList.add('hook-small')}else{$('clipHook').innerHTML=HOOK0;$('clipHook').classList.remove('hook-small')} $('clipSub').textContent=d.clip.sub; $('clipWatch').innerHTML=d.clip.watch; $('clipMore').textContent=d.clip.more||''; $('clipMore').hidden=!d.clip.more; $('clipMoreH').textContent=d.clip.moreH||''; $('clipMoreH').hidden=!d.clip.moreH; }
+  if(d.clip){ cv.poster=`https://aviram-heichal.github.io/moadon-page/clips/${d.clip.f}.jpg`; cv.src=`https://aviram-heichal.github.io/moadon-page/clips/${d.clip.f}.mp4`; $('clipSlide').textContent=d.clip.slide||d.clip.h; $('clipStart').hidden=false; $('clipStart').classList.toggle('kslide',key==='heshbon'); $('clipTop').textContent=d.clip.top||''; $('clipTop').hidden=!d.clip.top; if(d.clip.hook){$('clipHook').textContent=d.clip.hook;$('clipHook').classList.add('hook-small')}else{$('clipHook').innerHTML=HOOK0;$('clipHook').classList.remove('hook-small')} $('clipSub').textContent=d.clip.sub; $('clipWatch').innerHTML=d.clip.watch; $('clipMore').textContent=d.clip.more||''; $('clipMore').hidden=!d.clip.more; $('clipMoreH').textContent=d.clip.moreH||''; $('clipMoreH').hidden=!d.clip.moreH; }
   else cv.removeAttribute('src');
   const dp=document.getElementById('demoPoster'); if(dp) dp.hidden=key==='heshbon';
   $('firstSeries').innerHTML=(d.leadLine?`<p class="joinline">${d.leadLine}</p>`:'')+(cardInAfter?'':pic(d.lead,'lead-card'));
@@ -1130,9 +1143,10 @@ function render(key){
   $('swap').innerHTML=d.swap.map(r=>`<div class="swap-row"><p>${r[0]}</p><p>${r[1]}</p></div>`).join('');
   // Hanna Shuster has her own video under the stories
   const noV=k=>!['shuster','rivka','kazes','shein','teitelbaum'].includes(k)&&(k!=='fokshner'||key==='keshev')&&(!Q[k].door||Q[k].door===key)&&!(d.hide||[]).includes(k);
-  const firstQ=[...new Set([...d.quotes,'talia','eitan'])].filter(noV).slice(0,4);
-  $('earlyStories').innerHTML=firstQ.slice(0,2).map(story).join('');
-  $('homeStories').innerHTML=firstQ.slice(2).map(story).join('');
+  const nE=d.earlyN||2;
+  const firstQ=[...new Set([...d.quotes,'talia','eitan'])].filter(noV).slice(0,nE+2);
+  $('earlyStories').innerHTML=firstQ.slice(0,nE).map(story).join('');
+  $('homeStories').innerHTML=firstQ.slice(nE).map(story).join('');
   const moreQ=[...new Set([...d.quotes,'talia','eitan','malul','broidy','sherman','bokai','barnea',...Object.keys(Q)])].filter(k=>noV(k)&&k!=='guy'&&!firstQ.includes(k));
   $('moreStories').innerHTML=moreQ.slice(0,moreQ.length-moreQ.length%2).map(story).join('');
   $('turnHook').innerHTML=d.turnHook; $('turnH').textContent=d.turnH; $('homeHook').textContent=d.homeHook||''; $('homeHook').hidden=!d.homeHook;
