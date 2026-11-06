@@ -536,11 +536,13 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
 .cost-box>*{max-width:100%}
 .hero-quote{font-family:var(--head);font-weight:700;font-size:clamp(19px,5vw,23px);line-height:1.4;color:var(--gold);border-inline-start:4px solid var(--gold);padding-inline-start:12px;margin:0 0 14px;text-wrap:balance}
 .hero-quote cite{display:block;font-style:normal;font-weight:600;font-size:clamp(15px,3.9vw,17px);color:#fff;margin-top:4px}
-#secBridge .lines p{font-size:clamp(21px,5.4vw,26px);line-height:1.45}
+section#secBridge .wrap .lines p{font-family:var(--head);font-weight:700;font-size:clamp(23px,6.2vw,29px);line-height:1.4;color:var(--ink)}
 #secBridge .lines b{color:var(--navy)}
 .h1-hook{font-family:var(--head);font-weight:800;font-size:clamp(25px,6.8vw,34px);line-height:1.3;color:#fff;margin:4px 0 6px;text-wrap:balance}
 .cta.cta-long{font-size:clamp(23px,6vw,27px);line-height:1.25}
 .cta .cta-also{display:block;font-size:clamp(18px,4.8vw,21px);font-weight:700;margin-top:4px}
+#secBridge .meet{font-family:var(--head);font-weight:900;font-size:clamp(28px,7.6vw,40px);line-height:1.25;color:var(--navy);margin-top:18px;text-wrap:balance}
+#secBridge .meet b{color:var(--gold-deep)}
 .clip-who{font-family:var(--head);font-weight:700;font-size:clamp(18px,4.6vw,21px);line-height:1.35;color:var(--navy);text-wrap:balance;text-align:center}
 </style></head><body>
 <div class="review" hidden>
@@ -604,13 +606,14 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
   <div class="wrap">
     <h2 id="bridgeH"></h2>
     <div class="lines" id="bridge"></div>
+    <p class="meet" id="bridgeMeet"></p>
   </div>
 </section>
 
 <section class="band s-navy" id="secWhat">
   <div class="wrap">
     <h2 id="whatIs">אבל רגע - מה בעצם מקבלים במועדון?</h2>
-      <p class="club-def">מועדון הדור הבא הוא מועדון ההורים הכי פרקטי שיש היום בישראל - מקום אחד, בטלפון ובמחשב, שבו הורים לומדים מה ואיך עושים, ומקבלים תוצאות עם הילד בכל נושא:</p>
+      <p class="club-def" id="clubDef">מועדון הדור הבא הוא מועדון ההורים הכי פרקטי שיש היום בישראל - מקום אחד, בטלפון ובמחשב, שבו הורים לומדים מה ואיך עושים, ומקבלים תוצאות עם הילד בכל נושא:</p>
       <ul class="topics-list"><li>למידה</li><li>קשב וריכוז בלי תרופות</li><li>שיפור התנהגות</li><li>חשבון</li><li>הורות בלי מאבק</li><li>התפתחות אישית</li><li>לימוד קריאה</li><li>שגיאות כתיב</li><li>פחות מסכים</li><li>בוקר בלי ריבים</li><li>כבוד להורים</li><li>תקשורת טובה בבית</li><li>פחות ריבים בין האחים</li></ul>
       
   </div>
@@ -1027,15 +1030,21 @@ const D={
     scene:[['ניסית','שירים, אצבעות, משחקי זיכרון.'],['אתמול','7 כפול 8. תשובה נכונה. כולם שמחים.'],['היום','הוא שוב סופר על האצבעות.']],
     after:['וככל שעובר הזמן,','הוא אומר שהוא <b>"לא טוב בחשבון".</b>','{ואת מתחילה|ואתה מתחיל} לפחד שהוא מאמין לזה.'],
     learn:['איך להסביר לו בפשטות מה זה כפל','איך לתרגל איתו בעזרת משחק, כך שירצה לתרגל (ואפילו יבקש עוד)','איך הוא שולף את התשובות מהראש, ממש מהר, ולא שוכח'],
-    join:'וזה רק החדר הראשון. במועדון מחכה לך הרבה יותר.',
-    leadLine:'{הרשמי|הירשם} למועדון, {והתחילי|והתחל} כבר היום את תוכנית לוח הכפל.',
+    join:'',
+    leadLine:'',
     swapHead:'מה יכול להיות בקרוב',
     swap:[['סופר על האצבעות','שולף בעל פה'],['"אני לא טוב בחשבון"','"{תשאלי|תשאל} אותי, אני יודע!"'],['{את מחפשת|אתה מחפש} ביוטיוב איך מסבירים','{את יודעת|אתה יודע} מה הצעד הבא']],
     turnHook:'האמת היא ש...<br>זה לא שהוא מתעצל, וזה ממש לא הזיכרון שלו.',
     turnH:'חשבון נבנה קומה על קומה',
     turn:['מספיק פער אחד למטה, וכל מה שמעל מתנדנד.','לכן עוד תרגילים על אותו נושא לא תמיד עוזרים. קודם מוצאים איפה הפער.','<b>אחר כך סוגרים אותו נכון, נושא אחרי נושא.</b>','וזה עובד גם לילדים שאובחנו עם קשב וריכוז, לקות למידה או דיסקלקוליה.'],
-    bridgeH:'אז למה לעצור בלוח הכפל?',
-    bridge:['מעל 40% מהילדים בכיתות ה\' ומעלה עדיין לא שולטים בלוח הכפל.','וילד שלא שולט בלוח הכפל מתקשה גם בחילוק, בשברים, באחוזים ובבעיות מילוליות.','<b>לכן במועדון, לוח הכפל הוא רק ההתחלה.</b>'],
+    bridgeH:'אבל תוכנית לוח הכפל היא רק חלק ממשהו הרבה יותר גדול',
+    bridge:['מעל 40% מהילדים בכיתות ה\' ומעלה עדיין לא שולטים בלוח הכפל.','וילד שלא שולט בלוח הכפל מתקשה גם בחילוק, בשברים, באחוזים ובבעיות מילוליות.','ולכן בניתי משהו שיכול לעזור לך <b>להקפיץ את הילד בכל נושא חשוב בחשבון.</b>'],
+    bridgeMeet:'אני רוצה להכיר לך את <b>מועדון הדור הבא</b>...',
+    whatH:'אז מה זה מועדון הדור הבא?',
+    clubDef:'מועדון הדור הבא הוא מקום אחד, בטלפון ובמחשב, שבו הורים לומדים מה ואיך עושים עם הילד, צעד אחר צעד. <b>תוכנית לוח הכפל נמצאת בתוכו</b>, ולידה תוכניות לכל היסודות בחשבון, וגם הדרכות להורים בכל נושא:',
+    pillOrder:[1,3,2,0],
+    pillTitles:{1:'תוכנית מלאה ללימוד חשבון: מלוח הכפל ועד שברים ומשוואות (וגם קריאה)',0:'ובונוס: האוצר - מעל 45 הדרכות להורים, סופר מעשיות'},
+    ctaPre:'תוכנית לוח הכפל נפתחת לך תוך כמה דקות, גם בטלפון',
     homeHook:'וזה לא נגמר בחשבון.',
     first:'אם הילד מתקשה בלוח הכפל, אני ממליץ לך להתחיל כבר עכשיו עם ההדרכה פשוט לזכור את לוח הכפל, {ותראי איך את מלמדת|ותראה איך אתה מלמד} אותו בקלות, והוא זוכר בעל פה.',
     quotes:['malul2','broidy','eitan2','sherman2','moshe','esh','shilo','tsvik'],earlyN:3,noStrip:true,hide:['malul','sherman','eitan'],teachers:['rivka','teitelbaum']},
@@ -1111,13 +1120,17 @@ const SECS=['secShein','secOffer','secBridge','secWhat','secPillars','secEarly',
 const EARLY0=$('earlyH').innerHTML;
 function placeSecs(order){const list=order||SECS;let at=$('clipSec');list.forEach(id=>{const el=$(id);at.after(el);at=el});SECS.filter(id=>!list.includes(id)).forEach(id=>{const el=$(id);at.after(el);at=el})}
 // door-specific button wording (kefel door); the first text of each button is swapped, the small line under it stays
+const WHAT0=$('whatIs').innerHTML,DEF0=$('clubDef').innerHTML;
+const PIL=[...document.querySelectorAll('.pillars>li')].map(li=>[li,li.querySelector('h3').innerHTML]);
 const CTAS=[...document.querySelectorAll('button.cta:not([type=submit])')].map(b=>[b,b.firstChild.nodeValue]);
 function render(key){
   if(!D[key]) return; const d=JSON.parse(g(JSON.stringify(D[key])));
   placeSecs(d.order);
   $('stripLabel').hidden=$('stripBox').hidden=!!d.noStrip;
+  $('whatIs').innerHTML=d.whatH||WHAT0; $('clubDef').innerHTML=d.clubDef||DEF0; $('bridgeMeet').innerHTML=d.bridgeMeet||''; $('bridgeMeet').hidden=!d.bridgeMeet;
+  { const ol=document.querySelector('.pillars'); (d.pillOrder||[0,1,2,3]).forEach((i,n)=>{const [li,h]=PIL[i];ol.appendChild(li);const t=(d.pillTitles&&d.pillTitles[i])||h.replace(/^<span>\d<\/span>/,'');li.querySelector('h3').innerHTML=`<span>${n+1}</span>`+t.replace(/^<span>\d<\/span>/,'')}); }
   $('h1Hook').textContent=d.h1Hook||''; $('h1Hook').hidden=!d.h1Hook;
-  CTAS.forEach(([b,t])=>{b.firstChild.nodeValue=d.cta?d.cta+' ':t;b.classList.toggle('cta-long',!!d.cta);let a=b.querySelector('.cta-also');if(d.ctaAlso){if(!a){a=document.createElement('span');a.className='cta-also';b.firstChild.after(a)}a.textContent=d.ctaAlso}else if(a)a.remove()});
+  CTAS.forEach(([b,t])=>{const sm=b.querySelector('small');if(sm){if(!sm.dataset.t0)sm.dataset.t0=sm.innerHTML;const pre=d.ctaPre&&d.bridge&&(b.compareDocumentPosition($('secBridge'))&Node.DOCUMENT_POSITION_FOLLOWING);sm.innerHTML=pre?d.ctaPre:sm.dataset.t0}b.firstChild.nodeValue=d.cta?d.cta+' ':t;b.classList.toggle('cta-long',!!d.cta);let a=b.querySelector('.cta-also');if(d.ctaAlso){if(!a){a=document.createElement('span');a.className='cta-also';b.firstChild.after(a)}a.textContent=d.ctaAlso}else if(a)a.remove()});
   $('heroQuote').innerHTML=d.heroQuote||''; $('heroQuote').hidden=!d.heroQuote;
   $('earlyH').innerHTML=d.earlyH||EARLY0;
   $('secBridge').hidden=!d.bridge; $('bridgeH').textContent=d.bridgeH||''; $('bridge').innerHTML=(d.bridge||[]).map(x=>`<p>${x}</p>`).join('');
@@ -1131,7 +1144,7 @@ function render(key){
   const cardInAfter=d.after.some(x=>x.includes('joinline'));
   $('after').innerHTML=d.after.map(x=>`<p>${x}</p>`).join('')+(cardInAfter?pic(d.lead,'lead-card'):'');
   $('learn').innerHTML=d.learn.map(x=>`<li>${x}</li>`).join('');
-  $('joinline').textContent=d.join;
+  $('joinline').textContent=d.join; $('joinline').hidden=!d.join;
   const cv=$('clipV'); cv.pause();
   $('clipSec').hidden=!d.clip;
   if(d.clip){ cv.poster=`https://aviram-heichal.github.io/moadon-page/clips/${d.clip.f}.jpg`; cv.src=`https://aviram-heichal.github.io/moadon-page/clips/${d.clip.f}.mp4`; $('clipSlide').textContent=d.clip.slide||d.clip.h; $('clipStart').hidden=false; $('clipStart').classList.toggle('kslide',key==='heshbon'); $('clipTop').textContent=d.clip.top||''; $('clipTop').hidden=!d.clip.top; if(d.clip.hook){$('clipHook').textContent=d.clip.hook;$('clipHook').classList.add('hook-small')}else{$('clipHook').innerHTML=HOOK0;$('clipHook').classList.remove('hook-small')} $('clipSub').textContent=d.clip.sub; $('clipWatch').innerHTML=d.clip.watch; $('clipMore').textContent=d.clip.more||''; $('clipMore').hidden=!d.clip.more; $('clipMoreH').textContent=d.clip.moreH||''; $('clipMoreH').hidden=!d.clip.moreH; }
