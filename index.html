@@ -580,7 +580,7 @@ section#secBridge .wrap .lines p:has(.chip){display:flex;flex-wrap:wrap;justify-
 .hero-quote img{flex:none;width:76px;height:76px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px var(--gold)}
 #whoBox[hidden]{display:none}
 @keyframes preShow{to{visibility:visible}}
-html.pre body>header,html.pre body>section{visibility:hidden;animation:preShow 0s 3s forwards}
+html.pre body>header,html.pre body>section{visibility:hidden;animation:preShow 0s 6s forwards}
 .clip-who{font-family:var(--head);font-weight:700;font-size:clamp(18px,4.6vw,21px);line-height:1.35;color:var(--navy);text-wrap:balance;text-align:center}
 </style></head><body>
 <div class="review" hidden>
@@ -1330,5 +1330,6 @@ addEventListener('scroll',stickShow,{passive:true});addEventListener('resize',st
 window.__moadonBoot=boot;
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
+window.__moadonBoot&&window.__moadonBoot();
 </script>
 </body></html>
