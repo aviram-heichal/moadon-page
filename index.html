@@ -543,6 +543,34 @@ section#secBridge .wrap .lines p{font-family:var(--head);font-weight:700;font-si
 .cta .cta-also{display:block;font-size:clamp(18px,4.8vw,21px);font-weight:700;margin-top:4px}
 #secBridge .meet{font-family:var(--head);font-weight:900;font-size:clamp(28px,7.6vw,40px);line-height:1.25;color:var(--navy);margin-top:18px;text-wrap:balance}
 #secBridge .meet b{color:var(--gold-deep)}
+.choice{display:grid;gap:18px;margin-top:14px}
+@media (min-width:760px){.choice{grid-template-columns:1fr 1fr;align-items:start}}
+.ccard{position:relative;border:3px solid var(--line);border-radius:16px;background:var(--paper);padding:22px 18px 20px;display:grid;gap:10px;text-align:center}
+.ccard.best{border:5px solid var(--navy);box-shadow:0 0 0 4px var(--gold),0 10px 28px rgba(16,35,63,.2);background:var(--gold-soft);padding-top:30px}
+.cbadge{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);font-family:var(--head);font-weight:900;font-size:18px;padding:4px 16px;border-radius:30px;white-space:nowrap}
+.ccard h3{font-family:var(--head);font-weight:900;font-size:clamp(26px,7vw,32px);color:var(--navy);margin:0}
+.cprice{font-family:var(--head);font-weight:900;font-size:clamp(44px,13vw,60px);line-height:1;color:var(--navy);margin:4px 0 0}
+.cprice small{display:block;font-size:clamp(18px,4.8vw,21px);font-weight:700;margin-top:6px}
+.cnote{font-size:clamp(17px,4.6vw,19px);line-height:1.4;color:var(--ink);margin:0}
+.clist{list-style:none;margin:6px 0 4px;padding:0;display:grid;gap:9px;text-align:right}
+.clist li{position:relative;padding-inline-start:32px;font-size:clamp(18px,4.8vw,20px);line-height:1.35}
+.clist li.yes::before{content:"✓";position:absolute;inset-inline-start:0;top:-1px;font-weight:900;font-size:22px;color:#1d8a3a}
+.clist li.no{color:#8a94a3;text-decoration:line-through}
+.clist li.no::before{content:"✕";position:absolute;inset-inline-start:2px;top:0;font-size:18px;color:#b4bcc8}
+.cta-alt{display:block;border:3px solid var(--navy);border-radius:10px;padding:12px 14px;font-family:var(--head);font-weight:800;font-size:clamp(20px,5.4vw,23px);color:var(--navy);text-decoration:none;background:#fff}
+.choice-sub{font-family:var(--head);font-weight:700;font-size:clamp(20px,5.4vw,24px);text-align:center;color:var(--navy);margin:0}
+.choice-end{font-family:var(--head);font-weight:700;font-size:clamp(19px,5vw,22px);line-height:1.4;text-align:center;color:var(--navy);margin-top:18px;text-wrap:balance}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+@media (min-width:760px){.mgrid{grid-template-columns:repeat(3,1fr)}}
+.mgrid figure{margin:0;position:relative}
+.mgrid img{width:100%;height:auto;display:block;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.mgrid figure.start img{box-shadow:0 0 0 4px var(--gold),0 4px 12px rgba(0,0,0,.3)}
+.mgrid figure.start figcaption{position:absolute;top:6px;right:6px;background:var(--gold);color:var(--navy);font-family:var(--head);font-weight:900;font-size:15px;padding:2px 10px;border-radius:20px}
+.mgrid-more{font-family:var(--head);font-weight:700;font-size:clamp(19px,5vw,22px);line-height:1.4;color:#fff;margin-top:18px;text-wrap:balance}
+.mgrid-more b{color:var(--gold)}
+section#secBridge .wrap .lines p:has(.chip){display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.chip{display:inline-block;background:var(--gold-soft);border:2px solid var(--gold);border-radius:30px;padding:6px 14px;font-size:clamp(18px,4.8vw,21px);color:var(--navy)}
+#topicsList[hidden],#mathGrid[hidden],#mathMore[hidden],#planSlider[hidden],[data-door][hidden],#secChoice[hidden],#secWhere[hidden],#secPain[hidden],#secOffer[hidden]{display:none}
 .clip-who{font-family:var(--head);font-weight:700;font-size:clamp(18px,4.6vw,21px);line-height:1.35;color:var(--navy);text-wrap:balance;text-align:center}
 </style></head><body>
 <div class="review" hidden>
@@ -556,7 +584,7 @@ section#secBridge .wrap .lines p{font-family:var(--head);font-weight:700;font-si
       <div class="faces">
         <img class="av" src="https://aviram-heichal.github.io/moadon-page/img/aviram_hero.jpg" alt="אבירם היכל">
       </div>
-      <div class="club-id"><b>מועדון הדור הבא</b><span>של אבירם היכל</span></div>
+      <div class="club-id" id="clubId"><b>מועדון הדור הבא</b><span>של אבירם היכל</span></div>
     </div>
     <p class="h1-hook" id="h1Hook" hidden></p>
     <h1 id="h1" class="lines">הסוף למלחמות<br>על שיעורי הבית</h1>
@@ -578,7 +606,7 @@ section#secBridge .wrap .lines p{font-family:var(--head);font-weight:700;font-si
         <p class="clip-arrive" id="clipArrive" hidden>הנה התרגיל, כמו שהבטחתי:</p>
         <p class="clip-top" id="clipTop" hidden></p>
     <p class="hook" id="clipHook"><span>טעימה קטנה</span> מכל האוצר שמחכה לך במועדון הדור הבא</p>
-    <div class="vwrap"><video id="clipV" controls playsinline preload="metadata"></video><button class="vslide" id="clipStart" type="button"><b id="clipSlide"></b><i aria-hidden="true"></i><small>טעימה קטנה מתוך אחת ההדרכות במועדון</small></button></div>
+    <div class="vwrap"><video id="clipV" controls playsinline preload="metadata"></video><button class="vslide" id="clipStart" type="button"><b id="clipSlide"></b><i aria-hidden="true"></i><small id="clipSlideSmall">טעימה קטנה מתוך אחת ההדרכות במועדון</small></button></div>
     <p class="clip-sub" id="clipSub"></p>
     <div class="watch"><p class="clip-watch" id="clipWatch"></p><p class="clip-after" id="clipAfter" hidden>אהבתם את זה? זה רק חלק קטן מההדרכה הראשונה.</p>
     <p class="clip-more-h" id="clipMoreH" hidden></p><p class="clip-more" id="clipMore"></p></div>
@@ -610,11 +638,51 @@ section#secBridge .wrap .lines p{font-family:var(--head);font-weight:700;font-si
   </div>
 </section>
 
+<section class="band s-white" id="secChoice" hidden>
+  <div class="wrap wide">
+    <h2>אז מה {מתאים לך|מתאים לך}?</h2>
+    <p class="choice-sub">יש 2 אפשרויות. הנה ההבדל ביניהן:</p>
+    <div class="choice">
+      <div class="ccard best">
+        <span class="cbadge">⭐ הכי משתלם</span>
+        <h3>מועדון הדור הבא</h3>
+        <p class="cprice">29 ש"ח <small>לחודש הראשון</small></p>
+        <p class="cnote">אחר כך 97 ש"ח לחודש. עוצרים מתי שרוצים, בהודעה אחת.<br>הגישה פתוחה כל עוד המנוי פעיל.</p>
+        <ul class="clist">
+          <li class="yes">תוכנית לוח הכפל המלאה</li>
+          <li class="yes">כל 14 תוכניות החשבון: חיבור וחיסור בלי אצבעות, מאונך, שברים, סדר פעולות, משוואות ועוד</li>
+          <li class="yes">המאמן הדיגיטלי לתרגול (בונוס למצטרפים עד 20 בנובמבר)</li>
+          <li class="yes">קבוצת ווטסאפ אישית איתי</li>
+          <li class="yes">הדרכה חיה בזום, כל חודש</li>
+          <li class="yes">ובונוס: מעל 45 הדרכות להורים, בכל נושא</li>
+        </ul>
+        <button class="cta js-form" type="button">אני רוצה את המועדון<small>29 ש"ח לחודש הראשון, בלי התחייבות</small></button>
+      </div>
+      <div class="ccard">
+        <h3>רק תוכנית לוח הכפל</h3>
+        <p class="cprice">97 ש"ח <small>תשלום אחד</small></p>
+        <p class="cnote">התוכנית נשארת אצלך לתמיד.</p>
+        <ul class="clist">
+          <li class="yes">תוכנית לוח הכפל המלאה</li>
+          <li class="no">שאר תוכניות החשבון</li>
+          <li class="no">המאמן הדיגיטלי לתרגול</li>
+          <li class="no">קבוצת ווטסאפ וזום חודשי</li>
+          <li class="no">הדרכות להורים</li>
+        </ul>
+        <a class="cta-alt" href="https://heichal.ravpage.co.il/Kefel-New#8192918_10005821">רק לוח הכפל, 97 ש"ח</a>
+      </div>
+    </div>
+    <p class="choice-end">בשביל להשוות: תוכנית לוח הכפל לבד עולה 97 ש"ח.<br>במועדון, החודש הראשון עולה 29 ש"ח, ולוח הכפל כבר בפנים.</p>
+  </div>
+</section>
+
 <section class="band s-navy" id="secWhat">
   <div class="wrap">
     <h2 id="whatIs">אבל רגע - מה בעצם מקבלים במועדון?</h2>
       <p class="club-def" id="clubDef">מועדון הדור הבא הוא מועדון ההורים הכי פרקטי שיש היום בישראל - מקום אחד, בטלפון ובמחשב, שבו הורים לומדים מה ואיך עושים, ומקבלים תוצאות עם הילד בכל נושא:</p>
-      <ul class="topics-list"><li>למידה</li><li>קשב וריכוז בלי תרופות</li><li>שיפור התנהגות</li><li>חשבון</li><li>הורות בלי מאבק</li><li>התפתחות אישית</li><li>לימוד קריאה</li><li>שגיאות כתיב</li><li>פחות מסכים</li><li>בוקר בלי ריבים</li><li>כבוד להורים</li><li>תקשורת טובה בבית</li><li>פחות ריבים בין האחים</li></ul>
+      <ul class="topics-list" id="topicsList"><li>למידה</li><li>קשב וריכוז בלי תרופות</li><li>שיפור התנהגות</li><li>חשבון</li><li>הורות בלי מאבק</li><li>התפתחות אישית</li><li>לימוד קריאה</li><li>שגיאות כתיב</li><li>פחות מסכים</li><li>בוקר בלי ריבים</li><li>כבוד להורים</li><li>תקשורת טובה בבית</li><li>פחות ריבים בין האחים</li></ul>
+      <div class="mgrid" id="mathGrid" hidden></div>
+      <p class="mgrid-more" id="mathMore" hidden></p>
       
   </div>
 </section>
@@ -635,7 +703,7 @@ section#secBridge .wrap .lines p{font-family:var(--head);font-weight:700;font-si
           <h3><span>2</span>תוכנית ללימוד חשבון וקריאה</h3>
           <div class="pillar-body">
             <p>צעד אחר צעד.</p>
-            <div class="slider" id="planSlider">
+            <div class="slider" id="planSlider" data-hide-door="heshbon">
               <button class="arr" type="button" data-dir="-1" aria-label="ההדרכה הקודמת">→</button>
               <div class="slides" id="planSlides" tabindex="0" aria-label="הדרכות בחשבון ובקריאה"></div>
               <button class="arr" type="button" data-dir="1" aria-label="ההדרכה הבאה">←</button>
@@ -719,7 +787,7 @@ section#secBridge .wrap .lines p{font-family:var(--head);font-weight:700;font-si
 
 <section class="band s-mist" id="secLearn">
   <div class="wrap">
-    <h2>{ואת יכולה|ואתה יכול} ללמוד את זה כבר עכשיו:</h2>
+    <h2 id="learnH">{ואת יכולה|ואתה יכול} ללמוד את זה כבר עכשיו:</h2>
     <ul class="ticks" id="learn"></ul>
     <p class="joinline" id="joinline"></p>
     <p class="rec" id="first"></p>
@@ -848,7 +916,7 @@ section#secBridge .wrap .lines p{font-family:var(--head);font-weight:700;font-si
   </div>
 </section>
 
-<section class="band s-mist">
+<section class="band s-mist" id="secWhere">
   <div class="wrap">
     <h2>ומאיפה לוקחים שעה בשבוע?</h2>
     <p class="big">בהרצאות החיות היה צריך לצאת מהבית כדי לשמוע אותי...</p>
@@ -936,6 +1004,8 @@ section#secBridge .wrap .lines p{font-family:var(--head);font-weight:700;font-si
   <div class="wrap">
     <h2>שאלות שהורים שואלים</h2>
     <div class="faq">
+      <details data-door="heshbon" hidden><summary>מה ההבדל בין תוכנית לוח הכפל לבין המועדון?</summary><p>תוכנית לוח הכפל מלמדת נושא אחד, לוח הכפל, והיא נשארת אצלך לתמיד (97 ש"ח, תשלום אחד). במועדון תוכנית לוח הכפל נמצאת בפנים, ולידה כל תוכניות החשבון, המאמן הדיגיטלי לתרגול, קבוצת ווטסאפ איתי, זום חודשי והדרכות להורים. החודש הראשון 29 ש"ח, ואחר כך 97 ש"ח לחודש.</p></details>
+      <details data-door="heshbon" hidden><summary>ואם אעצור את המנוי, מה נשאר אצלי?</summary><p>הגישה למועדון פתוחה כל עוד המנוי פעיל. כשעוצרים, הגישה נסגרת. מה שכן נשאר: מה {שלמדת|שלמדת} ומה שהילד כבר יודע. ומי שרוצה רק את לוח הכפל לתמיד, {יכולה|יכול} לבחור בתוכנית לוח הכפל לבד.</p></details>
       <details><summary>אין לי זמן. זה יעבוד גם ככה?</summary><p>מתחילים בהדרכה אחת, לא בכל המועדון. אורית, אשתי, בונה לך את ההמשך, ובערך שעה בשבוע מספיקה.</p></details>
       <details><summary>אני לא {חזקה|חזק} בחשבון. זה בשבילי?</summary><p>כן. כל נושא מפורק לצעדים, עם סרטון הדגמה וצ'ק ליסט. קודם {את רואה|אתה רואה} איך עושים, ואז עושה עם הילד.</p></details>
       <details><summary>לאיזה גיל זה מתאים?</summary><p>להורים לילדים מכיתה א' עד כיתה ט'. תוכניות החשבון מתחילות ביסודות, ומתקדמות צעד אחר צעד.</p></details>
@@ -1019,8 +1089,8 @@ const D={
     turn:['מאחורי ה-"לא בא לי" יש כמעט תמיד משהו קטן:','מילה שלא הבין, פער ישן, או הדרך שבה מדברים איתו.','<b>כשיודעים למצוא את זה, הריב נגמר מעצמו.</b>'],
     first:'אם הילד לא רוצה ללמוד, אני ממליץ לך להתחיל כבר עכשיו עם ההדרכה לרצות ללמוד, {ותראי איך את מצליחה|ותראה איך אתה מצליח} לרתום אותו הרבה יותר בקלות, ולגרום לו לזכור את החומר, ליהנות ולרצות הרבה יותר.',
     quotes:['shmani','sherman','bokai','barnea']},
-  heshbon:{tab:'לוח הכפל',h1Hook:'הילד לומד את לוח הכפל ולמחרת שוכח הכל?',cta:'אבירם, אני רוצה לעזור לילד לזכור את לוח הכפל לתמיד',ctaAlso:'(וגם את כל שאר היסודות בחשבון)',clip:{f:'heshbon',top:'למה הוא לומד את לוח הכפל, ולמחרת שוכח? כי הוא עוד לא הבין מה זה כפל. ככה מתחילים:',hook:'(לחצו על הסרטון וראו איך זה נראה עם ילד אמיתי)',watch:'{צפי|צפה} עד הסוף, וכבר בפעם הבאה שתשבו ללמוד {תוכלי|תוכל} לעשות את זה עם הילד.<small class="watch-small">(אפשר גם בלי קול, יש כתוביות)</small>',slide:'מה זה כפל? ככה ילד מבין את זה באמת',h:'מה זה כפל? ככה ילד מבין את זה באמת',sub:'הדגמה אמיתית שלי עם ילד, מתוך תוכנית לוח הכפל במועדון (6 דקות)',moreH:'וזה רק הצעד הראשון בתוכנית',more:'בתוכנית לוח הכפל {תלמדי|תלמד} צעד אחר צעד איך ללמד אותו את כל לוח הכפל בעל פה, בממוצע תוך 10 ימים, בכיף ובלי שישכח אותו.'},lead:'kefel',shelf:['math','learn','parents','focus','school'],strip:['kefel','add10','frac1','order','morning','add20','eq','want','vertical','neg','calm','big','secrets'],
-    order:['secEarly','secLearn','secPain','secTurn','secBridge','secWhat','secPillars','secOffer','secEasy','secShein','secHome','secHomeStories'],
+  heshbon:{tab:'לוח הכפל',brand:'<b>פשוט לזכור את לוח הכפל</b><span>התוכנית של אבירם היכל</span>',choice:true,mathGrid:true,mathMore:'ובנוסף, <b>כבונוס:</b> מעל 45 הדרכות להורים בכל נושא: למידה, קשב וריכוז, התנהגות, מסכים, בוקר בלי ריבים ועוד.',hideSecs:['secOffer','secPain','secWhere'],h1Hook:'הילד לומד את לוח הכפל ולמחרת שוכח הכל?',cta:'אבירם, אני רוצה לעזור לילד לזכור את לוח הכפל לתמיד',ctaAlso:'(וגם את כל שאר היסודות בחשבון)',clip:{f:'heshbon',top:'למה הוא לומד את לוח הכפל, ולמחרת שוכח? כי הוא עוד לא הבין מה זה כפל. ככה מתחילים:',hook:'(לחצו על הסרטון וראו איך זה נראה עם ילד אמיתי)',watch:'{צפי|צפה} עד הסוף, וכבר בפעם הבאה שתשבו ללמוד {תוכלי|תוכל} לעשות את זה עם הילד.<small class="watch-small">(אפשר גם בלי קול, יש כתוביות)</small>',slide:'מה זה כפל? ככה ילד מבין את זה באמת',h:'מה זה כפל? ככה ילד מבין את זה באמת',sub:'הדגמה אמיתית שלי עם ילד, מתוך תוכנית לוח הכפל (6 דקות)',slideSmall:'מתוך תוכנית לוח הכפל',moreH:'וזה רק הצעד הראשון בתוכנית',more:'בתוכנית לוח הכפל {תלמדי|תלמד} צעד אחר צעד איך ללמד אותו את כל לוח הכפל בעל פה, בממוצע תוך 10 ימים, בכיף ובלי שישכח אותו.'},lead:'kefel',shelf:['math','learn','parents','focus','school'],strip:['kefel','add10','frac1','order','morning','add20','eq','want','vertical','neg','calm','big','secrets'],
+    order:['secEarly','secTurn','secLearn','secBridge','secWhat','secPillars','secChoice','secEasy','secShein','secHome','secHomeStories'],
     heroQuote:'"הבת שלי תוך שבוע וחצי אלופה בלוח הכפל! המעבר מתסכול להצלחה היה פשוט קסום"<cite>נעמה שמש ברוידי, אמא לילדה בכיתה ג\'</cite>',
     earlyH:'מעל 5,400 הורים כבר לימדו את לוח הכפל בשיטה הזו.<br>הנה מה שהם מספרים:',
     pre:'{לאמא שיושבת|לאבא שיושב} ליד התרגיל {ושואלת|ושואל}: רגע, איך מלמדים את זה?',
@@ -1029,25 +1099,26 @@ const D={
     painH:'זה נשמע לך מוכר?',
     scene:[['ניסית','שירים, אצבעות, משחקי זיכרון.'],['אתמול','7 כפול 8. תשובה נכונה. כולם שמחים.'],['היום','הוא שוב סופר על האצבעות.']],
     after:['וככל שעובר הזמן,','הוא אומר שהוא <b>"לא טוב בחשבון".</b>','{ואת מתחילה|ואתה מתחיל} לפחד שהוא מאמין לזה.'],
-    learn:['איך להסביר לו בפשטות מה זה כפל','איך לתרגל איתו בעזרת משחק, כך שירצה לתרגל (ואפילו יבקש עוד)','איך הוא שולף את התשובות מהראש, ממש מהר, ולא שוכח'],
+    learnH:'מה יש בתוכנית לוח הכפל?',
+    learn:['4 סרטוני הדרכה','3 סרטוני הדגמה עם ילדים, כמו זה שראית למעלה','שיטת תרגול ייחודית ללימוד לוח הכפל בעל פה','צ\'קליסט לעבודה עם הילד, צעד אחר צעד'],
     join:'',
     leadLine:'',
     swapHead:'מה יכול להיות בקרוב',
     swap:[['סופר על האצבעות','שולף בעל פה'],['"אני לא טוב בחשבון"','"{תשאלי|תשאל} אותי, אני יודע!"'],['{את מחפשת|אתה מחפש} ביוטיוב איך מסבירים','{את יודעת|אתה יודע} מה הצעד הבא']],
     turnHook:'האמת היא ש...<br>זה לא שהוא מתעצל, וזה ממש לא הזיכרון שלו.',
-    turnH:'חשבון נבנה קומה על קומה',
-    turn:['מספיק פער אחד למטה, וכל מה שמעל מתנדנד.','לכן עוד תרגילים על אותו נושא לא תמיד עוזרים. קודם מוצאים איפה הפער.','<b>אחר כך סוגרים אותו נכון, נושא אחרי נושא.</b>','וזה עובד גם לילדים שאובחנו עם קשב וריכוז, לקות למידה או דיסקלקוליה.'],
+    turnH:'הוא פשוט עוד לא הבין מה זה כפל',
+    turn:['שירים, אצבעות ומשחקי זיכרון לא בונים הבנה.','כשילד מבין מה זה כפל, ומתרגל נכון, הוא שולף את התשובה מהראש.','<b>ואז הוא כבר לא שוכח.</b>','וזה עובד גם לילדים שאובחנו עם קשב וריכוז, לקות למידה או דיסקלקוליה.'],
     bridgeH:'אבל תוכנית לוח הכפל היא רק חלק ממשהו הרבה יותר גדול',
-    bridge:['מעל 40% מהילדים בכיתות ה\' ומעלה עדיין לא שולטים בלוח הכפל.','וילד שלא שולט בלוח הכפל מתקשה גם בחילוק, בשברים, באחוזים ובבעיות מילוליות.','ולכן בניתי משהו שיכול לעזור לך <b>להקפיץ את הילד בכל נושא חשוב בחשבון.</b>'],
+    bridge:['ילדים שמתקשים בלוח הכפל, מתקשים פעמים רבות גם בעוד נושאים:','<span class="chip">סופרים על האצבעות בחיבור ובחיסור</span><span class="chip">מתבלבלים בחיבור ובחיסור במאונך</span><span class="chip">נתקעים בשברים, בסדר פעולות ובבעיות מילוליות</span>','כי חשבון נבנה קומה על קומה. מספיק פער אחד למטה, וכל מה שמעל מתנדנד.','ולכן בניתי משהו שיכול לעזור לך <b>להקפיץ את הילד בכל נושא חשוב בחשבון.</b>'],
     bridgeMeet:'אני רוצה להכיר לך את <b>מועדון הדור הבא</b>...',
     whatH:'אז מה זה מועדון הדור הבא?',
-    clubDef:'מועדון הדור הבא הוא מקום אחד, בטלפון ובמחשב, שבו הורים לומדים מה ואיך עושים עם הילד, צעד אחר צעד. <b>תוכנית לוח הכפל נמצאת בתוכו</b>, ולידה תוכניות לכל היסודות בחשבון, וגם הדרכות להורים בכל נושא:',
+    clubDef:'מועדון הדור הבא הוא מקום אחד, בטלפון ובמחשב, שבו הורים לומדים מה ואיך עושים עם הילד, צעד אחר צעד. <b>תוכנית לוח הכפל נמצאת בתוכו</b>, ולידה כל תוכניות החשבון:',
     pillOrder:[1,3,2,0],
-    pillTitles:{1:'תוכנית מלאה ללימוד חשבון: מלוח הכפל ועד שברים ומשוואות (וגם קריאה)',0:'ובונוס: האוצר - מעל 45 הדרכות להורים, סופר מעשיות'},
+    pillTitles:{1:'כל 14 תוכניות החשבון שראית למעלה',0:'ובונוס: האוצר - מעל 45 הדרכות להורים, סופר מעשיות'},
     ctaPre:'תוכנית לוח הכפל נפתחת לך תוך כמה דקות, גם בטלפון',
     homeHook:'וזה לא נגמר בחשבון.',
-    first:'אם הילד מתקשה בלוח הכפל, אני ממליץ לך להתחיל כבר עכשיו עם ההדרכה פשוט לזכור את לוח הכפל, {ותראי איך את מלמדת|ותראה איך אתה מלמד} אותו בקלות, והוא זוכר בעל פה.',
-    quotes:['malul2','broidy','eitan2','sherman2','moshe','esh','shilo','tsvik'],earlyN:3,noStrip:true,hide:['malul','sherman','eitan'],teachers:['rivka','teitelbaum']},
+    first:'ובסוף התוכנית {תדעי|תדע}: איך להסביר לו בפשטות מה זה כפל, איך לתרגל איתו בעזרת משחק כך שירצה לתרגל (ואפילו יבקש עוד), ואיך הוא שולף את התשובות מהראש, ממש מהר, ולא שוכח.',
+    quotes:['malul2','eitan2','sherman2','moshe','esh','shilo','tsvik'],earlyN:3,noStrip:true,hide:['malul','sherman','eitan','broidy'],teachers:['rivka','teitelbaum']},
   boker:{tab:'בוקר',clip:{f:'boker',watch:'{צפי|צפה} עד הסוף, וכבר מחר בבוקר {תוכלי|תוכל} לנסות את זה.<small class="watch-small">(אפשר גם בלי קול, יש כתוביות)</small>',h:'הם ניסו הכל. ואז שאלתי שאלה אחת.',sub:'קטע אמיתי מתוך ההדרכה "בוקר מנצח" במועדון. 4 דקות.',tryH:'{נסי|נסה} את זה מחר בבוקר:',try:['{שימי|שים} רמקול קטן בחדר שלו.','מרחוק, {הפעילי|הפעל} מוזיקה קצבית שהוא אוהב.','לא נכנסים לחדר. {ותראי|ותראה} מה קורה.']},lead:'morning',shelf:['parents','learn','focus','math','school'],strip:['morning','calm','coop','siblings','time','want','kefel','happy','screens','mistakes','secrets_f','add10','uzi1','discipline'],
     pre:'{לאמא שהבוקר שלה|לאבא שהבוקר שלו} נגמר עוד לפני שהתחיל',
     short:'קראת לו שלוש פעמים.<br>"איפה הנעל?" ואחיו כבר מציק לו.<br>{ואת צועקת|ואתה צועק} במסדרון.',h1:'בוקר מנצח.<br>בלי ריבים,<br>בלי ויכוחים<br>ובלי עצבים.',
@@ -1116,19 +1187,26 @@ function fitH1(){const h=$('h1');h.style.fontSize='';let fs=parseFloat(getComput
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitH1);
 addEventListener('resize',fitH1);
 // a door may put the shared sections in its own order (kefel door: sell the kefel program first, then reveal the club)
-const SECS=['secShein','secOffer','secBridge','secWhat','secPillars','secEarly','secEasy','secPain','secTurn','secLearn','secHome','secHomeStories'];
+const SECS=['secShein','secOffer','secChoice','secBridge','secWhat','secPillars','secEarly','secEasy','secPain','secTurn','secLearn','secHome','secHomeStories'];
 const EARLY0=$('earlyH').innerHTML;
 function placeSecs(order){const list=order||SECS;let at=$('clipSec');list.forEach(id=>{const el=$(id);at.after(el);at=el});SECS.filter(id=>!list.includes(id)).forEach(id=>{const el=$(id);at.after(el);at=el})}
 // door-specific button wording (kefel door); the first text of each button is swapped, the small line under it stays
 const WHAT0=$('whatIs').innerHTML,DEF0=$('clubDef').innerHTML;
 const PIL=[...document.querySelectorAll('.pillars>li')].map(li=>[li,li.querySelector('h3').innerHTML]);
-const CTAS=[...document.querySelectorAll('button.cta:not([type=submit])')].map(b=>[b,b.firstChild.nodeValue]);
+const LEARNH0=$('learnH').innerHTML,BRAND0=$('clubId').innerHTML,SLSM0=$('clipSlideSmall').textContent;
+const CTAS=[...document.querySelectorAll('button.cta:not([type=submit])')].filter(b=>!b.closest('.stick,#secChoice')).map(b=>[b,b.firstChild.nodeValue]);
 function render(key){
   if(!D[key]) return; const d=JSON.parse(g(JSON.stringify(D[key])));
   placeSecs(d.order);
   $('stripLabel').hidden=$('stripBox').hidden=!!d.noStrip;
   $('whatIs').innerHTML=d.whatH||WHAT0; $('clubDef').innerHTML=d.clubDef||DEF0; $('bridgeMeet').innerHTML=d.bridgeMeet||''; $('bridgeMeet').hidden=!d.bridgeMeet;
   { const ol=document.querySelector('.pillars'); (d.pillOrder||[0,1,2,3]).forEach((i,n)=>{const [li,h]=PIL[i];ol.appendChild(li);const t=(d.pillTitles&&d.pillTitles[i])||h.replace(/^<span>\d<\/span>/,'');li.querySelector('h3').innerHTML=`<span>${n+1}</span>`+t.replace(/^<span>\d<\/span>/,'')}); }
+  $('learnH').innerHTML=d.learnH||g(LEARNH0); $('clubId').innerHTML=d.brand||BRAND0; $('clipSlideSmall').textContent=(d.clip&&d.clip.slideSmall)||SLSM0;
+  ['secOffer','secPain','secWhere'].forEach(id=>{$(id).hidden=(d.hideSecs||[]).includes(id)}); $('secChoice').hidden=!d.choice;
+  document.querySelectorAll('[data-door]').forEach(e=>{e.hidden=e.dataset.door!==key});
+  document.querySelectorAll('[data-hide-door]').forEach(e=>{e.hidden=e.dataset.hideDoor===key});
+  $('topicsList').hidden=!!d.mathGrid; $('mathGrid').hidden=$('mathMore').hidden=!d.mathGrid;
+  if(d.mathGrid){$('mathGrid').innerHTML=LIB.math.map(([k,t])=>`<figure${k==='kefel'?' class="start"':''}><img src="https://aviram-heichal.github.io/moadon-page/img/lib/${k}.jpg" alt="${t.replace(/"/g,'&quot;')}" loading="lazy">${k==='kefel'?'<figcaption>✓ כאן מתחילים</figcaption>':''}</figure>`).join(''); $('mathMore').innerHTML=d.mathMore||'';}
   $('h1Hook').textContent=d.h1Hook||''; $('h1Hook').hidden=!d.h1Hook;
   CTAS.forEach(([b,t])=>{const sm=b.querySelector('small');if(sm){if(!sm.dataset.t0)sm.dataset.t0=sm.innerHTML;const pre=d.ctaPre&&d.bridge&&(b.compareDocumentPosition($('secBridge'))&Node.DOCUMENT_POSITION_FOLLOWING);sm.innerHTML=pre?d.ctaPre:sm.dataset.t0}b.firstChild.nodeValue=d.cta?d.cta+' ':t;b.classList.toggle('cta-long',!!d.cta);let a=b.querySelector('.cta-also');if(d.ctaAlso){if(!a){a=document.createElement('span');a.className='cta-also';b.firstChild.after(a)}a.textContent=d.ctaAlso}else if(a)a.remove()});
   $('heroQuote').innerHTML=d.heroQuote||''; $('heroQuote').hidden=!d.heroQuote;
@@ -1210,7 +1288,7 @@ addEventListener('popstate',()=>{jfHist=false;closeForm()});
 $('jfBack').addEventListener('click',closeForm);
 jf.addEventListener('click',e=>{if(e.target===jf)closeForm()});
 const payBtn=document.querySelector('.js-pay');
-document.querySelectorAll('.js-join').forEach(b=>b.addEventListener('click',()=>{const r=payBtn.getBoundingClientRect();if(r.top>=0&&r.bottom<=innerHeight-70)openForm();else goJoin()}));
+document.querySelectorAll('.js-join').forEach(b=>b.addEventListener('click',()=>{if(!$('secChoice').hidden){$('secChoice').scrollIntoView({behavior:'smooth'});return}const r=payBtn.getBoundingClientRect();if(r.top>=0&&r.bottom<=innerHeight-70)openForm();else goJoin()}));
 /* images load during the jump and push the price down, so re-align until the user scrolls */
 function goJoin(){
   const go=()=>$('join').scrollIntoView({behavior:'instant'});go();
@@ -1223,7 +1301,7 @@ payBtn.addEventListener('click',openForm);
 const offerBtn=document.querySelector('.js-open'),stick=document.querySelector('.stick');
 offerBtn.addEventListener('click',openForm);
 document.querySelectorAll('.js-form').forEach(b=>b.addEventListener('click',openForm));
-function stickShow(){const r=offerBtn.getBoundingClientRect();stick.hidden=r.top<innerHeight&&r.bottom>0||r.top>=innerHeight}
+function stickShow(){const r=($('secChoice').hidden?offerBtn:$('secChoice')).getBoundingClientRect();stick.hidden=r.top<innerHeight&&r.bottom>0||r.top>=innerHeight}
 addEventListener('scroll',stickShow,{passive:true});addEventListener('resize',stickShow);stickShow();
 
 }
