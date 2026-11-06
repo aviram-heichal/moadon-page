@@ -531,6 +531,10 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
 .cost-box .compare{background:#fff}
 #join .cost-box .price,.cost-box .price{white-space:nowrap;font-size:clamp(52px,17vw,96px)}
 .cost-box>*{max-width:100%}
+.hero-quote{font-family:var(--head);font-weight:700;font-size:clamp(19px,5vw,23px);line-height:1.4;color:var(--gold);border-inline-start:4px solid var(--gold);padding-inline-start:12px;margin:0 0 14px;text-wrap:balance}
+.hero-quote cite{display:block;font-style:normal;font-weight:600;font-size:clamp(15px,3.9vw,17px);color:#fff;margin-top:4px}
+#secBridge .lines p{font-size:clamp(21px,5.4vw,26px);line-height:1.45}
+#secBridge .lines b{color:var(--navy)}
 .clip-who{font-family:var(--head);font-weight:700;font-size:clamp(18px,4.6vw,21px);line-height:1.35;color:var(--navy);text-wrap:balance;text-align:center}
 </style></head><body>
 <div class="review" hidden>
@@ -546,12 +550,13 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
       </div>
       <div class="club-id"><b>מועדון הדור הבא</b><span>של אבירם היכל</span></div>
     </div>
-    <h1 id="h1"></h1>
+    <h1 id="h1" class="lines">הסוף למלחמות<br>על שיעורי הבית</h1>
     <button type="button" class="clip-jump" id="clipJump" hidden>▶ באתם בשביל התרגיל? לחצו כאן לצפייה (4 דקות)</button>
   </div>
   <div class="wrap hero-more">
-    <p class="short-pain" id="short"></p>
-    <p class="sub" id="sub"></p>
+    <p class="hero-quote" id="heroQuote" hidden></p>
+    <p class="short-pain" id="short">את: "תפתח מחברת"<br>הילד: "עוד מעט"<br>את אומרת את זה כבר בפעם הרביעית, ואז...<br>את כבר מאבדת את זה, והוא מתוסכל!<span class="not-must">אבל זה לא חייב להיות ככה!</span></p>
+    <p class="sub" id="sub">למדי עכשיו את הכלים המעשיים שיעזרו לך לגרום לילד לרצות ללמוד -<br>בלי צעקות, ובלי להיות המורה שלו.</p>
     <div class="press-top"><span>כפי שהוצג ב:</span><img src="https://aviram-heichal.github.io/moadon-page/img/press.jpg" alt="כאן 11, ערוץ 12, NTD"></div>
   </div>
   <p class="strip-label">הצצה למה שמחכה לך במועדון הדור הבא להורים:</p>
@@ -571,11 +576,11 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
   </div>
 </section>
 
-<section class="band s-white guy-band">
+<section class="band s-white guy-band" id="secShein">
   <div class="wrap"><div class="guy-big" id="homeBig" style="margin-bottom:24px"></div><div class="guy-big" id="guyBig"></div></div>
 </section>
 
-<section class="band s-mist clip-offer">
+<section class="band s-mist clip-offer" id="secOffer">
   <div class="wrap">
     <p class="offer-less">והכול בפחות ממחיר של שיעור פרטי אחד בחשבון או שפה</p>
     <p class="offer-h">החודש הראשון שלך במועדון:</p>
@@ -588,7 +593,14 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
   </div>
 </section>
 
-<section class="band s-navy">
+<section class="band s-white kbridge" id="secBridge" hidden>
+  <div class="wrap">
+    <h2 id="bridgeH"></h2>
+    <div class="lines" id="bridge"></div>
+  </div>
+</section>
+
+<section class="band s-navy" id="secWhat">
   <div class="wrap">
     <h2 id="whatIs">אבל רגע - מה בעצם מקבלים במועדון?</h2>
       <p class="club-def">מועדון הדור הבא הוא מועדון ההורים הכי פרקטי שיש היום בישראל - מקום אחד, בטלפון ובמחשב, שבו הורים לומדים מה ואיך עושים, ומקבלים תוצאות עם הילד בכל נושא:</p>
@@ -597,7 +609,7 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
   </div>
 </section>
 
-<section class="band s-mist">
+<section class="band s-mist" id="secPillars">
   <div class="wrap">
     <h2 class="two">במועדון מחכים לך<b>4 דברים שישנו לך את הבית:</b></h2>
     <ol class="pillars">
@@ -652,14 +664,14 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
   </div>
 </section>
 
-<section class="band s-white">
+<section class="band s-white" id="secEarly">
   <div class="wrap wide">
-    <h2>מעל 1,600 הורים כבר הצטרפו.<br>ככה נראה הבית אצלם, אחרי שהתחילו ללמוד:</h2>
+    <h2 id="earlyH">מעל 1,600 הורים כבר הצטרפו.<br>ככה נראה הבית אצלם, אחרי שהתחילו ללמוד:</h2>
     <div class="stories" id="earlyStories"></div>
   </div>
 </section>
 
-<section class="band s-navy">
+<section class="band s-navy" id="secEasy">
   <div class="wrap">
     <h2>כמה קל להתחיל?<br>ככה זה הולך אחרי שנרשמים:</h2>
     <ol class="easy">
@@ -676,7 +688,7 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
   </div>
 </section>
 
-<section class="band s-mist">
+<section class="band s-mist" id="secPain">
   <div class="wrap">
     <p class="pre pain-pre" id="pre"></p>
     <h2 id="painH"></h2>
@@ -685,7 +697,7 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
   </div>
 </section>
 
-<section class="band s-white">
+<section class="band s-white" id="secTurn">
   <div class="wrap">
     <p class="hook" id="turnHook"></p>
     <h2 id="turnH"></h2>
@@ -695,7 +707,7 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
   </div>
 </section>
 
-<section class="band s-mist">
+<section class="band s-mist" id="secLearn">
   <div class="wrap">
     <h2>{ואת יכולה|ואתה יכול} ללמוד את זה כבר עכשיו:</h2>
     <ul class="ticks" id="learn"></ul>
@@ -710,7 +722,7 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
   </div>
 </section>
 
-<section class="band s-navy home">
+<section class="band s-navy home" id="secHome">
   <div class="wrap">
     <p class="hook" id="homeHook" hidden></p>
     <h2>הבית שלך יכול<br>להיות מקום אחר</h2>
@@ -723,7 +735,7 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
   </div>
 </section>
 
-<section class="band s-white">
+<section class="band s-white" id="secHomeStories">
   <div class="wrap wide">
     <h2>הנה מה שהורים מספרים<br>על התוצאות בבית:</h2>
     <p class="results-line">פחות מאבקים, יותר שקט, וילד שמאמין בעצמו.</p>
@@ -943,7 +955,8 @@ h2.two b{display:block;color:var(--navy);font-weight:900}
 <script>
 (function(){var m=document.querySelector('meta[name=viewport]');if(!m){m=document.createElement('meta');m.name='viewport';(document.head||document.documentElement).appendChild(m)}m.content='width=device-width,initial-scale=1,viewport-fit=cover'})();
 (function(){
-function boot(){
+var done=0;function boot(){
+if(done)return;done=1;
 document.title='מועדון הדור הבא של אבירם היכל';
 
 const Q={
@@ -960,6 +973,13 @@ const Q={
   rivka:{t:'"לראות את האושר בעיניים של הילדים"',q:'צדקת, השיעורים שלך ממש מעולים. צפיתי בשני נושאים, חיבור עד 10, וחיבור עד 20, וכבר יישמתי את מה שלמדתי עם ילדה אחת בכיתה ב. אז, שוב, ממש תודה על שפקחת את עיניי לראות את העושר שאני יכולה לקבל ממך, ולהעלות את טיב השיעורים שלי, ואז לראות את האושר בעיניים של הילדים.',c:'רבקה סימס, מורה פרטנית לחשבון'},
   fokshner:{t:'"התחלנו לקבל שבחים מהמורים במקום תלונות"',q:'בכיתה א\' עברנו מורה מורה באסיפת ההורים וקיבלנו רק תלונות. עברנו אבחון והמליצו לליאור כדור. בזכות העזרה שקיבלנו מאבירם במועדון הדור הבא ועם הכלים שלמדנו, ליאור היום מצליח בכיתה ואנחנו מקבלים שבחים. והכול בלי כדור אחד של ריטלין.',c:'תומר פוקשנר',a:'fokshner'},
   barnea:{t:'"קיבלתי בדיוק מה שחיפשתי"',q:'הרגשתי שאני מאבדת את הבן שלי בלימודים. בדור הבא של אבירם קיבלתי כלים פרקטיים שאפשר ליישם מייד עם הילדים. גם בלהביא אותם ללמוד ולרצות, וגם באיך ללמד אותם כדי שיבינו באמת.',c:'שרון ברנע',a:'barnea'},
+  malul2:{door:'heshbon',t:'"אבירם, אנחנו רוצים לומר לך תודה, תודה ושוב תודה!"',q:'הביטחון העצמי של נויה ותחושת הסיפוק שלה מעצמה עולים וגוברים. היא מצליחה לזכור את התרגילים והיא רוצה ללמוד עוד ועוד. גם האמונה שניטעה בי שהבת שלי היא "לא חכמה מספיק" או שהיא מאותגרת בעלת "הפרעת קשב וריכוז", "לקות למידה" או שיש לה "דיסקלקוליה" הלכה והתפוגגה!',c:'אבישי מלול מעפולה, אבא של נויה',a:'malul'},
+  sherman2:{door:'heshbon',t:'"זה עובד כמו קסם, הילדה פשוט שולפת את לוח הכפל מהראש!"',q:'הבת שלנו התקשתה לזכור את לוח הכפל. ניסינו שיטות של שירים, אצבעות, משחק זיכרון ומה לא? אבל זה פשוט לא נקלט. בעלי רכש את התוכנית של אבירם והיא עבדה כמו קסם! תוך זמן קצר הילדה פשוט "שכפלה" את לוח הכפל כמו שאבירם מסביר בתוכנית והיום היא יודעת אותו בשליפה! תודה גדולה',c:'אביבית שרמן, רמת השרון',a:'sherman'},
+  moshe:{door:'heshbon',t:'"הלמידה שלי עם שי הפכה לחוויה נעימה והיא למדה את לוח הכפל"',q:'שי מאוד שמחה אחרי שאנחנו יושבות לתרגל את לוח הכפל. היום היא אפילו הפתיעה אותי וביקשה בעצמה שנעשה תרגילים! עד היום היו לה קשיים מאוד גדולים לתפוס חשבון בכיתה, וכעת אני יודעת איך ללמד אותה בדרך שהיא מבינה. ועכשיו היא שולטת בלוח כפל - זה הפך להיות פשוט וקל - פשוט פצצה!',c:'חלי משה, אמא של שי מראשון לציון'},
+  esh:{door:'heshbon',t:'"זה שונה לגמרי לדעת את החומר ולדעת איך ללמד אותו!"',q:'למרות שאני יודעת את לוח הכפל ואת החומר בחשבון - לא ידעתי איך להסביר אותו לילדים שלי כמו שצריך. בקורס הזה קיבלתי את השיטה המדויקת איך ללמד אותם את לוח הכפל במהירות! מהרגע הראשון שהתחלתי ליישם איתם - זה עבד כמו קסם. אני הפכתי להרבה יותר סבלנית והילדים הרבה יותר מרוכזים ומשתפים איתי פעולה - והכי כיף זה שרואים שהם מבינים ומצליחים.',c:'אורטל אש, אמא שגרה בלונדון'},
+  shilo:{door:'heshbon',t:'"הבן שלי שאל: אמא, למה לא מלמדים ככה בבית הספר?"',q:'הלכתי ללמוד שיטות להוראה מותאמת כדי לעזור לילד שלי בחשבון - אבל אף תוכנית לא היתה כל כך פרקטית כמו התוכנית הזו. זו שיטה שעובדת וכיף ללמוד עם הילדים. הבן שלי כל כך נהנה ושאל: "אמא, למה לא מלמדים ככה גם בבית ספר?" ממליצה בחום!',c:'אורית שילו, מעלה אדומים'},
+  tsvik:{door:'heshbon',t:'"אבירם פיצח את השיטה איך לגרום לילדים להבין ולרצות!"',q:'אבירם היכל פתר את החידה: כיצד להצליח ללמד ילדים את לוח הכפל וחשבון בכלל בצורה שהם יבינו ויפנימו! רואים את האסימונים נופלים למקומות הנכונים ואת ההנאה בלימודים. זה מהיר כמו מטאור. תודה לך אבירם',c:'מאיה צויק, אמא ל-3 משוהם'},
+  teitelbaum:{door:'heshbon',t:'"בשום מקום לא למדתי את הכלים שלמדתי עם אבירם"',q:'אלו כלים פשוטים להבנה ומאוד מאוד פרקטיים שכל מורה והורה יכולים וחייבים להשתמש בהם. היום, בעקבות הקורס עם אבירם, אני מלמדת שונה בכיתה ובצורה שהילדים הרבה יותר רוצים ללמוד!!! ממליצה בחום רב גם למורים וגם להורים!',c:'עדי טיטלבוים, מורה לחינוך מיוחד בבית ספר יסודי'},
   kazes:{t:'"ההרצאות מרתקות"',q:'אני מורה כבר מעל 20 שנה. עברתי הרבה השתלמויות שלא הועילו לי כלל. בהדרכות של אבירם אני עוברת חוויה מיוחדת במינה. תודה על ההדרכות המרתקות והכלים המעשיים.',c:'עירית קזס, מורה',a:'kazes'}
 };
 const LIB={
@@ -988,22 +1008,29 @@ const D={
     turn:['מאחורי ה-"לא בא לי" יש כמעט תמיד משהו קטן:','מילה שלא הבין, פער ישן, או הדרך שבה מדברים איתו.','<b>כשיודעים למצוא את זה, הריב נגמר מעצמו.</b>'],
     first:'אם הילד לא רוצה ללמוד, אני ממליץ לך להתחיל כבר עכשיו עם ההדרכה לרצות ללמוד, {ותראי איך את מצליחה|ותראה איך אתה מצליח} לרתום אותו הרבה יותר בקלות, ולגרום לו לזכור את החומר, ליהנות ולרצות הרבה יותר.',
     quotes:['shmani','sherman','bokai','barnea']},
-  heshbon:{tab:'חשבון',clip:{f:'heshbon',watch:'{צפי|צפה} עד הסוף, וכבר הערב {תוכלי|תוכל} לעשות את זה עם הילד.',h:'מה זה כפל? {תראי|תראה} איך הוא מבין את זה',sub:'הדגמה אמיתית שלי עם ילד, מתוך תוכנית לוח הכפל במועדון. 6 דקות.',tryH:'{נסי|נסה} את זה הערב:',try:['{קחי|קח} כמה אבנים או מטבעות, ו{שבי|שב} איתו ליד השולחן.','{עשי|עשה} איתו בדיוק מה שרואים בסרטון.','רק אחרי שהוא הבין מה זה כפל, עוברים לתרגילים.'],more:'בהדרכות החשבון במועדון {תלמדי|תלמד}, בין היתר, איך ללמד את הילד את לוח הכפל בעל פה, במהירות (בממוצע תוך כמה ימים), בלי שישכח אותו יותר!'},lead:'kefel',shelf:['math','learn','parents','focus','school'],strip:['kefel','add10','frac1','order','morning','add20','eq','want','vertical','neg','calm','big','secrets'],
+  heshbon:{tab:'לוח הכפל',clip:{f:'heshbon',top:'למה הוא לומד את לוח הכפל, ולמחרת שוכח? כי הוא עוד לא הבין מה זה כפל. ככה מתחילים:',hook:'(לחצו על הסרטון וראו איך זה נראה עם ילד אמיתי)',watch:'{צפי|צפה} עד הסוף, וכבר בפעם הבאה שתשבו ללמוד {תוכלי|תוכל} לעשות את זה עם הילד.',slide:'מה זה כפל? ככה ילד מבין את זה באמת',h:'מה זה כפל? ככה ילד מבין את זה באמת',sub:'הדגמה אמיתית שלי עם ילד, מתוך תוכנית לוח הכפל במועדון (6 דקות)',moreH:'וזה רק הצעד הראשון בתוכנית',more:'בתוכנית לוח הכפל {תלמדי|תלמד} צעד אחר צעד איך ללמד אותו את כל לוח הכפל בעל פה, בממוצע תוך 10 ימים, בכיף ובלי שישכח אותו.'},lead:'kefel',shelf:['math','learn','parents','focus','school'],strip:['kefel','add10','frac1','order','morning','add20','eq','want','vertical','neg','calm','big','secrets'],
+    order:['secEarly','secLearn','secPain','secTurn','secBridge','secWhat','secPillars','secOffer','secEasy','secShein','secHome','secHomeStories'],
+    heroQuote:'"הבת שלי תוך שבוע וחצי אלופה בלוח הכפל! המעבר מתסכול להצלחה היה פשוט קסום"<cite>נעמה שמש ברוידי, אמא לילדה בכיתה ג\'</cite>',
+    earlyH:'מעל 5,400 הורים כבר לימדו את לוח הכפל בשיטה הזו.<br>הנה מה שהם מספרים:',
     pre:'{לאמא שיושבת|לאבא שיושב} ליד התרגיל {ושואלת|ושואל}: רגע, איך מלמדים את זה?',
-    short:'אתמול 7 כפול 8. תשובה נכונה.<br>היום הוא סופר על האצבעות.<br>ובערב {את מחפשת|אתה מחפש} ביוטיוב איך מסבירים שברים.',h1:'לוח הכפל בעל פה.<br>בשבועיים⁠-⁠שלושה.<br>בלי מאבק.',
-    sub:'ואחריו שברים, סדר פעולות וכל היסודות.<br>גם אם {את|אתה} לא "{טובה|טוב} בחשבון".',
+    short:'אתמול הוא ידע 7 כפול 8.<br>היום הוא שוב סופר על האצבעות.<br>ניסית שירים, אצבעות ומשחקי זיכרון, וכלום לא נתפס?<span class="not-must">אבל זה לא חייב להיות ככה!</span>',h1:'לוח הכפל בעל פה.<br>פעם אחת ולתמיד.',
+    sub:'{למדי|למד} איך ללמד אותו את לוח הכפל, בממוצע תוך 10 ימים -<br>בלי מריבות, וגם אם {את לא מורה|אתה לא מורה}.',
     painH:'זה נשמע לך מוכר?',
-    scene:[['אתמול','7 כפול 8. תשובה נכונה. כולם שמחים.'],['היום','הוא סופר על האצבעות.'],['בערב','{את מחפשת|אתה מחפש} ביוטיוב איך מסבירים שברים.']],
+    scene:[['ניסית','שירים, אצבעות, משחקי זיכרון.'],['אתמול','7 כפול 8. תשובה נכונה. כולם שמחים.'],['היום','הוא שוב סופר על האצבעות.']],
     after:['וככל שעובר הזמן,','הוא אומר שהוא <b>"לא טוב בחשבון".</b>','{ואת מתחילה|ואתה מתחיל} לפחד שהוא מאמין לזה.'],
-    learn:['מאיפה מתחילים עם הילד','איך מלמדים לוח כפל בעל פה, בלי מאבק','איך סוגרים פערים, נושא אחרי נושא'],
-    join:'כל זה ועוד הרבה הרבה יותר מחכה לך במועדון.',
+    learn:['איך להסביר לו בפשטות מה זה כפל','איך לתרגל איתו בעזרת משחק, כך שירצה לתרגל (ואפילו יבקש עוד)','איך הוא שולף את התשובות מהראש, ממש מהר, ולא שוכח'],
+    join:'וזה רק החדר הראשון. במועדון מחכה לך הרבה יותר.',
+    leadLine:'{הרשמי|הירשם} למועדון, {והתחילי|והתחל} כבר היום את תוכנית לוח הכפל.',
     swapHead:'מה יכול להיות בקרוב',
     swap:[['סופר על האצבעות','שולף בעל פה'],['"אני לא טוב בחשבון"','"{תשאלי|תשאל} אותי, אני יודע!"'],['{את מחפשת|אתה מחפש} ביוטיוב איך מסבירים','{את יודעת|אתה יודע} מה הצעד הבא']],
-    turnHook:'חשבון נבנה קומה על קומה.',
-    turnH:'מספיק פער אחד למטה, וכל מה שמעל מתנדנד',
-    turn:['לכן עוד תרגילים על אותו נושא לא תמיד עוזרים.','קודם מוצאים איפה הפער.','<b>אחר כך סוגרים אותו נכון, נושא אחרי נושא.</b>'],
+    turnHook:'האמת היא ש...<br>זה לא שהוא מתעצל, וזה ממש לא הזיכרון שלו.',
+    turnH:'חשבון נבנה קומה על קומה',
+    turn:['מספיק פער אחד למטה, וכל מה שמעל מתנדנד.','לכן עוד תרגילים על אותו נושא לא תמיד עוזרים. קודם מוצאים איפה הפער.','<b>אחר כך סוגרים אותו נכון, נושא אחרי נושא.</b>','וזה עובד גם לילדים שאובחנו עם קשב וריכוז, לקות למידה או דיסקלקוליה.'],
+    bridgeH:'אז למה לעצור בלוח הכפל?',
+    bridge:['מעל 40% מהילדים בכיתות ה\' ומעלה עדיין לא שולטים בלוח הכפל.','וילד שלא שולט בלוח הכפל מתקשה גם בחילוק, בשברים, באחוזים ובבעיות מילוליות.','<b>לכן במועדון, לוח הכפל הוא רק ההתחלה.</b>'],
+    homeHook:'וזה לא נגמר בחשבון.',
     first:'אם הילד מתקשה בלוח הכפל, אני ממליץ לך להתחיל כבר עכשיו עם ההדרכה פשוט לזכור את לוח הכפל, {ותראי איך את מלמדת|ותראה איך אתה מלמד} אותו בקלות, והוא זוכר בעל פה.',
-    quotes:['broidy','malul','shuster','sherman']},
+    quotes:['malul2','sherman2','moshe','esh','shilo','tsvik','broidy'],hide:['malul','sherman'],teachers:['rivka','teitelbaum']},
   boker:{tab:'בוקר',clip:{f:'boker',watch:'{צפי|צפה} עד הסוף, וכבר מחר בבוקר {תוכלי|תוכל} לנסות את זה.<small class="watch-small">(אפשר גם בלי קול, יש כתוביות)</small>',h:'הם ניסו הכל. ואז שאלתי שאלה אחת.',sub:'קטע אמיתי מתוך ההדרכה "בוקר מנצח" במועדון. 4 דקות.',tryH:'{נסי|נסה} את זה מחר בבוקר:',try:['{שימי|שים} רמקול קטן בחדר שלו.','מרחוק, {הפעילי|הפעל} מוזיקה קצבית שהוא אוהב.','לא נכנסים לחדר. {ותראי|ותראה} מה קורה.']},lead:'morning',shelf:['parents','learn','focus','math','school'],strip:['morning','calm','coop','siblings','time','want','kefel','happy','screens','mistakes','secrets_f','add10','uzi1','discipline'],
     pre:'{לאמא שהבוקר שלה|לאבא שהבוקר שלו} נגמר עוד לפני שהתחיל',
     short:'קראת לו שלוש פעמים.<br>"איפה הנעל?" ואחיו כבר מציק לו.<br>{ואת צועקת|ואתה צועק} במסדרון.',h1:'בוקר מנצח.<br>בלי ריבים,<br>בלי ויכוחים<br>ובלי עצבים.',
@@ -1071,8 +1098,17 @@ const story=k=>{const q=Q[k];return `<div class="story">${q.a?`<img src="https:/
 function fitH1(){const h=$('h1');h.style.fontSize='';let fs=parseFloat(getComputedStyle(h).fontSize);while(h.scrollWidth>h.clientWidth&&fs>24){fs-=1;h.style.fontSize=fs+'px'}}
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitH1);
 addEventListener('resize',fitH1);
+// a door may put the shared sections in its own order (kefel door: sell the kefel program first, then reveal the club)
+const SECS=['secShein','secOffer','secBridge','secWhat','secPillars','secEarly','secEasy','secPain','secTurn','secLearn','secHome','secHomeStories'];
+const EARLY0=$('earlyH').innerHTML;
+function placeSecs(order){const list=order||SECS;let at=$('clipSec');list.forEach(id=>{const el=$(id);at.after(el);at=el});SECS.filter(id=>!list.includes(id)).forEach(id=>{const el=$(id);at.after(el);at=el})}
 function render(key){
   if(!D[key]) return; const d=JSON.parse(g(JSON.stringify(D[key])));
+  placeSecs(d.order);
+  $('heroQuote').innerHTML=d.heroQuote||''; $('heroQuote').hidden=!d.heroQuote;
+  $('earlyH').innerHTML=d.earlyH||EARLY0;
+  $('secBridge').hidden=!d.bridge; $('bridgeH').textContent=d.bridgeH||''; $('bridge').innerHTML=(d.bridge||[]).map(x=>`<p>${x}</p>`).join('');
+  $('teacherStories').innerHTML=(d.teachers||['rivka','kazes']).map(story).join('');
   $('pre').textContent=d.pre; $('pre').hidden=!d.pre; $('h1').innerHTML=d.h1; $('h1').classList.toggle('lines',d.h1.includes('<br>')); fitH1(); $('short').innerHTML=d.short; $('sub').innerHTML=d.sub;
   const stripKeys=[...new Set(['lurie',d.lead,...STRIP_MIX])];
   $('strip').innerHTML=[...stripKeys,...stripKeys].map(k=>`<img src="https://aviram-heichal.github.io/moadon-page/img/lib/${k}.jpg" alt="">`).join('');
@@ -1093,18 +1129,17 @@ function render(key){
   $('swapHead').textContent=d.swapHead;
   $('swap').innerHTML=d.swap.map(r=>`<div class="swap-row"><p>${r[0]}</p><p>${r[1]}</p></div>`).join('');
   // Hanna Shuster has her own video under the stories
-  const noV=k=>!['shuster','rivka','kazes','shein'].includes(k)&&(k!=='fokshner'||key==='keshev');
+  const noV=k=>!['shuster','rivka','kazes','shein','teitelbaum'].includes(k)&&(k!=='fokshner'||key==='keshev')&&(!Q[k].door||Q[k].door===key)&&!(d.hide||[]).includes(k);
   const firstQ=[...new Set([...d.quotes,'talia','eitan'])].filter(noV).slice(0,4);
   $('earlyStories').innerHTML=firstQ.slice(0,2).map(story).join('');
   $('homeStories').innerHTML=firstQ.slice(2).map(story).join('');
-  const moreQ=[...new Set(['talia','eitan','malul','broidy','sherman','bokai','barnea',...Object.keys(Q)])].filter(k=>noV(k)&&k!=='guy'&&!firstQ.includes(k));
+  const moreQ=[...new Set([...d.quotes,'talia','eitan','malul','broidy','sherman','bokai','barnea',...Object.keys(Q)])].filter(k=>noV(k)&&k!=='guy'&&!firstQ.includes(k));
   $('moreStories').innerHTML=moreQ.slice(0,moreQ.length-moreQ.length%2).map(story).join('');
   $('turnHook').innerHTML=d.turnHook; $('turnH').textContent=d.turnH; $('homeHook').textContent=d.homeHook||''; $('homeHook').hidden=!d.homeHook;
   $('turn').innerHTML=d.turn.map(x=>`<p>${x}</p>`).join('');
   $('tabs').querySelectorAll('a').forEach(a=>a.setAttribute('aria-current',a.dataset.k===key));
 }
 $('tabs').innerHTML=Object.keys(D).map(k=>`<a href="#${k}" data-k="${k}">${D[k].tab}</a>`).join('');
-$('teacherStories').innerHTML=['rivka','kazes'].map(story).join('');
 $('homeBig').innerHTML=(()=>{const q=Q.shein;return `<div class="story guy-t"><div class="guy-head"><img src="https://aviram-heichal.github.io/moadon-page/img/p_${q.a}.jpg" alt="${q.c}" loading="lazy"><div><b>עדות של ${q.c}</b><span>אמא במועדון הדור הבא</span></div></div><h3>${q.t}</h3><p>${q.q}</p></div>`})();
 $('guyBig').innerHTML=(()=>{const q=Q.guy,i=q.c.indexOf(',');return `<div class="story guy-t"><div class="guy-head"><img src="https://aviram-heichal.github.io/moadon-page/img/p_${q.a}.jpg" alt="גיא בן צבי" loading="lazy"><div><b>עדות של ${q.c.slice(0,i)}</b><span>${q.c.slice(i+1).trim()}</span></div></div><h3>${q.t}</h3><p>${q.q}</p></div>`})();
 $('hannaVideo').addEventListener('click',()=>{const b=$('hannaVideo'),w=document.createElement('div');w.className='poster';w.style.aspectRatio='940/788';w.innerHTML='<iframe src="https://player.vimeo.com/video/558500154?autoplay=1&title=0&byline=0&portrait=0&badge=0&vimeo_logo=0&dnt=1&playsinline=1" title="חנה שוסטר, עדות וידאו" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="width:100%;height:100%;border:0;display:block"></iframe>';b.replaceWith(w)});
@@ -1165,6 +1200,7 @@ function stickShow(){const r=offerBtn.getBoundingClientRect();stick.hidden=r.top
 addEventListener('scroll',stickShow,{passive:true});addEventListener('resize',stickShow);stickShow();
 
 }
+window.__moadonBoot=boot;
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
 </script>
