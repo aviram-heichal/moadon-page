@@ -711,7 +711,7 @@ html.pre body>header,html.pre body>section{visibility:hidden;animation:preShow 0
   <div class="wrap wide">
     <h2>אז מה {מתאים לך|מתאים לך}?</h2>
     <p class="choice-sub">יש 2 אפשרויות. הנה ההבדל ביניהן:</p>
-    <div class="choice">
+    <div class="choice" data-door="heshbon">
       <div class="ccard best">
         <span class="cbadge">⭐ הכי משתלם</span>
         <h3>מועדון הדור הבא</h3>
@@ -741,7 +741,39 @@ html.pre body>header,html.pre body>section{visibility:hidden;animation:preShow 0
         <a class="cta-alt" href="https://heichal.ravpage.co.il/Kefel-New#8192918_10005821">רק לוח הכפל, 97 ש"ח</a>
       </div>
     </div>
-    <p class="choice-end">בשביל להשוות: תוכנית לוח הכפל לבד עולה 97 ש"ח.<br>במועדון, החודש הראשון עולה 29 ש"ח, ולוח הכפל כבר בפנים.</p>
+    <p class="choice-end" data-door="heshbon">בשביל להשוות: תוכנית לוח הכפל לבד עולה 97 ש"ח.<br>במועדון, החודש הראשון עולה 29 ש"ח, ולוח הכפל כבר בפנים.</p>
+    <div class="choice" data-door="keshev" hidden>
+      <div class="ccard best">
+        <span class="cbadge">⭐ הכי משתלם</span>
+        <h3>מועדון הדור הבא</h3>
+        <p class="cprice">29 ש"ח <small>לחודש הראשון</small></p>
+        <p class="cnote">אחר כך 97 ש"ח לחודש. עוצרים מתי שרוצים, בהודעה אחת.<br>הגישה פתוחה כל עוד המנוי פעיל.</p>
+        <ul class="clist">
+          <li class="yes">ההדרכה סודות הקשב והריכוז המלאה</li>
+          <li class="yes">עוד הדרכות קשב וריכוז: עם ד"ר שולמית לוריא ועם ד"ר יעקב אופיר</li>
+          <li class="yes">מעל 45 הדרכות להורים: לרצות ללמוד, שיעורי בית בלי מאבק, מסכים, בוקר בלי ריבים ועוד</li>
+          <li class="yes">כל תוכניות החשבון והקריאה</li>
+          <li class="yes">קבוצת ווטסאפ אישית איתי</li>
+          <li class="yes">הדרכה חיה בזום, כל חודש</li>
+          <li class="yes">ובונוס: המאמן הדיגיטלי לתרגול (למצטרפים עד 20 בנובמבר)</li>
+        </ul>
+        <button class="cta js-form" type="button">אני רוצה את המועדון<small>29 ש"ח לחודש הראשון, בלי התחייבות</small></button>
+      </div>
+      <div class="ccard">
+        <h3>רק ההדרכה סודות הקשב והריכוז</h3>
+        <p class="cprice">[מחיר] ש"ח <small>תשלום אחד</small></p>
+        <p class="cnote">ההדרכה נשארת אצלכם לתמיד.</p>
+        <ul class="clist">
+          <li class="yes">ההדרכה סודות הקשב והריכוז המלאה</li>
+          <li class="no">שאר הדרכות הקשב והריכוז</li>
+          <li class="no">45 ההדרכות להורים</li>
+          <li class="no">תוכניות החשבון והקריאה</li>
+          <li class="no">קבוצת ווטסאפ וזום חודשי</li>
+        </ul>
+        <a class="cta-alt" href="#keshev">רק ההדרכה, [מחיר] ש"ח</a>
+      </div>
+    </div>
+    <p class="choice-end" data-door="keshev" hidden>בשביל להשוות: ההדרכה סודות הקשב לבד עולה [מחיר] ש"ח.<br>במועדון, החודש הראשון עולה 29 ש"ח, וההדרכה כבר בפנים.</p>
   </div>
 </section>
 
@@ -1076,6 +1108,8 @@ html.pre body>header,html.pre body>section{visibility:hidden;animation:preShow 0
     <div class="faq">
       <details data-door="heshbon" hidden><summary>מה ההבדל בין תוכנית לוח הכפל לבין המועדון?</summary><p>תוכנית לוח הכפל מלמדת נושא אחד, לוח הכפל, והיא נשארת אצלך לתמיד (97 ש"ח, תשלום אחד). במועדון תוכנית לוח הכפל נמצאת בפנים, ולידה כל תוכניות החשבון, המאמן הדיגיטלי לתרגול, קבוצת ווטסאפ איתי, זום חודשי והדרכות להורים. החודש הראשון 29 ש"ח, ואחר כך 97 ש"ח לחודש.</p></details>
       <details data-door="heshbon" hidden><summary>ואם אעצור את המנוי, מה נשאר אצלי?</summary><p>הגישה למועדון פתוחה כל עוד המנוי פעיל. כשעוצרים, הגישה נסגרת. מה שכן נשאר: מה {שלמדת|שלמדת} ומה שהילד כבר יודע. ומי שרוצה רק את לוח הכפל לתמיד, {יכולה|יכול} לבחור בתוכנית לוח הכפל לבד.</p></details>
+      <details data-door="keshev" hidden><summary>מה ההבדל בין ההדרכה סודות הקשב לבין המועדון?</summary><p>ההדרכה סודות הקשב והריכוז היא הדרכה אחת, והיא נשארת אצלכם לתמיד ([מחיר] ש"ח, תשלום אחד). במועדון היא נמצאת בפנים, ולידה עוד הדרכות קשב וריכוז, מעל 45 הדרכות להורים, תוכניות החשבון והקריאה, קבוצת ווטסאפ איתי וזום חודשי. החודש הראשון 29 ש"ח, ואחר כך 97 ש"ח לחודש.</p></details>
+      <details data-door="keshev" hidden><summary>הילד שלנו כבר אובחן, או כבר לוקח כדור. זה מתאים לנו?</summary><p>כן. הכלים עובדים עם כל ילד, גם עם ילדים שאובחנו עם הפרעת קשב וריכוז. אנחנו לא אומרים לאף אחד להפסיק טיפול. בהדרכה, ד"ר שולמית לוריא עוזרת לכם לקבל החלטה מושכלת, בלי לחץ ובלי פחד.</p></details>
       <details><summary>אין לי זמן. זה יעבוד גם ככה?</summary><p>מתחילים בהדרכה אחת, לא בכל המועדון. אורית, אשתי, בונה לך את ההמשך, ובערך שעה בשבוע מספיקה.</p></details>
       <details><summary>אני לא {חזקה|חזק} בחשבון. זה בשבילי?</summary><p>כן. כל נושא מפורק לצעדים, עם סרטון הדגמה וצ'ק ליסט. קודם {את רואה|אתה רואה} איך עושים, ואז עושה עם הילד.</p></details>
       <details><summary>לאיזה גיל זה מתאים?</summary><p>להורים לילדים מכיתה א' עד כיתה ט'. תוכניות החשבון מתחילות ביסודות, ומתקדמות צעד אחר צעד.</p></details>
@@ -1221,22 +1255,40 @@ const D={
     turn:['ילד יורד מהמסך כשיש קשר, כשיש לו הצלחות, וכשמדברים איתו נכון.','<b>שם מתחיל השינוי, לפני כל כלל חדש בבית.</b>'],
     first:'אם קשה להוריד אותו מהמסך, אני ממליץ לך להתחיל כבר עכשיו עם ההדרכה מסכים בצורה חכמה, {ותראי|ותראה} איך הוא נעשה מוכן לרדת, בלי מלחמה.',
     quotes:['shmani','bokai','barnea','malul']},
-  keshev:{tab:'קשב',lead:'secrets_f',shelf:['focus','learn','parents','math','school'],strip:['secrets_f','listen','lurie','ofir','want','comp','phones','calm','barrier','kefel','coop','exams','morning','uzi2'],
-    pre:'"כל דבר אני {אומרת|אומר} הרבה פעמים"',
-    short:'אמרת לו שלוש פעמים.<br>הוא הביט בך ושאל: "מה?"<br>והמורה כותבת: "מפוזר, לא מסיים משימות".',h1:'קשב וריכוז<br>אפשר לאמן.<br>גם בבית.',
-    sub:'כלים מעשיים שמלמדים ילד להיות נוכח, להקשיב ולסיים משימה. בלי מאבק.',
-    painH:'{את מכירה|אתה מכיר} את זה?',
-    scene:[['בבית','אמרת לו שלוש פעמים. הוא הביט בך ושאל: "מה?"'],['בכיתה','המורה כותבת: "מפוזר, לא מסיים משימות".'],['בערב','"הוא כזה חכם. למה זה ככה?"']],
+  keshev:{tab:'קשב',noWho:true,plural:true,lead:'secrets_f',shelf:['focus','learn','parents','math','school'],strip:['secrets_f','listen','lurie','ofir','want','comp','phones','calm','barrier','kefel','coop','exams','morning','uzi2'],
+    choice:true,noStrip:true,learnOne:[1],
+    brand:'<b>סודות הקשב והריכוז</b><span>ההדרכה של אבירם היכל, עם ד"ר שולמית לוריא</span>',
+    hideSecs:['secOffer','secPain','secWhere','secApp','secMore'],
+    order:['secEarly','secTurn','secLearn','secKnow','secBridge','secWhat','secPillars','secChoice','secEasy','secShein','secHome','secHomeStories'],
+    h1Hook:'אומרים לו שלוש פעמים, והוא שואל "מה?"',
+    cta:'אבירם, אני רוצה לעזור לילד להתרכז, בלי כדורים',ctaAlso:'(וגם בכל שאר הנושאים בבית ובלימודים)',
+    ctaPre:'ההדרכה נפתחת לכם תוך כמה דקות, גם בטלפון',
+    heroQuote:'<img src="https://aviram-heichal.github.io/moadon-page/img/p_fokshner.jpg" alt="תומר פוקשנר"><span>"עברנו אבחון והמליצו לליאור כדור... ליאור היום מצליח בכיתה ואנחנו מקבלים שבחים. והכול בלי כדור אחד של ריטלין."<cite>תומר פוקשנר, הורה במועדון הדור הבא</cite></span>',
+    earlyH:'הורים שכבר עובדים עם הכלים האלה מספרים:',
+    pre:'להורים שאומרים כל דבר שלוש פעמים',
+    short:'אמרתם לו שלוש פעמים.<br>הוא הרים את הראש ושאל: "מה?"<br>והמורה כותבת: "מפוזר, לא מסיים משימות".<span class="not-must">אבל זה לא חייב להיות ככה!</span>',
+    h1:'קשב וריכוז<br>אפשר לאמן!',
+    sub:'למדו את הכלים שמחזירים לילד את הקשב והריכוז -<br>בדרך טבעית, בלי אבחונים ובלי כדורים.',
+    painH:'זה נשמע לכם מוכר?',
+    scene:[['בבית','אמרתם לו שלוש פעמים. הוא הביט בכם ושאל: "מה?"'],['בכיתה','המורה כותבת: "מפוזר, לא מסיים משימות".'],['בערב','"הוא כזה חכם. למה זה ככה?"']],
     after:['וזה בדיוק העניין.','<b>הוא באמת חכם.</b>','ויש דברים שאפשר לעשות עם זה, כבר השבוע.'],
-    learn:['איך משפרים את הקשב, בלי תרופות','איך הוא מתחיל להקשיב לך','מה עושים עם הטלפונים מהמורה'],
-    join:'כל זה ועוד הרבה הרבה יותר מחכה לך במועדון.',
+    turnHook:'האמת היא ש...<br>זה לא שהוא לא רוצה, והוא ממש לא "לא מסוגל".',
+    turnH:'קשב הוא מיומנות. ואפשר לאמן אותה',
+    turn:['ילד שלא הבין מילה אחת בשיעור, מתנתק. מבחוץ זה נראה כמו "בעיית קשב".','ילד שתרגל להיות "כאן ועכשיו", מחזיק הרבה יותר זמן.','<b>ואז הוא מקשיב, יושב על משימה ומסיים אותה.</b>','וזה עובד גם לילדים שאובחנו עם הפרעת קשב וריכוז.'],
+    learnH:'מה לומדים בהדרכה סודות הקשב והריכוז?',
+    learn:['למה הילד "נמרח" על השיעורים, ואיך מחזירים לו את החשק ללמוד','איך מגבירים ריכוז בדרך טבעית, בלי אבחונים ובלי כדורים','תרגילי תקשורת שמרגיעים את ה"פתיל הקצר" בבית','איך הוא קם מהמחשב ובא ללמוד, בלי ויכוחים','ריטלין כן או לא? ואם לא, מה כן? עם ד"ר שולמית לוריא'],
+    knowH:'ובסוף ההדרכה תדעו:',
+    know:['למה הקשב "בורח" לו, ומה עושים עם זה כבר בפעם הבאה שתשבו ללמוד','איך הוא מתחיל להקשיב לכם, בלי לחזור על כל דבר שלוש פעמים','איך מקבלים החלטה מושכלת על ריטלין, בלי לחץ ובלי פחד'],
+    join:'',leadLine:'',first:'',
     swapHead:'מה יכול להיות בקרוב',
-    swap:[['{אומרת|אומר} שלוש פעמים, והוא שואל "מה?"','{אומרת|אומר} פעם אחת, והוא איתך'],['"מפוזר, לא מסיים משימות"','הוא יושב על משימה ומסיים'],['{את דואגת, ולא יודעת|אתה דואג, ולא יודע} מה לעשות','יש לך כלים, {ואת רואה|ואתה רואה} התקדמות']],
-    turnHook:'קשב הוא לא רק משהו שיש או אין.',
-    turnH:'אפשר לתרגל אותו, כמו כל מיומנות',
-    turn:['ילד שמבין את מה שהוא לומד נשאר איתו יותר זמן.','ילד שתרגל להיות "כאן ועכשיו" מחזיק יותר.','<b>{את לא צריכה להיות מומחית|אתה לא צריך להיות מומחה}.</b> {את צריכה|אתה צריך} כמה כלים פשוטים, ומישהו שיראה לך איך.'],
-    first:'אם הוא מתקשה להקשיב ולהתרכז, אני ממליץ לך להתחיל כבר עכשיו עם ההדרכה סודות הקשב והריכוז, {ותראי|ותראה} איך הוא מתחיל להיות איתך, להקשיב ולסיים משימות.',
-    quotes:['fokshner','malul','shmani','bokai','kazes']}
+    swap:[['אומרים שלוש פעמים, והוא שואל "מה?"','אומרים פעם אחת, והוא איתכם'],['"מפוזר, לא מסיים משימות"','הוא יושב על משימה ומסיים'],['דואגים, ולא יודעים מה לעשות','יש לכם כלים, ואתם רואים התקדמות']],
+    bridgeH:'אבל ההדרכה סודות הקשב היא רק חלק ממשהו הרבה יותר גדול',
+    bridge:['ילדים שמתקשים בקשב, מתקשים פעמים רבות גם בעוד דברים:','<span class="chip">שיעורי בית שנמרחים שעות</span><span class="chip">פערים בחשבון ובקריאה</span><span class="chip">טלפונים מהמורה ומריבות בבית</span>','כי קשב לא עומד לבד. כשיש פער בהבנה, כשהבוקר מתחיל בריב, כשהמסך מושך, הקשב הולך ראשון.','ולכן בניתי משהו שיכול לעזור לכם <b>לטפל בכל התמונה, ולא רק בקשב.</b>'],
+    bridgeMeet:'אני רוצה להכיר לכם את <b>מועדון הדור הבא</b>...',
+    whatH:'כל ההדרכות שלי להורים,<br>במנוי אחד:',
+    clubDef:'מועדון הדור הבא הוא מקום אחד, בטלפון ובמחשב, שבו הורים לומדים מה ואיך עושים עם הילד, צעד אחר צעד. <b>ההדרכה סודות הקשב והריכוז נמצאת בתוכו</b>, ולידה הדרכות בכל נושא:',
+    homeHook:'וזה לא נגמר בקשב.',
+    quotes:['malul','shmani','bokai','barnea','talia'],earlyN:3,hide:['fokshner']}
 };
 // the strip opens with the range of lecturers, then the door's own topics follow
 const STRIP_MIX=['want','uzi1','coop','listen','kefel','secrets_f','read','morning','ofir','calm','uzi2','exams','screens','comp','siblings'];
@@ -1279,7 +1331,7 @@ function render(key){
   $('whatIs').innerHTML=d.whatH||WHAT0; $('clubDef').innerHTML=d.clubDef||DEF0; $('bridgeMeet').innerHTML=d.bridgeMeet||''; $('bridgeMeet').hidden=!d.bridgeMeet;
   { const ol=document.querySelector('.pillars'); (d.pillOrder||[0,1,2,3]).forEach((i,n)=>{const [li,h]=PIL[i];ol.appendChild(li);const t=(d.pillTitles&&d.pillTitles[i])||h.replace(/^<span>\d<\/span>/,'');li.querySelector('h3').innerHTML=`<span>${n+1}</span>`+t.replace(/^<span>\d<\/span>/,'')}); }
   $('learnH').innerHTML=d.learnH||g(LEARNH0); $('whoBox').hidden=!!d.noWho; $('clubId').innerHTML=d.brand||BRAND0; $('clipSlideSmall').textContent=(d.clip&&d.clip.slideSmall)||SLSM0;
-  ['secOffer','secPain','secWhere','secPillars','secBonus2'].forEach(id=>{$(id).hidden=(d.hideSecs||[]).includes(id)}); $('secChoice').hidden=!d.choice; $('secApp').hidden=$('secMore').hidden=!d.choice; $('mathRes').hidden=!d.mathGrid;
+  ['secOffer','secPain','secWhere','secPillars','secBonus2'].forEach(id=>{$(id).hidden=(d.hideSecs||[]).includes(id)}); $('secChoice').hidden=!d.choice; ['secApp','secMore'].forEach(id=>{$(id).hidden=!d.choice||(d.hideSecs||[]).includes(id)}); $('mathRes').hidden=!d.mathGrid;
   document.querySelectorAll('[data-door]').forEach(e=>{e.hidden=e.dataset.door!==key});
   document.querySelectorAll('[data-hide-door]').forEach(e=>{e.hidden=e.dataset.hideDoor===key});
   $('topicsList').hidden=!!d.mathGrid; $('mathGrid').hidden=$('mathMore').hidden=!d.mathGrid;
