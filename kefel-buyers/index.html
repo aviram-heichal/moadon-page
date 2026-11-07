@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex"><title>מועדון הדור הבא - הצעה לרוכשי לוח הכפל</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;800;900&family=Assistant:wght@400;600;700&display=swap">
+<style>
+html,body{margin:0;padding:0}img{max-width:100%}[hidden]{display:none!important}
+/* Layout: one centered column, navy + gold like the club doors. Order: done -> good news -> why not stop -> all math -> app -> stories -> offer. Single look (no dark mode), all colors explicit. */
+:root{
+  --navy:#10233f; --navy2:#1b3459; --gold:#e3b23c; --gold-deep:#a97c12; --gold-soft:#fff5d9;
+  --paper:#ffffff; --mist:#f2f5f9; --ink:#1b2738; --muted:#55637a; --line:#d8dfe9; --ok:#1f8a4c; --ok-soft:#e7f6ec;
+  --head:"Rubik","Arial Hebrew",Arial,sans-serif; --body:"Assistant","Arial Hebrew",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:20px;line-height:1.55;direction:rtl;text-align:center;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--ok)}
+h1,h2,h3{font-family:var(--head);margin:0;text-wrap:balance;line-height:1.2}
+p{margin:0}
+img{max-width:100%}
+.wrap{max-width:660px;margin-inline:auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px));display:grid;gap:20px}
+.band{padding-block:48px}
+.mist{background:var(--mist)}
+.dark{background:var(--navy);color:#fff}
+h2{font-size:clamp(28px,7vw,38px);font-weight:800;color:var(--navy)}
+.dark h2{color:var(--gold)}
+.lines{display:grid;gap:12px;font-size:21px}
+.lines b{color:var(--navy)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* done bar: the purchase worked */
+.done{background:var(--ok);color:#fff;padding-block:16px}
+.done .wrap{grid-template-columns:auto 1fr;align-items:center;gap:14px;text-align:right}
+.done .face{width:clamp(92px,26vw,128px);box-shadow:0 0 0 4px #fff,0 6px 18px rgba(0,0,0,.25)}
+.done-txt{display:grid;gap:4px}
+.done strong{font-family:var(--head);font-size:clamp(24px,6.6vw,34px);font-weight:900;line-height:1.1}
+.done .done-big{font-family:var(--head);font-weight:800;font-size:clamp(19px,5.2vw,26px);line-height:1.2;color:#fff}
+.done p{font-size:16px;line-height:1.35;color:#e9fbef}
+.done small{font-size:14px;color:#cdeed9}
+
+/* hero */
+.hero{background:var(--navy);color:#fff;padding-block:30px 44px}
+.hero .wrap{justify-items:center;gap:14px}
+.who{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:600;color:#d8e2f1}
+.who div{display:flex;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.who button{background:transparent;color:#fff;border:0;font-family:var(--head);font-weight:700;font-size:17px;padding:4px 16px;min-height:40px;cursor:pointer}
+.who button[aria-pressed="true"]{background:var(--gold);color:var(--navy)}
+.news{font-family:var(--head);font-weight:900;font-size:clamp(34px,10vw,58px);line-height:1.12;color:#fff}
+.face{width:clamp(96px,28vw,132px);aspect-ratio:1;border-radius:50%;object-fit:cover;box-shadow:0 0 0 4px var(--gold)}
+.club-name{font-size:17px;font-weight:600;color:#aebcd2;margin-top:-4px}
+h1{font-size:clamp(42px,12.5vw,80px);font-weight:900;color:var(--gold);line-height:1.06}
+.sub{font-size:21px;line-height:1.45;max-width:30em}
+.sub b{color:var(--gold)}
+
+.vid-line{font-family:var(--head);font-weight:700;font-size:20px;color:#fff}
+.vid{position:relative;display:block;width:100%;max-width:620px;aspect-ratio:16/9;padding:0;border:5px solid var(--gold);border-radius:18px;overflow:hidden;background:#000;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.vid img,.vid iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+.play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:78px;height:78px;border-radius:50%;background:var(--gold);color:var(--navy);font-size:34px;display:grid;place-items:center;padding-left:6px;box-shadow:0 4px 16px rgba(0,0,0,.4)}
+/* buttons */
+.ctabox{display:grid;gap:10px;justify-items:center;width:100%}
+.cta{display:block;width:min(100%,520px);background:var(--gold);color:var(--navy);text-decoration:none;font-family:var(--head);font-weight:800;font-size:clamp(22px,6vw,27px);line-height:1.25;padding:18px 20px 14px;border-radius:16px;border:0;box-shadow:0 6px 0 var(--gold-deep);cursor:pointer}
+.cta small{display:block;font-family:var(--body);font-weight:700;font-size:16px;margin-top:4px;color:var(--navy2)}
+.cta:active{transform:translateY(3px);box-shadow:0 3px 0 var(--gold-deep)}
+.nothanks{background:none;border:0;color:inherit;opacity:.75;font-family:var(--body);font-size:16px;text-decoration:underline;cursor:pointer;padding:8px}
+
+/* math list */
+.topics{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;list-style:none;margin:0;padding:0}
+.topics li{background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 14px;font-family:var(--head);font-weight:700;font-size:18px;color:var(--navy)}
+.topics li.have{border-color:var(--ok);background:var(--ok-soft)}
+.topics li.have::after{content:" ✓ כבר אצלכם";font-family:var(--body);font-size:15px;color:var(--ok)}
+.covers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;list-style:none;margin:0;padding:0}
+.covers li{position:relative}
+.covers img{display:block;width:100%;aspect-ratio:480/256;object-fit:cover;border-radius:12px;box-shadow:0 2px 8px rgba(16,35,63,.18)}
+.covers li.have img{outline:4px solid var(--ok);outline-offset:-2px}
+.covers li.have::after{content:"✓ כבר אצלכם";position:absolute;top:6px;left:6px;background:var(--ok);color:#fff;font-weight:700;font-size:14px;padding:2px 9px;border-radius:999px}
+@media (min-width:560px){.covers{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.covers li.plus{grid-column:span 2;display:grid}
+.plus-in{display:grid;place-content:center;gap:2px;min-height:100%;background:var(--navy);border:3px solid var(--gold);border-radius:12px;padding:14px;color:#fff;font-family:var(--head);font-weight:700;font-size:clamp(17px,4.6vw,21px);line-height:1.3;box-shadow:0 2px 8px rgba(16,35,63,.18)}
+.plus-in b{color:var(--gold);font-size:1.35em;font-weight:900}
+@media (min-width:560px){.covers li.plus{grid-column:span 1}.plus-in{aspect-ratio:480/256;font-size:16px;padding:8px}}
+.gaps{list-style:none;margin:0;padding:0;display:grid;gap:8px;justify-items:center}
+.gaps li{background:var(--mist);border-radius:12px;padding:8px 16px;font-weight:700;color:var(--navy)}
+.gaps li::before{content:"✋ "}
+.res{border:4px solid var(--gold);background:var(--gold-soft);border-radius:18px;padding:20px 18px;display:grid;gap:6px}
+.res span{font-family:var(--head);font-weight:800;font-size:20px;color:var(--gold-deep)}
+.res p{font-family:var(--head);font-weight:800;font-size:clamp(24px,6.4vw,30px);line-height:1.3;color:var(--navy)}
+
+/* app */
+.newtag{justify-self:center;background:var(--gold);color:var(--navy);font-family:var(--head);font-weight:800;font-size:17px;padding:5px 14px;border-radius:999px}
+.app-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+.app-pair figure{margin:0;display:grid;gap:8px}
+.app-pair img{width:100%;border-radius:16px;border:4px solid var(--gold);background:#fff;aspect-ratio:397/600;object-fit:cover;object-position:top}
+.app-pair figcaption{font-size:16px;font-weight:600;color:#d8e2f1}
+.feats{list-style:none;margin:0;padding:0;display:grid;gap:10px;text-align:right}
+.feats li{background:var(--navy2);border-radius:14px;padding:12px 16px;font-size:19px}
+.feats b{color:var(--gold)}
+
+/* more in the club */
+.more{list-style:none;margin:0;padding:0;display:grid;gap:12px;text-align:right}
+.more li{background:#fff;border:2px solid var(--line);border-radius:14px;padding:14px 16px}
+.more h3{font-size:21px;color:var(--navy)}
+.more li.me{border-color:var(--gold);background:var(--gold-soft)}
+.more li.me p{color:var(--ink)}
+.more p{font-size:18px;color:var(--muted)}
+
+/* stories */
+.stories{display:grid;gap:16px}
+.story{background:#fff;border:2px solid var(--line);border-radius:18px;padding:18px;display:grid;gap:10px;text-align:right}
+.story h3{font-size:21px;color:var(--navy)}
+.story p{font-size:18px}
+.story footer{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--muted);font-size:16px}
+.story footer img{width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px var(--gold)}
+
+.letter{background:#fff;border:2px solid var(--line);border-radius:22px;padding:26px 20px;display:grid;gap:14px;text-align:right;box-shadow:0 6px 20px rgba(16,35,63,.08)}
+.letter-face{justify-self:center;width:clamp(100px,30vw,140px);aspect-ratio:1;border-radius:50%;object-fit:cover;box-shadow:0 0 0 4px var(--gold)}
+.letter h2{text-align:right}
+.letter p{font-size:20px;line-height:1.55}
+.letter b{color:var(--navy)}
+.letter ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:20px;font-weight:700;color:var(--navy)}
+.letter-sign{font-family:var(--head);font-weight:700;font-size:22px;color:var(--navy)}
+.guarantee{position:relative;background:#fff;border:4px solid var(--navy);border-radius:22px;padding:58px 20px 22px;margin-top:52px;display:grid;gap:12px;justify-items:center;box-shadow:0 0 0 6px var(--gold-soft),0 10px 28px rgba(16,35,63,.12)}
+.seal{position:absolute;top:-52px;left:50%;transform:translateX(-50%);width:104px;height:104px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f6d27a,var(--gold) 55%,var(--gold-deep));display:grid;place-items:center;box-shadow:0 6px 16px rgba(0,0,0,.25)}
+.seal-in{width:84px;height:84px;border-radius:50%;border:2px dashed var(--navy);display:grid;place-content:center;text-align:center;color:var(--navy);line-height:1}
+.seal-in b{font-family:var(--head);font-weight:900;font-size:23px;letter-spacing:-.5px}
+.seal-in span{font-family:var(--head);font-weight:800;font-size:14px;margin-top:3px}
+.guarantee h3{font-family:var(--head);font-weight:900;font-size:clamp(26px,6.8vw,32px);color:var(--navy)}
+.g-list{list-style:none;margin:0;padding:0;display:grid;gap:10px;text-align:right;width:100%}
+.g-list li{position:relative;padding-right:34px;font-size:clamp(18px,4.8vw,20px);line-height:1.45;color:var(--ink)}
+.g-list li::before{content:"✓";position:absolute;right:0;top:1px;width:24px;height:24px;border-radius:50%;background:var(--ok);color:#fff;font-weight:900;font-size:15px;display:grid;place-items:center}
+.g-list b{color:var(--navy)}
+.g-sign{font-family:"Brush Script MT","Segoe Script",var(--head);font-size:26px;color:var(--navy2);border-top:2px solid var(--line);padding-top:8px;width:100%}
+/* offer */
+.offer{background:#fff;color:var(--ink);border:5px solid var(--gold);border-radius:22px;padding:24px 18px;display:grid;gap:14px;justify-items:center}
+.only{background:#c0392b;color:#fff;font-family:var(--head);font-weight:800;font-size:17px;padding:5px 14px;border-radius:999px}
+.prices{display:flex;align-items:flex-end;justify-content:center;gap:22px;flex-wrap:wrap}
+.price{display:grid;justify-items:center;gap:2px}
+.price b{font-family:var(--head);font-weight:900;line-height:1;color:var(--navy);font-size:clamp(56px,18vw,84px)}
+.price.then b{font-size:clamp(40px,12vw,56px);color:var(--muted)}
+.price span{font-size:17px;font-weight:700;color:var(--muted)}
+.once{font-size:19px;line-height:1.45;color:var(--ink)}
+.once b{color:#c0392b}
+.bonus-bridge{display:grid;gap:4px;justify-items:center;background:#c0392b;color:#fff;border:5px solid var(--gold);border-radius:22px;padding:18px 14px;box-shadow:0 8px 24px rgba(192,57,43,.35);animation:pulse 1.6s ease-in-out infinite}
+.bonus-bridge span{font-family:var(--head);font-weight:700;font-size:clamp(20px,5.4vw,26px)}
+.bonus-bridge b{font-family:var(--head);font-weight:900;font-size:clamp(34px,10vw,54px);line-height:1.1;color:var(--gold)}
+.bonus-bridge .arrow{font-size:34px}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+@media (prefers-reduced-motion:reduce){.bonus-bridge{animation:none}}
+.calm{font-size:19px;font-weight:700;color:var(--ok)}
+.sign{font-family:var(--head);font-weight:700;font-size:21px;color:var(--navy)}
+
+/* no-thanks panel */
+.bye{position:fixed;inset:0;z-index:40;background:rgba(16,35,63,.88);display:grid;place-items:center;padding:max(18px,env(safe-area-inset-left,0px))}
+.bye[hidden]{display:none}
+.bye-card{background:#fff;color:var(--ink);border-radius:20px;padding:26px 20px;max-width:440px;display:grid;gap:14px}
+.bye-card h3{font-size:24px;color:var(--navy)}
+.back{background:var(--navy);color:#fff;border:0;border-radius:12px;font-family:var(--head);font-weight:700;font-size:19px;padding:12px 18px;cursor:pointer}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body>
+<header class="done">
+  <div class="wrap">
+    <img class="face" src="https://aviram-heichal.github.io/moadon-page/kefel-buyers/img/aviram_hero.jpg" alt="אבירם היכל">
+    <div class="done-txt">
+      <strong>✅ משימה הושלמה!</strong>
+      <p class="done-big">תוכנית לוח הכפל בדרך אליכם 🎉</p>
+      <p>בדקות הקרובות יגיע מייל עם הכניסה <small>(לא הגיע? לבדוק בספאם)</small></p>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+        <p class="news">ורגע...<br>יש לנו חדשות טובות<br>בשבילכם 🎁</p>
+    <h1>נהפוך את הילד<br>לאלוף בחשבון.</h1>
+    <p class="vid-line">לחצו על הסרטון כדי להבין מה מחכה לכם במועדון 👇</p>
+    <button class="vid" type="button" id="vid" aria-label="ניגון הסרטון של אבירם על המועדון">
+      <img src="https://aviram-heichal.github.io/moadon-page/kefel-buyers/img/video_poster.jpg" alt="">
+      <span class="play" aria-hidden="true">▶</span>
+    </button>
+    <p class="sub">לוח הכפל הוא רק ההתחלה.<br>במועדון מחכות לכם <b>כל תוכניות החשבון שלי</b>, ואפליקציית תרגול שהילדים עפים עליה.</p>
+    <div class="ctabox">
+      <a class="cta js-buy" href="#offer">אני רוצה את זה ב-10 ש"ח<small>החודש הראשון. הצעה חד-פעמית, רק בעמוד הזה</small></a>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>אז למה לעצור בלוח הכפל?</h2>
+    <div class="lines">
+      <p>ילדים שמתקשים בלוח הכפל,<br>מתקשים פעמים רבות גם בעוד נושאים:</p>
+      <ul class="gaps">
+        <li>עדיין סופרים על האצבעות בחיבור ובחיסור</li>
+        <li>מתבלבלים בחיבור וחיסור במאונך</li>
+        <li>נתקעים בשברים, בסדר פעולות ובבעיות מילוליות</li>
+      </ul>
+      <p><b>לכן במועדון, לוח הכפל הוא רק ההתחלה.</b></p>
+    </div>
+  </div>
+</section>
+
+<section class="band mist">
+  <div class="wrap">
+    <h2>כל תוכניות החשבון שלי,<br>במנוי אחד:</h2>
+    <ul class="covers">
+      <li class="have"><img src="https://aviram-heichal.github.io/moadon-page/kefel-buyers/img/lib/kefel.jpg" alt="פשוט לזכור את לוח הכפל" loading="lazy"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-buyers/img/lib/add10.jpg" alt="חיבור וחיסור עד 10" loading="lazy"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-buyers/img/lib/add20.jpg" alt="חיבור וחיסור עד 20" loading="lazy"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-buyers/img/lib/vertical.jpg" alt="חיבור וחיסור במאונך" loading="lazy"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-buyers/img/lib/order.jpg" alt="סדר פעולות חשבון" loading="lazy"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-buyers/img/lib/frac1.jpg" alt="מבוא לשברים" loading="lazy"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-buyers/img/lib/frac2.jpg" alt="שברים, חלק שני" loading="lazy"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-buyers/img/lib/big.jpg" alt="מספרים גדולים" loading="lazy"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-buyers/img/lib/neg.jpg" alt="חיוביים ושליליים" loading="lazy"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-buyers/img/lib/eq.jpg" alt="משוואות בנעלם אחד" loading="lazy"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-buyers/img/lib/geo.jpg" alt="ילד מצליח בהנדסה" loading="lazy"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-buyers/img/lib/zeros.jpg" alt="כפל עם אפסים" loading="lazy"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-buyers/img/lib/lang.jpg" alt="השפה של חשבון" loading="lazy"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-buyers/img/lib/secrets.jpg" alt="3 הסודות להצלחה בחשבון" loading="lazy"></li>
+      <li class="plus"><span class="plus-in"><b>➕ ועוד</b>תוכניות חדשות שעולות למועדון כל הזמן</span></li>
+    </ul>
+    <p class="lines">באותה שיטה של לוח הכפל: צעד אחר צעד, בסרטונים קצרים, בלי ידע של מורה.</p>
+    <div class="res">
+      <span>והתוצאה בבית:</span>
+      <p>אתם יודעים בדיוק איך להסביר, הוא מבין, ומתחיל להצליח. בלי מאבק.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>מעל 1,600 הורים כבר בפנים.<br>ככה זה נראה אצלם:</h2>
+    <div class="stories">
+      <article class="story"><h3>"המציאות עולה על כל דמיון"</h3><p>התהליך היה מופלא ופשוט. מההתחלה הילה היתה כל כולה בעניין. היא למדה את השפה של חשבון שאבירם מלמד בשקיקה, בוטחת לגמרי בתהליך ובי. אפילו "המריחה" הרגילה על השולחן כשאני יושב איתה, שכל כך אופיינית לבת שלי, נעלמה כלא היתה.</p><footer><img src="https://aviram-heichal.github.io/moadon-page/kefel-buyers/img/p_eitan.jpg" alt="" loading="lazy">איתן, אבא של הילה</footer></article>
+      <article class="story"><h3>"אני רואה אותה סוף סוף מצליחה ומסוגלת"</h3><p>הביטחון העצמי של נויה ותחושת הסיפוק שלה מעצמה עולים וגוברים. היא מצליחה לפתור את התרגילים, ורוצה ללמוד עוד ועוד. היום אני יודע איך לעזור לה.</p><footer><img src="https://aviram-heichal.github.io/moadon-page/kefel-buyers/img/p_malul.jpg" alt="" loading="lazy">אבישי מלול, עפולה, אבא של נויה</footer></article>
+      <article class="story"><h3>"היא משלימה סוף סוף את הפערים"</h3><p>במשך שנים ניסינו בעלי ואני ללמד את הבת שלנו עברית וחשבון, אבל היא לא רצתה. היום, עם הכלים של אבירם, אנחנו מצליחים לגרום לה לרצות ללמוד ולתרגל.</p><footer><img src="https://aviram-heichal.github.io/moadon-page/kefel-buyers/img/p_sherman.jpg" alt="" loading="lazy">אביבית שרמן</footer></article>
+    </div>
+  </div>
+</section>
+
+<section class="band mist">
+  <div class="wrap">
+    <div class="offer">
+      <span class="only">⚠️ הצעה חד-פעמית לרוכשי לוח הכפל</span>
+      <div class="prices">
+        <div class="price"><b>10 ש"ח</b><span>החודש הראשון</span></div>
+        <div class="price then"><b>97 ש"ח</b><span>לחודש, מהחודש השני</span></div>
+      </div>
+      <p class="calm">בלי התחייבות. אפשר לעצור בכל רגע.</p>
+      <div class="ctabox"><a class="cta" href="https://secure.cardcom.solutions/EA/EA5/qNoUgltGG0W1pRv49AwkHA" target="_top">כן! אני רוצה להצטרף<br>ולהקפיץ את הילד שלי בחשבון!<small>תשלום מאובטח בקארדקום</small></a></div>
+    </div>
+    <p class="bonus-bridge"><span>ומי שמצטרף עכשיו מקבל גם</span><b>🎁 בונוס משוגע באמת!</b><span class="arrow">👇</span></p>
+  </div>
+</section>
+
+<section class="band dark">
+  <div class="wrap">
+    <span class="newtag">🎁 בונוס: המאמן הדיגיטלי לחשבון</span>
+    <h2>ואחרי שהילד הבין,<br>הוא מתרגל 5 דקות ביום</h2>
+    <p class="lines">אפליקציית התרגול החדשה שפיתחתי כדי לעזור לילדים להשלים פערים במהירות. הילדים עפים על זה...</p>
+    <div class="app-pair">
+      <figure><img src="https://aviram-heichal.github.io/moadon-page/kefel-buyers/img/app2.jpg" alt="מסך המאמן הדיגיטלי: השבוע של הילדה מוכן" loading="lazy"><figcaption>שבוע אישי לילד</figcaption></figure>
+      <figure><img src="https://aviram-heichal.github.io/moadon-page/kefel-buyers/img/app_ex.jpg" alt="עמוד התרגילים של הילד, תרגילי כפל בעיצוב צבעוני" loading="lazy"><figcaption>ומבפנים: ככה הילד מתרגל</figcaption></figure>
+    </div>
+    <ul class="feats">
+      <li>✅ <b>תרגול יומי פשוט של כל הנושאים!</b></li>
+      <li>✅ <b>משחקים שמשפרים</b> את מהירות החשיבה והשליפה</li>
+      <li>✅ <b>כלים גם לשיפור בהנדסה</b></li>
+      <li>✅ <b>דוח שבועי</b> שמראה לכם את ההתקדמות של הילד</li>
+      <li>✅ <b>אפשר לתרגל עד 3 ילדים בבית</b></li>
+      <li>✅ הכול סופר פשוט - <b>בלחיצת כפתור!</b></li>
+    </ul>
+    <div class="res">
+      <span>והתוצאה בבית:</span>
+      <p>הילד מתרגל לבד, סוגר פערים, ושולף תשובות מהר. בלי שתצטרכו לשבת לידו.</p>
+    </div>
+    <div class="ctabox"><a class="cta js-buy" href="#offer">כן, גם אני רוצה!<small>10 ש"ח לחודש הראשון, בלי התחייבות</small></a></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>וזה עוד לא הכול.<br>במועדון מחכים לכם גם:</h2>
+    <ul class="more">
+      <li><h3>📚 ספריית הדרכות להורים</h3><p >איך לגרום לילד לרצות ללמוד, שיעורי בית בלי מאבק, שיפור קשב וריכוז, פחות שגיאות כתיב, איך להפחית מסכים, ביטחון עצמי ועוד. צופים מתי שנוח, בטלפון או במחשב.</p></li>
+      <li><h3>🎥 הדרכות חיות בזום</h3><p>הדרכה חדשה כל חודש, עם שאלות ותשובות.</p></li>
+      <li class="me"><h3>💬 אני אעזור לכם באופן אישי:</h3><p><b>קבוצת ווטסאפ אישית איתי.</b><br>נתקעתם? כותבים בקבוצה ומקבלים תשובה על כל בעיה עם הילד.</p></li>
+    </ul>
+    <div class="ctabox"><a class="cta" href="https://secure.cardcom.solutions/EA/EA5/qNoUgltGG0W1pRv49AwkHA" target="_top">כן! אני רוצה להצטרף<br>ולהקפיץ את הילד שלי בחשבון!<small>10 ש"ח לחודש הראשון. הצעה חד-פעמית, בלי התחייבות</small></a></div>
+  </div>
+</section>
+
+
+<section class="band mist">
+  <div class="wrap">
+    <article class="letter">
+      <img class="letter-face" src="https://aviram-heichal.github.io/moadon-page/kefel-buyers/img/aviram_hero.jpg" alt="אבירם היכל">
+      <h2>הורים יקרים,</h2>
+      <p><b>אני שמח שאתם כאן.</b><br>ההצטרפות למועדון הדור הבא יכולה לשנות לכם את הבית.</p>
+      <p>אחרי כמה שנים שבהן הילדים לא ממש למדו (קורונה, מלחמות...),<br>אנחנו ההורים צריכים לעזור להם לסגור את הפערים,<br>ולדאוג שהם לא יישארו מאחור.</p>
+      <p><b>מועדון הדור הבא עושה בדיוק את זה:</b></p>
+      <ul>
+        <li>✅ מקפיץ את הילדים בחשבון</li>
+        <li>✅ עוזר להם בקריאה</li>
+        <li>✅ ונותן להם להתמודד בבית הספר עם ביטחון עצמי גבוה יותר</li>
+      </ul>
+      <p>וגם נותן לכם את כל הכלים לרוגע בבית,<br>ולשקט הנפשי של לדעת שהילד שלכם מתקדם.</p>
+      <p><b>חשבון הוא רק חלק מזה.</b><br>במועדון מחכים לכם הכלים הכי פרקטיים שיש היום בישראל ללמידה, לקשב, לביטחון העצמי ולהתנהגות של הילדים.<br>ידע שלא תקבלו בשום מקום אחר.</p>
+      <p><b>והכול במחיר שכל הורה יכול להצטרף אליו בלי לחשוב פעמיים.</b></p>
+      <p class="letter-sign">באהבה,<br>אבירם היכל 💙</p>
+    </article>
+    <div class="guarantee">
+      <div class="seal" aria-hidden="true"><div class="seal-in"><b>100%</b><span>ראש שקט</span></div></div>
+      <h3>האחריות האישית שלי</h3>
+      <ul class="g-list">
+        <li><b>אין התחייבות.</b> אפשר לבטל את המנוי בכל רגע.</li>
+        <li>רוצים לעצור? שולחים הודעת ווטסאפ או מייל, ותוך 48 שעות אנחנו מפסיקים את החיוב.</li>
+        <li>בלי שאלות מעצבנות, ובלי "לשכנע" אתכם להישאר.</li>
+      </ul>
+      <p class="g-sign">אבירם היכל</p>
+    </div>
+  </div>
+</section>
+
+<section class="band dark" id="offer">
+  <div class="wrap">
+    <h2>ההצעה שלכם:</h2>
+    <div class="offer">
+      <span class="only">⚠️ הצעה חד-פעמית</span>
+      <p class="once">המחיר הזה רק לרוכשי לוח הכפל, ורק עכשיו.<br><b>אחרי שיוצאים מהעמוד, אי אפשר לחזור להזדמנות ולמחיר הזה.</b></p>
+      <div class="prices">
+        <div class="price"><b>10 ש"ח</b><span>החודש הראשון</span></div>
+        <div class="price then"><b>97 ש"ח</b><span>לחודש, מהחודש השני</span></div>
+      </div>
+      <p class="calm">בלי התחייבות. אפשר לעצור בכל רגע.</p>
+      <div class="ctabox">
+        <a class="cta" id="buy" href="https://secure.cardcom.solutions/EA/EA5/qNoUgltGG0W1pRv49AwkHA" target="_top">כן! אני רוצה להצטרף<br>ולהקפיץ את הילד שלי בחשבון!<small>תשלום מאובטח בקארדקום</small></a>
+        <button class="nothanks" type="button" id="no">לא תודה, מספיק לי לוח הכפל</button>
+      </div>
+    </div>
+    <p class="sign">מחכה לראות אתכם בפנים,<br>אבירם 💙</p>
+  </div>
+</section>
+
+<div class="bye" id="bye" hidden role="dialog" aria-modal="true" aria-labelledby="byeH">
+  <div class="bye-card">
+    <h3 id="byeH">בסדר גמור 🙂</h3>
+    <p>תוכנית לוח הכפל בדרך אליכם במייל.<br>בהצלחה, אבירם 💙</p>
+    <button class="back" type="button" id="back">→ חזרה להצעה</button>
+  </div>
+</div>
+<script>
+(function(){var m=document.querySelector('meta[name=viewport]');if(!m){m=document.createElement('meta');m.name='viewport';(document.head||document.documentElement).appendChild(m)}m.content='width=device-width,initial-scale=1,viewport-fit=cover'})();
+document.title='מועדון הדור הבא - הצעה לרוכשי לוח הכפל';
+(function(){
+var done=0;function boot(){
+if(done||!document.getElementById('vid'))return;done=1;
+(function(){
+  var v=document.getElementById('vid');
+  v.onclick=function(){if(v.querySelector('iframe'))return;v.innerHTML='<iframe src="https://player.vimeo.com/video/940835105?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="אבירם מסביר על מועדון הדור הבא"></iframe>';};
+  var bye=document.getElementById('bye');
+  function close(){bye.hidden=true;}
+  document.getElementById('no').onclick=function(){bye.hidden=false;document.getElementById('back').focus();};
+  document.getElementById('back').onclick=close;
+  bye.addEventListener('click',function(e){if(e.target===bye)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+}
+window.__kefelBoot=boot;
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+})();
+</script>
+</body></html>
