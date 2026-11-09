@@ -1,0 +1,1145 @@
+<!doctype html>
+<html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex"><title>לוח הכפל בעל פה, פעם אחת ולתמיד - אבירם היכל</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;800;900&family=Assistant:wght@400;600;700&display=swap">
+<style>
+html,body{margin:0;padding:0}body{background:#fff}img{max-width:100%}[hidden]{display:none!important}
+.ravForm .RMFORM,.ravForm form,.ravForm .multyparent,.ravForm .inner_multyfields,.ravForm .multyfield,.ravForm .multyinner,.ravForm .field,.ravForm .submitbuttonbox{display:block!important;width:100%!important;max-width:100%!important;min-width:0!important;height:auto!important;padding:0!important;margin:0!important;background:none!important;box-shadow:none!important;border:0!important;position:static!important;float:none!important;flex:none!important}
+.ravForm{min-width:0;max-width:100%}
+.ravForm[hidden]{display:none!important}
+.ravForm *{max-width:100%!important;min-width:0!important;box-sizing:border-box}
+.ravForm .ravxx_backgroundSpace{display:none!important}
+.ravForm .multyfield{margin-bottom:12px!important}
+.ravForm input[type=text],.ravForm input[type=tel],.ravForm input[type=email]{display:block!important;box-sizing:border-box!important;width:100%!important;min-height:54px!important;height:54px!important;background:#fff!important;color:#1b2430!important;border:2px solid #b9c4d2!important;border-radius:12px!important;padding:8px 14px!important;font:400 19px Assistant,system-ui,sans-serif!important;text-align:right!important;box-shadow:none!important;-webkit-text-fill-color:#1b2430!important}
+.ravForm input::placeholder{color:#5d6b7c!important;-webkit-text-fill-color:#5d6b7c!important;opacity:1!important}
+.ravForm .checkboxoption{display:flex!important;align-items:flex-start!important;gap:10px!important;text-align:right!important}
+.ravForm .checkbox_styled{flex:none!important;width:24px!important;height:24px!important;position:relative!important;margin:2px 0 0!important}
+.ravForm .checkbox_styled input{display:block!important;position:static!important;opacity:1!important;width:24px!important;height:24px!important;margin:0!important;accent-color:#10233f!important;appearance:auto!important;-webkit-appearance:checkbox!important}
+.ravForm .checkbox_styled>div{display:none!important}
+.ravForm .checkboxlabel{font:400 15px/1.4 Assistant,system-ui,sans-serif!important;color:#1b2430!important;text-align:right!important;flex:1!important}
+.ravForm .submitbuttonbox button{display:block!important;box-sizing:border-box!important;width:100%!important;min-height:62px!important;margin:6px 0 0!important;background:#e3b23c!important;color:#10233f!important;border:0!important;border-bottom:4px solid #a97c12!important;border-radius:14px!important;font:900 22px Rubik,system-ui,sans-serif!important;cursor:pointer!important;text-shadow:none!important}
+.ravForm .ravxx_hover{display:none!important}
+.ravForm .submitbuttonbox a{display:block!important;text-decoration:none!important;background:none!important;border:0!important;box-shadow:none!important;padding:0!important;height:auto!important}
+.ravForm label.error,.ravForm .error_message{color:#b3122a!important;font:700 15px Assistant,system-ui,sans-serif!important}
+:root{
+  --navy:#10233f; --navy2:#1b3459; --gold:#e3b23c; --gold-deep:#a97c12; --gold-soft:#fff5d9;
+  --paper:#ffffff; --mist:#f2f5f9; --ink:#1b2738; --muted:#55637a; --line:#d8dfe9; --ok:#1f8a4c; --ok-soft:#e7f6ec;
+  --head:"Rubik","Arial Hebrew",Arial,sans-serif; --body:"Assistant","Arial Hebrew",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:20px;line-height:1.55;direction:rtl;text-align:center;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--ok)}
+h1,h2,h3{font-family:var(--head);margin:0;text-wrap:balance;line-height:1.2}
+p{margin:0}
+img{max-width:100%}
+.wrap{max-width:660px;margin-inline:auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px));display:grid;gap:20px}
+.band{padding-block:48px}
+.mist{background:var(--mist)}
+.dark{background:var(--navy);color:#fff}
+h2{font-size:clamp(28px,7vw,38px);font-weight:800;color:var(--navy)}
+.dark h2{color:var(--gold)}
+.lines{display:grid;gap:12px;font-size:21px}
+.lines b{color:var(--navy)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* done bar: the purchase worked */
+.done{background:var(--ok);color:#fff;padding-block:16px}
+.done .wrap{grid-template-columns:auto 1fr;align-items:center;gap:14px;text-align:right}
+.done .face{width:clamp(92px,26vw,128px);box-shadow:0 0 0 4px #fff,0 6px 18px rgba(0,0,0,.25)}
+.done-txt{display:grid;gap:4px}
+.done strong{font-family:var(--head);font-size:clamp(24px,6.6vw,34px);font-weight:900;line-height:1.1}
+.done .done-big{font-family:var(--head);font-weight:800;font-size:clamp(19px,5.2vw,26px);line-height:1.2;color:#fff}
+.done p{font-size:16px;line-height:1.35;color:#e9fbef}
+.done small{font-size:14px;color:#cdeed9}
+
+/* hero */
+.hero{background:var(--navy);color:#fff;padding-block:30px 44px}
+.hero .wrap{justify-items:center;gap:14px}
+.who{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:600;color:#d8e2f1}
+.who div{display:flex;border:2px solid var(--gold);border-radius:10px;overflow:hidden}
+.who button{background:transparent;color:#fff;border:0;font-family:var(--head);font-weight:700;font-size:17px;padding:4px 16px;min-height:40px;cursor:pointer}
+.who button[aria-pressed="true"]{background:var(--gold);color:var(--navy)}
+.news{font-family:var(--head);font-weight:900;font-size:clamp(34px,10vw,58px);line-height:1.12;color:#fff}
+.face{width:clamp(96px,28vw,132px);aspect-ratio:1;border-radius:50%;object-fit:cover;box-shadow:0 0 0 4px var(--gold)}
+.club-name{font-size:17px;font-weight:600;color:#aebcd2;margin-top:-4px}
+h1{font-size:clamp(42px,12.5vw,80px);font-weight:900;color:var(--gold);line-height:1.06}
+.sub{font-size:21px;line-height:1.45;max-width:30em}
+.sub b{color:var(--gold)}
+
+.vid-line{font-family:var(--head);font-weight:700;font-size:20px;color:#fff}
+.vid{position:relative;display:block;width:100%;max-width:620px;aspect-ratio:16/9;padding:0;border:5px solid var(--gold);border-radius:18px;overflow:hidden;background:#000;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.vid img,.vid iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+.play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:78px;height:78px;border-radius:50%;background:var(--gold);color:var(--navy);font-size:34px;display:grid;place-items:center;padding-left:6px;box-shadow:0 4px 16px rgba(0,0,0,.4)}
+/* buttons */
+.ctabox{display:grid;gap:10px;justify-items:center;width:100%}
+.cta{display:block;width:min(100%,520px);background:var(--gold);color:var(--navy);text-decoration:none;font-family:var(--head);font-weight:800;font-size:clamp(22px,6vw,27px);line-height:1.25;padding:18px 20px 14px;border-radius:16px;border:0;box-shadow:0 6px 0 var(--gold-deep);cursor:pointer}
+.cta small{display:block;font-family:var(--body);font-weight:700;font-size:16px;margin-top:4px;color:var(--navy2)}
+.cta:active{transform:translateY(3px);box-shadow:0 3px 0 var(--gold-deep)}
+.nothanks{background:none;border:0;color:inherit;opacity:.75;font-family:var(--body);font-size:16px;text-decoration:underline;cursor:pointer;padding:8px}
+
+/* math list */
+.topics{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;list-style:none;margin:0;padding:0}
+.topics li{background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px 14px;font-family:var(--head);font-weight:700;font-size:18px;color:var(--navy)}
+.topics li.have{border-color:var(--ok);background:var(--ok-soft)}
+.topics li.have::after{content:" ✓ כבר אצלכם";font-family:var(--body);font-size:15px;color:var(--ok)}
+.covers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;list-style:none;margin:0;padding:0}
+.covers li{position:relative}
+.covers img{display:block;width:100%;aspect-ratio:480/256;object-fit:cover;border-radius:12px;box-shadow:0 2px 8px rgba(16,35,63,.18)}
+.covers li.have img{outline:4px solid var(--ok);outline-offset:-2px}
+.covers li.have::after{content:"✓ כבר אצלכם";position:absolute;top:6px;left:6px;background:var(--ok);color:#fff;font-weight:700;font-size:14px;padding:2px 9px;border-radius:999px}
+@media (min-width:560px){.covers{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.covers li.plus{grid-column:span 2;display:grid}
+.plus-in{display:grid;place-content:center;gap:2px;min-height:100%;background:var(--navy);border:3px solid var(--gold);border-radius:12px;padding:14px;color:#fff;font-family:var(--head);font-weight:700;font-size:clamp(17px,4.6vw,21px);line-height:1.3;box-shadow:0 2px 8px rgba(16,35,63,.18)}
+.plus-in b{color:var(--gold);font-size:1.35em;font-weight:900}
+@media (min-width:560px){.covers li.plus{grid-column:span 1}.plus-in{aspect-ratio:480/256;font-size:16px;padding:8px}}
+.gaps{list-style:none;margin:0;padding:0;display:grid;gap:8px;justify-items:center}
+.gaps li{background:var(--mist);border-radius:12px;padding:8px 16px;font-weight:700;color:var(--navy)}
+.gaps li::before{content:"✋ "}
+.res{border:4px solid var(--gold);background:var(--gold-soft);border-radius:18px;padding:20px 18px;display:grid;gap:6px}
+.res span{font-family:var(--head);font-weight:800;font-size:20px;color:var(--gold-deep)}
+.res p{font-family:var(--head);font-weight:800;font-size:clamp(24px,6.4vw,30px);line-height:1.3;color:var(--navy)}
+
+/* app */
+.newtag{justify-self:center;background:var(--gold);color:var(--navy);font-family:var(--head);font-weight:800;font-size:17px;padding:5px 14px;border-radius:999px}
+.app-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+.app-pair figure{margin:0;display:grid;gap:8px}
+.app-pair img{width:100%;border-radius:16px;border:4px solid var(--gold);background:#fff;aspect-ratio:397/600;object-fit:cover;object-position:top}
+.app-pair figcaption{font-size:16px;font-weight:600;color:#d8e2f1}
+.feats{list-style:none;margin:0;padding:0;display:grid;gap:10px;text-align:right}
+.feats li{background:var(--navy2);border-radius:14px;padding:12px 16px;font-size:19px}
+.feats b{color:var(--gold)}
+
+/* more in the club */
+.more{list-style:none;margin:0;padding:0;display:grid;gap:12px;text-align:right}
+.more li{background:#fff;border:2px solid var(--line);border-radius:14px;padding:14px 16px}
+.more h3{font-size:21px;color:var(--navy)}
+.more li.me{border-color:var(--gold);background:var(--gold-soft)}
+.more li.me p{color:var(--ink)}
+.more p{font-size:18px;color:var(--muted)}
+
+/* stories */
+.stories{display:grid;gap:16px}
+.story{background:#fff;border:2px solid var(--line);border-radius:18px;padding:18px;display:grid;gap:10px;text-align:right}
+.story h3{font-size:21px;color:var(--navy)}
+.story p{font-size:18px}
+.story footer{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--muted);font-size:16px}
+.story footer img{width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px var(--gold)}
+
+.letter{background:#fff;border:2px solid var(--line);border-radius:22px;padding:26px 20px;display:grid;gap:14px;text-align:right;box-shadow:0 6px 20px rgba(16,35,63,.08)}
+.letter-face{justify-self:center;width:clamp(100px,30vw,140px);aspect-ratio:1;border-radius:50%;object-fit:cover;box-shadow:0 0 0 4px var(--gold)}
+.letter h2{text-align:right}
+.letter p{font-size:20px;line-height:1.55}
+.letter b{color:var(--navy)}
+.letter ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:20px;font-weight:700;color:var(--navy)}
+.letter-sign{font-family:var(--head);font-weight:700;font-size:22px;color:var(--navy)}
+.guarantee{position:relative;background:#fff;border:4px solid var(--navy);border-radius:22px;padding:58px 20px 22px;margin-top:52px;display:grid;gap:12px;justify-items:center;box-shadow:0 0 0 6px var(--gold-soft),0 10px 28px rgba(16,35,63,.12)}
+.seal{position:absolute;top:-52px;left:50%;transform:translateX(-50%);width:104px;height:104px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f6d27a,var(--gold) 55%,var(--gold-deep));display:grid;place-items:center;box-shadow:0 6px 16px rgba(0,0,0,.25)}
+.seal-in{width:84px;height:84px;border-radius:50%;border:2px dashed var(--navy);display:grid;place-content:center;text-align:center;color:var(--navy);line-height:1}
+.seal-in b{font-family:var(--head);font-weight:900;font-size:23px;letter-spacing:-.5px}
+.seal-in span{font-family:var(--head);font-weight:800;font-size:14px;margin-top:3px}
+.guarantee h3{font-family:var(--head);font-weight:900;font-size:clamp(26px,6.8vw,32px);color:var(--navy)}
+.g-list{list-style:none;margin:0;padding:0;display:grid;gap:10px;text-align:right;width:100%}
+.g-list li{position:relative;padding-right:34px;font-size:clamp(18px,4.8vw,20px);line-height:1.45;color:var(--ink)}
+.g-list li::before{content:"✓";position:absolute;right:0;top:1px;width:24px;height:24px;border-radius:50%;background:var(--ok);color:#fff;font-weight:900;font-size:15px;display:grid;place-items:center}
+.g-list b{color:var(--navy)}
+.g-sign{font-family:"Brush Script MT","Segoe Script",var(--head);font-size:26px;color:var(--navy2);border-top:2px solid var(--line);padding-top:8px;width:100%}
+/* offer */
+.offer{background:#fff;color:var(--ink);border:5px solid var(--gold);border-radius:22px;padding:24px 18px;display:grid;gap:14px;justify-items:center}
+.only{background:#c0392b;color:#fff;font-family:var(--head);font-weight:800;font-size:17px;padding:5px 14px;border-radius:999px}
+.prices{display:flex;align-items:flex-end;justify-content:center;gap:22px;flex-wrap:wrap}
+.price{display:grid;justify-items:center;gap:2px}
+.price b{font-family:var(--head);font-weight:900;line-height:1;color:var(--navy);font-size:clamp(56px,18vw,84px)}
+.price.then b{font-size:clamp(40px,12vw,56px);color:var(--muted)}
+.price span{font-size:17px;font-weight:700;color:var(--muted)}
+.once{font-size:19px;line-height:1.45;color:var(--ink)}
+.once b{color:#c0392b}
+.toponly{text-align:center;margin:0 0 14px}
+.toponly .only{display:inline-block;line-height:1.35;font-size:clamp(19px,5.4vw,25px);padding:8px 18px}
+@media (min-width:600px){.toponly .only{white-space:nowrap}.toponly br.m{display:none}}
+.bye-warn{background:#fdecea;border:2px solid #c0392b;border-radius:12px;padding:12px 14px;font-size:18px;line-height:1.45}
+.bye-warn b{color:#c0392b}
+.bonus-bridge{display:grid;gap:4px;justify-items:center;background:#c0392b;color:#fff;border:5px solid var(--gold);border-radius:22px;padding:18px 14px;box-shadow:0 8px 24px rgba(192,57,43,.35);animation:pulse 1.6s ease-in-out infinite}
+.bonus-bridge span{font-family:var(--head);font-weight:700;font-size:clamp(20px,5.4vw,26px)}
+.bonus-bridge b{font-family:var(--head);font-weight:900;font-size:clamp(34px,10vw,54px);line-height:1.1;color:var(--gold)}
+.bonus-bridge .arrow{font-size:34px}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+@media (prefers-reduced-motion:reduce){.bonus-bridge{animation:none}}
+.calm{font-size:19px;font-weight:700;color:var(--ok)}
+.sign{font-family:var(--head);font-weight:700;font-size:21px;color:var(--navy)}
+
+/* no-thanks panel */
+.bye{position:fixed;inset:0;z-index:40;background:rgba(16,35,63,.88);display:grid;place-items:center;padding:max(18px,env(safe-area-inset-left,0px))}
+.bye[hidden]{display:none}
+.bye-card{background:#fff;color:var(--ink);border-radius:20px;padding:26px 20px;max-width:440px;display:grid;gap:14px}
+.bye-card h3{font-size:24px;color:var(--navy)}
+.back{background:var(--navy);color:#fff;border:0;border-radius:12px;font-family:var(--head);font-weight:700;font-size:19px;padding:12px 18px;cursor:pointer}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.paybox{background:#fff;border:5px solid var(--gold);border-radius:24px;overflow:hidden;box-shadow:0 10px 30px rgba(16,35,63,.18)}
+.pb-head{background:var(--navy);color:var(--gold);font-family:var(--head);font-weight:900;font-size:clamp(26px,7vw,34px);padding:14px 10px}
+.pb-body{display:grid;gap:16px;justify-items:center;padding:20px 16px 22px}
+.pb-lead{font-size:20px}
+.pb-reg{display:grid;gap:2px;width:100%;background:var(--mist);border-radius:16px;padding:12px}
+.pb-reg span{font-size:17px;font-weight:700;color:var(--muted)}
+.pb-reg b{font-family:var(--head);font-weight:900;font-size:clamp(34px,10vw,46px);color:var(--navy);line-height:1.1}
+.pb-reg small{font-family:var(--head);font-weight:700;font-size:18px;color:var(--ok)}
+.pb-deal{display:grid;gap:8px;justify-items:center;width:100%;border:3px dashed #c0392b;border-radius:16px;padding:14px 10px;background:#fff6f4}
+.pb-deal .only{line-height:1.35}
+.pb-ten{display:grid;justify-items:center}
+.pb-ten b{font-family:var(--head);font-weight:900;line-height:1;color:#c0392b;font-size:clamp(64px,20vw,92px)}
+.pb-ten span{font-family:var(--head);font-weight:800;font-size:22px;color:var(--navy)}
+.pb-then{font-size:17px;font-weight:700;color:var(--muted)}
+.proof1600{background:linear-gradient(135deg,rgba(227,178,60,.22),rgba(227,178,60,.08));border:3px solid var(--gold);border-radius:22px;padding:18px 16px;display:grid;gap:8px}
+.proof1600 .num{font-family:var(--head);font-weight:900;font-size:clamp(60px,18vw,88px);line-height:1;color:var(--gold)}
+.proof1600 p{font-size:20px;color:#fff}
+.proof1600 p b{color:var(--gold)}
+.proof1600 .p-end{font-family:var(--head);font-weight:800;font-size:clamp(20px,5.6vw,24px);color:var(--gold)}
+.fit{background:rgba(31,138,76,.16);border:3px solid #2ecc71;border-radius:20px;padding:16px;display:grid;gap:6px;font-size:20px;color:#fff}
+.fit-h{font-family:var(--head);font-weight:900;font-size:clamp(22px,6vw,28px);color:#7ee2a8}
+.fit b{color:var(--gold)}
+.school{margin:4px 0;display:grid;gap:6px}
+.school img{display:block;width:100%;aspect-ratio:3/1;object-fit:cover;border-radius:16px;box-shadow:0 4px 14px rgba(16,35,63,.2)}
+.school figcaption{font-size:16px;color:var(--muted);font-weight:700}
+.trust{display:grid;gap:8px;justify-items:center;margin-top:-4px}
+.t-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.t-badge{display:inline-flex;align-items:center;gap:6px;background:#fff;border:2px solid var(--line);border-radius:999px;padding:4px 12px 4px 10px;font-size:15px;font-weight:700;color:var(--navy)}
+.t-cards{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+.t-card{width:52px;height:33px;display:block}
+.easybig{display:grid;gap:6px;justify-items:center;background:linear-gradient(135deg,#2ecc71,#1f9d55);color:#fff;border-radius:22px;padding:16px 14px;box-shadow:0 6px 18px rgba(31,157,85,.35)}
+.easybig b{font-family:var(--head);font-weight:900;font-size:clamp(30px,9vw,44px);line-height:1.15;text-shadow:0 2px 3px rgba(0,0,0,.2)}
+.easybig span{font-size:20px;font-weight:700}
+.t-logo{width:auto;display:inline-flex;align-items:center;background:#fff;border:1px solid var(--line);border-radius:5px;padding:4px 8px}.t-logo img{height:20px;width:auto;display:block}
+.vid-note{font-size:.8em;font-weight:600;color:#d8e2f1}.paybox .nothanks{color:var(--muted)}
+.clip{margin:0;display:grid;gap:8px;width:100%;max-width:620px}
+.clip video{width:100%;aspect-ratio:848/478;border:5px solid var(--gold);border-radius:18px;background:#000;display:block;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.clip figcaption{font-size:17px;color:#d8e2f1;font-weight:600}
+.clip figcaption small{font-size:15px;font-weight:600;color:#aebcd2}
+.clip-title{font-family:var(--head);font-weight:900;font-size:clamp(28px,8vw,40px);line-height:1.2;color:var(--gold);margin-bottom:-4px}
+.vwrap{position:relative}
+.bigplay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:clamp(84px,24vw,112px);height:clamp(84px,24vw,112px);border-radius:50%;border:5px solid #fff;background:var(--gold);color:var(--navy);font-size:clamp(36px,10vw,48px);display:grid;place-items:center;padding-left:8px;cursor:pointer;box-shadow:0 6px 24px rgba(0,0,0,.45);animation:pulse 1.6s ease-in-out infinite}
+.bigplay span{transform:translateX(3px)}
+@media (prefers-reduced-motion:reduce){.bigplay{animation:none}}
+.bigplay{top:0;left:0;right:0;bottom:0;margin:auto;transform:none}
+.mf-logo{justify-self:center;position:relative;display:inline-flex;align-items:center;direction:ltr;font-family:var(--head);font-weight:900;font-size:clamp(32px,9.5vw,58px);letter-spacing:1px;max-width:100%;line-height:1;padding:12px 22px 10px;border-radius:14px;background:#0b182c;border:3px solid var(--gold);box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.mf-logo .m{color:var(--gold)}
+.mf-logo .f{color:#fff}
+.mf-logo i{font-style:normal;font-size:.42em;color:var(--navy);background:var(--gold);width:1.9em;height:1.9em;border-radius:50%;display:grid;place-items:center;margin-left:10px;padding-left:.15em}
+.mf-big{font-size:clamp(38px,11vw,76px)}
+.wrap{grid-template-columns:minmax(0,1fr)}
+.mf-tag{font-family:var(--head);font-weight:700;font-size:clamp(20px,5.4vw,24px);color:#fff}
+.easy{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.easy li{background:#fff;color:var(--navy);border:4px solid var(--gold);border-radius:14px;padding:0 18px 20px;display:grid;gap:8px;justify-items:center}
+.easy .when{background:var(--gold);color:var(--navy);font-family:var(--head);font-weight:900;font-size:clamp(22px,6.2vw,28px);line-height:1.2;padding:6px 20px 8px;border-radius:0 0 12px 12px;margin-top:-4px}
+.easy h3{font-size:clamp(25px,7vw,34px);font-weight:900;line-height:1.18;color:var(--navy)}
+.easy p{font-size:clamp(19px,5.2vw,22px);font-weight:600;line-height:1.4;color:var(--ink)}
+.easy .call{background:var(--gold-soft)}
+.easy .call img{width:clamp(96px,26vw,124px);aspect-ratio:1;border-radius:50%;object-fit:cover;box-shadow:0 0 0 4px #fff,0 0 0 7px var(--gold)}
+.easy-time{border:4px solid var(--gold);border-radius:14px;padding:18px;display:grid;gap:6px;font-size:clamp(20px,5.4vw,23px);font-weight:600}
+.easy-time b{font-family:var(--head);font-weight:900;font-size:clamp(34px,9.6vw,50px);line-height:1.1;color:var(--gold)}
+.mf-intro{font-family:var(--head);font-weight:700;font-size:clamp(22px,6vw,28px);line-height:1.35;color:#fff}.mf-intro b{display:block;margin-top:6px;font-weight:900;font-size:clamp(28px,8vw,40px);color:var(--gold)}
+.mf-instead{font-family:var(--head);font-weight:700;font-size:clamp(20px,5.6vw,25px);line-height:1.35;color:#d8e2f1;margin-bottom:-8px}.mf-intro b{margin-top:0}
+.newtag{text-align:center;line-height:1.35;max-width:100%;border-radius:22px}
+.loop{font-family:var(--head);font-weight:700;font-size:clamp(20px,5.4vw,24px);line-height:1.45;color:var(--navy);background:var(--gold-soft);border:2px dashed var(--gold);border-radius:16px;padding:16px 14px;margin-top:6px}
+.loop b{color:#c0392b}
+.loop.on-dark{background:rgba(227,178,60,.12);color:#fff}
+.loop.on-dark b{color:var(--gold)}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.gallery figure{margin:0;display:grid;gap:4px;align-content:start}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;box-shadow:0 2px 8px rgba(16,35,63,.18);display:block}
+.gallery .wide{grid-column:span 2}
+.gallery .wide img{aspect-ratio:16/8}
+.gallery figcaption{font-size:16px;font-weight:700;color:var(--navy)}
+.school img{width:100%;border-radius:16px;border:4px solid var(--gold);display:block}
+.gallery .logos img{aspect-ratio:auto;object-fit:contain;background:#fff}
+.vid-line .g{color:var(--gold)}
+.letter.mine{text-align:center}.letter.mine .letter-face{margin-top:-4px}
+.solve-lead{font-family:var(--head);font-weight:900;font-size:clamp(22px,6vw,28px);color:var(--gold-deep)}
+.kids{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.kids figure{margin:0;display:grid;gap:4px}
+.kids img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px;border:4px solid var(--gold);display:block}
+.kids figcaption{font-size:16px;font-weight:700;color:var(--navy)}
+.kids img{aspect-ratio:4/3}.kids figure:last-child img{object-position:18% 50%}
+.letter .joyline{background:linear-gradient(135deg,#f6d27a,var(--gold));color:var(--navy);font-family:var(--head);font-weight:900;font-size:clamp(24px,6.8vw,32px);line-height:1.3;border-radius:20px;padding:18px 14px;box-shadow:0 8px 22px rgba(169,124,18,.35);border:4px solid #fff;outline:3px solid var(--gold);animation:pulse 1.8s ease-in-out infinite;margin-block:8px}
+@media (prefers-reduced-motion:reduce){.letter .joyline{animation:none}}
+.letter .joyline{text-wrap:balance}
+.mf-instead{font-family:var(--head);font-weight:700;font-size:clamp(20px,5.6vw,25px);line-height:1.35;color:#d8e2f1;margin-bottom:-8px}.mf-intro b{margin-top:0}
+.letter .joyline{display:grid;gap:10px}
+.letter .joyline p{margin:0}
+.letter .joyline .joy-sub{font-size:clamp(18px,5vw,22px);font-weight:700;line-height:1.4}
+.letter .joyline .joy-sub b{font-weight:900}
+.ready{font-family:var(--head);font-weight:900;font-size:clamp(48px,14vw,72px);line-height:1.1;color:var(--navy);margin-top:6px}
+.band.tight-b{padding-bottom:22px}
+.band.tight-t{padding-top:24px}
+.letter .joyline p:first-child{font-size:clamp(24px,6.8vw,32px);font-weight:900;line-height:1.3}
+/* kefel + club page: own pieces on top of base.css + shared.css */
+.brandrow{display:flex;align-items:center;gap:12px;text-align:right}
+.brandrow .face{width:72px;box-shadow:0 0 0 3px var(--gold)}
+.brandrow b{display:block;font-family:var(--head);font-weight:900;font-size:clamp(22px,6vw,28px);color:#fff;line-height:1.15}
+.brandrow span{font-size:16px;font-weight:600;color:#aebcd2}
+.hquote{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;text-align:right;background:var(--navy2);border:3px solid var(--gold);border-radius:18px;padding:14px;width:100%}
+.hquote img{width:84px;height:84px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px var(--gold)}
+.hquote p{font-family:var(--head);font-weight:800;font-size:clamp(19px,5.2vw,23px);line-height:1.3;color:#fff}
+.hquote small{display:block;font-family:var(--body);font-weight:600;font-size:15px;color:#cdd8ea;margin-top:4px}
+.fb{margin:0;width:100%;background:#242526;border-radius:14px;padding:8px;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.fb img{display:block;width:100%;border-radius:8px}
+.fb figcaption{font-size:14px;color:#b0b3b8;padding-top:6px}
+.hook{font-family:var(--head);font-weight:800;font-size:clamp(22px,6vw,28px);color:#fff;margin-top:8px}
+.ct-q{font-family:var(--head);font-weight:900;font-size:clamp(25px,7vw,34px);line-height:1.25;color:var(--gold)}
+.ct-sub{font-size:19px;line-height:1.5;color:#e4ebf6}
+.ct-go{font-family:var(--head);font-weight:800;font-size:22px;color:#fff}
+.clip{position:relative}
+.clip .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:13px;border:5px solid var(--gold);cursor:pointer}
+.clip .poster-t{position:absolute;inset:auto 5px 5px 5px;background:linear-gradient(transparent,rgba(16,35,63,.95));color:#fff;font-family:var(--head);font-weight:800;font-size:clamp(17px,4.6vw,22px);padding:30px 10px 10px;border-radius:0 0 13px 13px;pointer-events:none}
+.watch{font-size:19px;font-weight:700;color:#fff}
+.watch small{display:block;font-size:15px;font-weight:600;color:#aebcd2}
+.moreH{font-family:var(--head);font-weight:900;font-size:clamp(22px,6vw,27px);color:var(--gold)}
+.big5400{display:grid;gap:6px;background:var(--gold-soft);border:4px solid var(--gold);border-radius:22px;padding:18px 14px}
+.big5400 .num{font-family:var(--head);font-weight:900;font-size:clamp(56px,17vw,84px);line-height:1;color:var(--navy)}
+.big5400 p{font-size:20px;font-weight:700;color:var(--navy)}
+.ticks{list-style:none;margin:0;padding:0;display:grid;gap:10px;text-align:right}
+.ticks li{position:relative;background:var(--mist);border-radius:14px;padding:12px 46px 12px 14px;font-size:19px;line-height:1.45}
+.ticks li::before{content:"✓";position:absolute;right:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--ok);color:#fff;font-weight:900;font-size:15px;display:grid;place-items:center}
+.ticks b{color:var(--navy)}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;list-style:none;margin:0;padding:0}
+.chips li{background:var(--navy);color:#fff;border-radius:12px;padding:7px 13px;font-family:var(--head);font-weight:700;font-size:17px}
+.chips li.bon{background:var(--gold);color:var(--navy)}
+.diag{font-size:18px;font-weight:700;color:var(--ok)}
+.pain p{font-size:21px}
+.pain .big{font-family:var(--head);font-weight:800;font-size:clamp(22px,6vw,27px);color:var(--navy)}
+.gaps2{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.gaps2 li{background:#fff;color:var(--navy);border-radius:12px;padding:7px 14px;font-family:var(--head);font-weight:800;font-size:18px}
+.stat40{font-family:var(--head);font-weight:900;font-size:clamp(26px,7.4vw,36px);line-height:1.2;color:#fff}
+.stat40 b{color:var(--gold);font-size:1.3em}
+.meet{display:grid;gap:4px;background:var(--gold);color:var(--navy);border-radius:20px;padding:16px 12px}
+.meet span{font-family:var(--head);font-weight:700;font-size:20px}
+.meet b{font-family:var(--head);font-weight:900;font-size:clamp(30px,9vw,44px);line-height:1.1}
+.clubline{font-size:20px;font-weight:700;color:var(--muted)}
+.covers li.start img{outline:4px solid var(--ok);outline-offset:-2px}
+.covers li.start::after{content:"✓ כאן מתחילים";position:absolute;top:6px;left:6px;background:var(--ok);color:#fff;font-weight:700;font-size:14px;padding:2px 9px;border-radius:999px}
+.pillars{list-style:none;margin:0;padding:0;display:grid;gap:14px;text-align:right}
+.pillars>li{background:#fff;border:3px solid var(--line);border-radius:20px;padding:16px;display:grid;gap:10px}
+.pillars h3{font-size:clamp(21px,5.8vw,25px);color:var(--navy)}
+.pillars p{font-size:19px}
+.pillars .tag{justify-self:start;background:#c0392b;color:#fff;font-family:var(--head);font-weight:800;font-size:15px;padding:3px 12px;border-radius:999px}
+.pillars .mini-res{background:var(--gold-soft);border-right:5px solid var(--gold);border-radius:10px;padding:8px 12px;font-family:var(--head);font-weight:800;font-size:19px;color:var(--navy)}
+.pillars .mini-res span{display:block;font-size:15px;color:var(--gold-deep)}
+.pillars .pic{display:block;width:100%;border-radius:14px;aspect-ratio:16/9;object-fit:cover}
+.app2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.app2 img{width:100%;aspect-ratio:397/600;object-fit:cover;object-position:top;border-radius:14px;border:3px solid var(--gold)}
+.pcovers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.pcovers img{width:100%;aspect-ratio:480/256;object-fit:cover;border-radius:8px}
+/* choice */
+.choice{display:grid;gap:18px}
+@media (min-width:720px){.choice{grid-template-columns:1.15fr 1fr;align-items:start}.wrap.wide{max-width:980px}}
+.ccard{position:relative;background:#fff;border:3px solid var(--line);border-radius:22px;padding:22px 16px 18px;display:grid;gap:12px;justify-items:center}
+.ccard.best{border:5px solid var(--gold);box-shadow:0 10px 30px rgba(16,35,63,.18);padding-top:30px}
+.cbadge{position:absolute;top:-17px;left:50%;transform:translateX(-50%);white-space:nowrap;background:#c0392b;color:#fff;font-family:var(--head);font-weight:800;font-size:16px;padding:5px 14px;border-radius:999px}
+.ccard h3{font-size:clamp(24px,6.6vw,30px);color:var(--navy)}
+.cprice{display:grid;gap:2px}
+.cprice b{font-family:var(--head);font-weight:900;font-size:clamp(50px,15vw,70px);line-height:1;color:var(--navy)}
+.ccard.best .cprice b{color:#c0392b}
+.cprice span{font-size:17px;font-weight:700;color:var(--muted)}
+.cprice s{color:var(--muted);font-size:20px}
+.cnote{font-size:17px;color:var(--muted);line-height:1.45}
+.clist{list-style:none;margin:0;padding:0;display:grid;gap:8px;text-align:right;width:100%}
+.clist li{position:relative;padding-right:32px;font-size:18px;line-height:1.4}
+.clist li::before{position:absolute;right:0;top:1px;width:23px;height:23px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:14px}
+.clist li.yes::before{content:"✓";background:var(--ok);color:#fff}
+.clist li.no{color:#98a3b4}
+.clist li.no::before{content:"✕";background:#e6eaf0;color:#98a3b4}
+.cta-alt{display:block;width:min(100%,420px);text-align:center;text-decoration:none;border:3px solid var(--navy);color:var(--navy);border-radius:14px;font-family:var(--head);font-weight:800;font-size:20px;padding:12px 14px;background:#fff}
+.choice-end{font-size:18px;font-weight:700;color:var(--navy);background:var(--gold-soft);border-radius:14px;padding:12px}
+.note-pre{font-size:15px;color:#c0392b;font-weight:700}
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px;text-align:right;counter-reset:s}
+.steps li{position:relative;background:#fff;border:3px solid var(--line);border-radius:18px;padding:14px 64px 14px 14px;font-size:19px;counter-increment:s}
+.steps li::before{content:counter(s);position:absolute;right:14px;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:var(--navy);color:var(--gold);font-family:var(--head);font-weight:900;font-size:21px;display:grid;place-items:center}
+.steps b{color:var(--navy)}
+.hour{font-family:var(--head);font-weight:800;font-size:clamp(21px,5.8vw,25px);color:var(--navy)}
+.story .fbtag{font-size:14px;color:var(--muted)}
+.story.teacher{border-color:var(--navy)}
+.pressrow{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pressrow img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:12px}
+.fitlist{display:grid;gap:10px}
+@media (min-width:600px){.fitlist{grid-template-columns:repeat(3,1fr)}}
+.fitlist div{background:#fff;border:3px solid var(--gold);border-radius:16px;padding:12px;display:grid;gap:2px}
+.fitlist b{font-family:var(--head);font-weight:900;font-size:22px;color:var(--navy)}
+.fitlist span{font-size:17px;color:var(--muted)}
+.faq{display:grid;gap:10px;text-align:right}
+.faq details{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px}
+.faq summary{font-family:var(--head);font-weight:800;font-size:19px;color:var(--navy);cursor:pointer}
+.faq p{font-size:18px;margin-top:8px}
+.foot{font-size:14px;color:#aebcd2}
+.h1k{font-size:clamp(31px,9.6vw,64px);display:grid;gap:2px}.h1k span{white-space:nowrap}
+.h1k{font-size:clamp(36px,10.8vw,86px)}.hero .sub{font-size:clamp(23px,6.4vw,29px);font-weight:700;line-height:1.4}
+.h1o{display:grid;gap:10px;font-size:clamp(34px,9.6vw,64px);line-height:1.12}.h1o-2{color:#fff;font-size:.78em}
+.stuck p{font-size:21px;line-height:1.5}
+.stuck b{color:var(--navy)}
+.stuck .big{font-family:var(--head);font-weight:800;font-size:clamp(23px,6.4vw,29px);color:var(--navy);line-height:1.3}
+.gapbox{background:var(--navy);color:#fff;border:4px solid var(--gold);border-radius:22px;padding:18px 14px;display:grid;gap:10px}
+.gapbox p{font-size:20px}
+.gapbox .g40{font-family:var(--head);font-weight:800;font-size:clamp(23px,6.4vw,30px);line-height:1.25;color:#fff}
+.gapbox .g40 b{color:var(--gold);font-size:1.6em;font-weight:900}
+.gapbox .gaps2 li{background:var(--gold)}
+.revo{background:var(--ok-soft);border:4px solid var(--ok);border-radius:20px;padding:16px;display:grid;gap:6px}
+.revo b{font-family:var(--head);font-weight:900;font-size:clamp(24px,6.6vw,30px);color:var(--ok)}
+.revo p{font-family:var(--head);font-weight:700;font-size:clamp(20px,5.4vw,23px);color:var(--navy)}
+/* v11 Kefel-New structure */
+.lead2{font-size:21px;line-height:1.5}
+.dark .lead2{color:#e4ebf6}
+.h2s{font-size:clamp(24px,6.4vw,30px)}
+.asseen{font-size:17px;font-weight:700;color:#aebcd2;margin-bottom:-8px}
+.chips.press li{background:#fff;color:var(--navy)}
+.cany{font-size:21px;font-weight:700;color:#fff}
+.cbig{font-family:var(--head);font-weight:900;font-size:clamp(30px,8.6vw,46px);line-height:1.15;color:var(--gold)}
+.cbig2{font-family:var(--head);font-weight:900;font-size:clamp(26px,7.2vw,36px);line-height:1.2;color:var(--navy)}
+.ifimp{font-size:21px;line-height:1.5;color:#fff}
+.ifimp b{color:var(--gold)}
+.pmini{font-family:var(--head);font-weight:800;font-size:20px;line-height:1.3;color:#fff}
+.pmini b{font-size:clamp(40px,12vw,56px);font-weight:900;color:var(--gold)}
+.pmini s{color:#aebcd2;font-size:20px}
+.band:not(.dark) .pmini{color:var(--navy)}
+.band:not(.dark) .pmini b{color:#c0392b}
+.band:not(.dark) .pmini s{color:var(--muted)}
+.pbig{display:grid;gap:2px}
+.pbig b{font-family:var(--head);font-weight:900;font-size:clamp(64px,20vw,96px);line-height:1;color:#c0392b}
+.pbig span{font-family:var(--head);font-weight:800;font-size:22px;color:var(--navy)}
+.pbig s{color:var(--muted)}
+.fnote{font-size:15px;color:var(--muted)}
+.dark .fnote{color:#aebcd2}
+.bonusbox{display:grid;gap:6px;width:100%;background:var(--gold-soft);border:3px solid var(--gold);border-radius:16px;padding:14px}
+.bonusbox b{font-family:var(--head);font-weight:900;font-size:clamp(20px,5.6vw,24px);color:var(--navy)}
+.bonusbox p{font-size:18px}
+.lastq{background:#fff;border:2px solid var(--line);border-radius:22px;padding:22px 18px;display:grid;gap:12px;text-align:right}
+.lastq h2{text-align:right;font-size:clamp(23px,6.2vw,29px)}
+.lastq p{font-size:19px}
+.lastq b{color:var(--navy)}
+.presslogos{display:block;width:min(100%,380px);margin-inline:auto;border-radius:10px}
+.tvgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tvgrid img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:14px;border:3px solid var(--gold)}
+.tvgrid img:first-child{grid-column:span 2}
+@media (min-width:600px){.tvgrid{grid-template-columns:repeat(3,1fr)}.tvgrid img:first-child{grid-column:auto}}
+.demoh{font-family:var(--head);font-weight:900;font-size:clamp(24px,6.6vw,32px);line-height:1.25;color:var(--navy)}.band:not(.dark) .clip figcaption{color:var(--muted)}
+.onlystart b{display:block;font-family:var(--head);font-weight:900;font-size:clamp(24px,6.6vw,30px);color:var(--navy);margin-bottom:4px}
+.proofsec{padding-bottom:12px}.getsec{padding-top:8px}
+/* v17 split + photos + bestseller */
+.sgrid{display:grid;grid-template-columns:1fr;gap:16px}
+@media (min-width:640px){.sgrid{grid-template-columns:1fr 1fr}.wrap:has(.sgrid){max-width:980px}}
+.story.ph{padding:0;overflow:hidden;gap:0;align-content:start}
+.story .sphoto{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 25%;border-bottom:4px solid var(--gold)}
+.story .sbody{display:grid;gap:10px;padding:16px 18px 18px}
+.optn{justify-self:center;background:var(--navy);color:var(--gold);font-family:var(--head);font-weight:900;font-size:17px;padding:3px 14px;border-radius:999px}
+.ccard .cnote b{color:var(--navy)}
+.pb-or{font-family:var(--head);font-weight:900;font-size:26px;color:var(--navy)}
+.mfdeal{border-color:var(--gold);background:var(--gold-soft)}
+.mfdeal .only{background:var(--navy)}
+.mfdeal .pb-ten b{color:var(--navy)}
+.orkefel{font-size:18px;color:#d8e2f1}
+.orkefel a{color:var(--gold);font-weight:700}
+#meet .covers li.start::after{content:"✓ כאן מתחילים"}
+.bestseller{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--gold-soft);border:2px solid var(--gold);border-radius:999px;padding:4px 14px 4px 6px;max-width:100%}
+.bestseller svg{width:38px;height:38px;flex:none}
+.bestseller p{font-family:var(--head);font-weight:700;font-size:clamp(12.5px,3.6vw,19px);white-space:nowrap;color:var(--navy);min-width:0}
+.bestseller b{color:#c0392b;font-weight:900}
+/* v19 dual buttons + smaller parent photos */
+.dual{display:grid;gap:12px;justify-items:center;width:100%}
+.dual .cta small{font-size:15px}
+.dual .cta-alt small{display:block;font-family:var(--body);font-weight:700;font-size:15px;margin-top:2px;color:var(--muted)}
+.dark .dual .cta-alt{background:transparent;color:#fff;border-color:#fff}
+.dark .dual .cta-alt small{color:#d8e2f1}
+.red{color:#c0392b}
+.kids-t{color:var(--navy)}
+.story.ph{padding:18px 18px 16px;gap:10px;justify-items:center;text-align:center}
+.story .sphoto{width:110px;height:110px;aspect-ratio:1;border-radius:50%;object-position:center 25%;border:0;box-shadow:0 0 0 4px var(--gold)}
+.story .sbody{padding:0;text-align:right;width:100%}
+#final .cta-alt{background:#fff}
+.choose{color:#fff;font-size:clamp(28px,8vw,40px)}
+/* v23: tighter gap between button text and its small line */
+.cta small,.dual .cta-alt small{margin-top:0;line-height:1.2}
+.cta{line-height:1.15}
+.cta .nw{white-space:nowrap;font-size:clamp(19px,5.4vw,26px)}
+/* v26: bonus bridge - strong red, white text, more prominent */
+.bonus-bridge{background:linear-gradient(180deg,#e3191c,#b80d10);border-width:6px;padding:22px 16px;box-shadow:0 10px 28px rgba(184,13,16,.45)}
+.bonus-bridge span,.bonus-bridge .bb-pre{color:#fff;text-shadow:0 2px 3px rgba(0,0,0,.35)}
+.bonus-bridge .bb-pre{font-weight:900;font-size:clamp(26px,7vw,34px)}
+.bonus-bridge b{color:#fff;font-size:clamp(40px,12vw,62px);text-shadow:0 3px 4px rgba(0,0,0,.4)}
+/* v27: parents-club topics as colorful cards */
+.more2{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px;width:100%;text-align:right}
+.more2 li{--c:#2f6fd6;--s:#eaf2ff;background:var(--s);border:3px solid var(--c);border-radius:20px;overflow:hidden;box-shadow:0 6px 18px rgba(16,32,64,.10)}
+.more2 .mt-head{display:flex;align-items:center;gap:12px;background:var(--c);padding:12px 14px}
+.more2 .mt-ic{flex:none;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:#fff;font-size:28px;box-shadow:0 2px 6px rgba(0,0,0,.18)}
+.more2 h3{margin:0;color:#fff;font-family:var(--head);font-weight:900;font-size:clamp(21px,5.6vw,24px);line-height:1.25}
+.more2 p{margin:0;padding:14px 16px 16px;font-size:19px;line-height:1.5;color:var(--navy);font-weight:600}
+.more2 .c1{--c:#6b3fd6;--s:#f2ecff}.more2 .c2{--c:#e08a00;--s:#fff5e0}.more2 .c3{--c:#1f8a5b;--s:#e8f7ef}
+.more2 .c4{--c:#d2352b;--s:#fdecea}.more2 .c5{--c:#1f6fd1;--s:#e9f2ff}.more2 .c6{--c:#13294b;--s:#eef2f8}
+.commit{display:grid;gap:6px;justify-items:center;width:100%;margin-top:22px;background:linear-gradient(180deg,#13294b,#0c1c36);color:#fff;border:5px solid var(--gold);border-radius:22px;padding:22px 16px}
+.commit-ic{font-size:36px}
+.commit b{font-family:var(--head);font-weight:900;font-size:clamp(24px,6.6vw,32px);line-height:1.25;color:var(--gold)}
+.commit p{margin:0;font-size:clamp(19px,5.2vw,22px);line-height:1.5;font-weight:700}
+/* v28: buttons that invite a click - green 3D, arrow, shine, lift */
+.cta{position:relative;overflow:hidden;background:linear-gradient(180deg,#34d06a 0%,#1fa851 55%,#178a42 100%);color:#fff;text-shadow:0 2px 2px rgba(0,0,0,.25);border:3px solid #fff;box-shadow:0 7px 0 #0f6b32,0 14px 28px rgba(23,138,66,.40);padding:20px 22px 16px;border-radius:18px;transition:transform .12s,box-shadow .12s;animation:ctaBreath 2.4s ease-in-out infinite}
+.cta small{color:#eafff1;text-shadow:none;font-size:16px}
+.dual .cta small{font-size:15px}
+.cta::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:ctaShine 3.2s ease-in-out infinite;pointer-events:none}
+.cta:hover{transform:translateY(-3px);box-shadow:0 10px 0 #0f6b32,0 18px 32px rgba(23,138,66,.45)}
+.cta:active{transform:translateY(5px);box-shadow:0 2px 0 #0f6b32,0 6px 12px rgba(23,138,66,.35)}
+.cta-alt{background:#fff;border:3px solid var(--navy);box-shadow:0 5px 0 var(--navy);border-radius:16px;font-size:21px;padding:13px 16px 11px;transition:transform .12s,box-shadow .12s}
+.cta-alt::before{content:"👈 ";}
+.cta-alt:hover{transform:translateY(-2px);box-shadow:0 7px 0 var(--navy);background:#f3f7ff}
+.cta-alt:active{transform:translateY(4px);box-shadow:0 1px 0 var(--navy)}
+.dark .dual .cta-alt{background:rgba(255,255,255,.08);box-shadow:0 5px 0 rgba(255,255,255,.55)}
+.dark .dual .cta-alt:hover{background:rgba(255,255,255,.16)}
+@keyframes ctaShine{0%,55%{left:-60%}100%{left:130%}}
+@keyframes ctaBreath{0%,100%{scale:1}50%{scale:1.03}}
+@media (prefers-reduced-motion:reduce){.cta,.cta::after{animation:none}}
+/* v30: joy box - each line stays whole (no jumping lines), size fits the screen */
+.letter .joyline .jl{display:block;white-space:nowrap}
+.letter .joyline p.joy-main{font-size:min(26px,calc((100vw - 96px) / 20.5))}
+.letter .joyline .joy-sub{font-size:min(21px,calc((100vw - 96px) / 21))}
+/* v31: success stories - photo beside the headline, quote below (clean on phone too) */
+.story.ph{display:grid;grid-template-columns:84px 1fr;column-gap:14px;row-gap:10px;align-items:center;justify-items:stretch;text-align:right;padding:18px 18px 16px;border:2px solid var(--line);border-top:5px solid var(--gold);box-shadow:0 6px 18px rgba(16,32,64,.08)}
+.story.ph .sbody{display:contents}
+.story.ph .sphoto{grid-column:1;grid-row:1;width:84px;height:84px;box-shadow:0 0 0 3px var(--gold)}
+.story.ph h3{grid-column:2;grid-row:1;margin:0;font-size:clamp(19px,5vw,21px);line-height:1.3}
+.story.ph p{grid-column:1 / -1;margin:0;line-height:1.6}
+.story.ph footer{grid-column:1 / -1;margin:0;border-top:1px solid var(--line);padding-top:10px;color:var(--navy2,#33476b)}
+.story.ph footer::before{content:"💬";margin-left:2px}
+/* v33: wide photo (father + daughter) - show both faces */
+.story.ph .sphoto.wide{grid-column:1 / -1;grid-row:1;justify-self:center;width:100%;max-width:300px;height:auto;aspect-ratio:260/148;border-radius:14px;object-fit:cover;object-position:center;box-shadow:0 0 0 3px var(--gold)}
+.story.ph:has(.sphoto.wide) h3{grid-column:1 / -1;grid-row:2;text-align:center}
+/* v34: option cards - buttons at the same height on computer */
+@media (min-width:720px){
+  .choice{align-items:stretch}
+  .choice .ccard{display:flex;flex-direction:column;align-items:center}
+  .choice .ccard > a,.choice .ccard > .calm{margin-top:auto}
+  .choice .ccard > .calm + a{margin-top:0}
+  .choice .ccard > a{min-height:92px;display:flex;flex-direction:column;justify-content:center;align-items:center;box-sizing:border-box}
+}
+@media (min-width:720px){
+  .choice .ccard > a.cta-alt{flex-direction:row;flex-wrap:wrap;align-content:center;gap:0 6px}
+  .choice .ccard > a.cta-alt small{flex-basis:100%}
+}
+/* v39: bonuses stand out */
+.bonusban{position:relative;justify-self:center;display:grid;justify-items:center;gap:2px;width:min(100%,560px);margin:26px auto 6px;padding:34px 18px 18px;background:linear-gradient(180deg,#e3191c,#b80d10);color:#fff;border:5px solid var(--gold);border-radius:24px;box-shadow:0 10px 28px rgba(184,13,16,.40);text-align:center;animation:pulse 1.8s ease-in-out infinite}
+.bonusban .bb-gift{position:absolute;top:-34px;left:50%;transform:translateX(-50%);display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:var(--gold);border:4px solid #fff;font-size:34px;box-shadow:0 6px 14px rgba(0,0,0,.25)}
+.bonusban .bb-num{display:inline-block;background:var(--gold);color:var(--navy);font-family:var(--head);font-weight:900;font-size:clamp(20px,5.6vw,24px);padding:3px 18px;border-radius:999px;margin-bottom:6px}
+.bonusban .bb-name{font-family:var(--head);font-weight:900;font-size:clamp(26px,7.4vw,36px);line-height:1.2;text-shadow:0 2px 3px rgba(0,0,0,.35)}
+.bonusban .bb-sub{font-family:var(--head);font-weight:700;font-size:clamp(18px,5vw,21px);color:#ffe9a8;margin-top:4px}
+@media (prefers-reduced-motion:reduce){.bonusban{animation:none}}
+.clist li.bon{background:var(--gold-soft);border:2px solid var(--gold);border-radius:10px;padding:4px 8px;font-weight:800;color:var(--navy)}
+.clist li.bon{padding:5px 40px 5px 10px}
+.clist li.bon::before{right:8px;top:50%;transform:translateY(-50%)}
+/* v49: cards on dark bands keep dark text */
+.ccard{color:var(--navy)}
+.ccard .clist li.yes,.ccard p{color:var(--navy)}
+.ccard .clist li.no{color:#98a3b4}
+.ccard .cprice span,.ccard .cnote{color:var(--muted)}
+.ccard .cnote b{color:var(--navy)}
+.ccard .calm{color:var(--ok)}
+@media (min-width:720px){.choice .ccard > a.cta-alt{display:block;min-height:0;padding-top:16px;padding-bottom:14px}}
+.nwp{white-space:nowrap}
+.ccard .cta-alt small{display:block;font-family:var(--body);font-weight:700;font-size:15px;margin-top:2px;color:var(--muted)}
+/* v52 bestseller badge redesign */
+.bestseller{position:relative;overflow:hidden;display:flex;align-items:center;gap:12px;padding:12px 18px 12px 14px;border:0;border-radius:18px;background:linear-gradient(135deg,#fff3c4 0%,#f3cd5f 45%,#e3b23c 70%,#fbe39a 100%);box-shadow:0 8px 22px rgba(0,0,0,.35),inset 0 0 0 2px rgba(255,255,255,.55),inset 0 -3px 0 rgba(169,124,18,.45);max-width:min(560px,100%)}
+.bestseller::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.65) 50%,transparent 70%);transform:translateX(-120%);animation:bsShine 4.5s ease-in-out infinite}
+@keyframes bsShine{0%,60%{transform:translateX(120%)}100%{transform:translateX(-120%)}}
+.bestseller svg{width:62px;height:62px;flex:none;filter:drop-shadow(0 3px 4px rgba(0,0,0,.3))}
+.bs-txt{display:flex;flex-direction:column;align-items:flex-start;gap:3px;min-width:0;text-align:right}
+.bs-tag{font-family:var(--head);font-weight:900;font-size:clamp(15px,4.2vw,19px);color:#fff;background:#c0392b;border-radius:999px;padding:2px 14px;letter-spacing:.5px;box-shadow:0 2px 0 #7f1d14}
+.bs-name{font-family:var(--head);font-weight:800;font-size:clamp(15px,4.3vw,21px);line-height:1.25;color:var(--navy);text-wrap:balance}
+.bs-stars{color:#c0392b;font-size:clamp(15px,4vw,18px);letter-spacing:2px;display:flex;align-items:center;flex-wrap:wrap;gap:4px 8px}
+.bs-stars small{font-family:var(--body);color:var(--navy);font-weight:700;font-size:clamp(13px,3.6vw,15.5px);letter-spacing:0}
+@media (prefers-reduced-motion:reduce){.bestseller::after{animation:none;display:none}}
+/* v53 smaller bestseller + bigger covers */
+.bestseller{gap:9px;padding:7px 14px 7px 10px;border-radius:14px;max-width:min(470px,100%)}
+.bestseller svg{width:44px;height:44px}
+.bs-txt{gap:2px}
+.bs-tag{font-size:clamp(13px,3.6vw,15px);padding:1px 11px}
+.bs-name{font-size:clamp(13.5px,3.8vw,17px)}
+.bs-stars{font-size:clamp(13px,3.4vw,15px)}
+.bs-stars small{font-size:clamp(12px,3.2vw,13.5px)}
+.covers{width:min(780px,calc(100vw - 28px));justify-self:center;gap:12px}
+/* v54 phone fixes */
+.nw{white-space:nowrap}
+@media (max-width:560px){
+  .letter .joyline .jl{white-space:normal;text-wrap:balance}
+  .letter .joyline p.joy-main{font-size:20px;line-height:1.35}
+  .letter .joyline .joy-sub{font-size:17.5px;line-height:1.4}
+  .letter .joyline .joy-sub .jl+.jl{margin-top:4px}
+}
+/* v55 3 steps like Kefel-New (dark boxes + big icons) */
+.steps3{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;width:min(920px,calc(100vw - 28px));justify-self:center}
+.steps3 li{position:relative;background:linear-gradient(180deg,var(--navy2),var(--navy));border:3px solid var(--gold);border-radius:20px;padding:30px 16px 22px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;box-shadow:0 10px 24px rgba(16,35,63,.25)}
+.steps3 .s3n{position:absolute;top:-20px;left:50%;transform:translateX(-50%);width:42px;height:42px;border-radius:50%;background:var(--gold);color:var(--navy);font-family:var(--head);font-weight:900;font-size:23px;display:grid;place-items:center;box-shadow:0 3px 0 var(--gold-deep)}
+.steps3 p{margin:0;color:#fff;font-size:19px;line-height:1.45;flex:1}
+.steps3 b{color:var(--gold);font-family:var(--head);font-weight:800;display:block;font-size:21px;margin-bottom:4px}
+.steps3 svg{width:110px;height:110px;flex:none}
+@media (max-width:640px){
+  .steps3{grid-template-columns:minmax(0,1fr);gap:26px}
+  .steps3 li{flex-direction:row;text-align:right;padding:26px 16px 18px;gap:12px}
+  .steps3 .s3n{left:auto;right:18px;transform:none}
+  .steps3 svg{width:78px;height:78px}
+}
+/* v59: lead form before payment */
+.lead{position:fixed;inset:0;z-index:60;background:rgba(16,35,63,.88);display:grid;place-items:center;padding:16px;overflow-y:auto}
+.lead[hidden]{display:none}
+.lead-card{position:relative;background:#fff;color:var(--navy);border:5px solid var(--gold);border-radius:24px;padding:30px 20px 18px;width:min(100%,470px);display:grid;gap:12px;text-align:center;box-shadow:0 16px 40px rgba(0,0,0,.45)}
+.lead-x{position:absolute;top:8px;left:8px;width:44px;height:44px;border-radius:50%;border:2px solid var(--line);background:#fff;color:var(--navy);font-size:20px;font-weight:900;cursor:pointer}
+.lead-pick{justify-self:center;background:var(--gold-soft);border:2px solid var(--gold);border-radius:14px;padding:6px 12px;font-family:var(--head);font-weight:800;font-size:16px;line-height:1.35}
+.lead-card h3{font-family:var(--head);font-weight:900;font-size:clamp(26px,7vw,32px);color:var(--navy)}
+.lead-sub{font-size:19px;font-weight:700;color:var(--muted)}
+#leadForm{display:grid;gap:12px;text-align:right}
+#leadForm label{display:grid;gap:4px;font-family:var(--head);font-weight:800;font-size:18px}
+#leadForm input{font:inherit;font-family:var(--body);font-weight:600;font-size:20px;padding:12px 14px;border:3px solid var(--line);border-radius:14px;color:var(--navy);background:#fff;width:100%}
+#leadForm input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-soft)}
+#leadForm input[type=tel],#leadForm input[type=email]{direction:ltr;text-align:right}
+.lead-err{background:#fdecea;border:2px solid #c0392b;color:#c0392b;border-radius:12px;padding:8px 12px;font-weight:800;font-size:17px;text-align:center}
+.lead-go{width:100%;margin-top:4px}
+.lead-back{justify-self:center;background:var(--navy);color:#fff;border:0;border-radius:12px;font-family:var(--head);font-weight:800;font-size:19px;padding:12px 22px;cursor:pointer}
+#leadForm .trust{margin-top:2px}
+</style></head><body>
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="bestseller"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20 40 12 60l9-4 5 8 6-18zM44 40l8 20-9-4-5 8-6-18z" fill="#c0392b"/><circle cx="32" cy="26" r="22" fill="#e3b23c"/><circle cx="32" cy="26" r="17" fill="none" stroke="#10233f" stroke-width="2" stroke-dasharray="3 3"/><path d="m32 14 3.5 7.2 7.9 1.1-5.7 5.6 1.4 7.8-7.1-3.7-7.1 3.7 1.4-7.8-5.7-5.6 7.9-1.1z" fill="#10233f"/></svg><div class="bs-txt"><span class="bs-tag">רב מכר!</span><span class="bs-name">התוכנית "פשוט לזכור את לוח הכפל לתמיד"</span><span class="bs-stars">★★★★★<small>כבר מעל 5,430 הורים רכשו אותה</small></span></div></div>
+    <div class="hquote"><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/p_broidy_hero.jpg" alt="נעמה ברוידי שמש"><p>"הבת שלי תוך שבוע וחצי אלופה בלוח הכפל! המעבר מתסכול להצלחה היה פשוט קסום"<small>נעמה ברוידי שמש, אמא לילדה בכיתה ג'</small></p></div>
+    <h1 class="h1k"><span>לוח הכפל בעל פה</span><span>פעם אחת ולתמיד!</span></h1>
+    <p class="sub">אתם ממש לא צריכים להיות מורים כדי לעזור לילד לשלוט בלוח הכפל בעל פה, <b>תוך 10 ימים בממוצע</b>, בלי מריבות ותסכולים!</p>
+    <figure class="fb"><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/fb_karin_dark.jpg" alt="תגובה בפייסבוק של קרין כהן: נרשמנו לפני מספר ימים, הייתי סקפטית אבל מה יכול להיות במחיר של שיעור פרטי 1. אתמול הגענו לשחק את משחק הקלפים לפי התוכנית והיה פשוט מעולה!! עם 2 ילדים במשך שעתיים לא רצו להפסיק. בבוקר עוד שאלתי תרגילים, זכרו הכל בשליפה מהירה. הם מחכים להמשיך. תודה"></figure>
+    <div class="ctabox"><a class="cta" href="#price">אבירם, גם אני רוצה ללמד את הילד את לוח הכפל<small>(וגם את כל שאר היסודות בחשבון)</small></a></div>
+  </div>
+</header>
+
+<!-- STUCK (verbatim from Kefel-New, his ask 8.11) -->
+<section class="band stuck">
+  <div class="wrap">
+    <h2>הורים יקרים - הילד שלכם "נתקע" בלוח הכפל?</h2>
+    <p>האם אתם מוצאים את עצמכם שוב ושוב חוזרים על אותם תרגילים, משתמשים בשירים, באצבעות, ובמשחקי זיכרון - <b>אבל כלום לא נתפס?</b></p>
+    <p class="big">זה לא שהילד שלכם מתעצל<br>ולא, זה ממש לא קשור לזיכרון שלו...</p>
+    <div class="gapbox">
+      <p class="g40"><b>40%</b> מהילדים בכיתות ה' ומעלה<br>עדיין לא שולטים בלוח הכפל ו...</p>
+      <p>זה הפער שגורם להם להתקשות בהמשך גם ב:</p>
+      <ul class="gaps2"><li>חילוק</li><li>שברים</li><li>אחוזים</li><li>בעיות מילוליות</li></ul>
+    </div>
+    <p>כשהם לא יודעים את לוח הכפל, הם מרגישים "לא חכמים" או "חלשים" בכיתה,<br><b>והביטחון העצמי שלהם נפגע.</b></p>
+    <div class="revo"><b>השיטה הזו עושה מהפכה:</b><p>אנחנו הופכים את הסיוט של לוח הכפל לחוויה של הצלחה, הבנה אמיתית ושליפה מהירה מהראש - גם לילדים עם הפרעות קשב, דיסקלקוליה או לקויות למידה.</p></div>
+  </div>
+</section>
+
+<!-- NEW METHOD -->
+<section class="band dark">
+  <div class="wrap">
+    <span class="newtag">✨ שיטת לימוד חדשה</span>
+    <h2>גם ילדים שמאובחנים עם קשב וריכוז או לקות למידה ודיסקלקוליה מצליחים יותר בלימודים בחשבון!</h2>
+    <p class="asseen">כפי שהוצג ב-</p>
+    <img class="presslogos" src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/press.jpg" alt="חדשות 12, כאן 11, NTD">
+    <div class="tvgrid"><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/tv12.jpg" alt="אבירם היכל בראיון בטלוויזיה"><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/tv2.jpg" alt="אבירם היכל בכתבה בטלוויזיה"><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/ntd.jpg" alt="אבירם היכל בראיון לרשת NTD"></div>
+    <p class="cany">גם אתם יכולים לעזור לילד שלכם...</p>
+    <p class="cbig">פשוט לזכור את לוח הכפל לתמיד!</p>
+    <div class="ctabox"><a class="cta" href="#price">אבירם, גם אני רוצה ללמד את ילדי את לוח הכפל<small>97 ש"ח במקום 197 ש"ח</small></a></div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="band proofsec">
+  <div class="wrap">
+    <div class="big5400"><p>התוכנית החדשה הזו עזרה כבר למעל</p><span class="num" dir="ltr">5,400</span><p>הורים (ואפילו סבתות וסבים) ללמד את הילדים את לוח הכפל <b>בממוצע תוך 10 ימים!</b></p></div>
+    <p class="lead2">והכול בעזרת הבנה אמיתית של פעולת הכפל, ושיטת תרגול מהנה שגורמת לילדים לרצות ללמוד ולתרגל בכיף, ולהטמיע את לוח הכפל בלי לשכוח אותו!</p>
+    <p class="demoh">צפו בסרטון הדגמה אחד מתוך התוכנית המלאה:</p>
+    <figure class="clip">
+      <div class="vwrap">
+        <video id="kv" src="https://aviram-heichal.github.io/moadon-page/kefel-new/clips/heshbon-preview2.mp4" preload="metadata" playsinline controls></video>
+        <img class="poster" id="kposter" src="https://aviram-heichal.github.io/moadon-page/kefel-new/clips/heshbon_slide.jpg" alt="">
+        <p class="poster-t" id="kpt">מה זה כפל? ככה ילד מבין את זה באמת</p>
+        <button class="bigplay" id="kplay" type="button" aria-label="הפעלת הסרטון"><span>▶</span></button>
+      </div>
+      <figcaption>הדגמה אמיתית שלי עם ילד, מתוך התוכנית (6 דקות)</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="band getsec">
+  <div class="wrap">
+    <p class="lead2 onlystart"><b>אבל זו כמובן רק ההתחלה -</b> קבלו עכשיו קישור לתוכנית המלאה ובה תלמדו איך ללמד את הילד את כל לוח הכפל ובכיף, כך שישלוף את התשובות מהראש ויזכור אותו לתמיד!</p>
+    <h2 class="h2s">בתוכנית המלאה תקבלו:</h2>
+    <ul class="chips"><li>4 סרטוני הדרכה</li><li>3 סרטוני הדגמה</li><li>שיטת תרגול ייחודית</li><li>צ'קליסט צעד אחר צעד</li><li class="bon">🎁 מדריך להקפצת הילד בחשבון</li></ul>
+    <h2>בתוכנית "פשוט לזכור את לוח הכפל" תלמדו...</h2>
+    <ul class="ticks">
+      <li><b>איך להסביר לילד בצורה פשוטה</b> את המשמעות של פעולת הכפל</li>
+      <li><b>איך לתרגל איתו בעזרת משחק מהנה</b>, כדי שירצה לתרגל (ואפילו יבקש מכם עוד)</li>
+      <li><b>טכניקה מיוחדת</b> שעוזרת לו להטמיע את לוח הכפל ולשלוף את התשובות מהראש, ממש מהר</li>
+      <li><b>ובונוס:</b> 4 טכניקות פשוטות לשיפור מהיר של הזיכרון והקליטה, בחשבון ובכלל</li>
+    </ul>
+    <div class="res"><span>והתוצאה בבית:</span><p>הילד שולף את לוח הכפל מהראש, ולא שוכח.<br>בלי מאבק, ובלי שתצטרכו להיות מורים!</p></div>
+    <p class="diag">מתאים מאוד גם להורים לילדים שאובחנו עם לקות למידה, הפרעת קשב או דיסקלקוליה.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="band">
+  <div class="wrap">
+    <h2>פשוט לזכור את לוח הכפל -<br>איך זה עובד?</h2>
+    <p class="hour">תוך כשעה תלמדו איך ללמד את הילד שלכם את לוח הכפל כמו המורה הכי טובה להוראה מתקנת, והכול בצורה מהנה ובלי תסכולים ועצבים!</p>
+    <ol class="steps3">
+      <li><span class="s3n">1</span><p><b>נרשמים ומקבלים מייד למייל</b> את פרטי הגישה לקורס, לצפייה במחשב או בסמארטפון.</p><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M30 46V30a20 20 0 0 1 39-6" fill="none" stroke="#e3b23c" stroke-width="11" stroke-linecap="round"/><rect x="16" y="44" width="68" height="50" rx="12" fill="#e3b23c"/><rect x="45" y="60" width="10" height="18" rx="5" fill="#10233f"/></svg></li>
+      <li><span class="s3n">2</span><p><b>צופים בסרטוני ההדרכה וההדגמה</b> ורואים איך ללמד את הילד את לוח הכפל לפי השיטה.</p><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="27" y="6" width="46" height="88" rx="10" fill="#e3b23c"/><rect x="33" y="15" width="34" height="58" rx="3" fill="#10233f"/><path d="M45 36v20l15-10z" fill="#e3b23c"/><circle cx="50" cy="83" r="5" fill="#10233f"/></svg></li>
+      <li><span class="s3n">3</span><p><b>מלמדים את הילד את לוח הכפל</b> צעד אחר צעד, בכיף, פעם אחת ולתמיד.</p><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="19" r="13" fill="#e3b23c"/><path d="M16 24l26 20M84 24L58 44M44 66l-3 26M56 66l3 26" fill="none" stroke="#e3b23c" stroke-width="11" stroke-linecap="round"/><rect x="37" y="37" width="26" height="33" rx="9" fill="#e3b23c"/></svg></li>
+    </ol>
+  </div>
+</section>
+
+<!-- HOW TO START = the split (8.11 his ask) -->
+<section class="band mist" id="price">
+  <div class="wrap wide">
+    <h2>איך מתחילים?</h2>
+    <p class="lead2">יש 2 דרכים להתחיל. הנה ההבדל ביניהן:</p>
+    <div class="choice">
+      <div class="ccard">
+        <span class="optn">אפשרות 1</span>
+        <h3>רק התוכנית פשוט לזכור את לוח הכפל</h3>
+        <p class="cprice"><b>97 ש"ח</b><span>תשלום אחד, במקום <s>197 ש"ח</s></span></p>
+        <p class="cnote"><b>והתוכנית שלכם לתמיד.</b></p>
+        <ul class="clist">
+          <li class="yes">התוכנית המלאה ללימוד לוח הכפל</li>
+          <li class="yes">4 סרטוני הדרכה ו-3 סרטוני הדגמה</li>
+          <li class="yes">שיטת התרגול + הצ'קליסט</li>
+          <li class="yes bon">🎁 בונוס: מדריך 10 הטכניקות להבנת חשבון</li>
+          <li class="no">שאר תוכניות החשבון</li>
+          <li class="no">אפליקציית התרגול</li>
+          <li class="no">מועדון ההורים</li>
+        </ul>
+        <a class="cta-alt" href="https://secure.cardcom.solutions/u/v6oHno9OU62sgxvAQ4psg" data-pay="kf">אני רוצה רק את לוח הכפל - 97&nbsp;ש"ח<small>תשלום חד-פעמי אחד</small></a>
+      </div>
+      <div class="ccard best">
+        <span class="cbadge">⭐ הכי משתלם</span>
+        <span class="optn">אפשרות 2</span>
+        <h3>מנוי ל-MATHFLIX</h3>
+        <p class="cprice"><b>29 ש"ח</b><span>לחודש הראשון, ואחר כך 97 ש"ח לחודש</span></p>
+        <p class="cnote"><b>גישה לכל תוכניות לימוד החשבון, כולל לוח הכפל</b>, ותוכניות נוספות כדי להקפיץ את הילד בכל היסודות הכי חשובים בחשבון.</p>
+        <ul class="clist">
+          <li class="yes">תוכנית לוח הכפל המלאה</li>
+          <li class="yes">כל תוכניות החשבון: חיבור וחיסור, מאונך, שברים, סדר פעולות, משוואות ועוד</li>
+          <li class="yes bon">🎁 בונוס: מדריך 10 הטכניקות להבנת חשבון</li>
+          <li class="yes bon">🎁 בונוס: אפליקציית התרגול החדשה</li>
+          <li class="yes bon">🎁 בונוס: מועדון ההורים שלנו</li>
+        </ul>
+        <a class="cta" href="#meet"><span class="nw">ספרו לי עוד על MATHFLIX&nbsp;👇</span><small>מנוי ל-MATHFLIX עם כל הבונוסים<br>29 ש"ח לחודש הראשון ו-97 ש"ח לחודש <span class="nwp">מהחודש השני</span><br>בלי התחייבות, אפשר להפסיק בכל רגע <span class="nwp">(100% ראש שקט!)</span></small></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MATHFLIX: what is it -->
+<section class="band dark" id="meet">
+  <div class="wrap">
+    <p class="mf-intro"><b>אני רוצה להכיר לכם את:</b></p>
+    <div class="mf-logo mf-big" role="img" aria-label="MATHFLIX"><span class="m">MATH</span><span class="f">FLIX</span><i aria-hidden="true">▶</i></div>
+    <p class="mf-instead">במקום לשרוף שעות על ניסיונות<br>שנגמרים בפיצוצים ותסכולים,</p>
+    <p class="mf-tag">בית הספר האינטרנטי לחשבון,<br>להורים, מורים (וגם לסבתא או סבא)<br>שרוצים לעזור לילדים שלהם לקפוץ בחשבון!</p>
+    <h2>כל תוכניות החשבון שלי<br>נמצאות ב-MATHFLIX:</h2>
+    <ul class="covers">
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/mf/kefel.jpg" alt="פשוט לזכור את לוח הכפל"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/mf/add10.jpg" alt="חיבור וחיסור עד 10 בלי אצבעות"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/mf/add20.jpg" alt="חיבור וחיסור עד 20"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/mf/vertical.jpg" alt="חיבור וחיסור במאונך"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/mf/order.jpg" alt="סדר פעולות"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/mf/frac1.jpg" alt="שברים"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/mf/frac2.jpg" alt="שברים 2"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/mf/big.jpg" alt="מספרים גדולים"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/mf/neg.jpg" alt="מספרים שליליים"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/mf/eq.jpg" alt="משוואות"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/mf/geo.jpg" alt="גיאומטריה"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/mf/zeros.jpg" alt="אפסים"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/mf/lang.jpg" alt="שפת החשבון"></li>
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/mf/secrets.jpg" alt="סודות"></li>
+      <li class="plus"><span class="plus-in"><b>➕ ועוד</b>תוכניות חדשות שעולות כל הזמן</span></li>
+    </ul>
+    <div class="fit">
+      <p class="fit-h">✅ למי זה מתאים?</p>
+      <p>להורים לילדים <b>בכיתות א' עד ז'</b>.</p>
+      <p>גם לילדים שאובחנו עם <b>קשיי למידה, דיסקלקוליה או קשב וריכוז</b>.</p>
+      <p>וכמובן, לכל השאר!</p>
+    </div>
+    <h2>בכל תוכנית מחכים לכם:</h2>
+    <ul class="feats">
+      <li>🎬 <b>סרטוני הדרכה פשוטים</b></li>
+      <li>👀 <b>הדגמות</b> איך ללמד את הילד</li>
+      <li>🪜 <b>הצ'קליסט</b> - רשימת כל השלבים והצעדים שתעשו עם הילד, צעד אחר צעד, בכל נושא חשוב בחשבון. <b>בלי לשבור את הראש!</b></li>
+    </ul>
+    <div class="res"><span>והתוצאה בבית:</span><p>אתם יודעים בדיוק מה להראות ואיך להסביר - והילד מבין.<br>בלי מאבק ובלי להרגיש מורים!</p></div>
+    <div class="proof1600"><b class="num">1,600</b><p><b>הורים ומשפחות</b> כבר בפנים.<br>הגישה ל-MATHFLIX כבר משנה להם את הדרך<br>שבה הם לומדים עם הילדים ומצליחים בחשבון.</p><p class="p-end">והיא יכולה כבר מהיום לעזור גם לילד שלכם.</p></div>
+  </div>
+</section>
+
+<!-- MATHFLIX price -->
+<section class="band mist">
+  <div class="wrap">
+    <div class="paybox">
+      <p class="pb-head">💰 כמה עולה מנוי <span class="nw">ל-MATHFLIX?</span></p>
+      <div class="pb-body">
+        <p class="pb-lead">כל הידע הזה, <b>במחיר שכל הורה יכול להרשות לעצמו:</b></p>
+        <div class="pb-reg"><span>המנוי החודשי ל-MATHFLIX</span><b>97 ש"ח לחודש</b><small>פחות משיעור פרטי אחד בחשבון בחודש!</small></div>
+        <div class="pb-deal">
+          <span class="only">⚠️ אבל עכשיו: החודש הראשון בהנחה</span>
+          <div class="pb-ten"><b>29 ש"ח</b><span>החודש הראשון</span></div>
+          <p class="pb-then">ואחר כך 97 ש"ח לחודש, מהחודש השני</p>
+        </div>
+        <p class="calm"><b>100% ראש שקט</b> - אין לכם שום התחייבות - אפשר לבטל את המנוי בכל רגע!</p>
+        <div class="ctabox"><a class="cta js-mf" href="https://secure.cardcom.solutions/u/9x6QsAyPGUelcjAsrTdpbA">כן! אני רוצה להצטרף ל-MATHFLIX<br>ולהקפיץ את הילד שלי בחשבון!<small>מנוי ל-MATHFLIX עם כל הבונוסים<br>29 ש"ח לחודש הראשון ו-97 ש"ח לחודש <span class="nwp">מהחודש השני</span><br>בלי התחייבות, אפשר להפסיק בכל רגע <span class="nwp">(100% ראש שקט!)</span></small></a></div>
+<div class="trust" aria-label="תשלום מאובטח">
+  <div class="t-row">
+    <span class="t-badge"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2.5" fill="#1f8a4c"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="#1f8a4c" stroke-width="2.4"/><circle cx="12" cy="15.5" r="1.8" fill="#fff"/></svg>תשלום מאובטח SSL</span>
+    <span class="t-badge"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z" fill="#10233f"/><path d="m8.5 12 2.4 2.4 4.6-4.8" fill="none" stroke="#e3b23c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>תקן אבטחה PCI DSS</span>
+  </div>
+  <div class="t-cards" aria-label="כרטיסי אשראי">
+    <svg viewBox="0 0 60 38" class="t-card" role="img" aria-label="Visa"><rect width="60" height="38" rx="5" fill="#fff" stroke="#d8dfe9"/><text x="30" y="25" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-style="italic" font-size="16" fill="#1a1f71">VISA</text></svg>
+    <svg viewBox="0 0 60 38" class="t-card" role="img" aria-label="American Express"><rect width="60" height="38" rx="5" fill="#2e77bc"/><text x="30" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="12" fill="#fff">AMEX</text></svg>
+    <span class="t-card t-logo"><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/card_isracard.jpg" alt="ישראכרט"></span>
+    <span class="t-card t-logo"><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/card_diners.jpg" alt="Diners Club"></span>
+  </div>
+</div>
+
+      </div>
+    </div>
+    <p class="bonus-bridge"><span class="bb-pre">אבל זה לא הכול!</span><span>ומי שמצטרף עכשיו מקבל גם</span><b>🎁 2 בונוסים!</b><span class="arrow">👇</span></p>
+  </div>
+</section>
+
+<!-- bonus 1: app -->
+<section class="band dark">
+  <div class="wrap">
+    <div class="bonusban"><span class="bb-gift">🎁</span><span class="bb-num">בונוס 1</span><span class="bb-name">אפליקציית התרגול החדשה<br>של אבירם היכל</span></div>
+    <h2>הילד מתרגל לבד,<br>בכיף ובכמויות!</h2>
+    <p class="lines">אפליקציית התרגול החדשה שפיתחתי, כדי שהילד יתרגל עד שהוא שולט ושולף. הילדים עפים על זה...</p>
+    <div class="app-pair">
+      <figure><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/app2.jpg" alt="שבוע תרגול אישי לילד"><figcaption>שבוע תרגול אישי לילד</figcaption></figure>
+      <figure><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/app_ex.jpg" alt="ככה הילד מתרגל"><figcaption>ומבפנים: ככה הילד מתרגל</figcaption></figure>
+    </div>
+    <ul class="feats">
+      <li>✅ <b>תרגול יומי פשוט של כל הנושאים!</b></li>
+      <li>✅ <b>משחקים שמשפרים</b> את מהירות החשיבה והשליפה</li>
+      <li>✅ <b>כלים גם לשיפור בהנדסה</b></li>
+      <li>✅ <b>דוח שבועי</b> שמראה לכם את ההתקדמות של הילד</li>
+      <li>✅ <b>אפשר לתרגל עד 3 ילדים בבית</b></li>
+      <li>✅ הכול סופר פשוט - <b>בלחיצת כפתור!</b></li>
+    </ul>
+    <div class="res"><span>והתוצאה בבית:</span><p>הילד מתרגל לבד, בכיף ובכמויות, בלי שתצטרכו לשבת לידו ולבדוק כל תרגיל.</p></div>
+  </div>
+</section>
+
+<!-- bonus 2: parents club -->
+<section class="band">
+  <div class="wrap">
+    <div class="bonusban"><span class="bb-gift">🎁</span><span class="bb-num">בונוס 2</span><span class="bb-name">כניסה למועדון ההורים שלנו</span><span class="bb-sub">ללא תוספת תשלום (הכול באותו מנוי)</span></div>
+    <h2>כל ההדרכות שלי<br>ושל מומחים נוספים:</h2>
+    <ul class="covers">
+      <li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/parents/lurie.jpg" alt=""></li><li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/parents/ofir.jpg" alt=""></li><li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/parents/listen.jpg" alt=""></li><li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/parents/secrets_f.jpg" alt=""></li><li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/parents/morning.jpg" alt=""></li><li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/parents/read.jpg" alt=""></li><li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/parents/spell.jpg" alt=""></li><li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/parents/kinder.jpg" alt=""></li><li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/parents/family.jpg" alt=""></li><li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/parents/ups.jpg" alt=""></li><li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/parents/calm.jpg" alt=""></li><li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/parents/screens.jpg" alt=""></li><li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/parents/phones.jpg" alt=""></li><li><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/parents/siblings.jpg" alt=""></li>
+      <li class="plus"><span class="plus-in"><b>➕ ועוד</b>הדרכות חדשות שעולות כל הזמן</span></li>
+    </ul>
+    <ul class="more2">
+      <li class="c1"><div class="mt-head"><span class="mt-ic">🧠</span><h3>שיפור קשב וריכוז באופן טבעי, בלי כימיקלים</h3></div><p>הדרכות שלי, של ד"ר שולמית לוריא, של נועה אדם גרוס, של ד"ר יעקב אופיר ועוד.</p></li>
+      <li class="c2"><div class="mt-head"><span class="mt-ic">☀️</span><h3>בוקר מנצח</h3></div><p>איך ליצור בוקר עם הילדים בלי ריבים ועצבים.</p></li>
+      <li class="c3"><div class="mt-head"><span class="mt-ic">📖</span><h3>לימוד קריאה ושגיאות כתיב</h3></div><p>איך ללמד את הילד לקרוא בקלות, ולטפל בשגיאות כתיב.</p></li>
+      <li class="c4"><div class="mt-head"><span class="mt-ic">📵</span><h3>פחות מסכים</h3></div><p>בלי שהילד שובר לכם את הבית בהתפרצויות זעם כשאתם מגבילים לו את הפורטנייט.</p></li>
+      <li class="c5"><div class="mt-head"><span class="mt-ic">📞</span><h3>הטלפונים מבית הספר</h3></div><p>איך להתמודד נכון ולעבוד בשיתוף פעולה עם הצוות החינוכי, בלי לחץ לאבחונים ותרופות.</p></li>
+      <li class="c6"><div class="mt-head"><span class="mt-ic">➕</span><h3>ויש עוד...</h3></div><p>שיפור ההתנהגות והתקשורת בבית, פחות ריבים בין אחים, ועוד ועוד.</p></li>
+    </ul>
+    <div class="commit"><span class="commit-ic">💙</span><b>אנחנו מחויבים לעזור לכל הורה שלומד אצלנו</b><p>כדי שיוכל להקפיץ את הילדים שלו בלימודים,<br>ולשפר כל היבט בבית.</p></div>
+  </div>
+</section>
+
+<!-- MATHFLIX steps -->
+<section class="band dark">
+  <div class="wrap">
+    <h2>אז מה קורה מהרגע שמצטרפים ל-MATHFLIX?</h2>
+    <div class="easybig"><b>✨ הכול פשוט וקל! ✨</b><span>בלי להסתבך,<br>ואנחנו איתכם בכל צעד.</span></div>
+    <ol class="easy">
+      <li><span class="when">תוך כמה דקות</span><h3>הכול נפתח לכם</h3><p>כל הפרטים נשלחים אליכם למייל. לוחצים ונכנסים, בטלפון או במחשב, בלי סיסמה.</p></li>
+      <li><span class="when">תוך 24 שעות</span><h3>קבוצת ווטסאפ אישית איתי ועם אורית</h3><p>שואלים כל שאלה, ומקבלים תשובה והכוונה.</p></li>
+      <li class="call"><span class="when">בשבוע הראשון</span><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/orit.jpg" alt="אורית היכל"><h3>אורית, אשתי, מתקשרת אליכם</h3><p>ובונה לכם באופן אישי במה להתחיל לצפות, לפי מה שמתאים לכם ולילד.</p></li>
+      <li><span class="when">כבר מהשבוע הראשון</span><h3>הילד מתחיל לתרגל באפליקציה</h3><p>לבד, בכיף ובכמויות. ואתם מקבלים דוח שבועי.</p></li>
+      <li><span class="when">כל חודש</span><h3>הדרכה חיה בזום</h3><p>ובין לבין עולות עוד הדרכות ותוכניות.</p></li>
+    </ol>
+    <div class="easy-time"><p>כמה זמן זה דורש מכם?</p><b>בערך שעה בשבוע</b><p>(אבל רבים מההורים פשוט נהנים, ולומדים ומקשיבים הרבה יותר...)</p></div>
+    <h2 class="choose">אז מה אתם בוחרים?</h2>
+    <div class="dual"><a class="cta js-mf" href="https://secure.cardcom.solutions/u/9x6QsAyPGUelcjAsrTdpbA">אני רוצה את הכול!<small>מנוי ל-MATHFLIX עם כל הבונוסים<br>29 ש"ח לחודש הראשון ו-97 ש"ח לחודש <span class="nwp">מהחודש השני</span><br>בלי התחייבות, אפשר להפסיק בכל רגע <span class="nwp">(100% ראש שקט!)</span></small></a><a class="cta-alt" href="https://secure.cardcom.solutions/u/v6oHno9OU62sgxvAQ4psg" data-pay="kf">רק התוכנית פשוט לזכור את לוח הכפל<small>97 ש"ח, תשלום חד-פעמי אחד</small></a></div>
+  </div>
+</section>
+
+<!-- GAPS CTA -->
+<section class="band dark">
+  <div class="wrap">
+    <h2>ילד שלא שולט בלוח הכפל<br>מתקשה גם ב...</h2>
+    <ul class="gaps2"><li>חילוק</li><li>שברים (מכנה משותף)</li><li>חזקות ושורשים</li><li>אחוזים</li><li>פירוק לגורמים</li><li>ונושאים נוספים במתמטיקה!</li></ul>
+    <p class="ifimp">אם חשוב לכם שהילד שלכם כן ישלוט בלוח הכפל ויוביל בכיתה -<br><b>התוכנית הזו תעזור לכם ללמד אותו את לוח הכפל בכיף, במהירות ובלי תסכולים!</b></p>
+    <p class="ifimp">ואם חשוב לכם שהוא יצליח <b>גם בכל שאר היסודות בחשבון</b> -<br>כל התוכניות מחכות לכם ב-MATHFLIX.</p>
+    <div class="dual"><a class="cta js-mf" href="https://secure.cardcom.solutions/u/9x6QsAyPGUelcjAsrTdpbA">אני רוצה את הכול!<small>מנוי ל-MATHFLIX עם כל הבונוסים<br>29 ש"ח לחודש הראשון ו-97 ש"ח לחודש <span class="nwp">מהחודש השני</span><br>בלי התחייבות, אפשר להפסיק בכל רגע <span class="nwp">(100% ראש שקט!)</span></small></a><a class="cta-alt" href="https://secure.cardcom.solutions/u/v6oHno9OU62sgxvAQ4psg" data-pay="kf">רק התוכנית פשוט לזכור את לוח הכפל<small>97 ש"ח, תשלום חד-פעמי אחד</small></a></div>
+  </div>
+</section>
+
+<!-- KIDS (from the MATHFLIX kefel-buyers page) -->
+<section class="band mist">
+  <div class="wrap">
+    <p class="clip-title kids-t">רגע, אפילו לא הצגתי את עצמי...<br>אבל לפני זה, אני רוצה להראות לכם איך אני לומד עם הבת שלי, אמילי, במשחק החטיפות 💙</p>
+    <figure class="clip">
+      <div class="vwrap"><video id="emilyVid" controls controlslist="nofullscreen nodownload noremoteplayback" disablepictureinpicture playsinline webkit-playsinline preload="metadata" poster="https://aviram-heichal.github.io/moadon-page/kefel-new/img/emily_poster.jpg" src="https://aviram-heichal.github.io/moadon-page/kefel-new/clips/emily-preview.mp4"></video><button class="bigplay" id="ePlay" type="button" aria-label="ניגון הסרטון"><span aria-hidden="true">▶</span></button></div>
+    </figure>
+    <p class="cbig2">וגם ראיתם מה אמילי אמרה בסוף?<br><span class="red">"עוד פעם..."</span></p>
+    <p class="lead2">כשההורים יודעים את כל הכלים,<br><b>הילדים רוצים ללמוד ומתלהבים לתרגל.</b></p>
+    <article class="letter mine">
+      <img class="letter-face" src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/aviram_hero.jpg" alt="אבירם היכל">
+      <p>אז נעים מאוד, שמי <b>אבירם היכל</b>,<br>ועד היום לימדתי בעצמי חשבון <b>אלפי ילדים</b>,<br>ויש לי גם <b>צוות מאמנים</b> שמלמדים חשבון<br>מכיתה א' ועד בגרויות.</p>
+      <p>עם כל הניסיון הזה, והשיטה הייחודית שלנו,<br>אני יודע בדיוק מה הצעדים.</p>
+      <p>בזכות זה הבת שלי ידעה כבר בגיל 5, עוד לפני כיתה א',<br>לשלוף מהראש תרגילים כמו 9+5 או 8+4, במהירות.</p>
+      <p>ולא רק את זה.<br><b>והכי יפה זה שהיא אוהבת ללמוד איתי.</b></p>
+      <p>והבן שלי, בן? <b>גם הוא אלוף בחשבון בזכות השיטה!</b><br>לימדתי אותו חיבור וחיסור עד 10 בלי אצבעות כבר בגיל 4.<br>היום הוא כבר בן 9,<br><b>והוא שולט בכל נושא חשוב בחשבון בכיתה!</b><br>יש לו חשיבה מתמטית שפיתחתי אצלו.</p>
+      <div class="kids">
+        <figure><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/emily.jpg" alt="אבירם ואמילי מתאמנים"><figcaption>אני ואמילי, הבת שלי, מתאמנים</figcaption></figure>
+        <figure><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/ben.jpg" alt="אבירם ובן"><figcaption>אני ובן, הבן שלי, בתוכנית חיבור וחיסור עד 10</figcaption></figure>
+      </div>
+      <p>אבל חוץ מהילדים שלי,<br>ועוד אלפי ילדים שלימדתי באופן פרטי וקבוצתי,<br><b>הכשרתי גם אלפי הורים ומורים</b><br>איך ללמד את הילדים שלהם חשבון,<br>כלים לשיפור הקשב, וכלים ללמידה נכונה<br>(גם לילדים שאובחנו עם דיסקלקוליה או עם הפרעות קשב).</p>
+      <p class="loop">אז לקחתי את כל השלבים, לכל נושא בחשבון,<br><b>ושמתי אותם במקום אחד: ב-MATHFLIX.</b></p>
+      <div class="joyline">
+        <p class="joy-main">🎉<span class="jl">אז כן, אני הולך להראות לכם את כל הכלים</span><span class="jl">שאיתם גם הילדים שלכם ירצו ללמוד</span><span class="jl">ויתלהבו לתרגל!</span></p>
+        <p class="joy-sub"><span class="jl">וכשתדעו את זה, יהיה לכם כיף ללמד ביחד 🙂</span><b class="jl">וכבר לא תרגישו כמו המורים שלהם...</b></p>
+      </div>
+    </article>
+    <div class="dual"><a class="cta js-mf" href="https://secure.cardcom.solutions/u/9x6QsAyPGUelcjAsrTdpbA">אני רוצה את הכול!<small>מנוי ל-MATHFLIX עם כל הבונוסים<br>29 ש"ח לחודש הראשון ו-97 ש"ח לחודש <span class="nwp">מהחודש השני</span><br>בלי התחייבות, אפשר להפסיק בכל רגע <span class="nwp">(100% ראש שקט!)</span></small></a><a class="cta-alt" href="https://secure.cardcom.solutions/u/v6oHno9OU62sgxvAQ4psg" data-pay="kf">רק התוכנית פשוט לזכור את לוח הכפל<small>97 ש"ח, תשלום חד-פעמי אחד</small></a></div>
+  </div>
+</section>
+
+<!-- STORIES -->
+<section class="band mist">
+  <div class="wrap">
+    <h2>מעל 5,400 הורים כבר עזרו לילדים<br>עם התוכנית החדשה ללימוד לוח הכפל</h2>
+    <p class="lead2">הנה מה שיש להם לספר...</p>
+    <div class="stories sgrid">
+      <article class="story ph"><img class="sphoto wide" src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/kn/malul2.jpg" alt="אבישי מלול והבת שלו נויה">
+<div class="sbody"><h3>"אבירם, אנחנו רוצים לומר לך תודה, תודה ושוב תודה!"</h3><p>"הביטחון העצמי של נויה ותחושת הסיפוק שלה מעצמה עולים וגוברים. היא מצליחה לזכור את התרגילים והיא רוצה ללמוד עוד ועוד. גם האמונה שניטעה בי שהבת שלי היא "לא חכמה מספיק" או שהיא מאותגרת בעלת "הפרעת קשב וריכוז", "לקות למידה" או שיש לה "דיסקלקוליה" הלכה והתפוגגה!"</p><footer>אבישי מלול מעפולה, אבא של נויה</footer></div></article>
+      <article class="story ph"><img class="sphoto" src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/kn/sherman.jpg" alt="">
+<div class="sbody"><h3>"זה עובד כמו קסם, הילדה פשוט שולפת את לוח הכפל מהראש!"</h3><p>"הבת שלנו התקשתה לזכור את לוח הכפל. ניסינו שיטות של שירים, אצבעות, משחק זיכרון ומה לא? אבל זה פשוט לא נקלט. בעלי רכש את התוכנית של אבירם והיא עבדה כמו קסם! תוך זמן קצר הילדה פשוט "שכפלה" את לוח הכפל כמו שאבירם מסביר בתוכנית והיום היא יודעת אותו בשליפה! תודה גדולה"</p><footer>אביבית שרמן, אמא של עמנואל (כיתה ו') מרמת השרון</footer></div></article>
+      <article class="story ph"><img class="sphoto" src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/kn/shuster.jpg" alt="">
+<div class="sbody"><h3>"הנכד שלי זוכר את לוח הכפל גם אם מעירים אותו באמצע הלילה"</h3><p>"חיפשתי דרך קלה ללמד את הנכד שלי בן ה-8 את לוח הכפל ופתאום מצאתי את השיטה בפייסבוק. נרשמתי וזה עבד פשוט מעולה. הנכד שלי היה מוכן ואפילו ביקש לתרגל עוד ועוד ועכשיו הוא יודע את לוח הכפל כל כך טוב - שגם אם אעיר אותו באמצע הלילה הוא ישלוף אותו. זה פשוט וזה עובד!"</p><footer>חנה שוסטר, סבתא שלימדה את הנכד שבכיתה ב'</footer></div></article>
+      <article class="story ph"><img class="sphoto" src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/kn/shilo.jpg" alt="">
+<div class="sbody"><h3>"הבן שלי שאל: אמא, למה לא מלמדים ככה בבית הספר?"</h3><p>"הלכתי ללמוד שיטות להוראה מותאמת כדי לעזור לילד שלי בחשבון - אבל אף תוכנית לא היתה כל כך פרקטית כמו התוכנית הזו. זו שיטה שעובדת וכיף ללמוד עם הילדים. הבן שלי כל כך נהנה ושאל: "אמא, למה לא מלמדים ככה גם בבית ספר?" ממליצה בחום!"</p><footer>אורית שילו, אמא ממעלה אדומים</footer></div></article>
+      <article class="story ph"><img class="sphoto" src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/kn/eitan.jpg" alt="">
+<div class="sbody"><h3>"התלהבתי כשלמדתי את השיטה, אבל המציאות עולה על כל דמיון"</h3><p>"התהליך היה מופלא ופשוט. מההתחלה הילה היתה כל כולה בעניין. אבירם הוא גאון! התלהבתי כשלמדתי את השיטה אבל המציאות עולה על כל דמיון."</p><footer>איתן דוד, אבא של הילה שבכיתה ה'</footer></div></article>
+      <article class="story ph"><img class="sphoto" src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/kn/teit.jpg" alt="">
+<div class="sbody"><h3>"בשום מקום לא למדתי את הכלים שלמדתי עם אבירם"</h3><p>"אלו כלים פשוטים להבנה ומאוד מאוד פרקטיים שכל מורה והורה יכולים וחייבים להשתמש בהם. היום, בעקבות הקורס עם אבירם, אני מלמדת שונה בכיתה ובצורה שהילדים הרבה יותר רוצים ללמוד!!! ממליצה בחום רב גם למורים וגם להורים!"</p><footer>עדי טיטלבוים, מורה לחינוך מיוחד בבית ספר יסודי</footer></div></article>
+      <article class="story ph"><img class="sphoto" src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/kn/bokai.jpg" alt="">
+<div class="sbody"><h3>"סוף סוף הבת שלי רוצה ללמוד איתי ולא מתנגדת"</h3><p>"הייתי סקפטית בהתחלה כי הבת שלי תמיד התנגדה לשבת איתי ללמוד. עם השיטה הזו אני לא רק מצליחה להושיב אותה - היא אפילו מבקשת ממני לתרגל עוד! פעם ראשונה שאנחנו נהנות ללמוד יחד ואנחנו לא מאבדות סבלנות"</p><footer>שירי בוקאי, אמא שמלמדת את כל הילדים שלה</footer></div></article>
+      <article class="story ph"><img class="sphoto" src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/kn/esh.jpg" alt="">
+<div class="sbody"><h3>"זה שונה לגמרי לדעת את החומר ולדעת איך ללמד אותו!"</h3><p>"למרות שאני יודעת את לוח הכפל ואת החומר בחשבון - לא ידעתי איך להסביר אותו לילדים שלי כמו שצריך. בקורס הזה קיבלתי את השיטה המדויקת איך ללמד אותם את לוח הכפל במהירות! מהרגע הראשון שהתחלתי ליישם איתם - זה עבד כמו קסם."</p><footer>אורטל אש, אמא שגרה בלונדון</footer></div></article>
+      <article class="story ph"><img class="sphoto" src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/kn/tsvik.jpg" alt="">
+<div class="sbody"><h3>"אבירם פיצח את השיטה איך לגרום לילדים להבין ולרצות!"</h3><p>"אבירם היכל פתר את החידה: כיצד להצליח ללמד ילדים את לוח הכפל וחשבון בכלל בצורה שהם יבינו ויפנימו! רואים את האסימונים נופלים למקומות הנכונים ואת ההנאה בלימודים. זה מהיר כמו מטאור. תודה לך אבירם"</p><footer>מאיה צויק, אמא ל-3 משוהם</footer></div></article>
+      <article class="story ph"><img class="sphoto" src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/kn/moshe.jpg" alt="">
+<div class="sbody"><h3>"הלמידה שלי עם שי הפכה לחוויה נעימה והיא למדה את לוח הכפל"</h3><p>"שי מאוד שמחה אחרי שאנחנו יושבות לתרגל את לוח הכפל. היום היא אפילו הפתיעה אותי וביקשה בעצמה שנעשה תרגילים! עד היום היו לה קשיים מאוד גדולים לתפוס חשבון בכיתה, וכעת אני יודעת איך ללמד אותה בדרך שהיא מבינה. ועכשיו היא שולטת בלוח כפל - זה הפך להיות פשוט וקל - פשוט פצצה!"</p><footer>חלי משה, אמא של שי מראשון לציון</footer></div></article>
+    </div>
+    <div class="dual"><a class="cta js-mf" href="https://secure.cardcom.solutions/u/9x6QsAyPGUelcjAsrTdpbA">אני רוצה את הכול!<small>מנוי ל-MATHFLIX עם כל הבונוסים<br>29 ש"ח לחודש הראשון ו-97 ש"ח לחודש <span class="nwp">מהחודש השני</span><br>בלי התחייבות, אפשר להפסיק בכל רגע <span class="nwp">(100% ראש שקט!)</span></small></a><a class="cta-alt" href="https://secure.cardcom.solutions/u/v6oHno9OU62sgxvAQ4psg" data-pay="kf">רק התוכנית פשוט לזכור את לוח הכפל<small>97 ש"ח, תשלום חד-פעמי אחד</small></a></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="band">
+  <div class="wrap">
+    <div class="letter">
+      <img class="letter-face" src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/aviram_hero.jpg" alt="אבירם היכל">
+      <h2>אם אנחנו עדיין לא מכירים...</h2>
+      <p>לפני יותר מ-25 שנה עבדתי בכלל כמנתח חברות ציבוריות בשוק ההון. העבודה כללה המון למידה, ולא נעים להגיד, אבל לפעמים הייתי פשוט נרדם תוך כדי קריאה של דוחות כספיים.</p>
+      <p>ממש במקרה נתקלתי בקורס מיוחד לשיטות למידה, <b>והוא שינה הכול.</b> הבנתי מה באמת גורם לקשיים בלימודים, וזה לא היה "לקות למידה" או "הפרעת קשב".</p>
+      <p>באותו רגע חשבתי לעצמי: <b>"למה לא לימדו אותי את זה בבית הספר?"</b> ומאז אני חייב לחלוק את הידע הזה.</p>
+      <ul>
+        <li>✓ עזרתי למעל 27,000 הורים, ילדים ומורים</li>
+        <li>✓ הכשרתי מעל 350 מאמנים לכישורי למידה</li>
+        <li>✓ יש לי צוות שמונה עשרות מאמנים שעוזרים לילדים ללמוד נכון, לשפר את הקשב, להגביר את המוטיבציה ולהצליח בחשבון ובשפה</li>
+        <li>✓ מרצה למורים בעמותת המורים</li>
+        <li>✓ מומחה לטכנולוגיית למידה</li>
+        <li>✓ הפעילות שלנו סוקרה בחדשות 12, כאן 11 ו-NTD</li>
+      </ul>
+      <div class="pressrow"><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/tv12.jpg" alt="כתבה בחדשות 12"><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/lecture.jpg" alt="הרצאה להורים ומורים"></div>
+      <p>אני מאמין שכל ילד הוא חכם ומוכשר ויכול להצליח, <b>ושכל הורה יכול ללמד את הילד שלו בצורה נכונה.</b> בלי תרופות ובלי תיוגים.</p>
+      <p><b>אני מזמין אתכם להצטרף אליי ל-MATHFLIX</b> (או לפחות לתוכנית לוח הכפל),<br><b>וביחד נעזור לילד לקפוץ!</b></p>
+      <p class="letter-sign">מחכה לראות אתכם,<br>אבירם 💙</p>
+    </div>
+    <h2>כמה תמונות להמחשה<br>על מה שאנחנו עושים</h2>
+    <p class="lead2">בתחום משנת 2000.<br><b>מעל 27,000 הורים, ילדים ומורים</b> כבר למדו איתי.</p>
+    <div class="gallery">
+      <figure class="wide"><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/proof/hall2.jpg" alt=""><figcaption>הדרכה להורים ולמורים</figcaption></figure>
+      <figure><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/proof/lecture.jpg" alt=""><figcaption>הדרכה להורים</figcaption></figure>
+      <figure><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/proof/demo.jpg" alt=""><figcaption>ככה הכול התחיל... לפני 26 שנים,<br>כשעוד היו לי שערות על הראש (שימו לב לאופנה...)</figcaption></figure>
+      <figure><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/proof/zoom_live.jpg" alt=""><figcaption>הדרכה חיה בזום</figcaption></figure>
+      <figure><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/proof/hall.jpg" alt=""><figcaption>אולם מלא בהורים</figcaption></figure>
+      <figure class="wide"><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/proof/grads4.jpg" alt=""><figcaption>מחזורי המאמנים שהכשרתי (מעל 350 מאמנים)</figcaption></figure>
+    </div>
+    <p class="cbig2">בואו נלמד את הילד שלכם את כל היסודות הכי חשובים בחשבון בצורה נכונה...</p>
+    <div class="dual"><a class="cta js-mf" href="https://secure.cardcom.solutions/u/9x6QsAyPGUelcjAsrTdpbA">אני רוצה את הכול!<small>מנוי ל-MATHFLIX עם כל הבונוסים<br>29 ש"ח לחודש הראשון ו-97 ש"ח לחודש <span class="nwp">מהחודש השני</span><br>בלי התחייבות, אפשר להפסיק בכל רגע <span class="nwp">(100% ראש שקט!)</span></small></a><a class="cta-alt" href="https://secure.cardcom.solutions/u/v6oHno9OU62sgxvAQ4psg" data-pay="kf">רק התוכנית פשוט לזכור את לוח הכפל<small>97 ש"ח, תשלום חד-פעמי אחד</small></a></div>
+  </div>
+</section>
+
+<!-- LAST THINGS -->
+<section class="band">
+  <div class="wrap">
+    <h2>וכמה דברים אחרונים...</h2>
+    <div class="lines">
+      <p>הידע הזה הוא לא עוד הדרכת הורים או הוראה מתקנת.</p>
+      <p><b>זה ידע ייחודי שמיישמים היום<br>במעל 1,000 בתי ספר ומרכזי למידה בעולם.</b></p>
+    </div>
+    <div class="lines">
+      <p>הילדים שלנו למדו בבית ספר כזה באנגליה.</p>
+      <figure class="school"><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/school_uk.jpg" alt="בית הספר באנגליה שבו למדו הילדים של אבירם"><figcaption>בית הספר באנגליה שבו למדו הילדים שלנו</figcaption></figure>
+      <p>היום אנחנו גרים בדרום אפריקה,<br>והם לומדים במרכז למידה פרטי באותה שיטה.</p>
+      <p>אנחנו מומחים לידע הזה בעצמנו.<br><b>ואת הידע הזה אנחנו מביאים לכם.</b></p>
+    </div>
+    <div class="guarantee">
+      <div class="seal" aria-hidden="true"><div class="seal-in"><b>100%</b><span>ראש שקט</span></div></div>
+      <h3>האחריות האישית שלי</h3>
+      <ul class="g-list">
+        <li><b>ב-MATHFLIX אין התחייבות.</b> אפשר לבטל את המנוי בכל רגע.</li>
+        <li>רוצים לעצור? שולחים הודעת ווטסאפ או מייל, ותוך 48 שעות אנחנו מפסיקים את החיוב.</li>
+        <li>בלי שאלות מעצבנות, ובלי "לשכנע" אתכם להישאר.</li>
+        <li><b>ותוכנית לוח הכפל לבד</b> נשארת אצלכם לתמיד.</li>
+      </ul>
+      <p class="g-sign">אבירם היכל</p>
+    </div>
+  </div>
+</section>
+
+<!-- FIT -->
+<section class="band mist">
+  <div class="wrap">
+    <h2>למי זה מתאים?</h2>
+    <div class="fitlist"><div><b>הורים</b><span>לילדים בכיתות א' עד ח'</span></div><div><b>סבתות וסבים</b><span>שרוצים לעזור לנכדים</span></div><div><b>מורים ומורות</b><span>שרוצים לעזור לתלמידים</span></div></div>
+  </div>
+</section>
+
+<!-- FINAL: both options -->
+<section class="band dark" id="final">
+  <div class="wrap wide">
+    <h2>מוכנים להתחיל?</h2>
+    <p class="lead2">בחרו את הדרך שלכם:</p>
+    <div class="choice">
+      <div class="ccard">
+        <span class="optn">אפשרות 1</span>
+        <h3>רק התוכנית פשוט לזכור את לוח הכפל</h3>
+        <p class="cprice"><b>97 ש"ח</b><span>תשלום אחד, במקום <s>197 ש"ח</s></span></p>
+        <p class="cnote"><b>והתוכנית שלכם לתמיד.</b><br>(בערך כמו שיעור פרטי אחד של הוראה מתקנת בחשבון)</p>
+        <ul class="clist">
+          <li class="yes">התוכנית המלאה ללימוד לוח הכפל</li>
+          <li class="yes">4 סרטוני הדרכה ו-3 סרטוני הדגמה</li>
+          <li class="yes">שיטת התרגול + הצ'קליסט</li>
+          <li class="yes bon">🎁 בונוס: מדריך 10 הטכניקות להבנת חשבון</li>
+        </ul>
+        <a class="cta-alt" href="https://secure.cardcom.solutions/u/v6oHno9OU62sgxvAQ4psg" data-pay="kf">אבירם, אני בפנים! רק לוח הכפל - 97&nbsp;ש"ח<small>תשלום חד-פעמי אחד</small></a>
+      </div>
+      <div class="ccard best">
+        <span class="cbadge">⭐ הכי משתלם</span>
+        <span class="optn">אפשרות 2</span>
+        <h3>אני רוצה את הכול! מנוי ל-MATHFLIX</h3>
+        <p class="cprice"><b>29 ש"ח</b><span>לחודש הראשון, ואחר כך 97 ש"ח לחודש</span></p>
+        <p class="cnote"><b>כל תוכניות לימוד החשבון, כולל לוח הכפל.</b><br>פחות משיעור פרטי אחד בחשבון בחודש!</p>
+        <ul class="clist">
+          <li class="yes">תוכנית לוח הכפל המלאה</li>
+          <li class="yes">כל תוכניות החשבון: חיבור וחיסור, מאונך, שברים, סדר פעולות, משוואות ועוד</li>
+          <li class="yes bon">🎁 בונוס: מדריך 10 הטכניקות להבנת חשבון</li>
+          <li class="yes bon">🎁 בונוס 1: אפליקציית התרגול החדשה</li>
+          <li class="yes bon">🎁 בונוס 2: מועדון ההורים שלנו</li>
+          <li class="yes">קבוצת ווטסאפ אישית + הדרכה חיה בזום כל חודש</li>
+        </ul>
+        <p class="calm"><b>100% ראש שקט</b> - אין שום התחייבות - אפשר לבטל את המנוי בכל רגע!</p>
+        <a class="cta js-mf" href="https://secure.cardcom.solutions/u/9x6QsAyPGUelcjAsrTdpbA">כן! אני רוצה את הכול<small>מנוי ל-MATHFLIX עם כל הבונוסים<br>29 ש"ח לחודש הראשון ו-97 ש"ח לחודש <span class="nwp">מהחודש השני</span><br>בלי התחייבות, אפשר להפסיק בכל רגע <span class="nwp">(100% ראש שקט!)</span></small></a>
+      </div>
+    </div>
+<div class="trust" aria-label="תשלום מאובטח">
+  <div class="t-row">
+    <span class="t-badge"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2.5" fill="#1f8a4c"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="#1f8a4c" stroke-width="2.4"/><circle cx="12" cy="15.5" r="1.8" fill="#fff"/></svg>תשלום מאובטח SSL</span>
+    <span class="t-badge"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z" fill="#10233f"/><path d="m8.5 12 2.4 2.4 4.6-4.8" fill="none" stroke="#e3b23c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>תקן אבטחה PCI DSS</span>
+  </div>
+  <div class="t-cards" aria-label="כרטיסי אשראי">
+    <svg viewBox="0 0 60 38" class="t-card" role="img" aria-label="Visa"><rect width="60" height="38" rx="5" fill="#fff" stroke="#d8dfe9"/><text x="30" y="25" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-style="italic" font-size="16" fill="#1a1f71">VISA</text></svg>
+    <svg viewBox="0 0 60 38" class="t-card" role="img" aria-label="American Express"><rect width="60" height="38" rx="5" fill="#2e77bc"/><text x="30" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="12" fill="#fff">AMEX</text></svg>
+    <span class="t-card t-logo"><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/card_isracard.jpg" alt="ישראכרט"></span>
+    <span class="t-card t-logo"><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/card_diners.jpg" alt="Diners Club"></span>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<!-- LAST Q -->
+<section class="band mist">
+  <div class="wrap">
+    <div class="lastq">
+      <h2>"אבירם, רק עוד שאלה קטנה לפני: אם אתקל בקושי, תעזור לי?"</h2>
+      <p>האמת, שהתוכנית כל כך פשוטה ולכן כמעט אף אחד לא נתקל בקושי. אבל...</p>
+      <p>יש כאלה שכן צריכים עוד עצה או טיפ תוך כדי עבודה, <b>ואני עונה ממש בשמחה על כל שאלה ועוזר בכיף.</b></p>
+      <p>בדרך כלל דרך המיילים שלי: <span class="nw" dir="ltr">aviram@a-h.co.il</span> | <span class="nw" dir="ltr">service@a-h.co.il</span>, או בווטסאפ שלי 054-4429422</p>
+      <p class="fnote">(אין מה לרשום - שולח לכם אותם מייד עם סיום ההרשמה)</p>
+      <p class="letter-sign">מחכה לכם בקורס הכי פשוט ומדויק,<br>איך ללמד את הילד שלכם את לוח הכפל מהר ובכיף!<br>אבירם 💙</p>
+    </div>
+    <p class="foot">© כל הזכויות שמורות לאבירם היכל - העוצמה בחינוך 2026</p>
+  </div>
+</section>
+
+<div class="lead" id="lead" hidden role="dialog" aria-modal="true" aria-labelledby="leadH">
+  <div class="lead-card">
+    <button type="button" class="lead-x" id="leadX" aria-label="סגירה">✕</button>
+    <p class="lead-pick" id="leadPick"></p>
+    <h3 id="leadH">לאן לשלוח לכם את פרטי הגישה?</h3>
+    <div class="ravForm" id="ravMF" hidden><script async src='https://form2.ravpage.co.il/0d998d9e3f0aa47121486732f408095a6AF1C1A4?__external_ai__=true'></script></div><div class="ravForm" id="ravKF" hidden><script async src='https://form2.ravpage.co.il/fe6d95884d8736cb74ae4c0d49d9e4486AF1C489?__external_ai__=true'></script></div><div class="trust" aria-label="תשלום מאובטח">
+  <div class="t-row">
+    <span class="t-badge"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2.5" fill="#1f8a4c"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="#1f8a4c" stroke-width="2.4"/><circle cx="12" cy="15.5" r="1.8" fill="#fff"/></svg>תשלום מאובטח SSL</span>
+    <span class="t-badge"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z" fill="#10233f"/><path d="m8.5 12 2.4 2.4 4.6-4.8" fill="none" stroke="#e3b23c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>תקן אבטחה PCI DSS</span>
+  </div>
+  <div class="t-cards" aria-label="כרטיסי אשראי">
+    <svg viewBox="0 0 60 38" class="t-card" role="img" aria-label="Visa"><rect width="60" height="38" rx="5" fill="#fff" stroke="#d8dfe9"/><text x="30" y="25" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-style="italic" font-size="16" fill="#1a1f71">VISA</text></svg>
+    <svg viewBox="0 0 60 38" class="t-card" role="img" aria-label="American Express"><rect width="60" height="38" rx="5" fill="#2e77bc"/><text x="30" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="12" fill="#fff">AMEX</text></svg>
+    <span class="t-card t-logo"><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/card_isracard.jpg" alt="ישראכרט"></span>
+    <span class="t-card t-logo"><img src="https://aviram-heichal.github.io/moadon-page/kefel-new/img/card_diners.jpg" alt="Diners Club"></span>
+  </div>
+</div>
+  </div>
+</div>
+<script>
+(function(){var m=document.querySelector('meta[name=viewport]');if(!m){m=document.createElement('meta');m.name='viewport';(document.head||document.documentElement).appendChild(m)}m.content='width=device-width,initial-scale=1,viewport-fit=cover'})();
+document.title='לוח הכפל בעל פה, פעם אחת ולתמיד - אבירם היכל';
+(function(){
+var done=0;function boot(){
+if(done||!document.getElementById('lead'))return;done=1;
+(function(){
+  /* MF = the MATHFLIX payment flow (CardCom, 29 then 97). Empty in the preview. */
+  var MF='https://secure.cardcom.solutions/u/9x6QsAyPGUelcjAsrTdpbA'; /* MATHFLIX 29 then 97, CardCom page 20 */
+  var KF='https://secure.cardcom.solutions/u/v6oHno9OU62sgxvAQ4psg'; /* kefel only 97, CardCom page 48 */
+  var lead=document.getElementById('lead'),pick=document.getElementById('leadPick');
+  var dest='',lastBtn=null;
+  function openLead(kind,btn){dest=kind==='mf'?MF:KF;lastBtn=btn;
+    pick.textContent=kind==='mf'?'בחרתם: MATHFLIX עם כל הבונוסים (29 ש"ח לחודש הראשון)':'בחרתם: התוכנית פשוט לזכור את לוח הכפל (97 ש"ח, חד-פעמי)';
+    document.getElementById('ravMF').hidden=kind!=='mf';document.getElementById('ravKF').hidden=kind!=='kf';
+    lead.hidden=false;document.body.style.overflow='hidden';}
+  function closeLead(){lead.hidden=true;document.body.style.overflow='';if(lastBtn)lastBtn.focus();}
+  [].forEach.call(document.querySelectorAll('.js-mf'),function(a){a.dataset.pay='mf';});
+  [].forEach.call(document.querySelectorAll('[data-pay]'),function(a){
+    a.addEventListener('click',function(e){e.preventDefault();openLead(a.dataset.pay,a);});});
+  document.getElementById('leadX').onclick=closeLead;
+  lead.addEventListener('click',function(e){if(e.target===lead)closeLead();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lead.hidden)closeLead();});
+  var ev=document.getElementById('emilyVid'),ep=document.getElementById('ePlay');
+  if(ev&&ep){ep.onclick=function(){ev.play();};ev.addEventListener('play',function(){ep.hidden=true;});ev.addEventListener('pause',function(){if(!ev.seeking)ep.hidden=false;});}
+  var v=document.getElementById('kv'),p=document.getElementById('kposter'),t=document.getElementById('kpt'),b=document.getElementById('kplay');
+  function go(){p.hidden=t.hidden=b.hidden=true;v.play();}
+  b.onclick=go;p.onclick=go;
+  v.addEventListener('play',function(){p.hidden=t.hidden=b.hidden=true;});
+})();
+
+
+(function(){var v=document.getElementById('emilyVid');if(!v)return;
+v.addEventListener('dblclick',function(e){e.preventDefault();e.stopPropagation();},true);
+function out(){var d=document;var f=d.fullscreenElement||d.webkitFullscreenElement;if(f===v){(d.exitFullscreen||d.webkitExitFullscreen).call(d);}}
+document.addEventListener('fullscreenchange',out);document.addEventListener('webkitfullscreenchange',out);
+v.addEventListener('webkitbeginfullscreen',function(){try{v.webkitExitFullscreen();}catch(e){}});
+})();
+}
+window.__kefelNewBoot=boot;
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+})();
+</script>
+</body></html>
