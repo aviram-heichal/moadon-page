@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex"><title>סיפורים</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800;900&display=swap">
+<style>
+html,body{margin:0;padding:0}img{max-width:100%}[hidden]{display:none!important}
+/* Layout: one centered column, navy hero band, white reading sections, gold used only for the frame, the results and the key words */
+:root{
+  --navy:#0f2747; --navy2:#173a66; --gold:#c9a227; --gold-soft:#f6edcf;
+  --ink:#1b2433; --muted:#4a5568; --paper:#ffffff; --mist:#f3f6fa;
+  --f:'Rubik',Arial,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f);font-size:19px;line-height:1.65;direction:rtl;text-align:center}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+section{padding-block:44px}
+h1,h2,h3{text-wrap:balance;margin:0}
+h2{font-size:clamp(26px,6vw,36px);font-weight:800;color:var(--navy);line-height:1.25;margin-bottom:18px}
+p{margin:0 0 14px}
+.lead{font-size:20px;color:var(--muted)}
+b,.gold{color:var(--navy)}
+
+/* hero */
+.hero{background:var(--navy);color:#fff;padding-block:34px 40px}
+.pill{display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;font-size:16px;padding:6px 18px;border-radius:999px;margin-bottom:18px}
+.hero h1{font-size:clamp(40px,11vw,66px);font-weight:900;line-height:1.08;letter-spacing:-.5px}
+.hero h1 span{color:var(--gold)}
+.hero .sub{font-size:clamp(19px,4.6vw,23px);margin:16px auto 24px;max-width:560px;color:#e6ecf5}
+.video{position:relative;aspect-ratio:16/9;max-width:100%;border-radius:14px;overflow:hidden;border:5px solid var(--gold);box-shadow:0 0 0 6px rgba(201,162,39,.25),0 18px 40px rgba(0,0,0,.35);background:#000;cursor:pointer}
+.video img,.video iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+.play{position:absolute;inset:0;margin:auto;width:86px;height:86px;border-radius:50%;background:var(--gold);border:0;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.4);cursor:pointer}
+.play svg{width:34px;height:34px;margin-left:-6px}
+.play:focus-visible{outline:4px solid #fff;outline-offset:4px}
+.vnote{font-size:17px;color:#cfd9e8;margin-top:14px}
+.vnote b{color:var(--gold)}
+
+/* before quotes */
+.before{background:var(--mist)}
+.quotes{display:grid;gap:14px;margin-top:22px}
+.q{background:#fff;border-radius:12px;padding:18px 20px;font-size:20px;font-weight:500;color:var(--ink);border:1px solid #dde4ee}
+.q::before{content:"״";display:block;font-size:44px;line-height:.6;color:var(--gold);font-weight:900;margin-bottom:6px}
+.who{display:block;font-size:15px;color:var(--muted);font-weight:400;margin-top:6px}
+
+/* what they did */
+.items{display:grid;gap:18px;margin-top:24px;text-align:right}
+.item{border:3px solid var(--navy);border-radius:14px;overflow:hidden;background:#fff}
+.item h3{background:var(--navy);color:#fff;font-size:22px;font-weight:800;padding:12px 18px;text-align:center}
+.item .what{padding:14px 18px 4px;font-size:18px;color:var(--muted);text-align:center}
+.res{margin:8px 14px 16px;background:var(--gold-soft);border:2px solid var(--gold);border-radius:10px;padding:12px 16px;text-align:center}
+.res small{display:block;font-size:16px;font-weight:700;color:#8a6d12;margin-bottom:2px}
+.res strong{font-size:21px;font-weight:800;color:var(--navy);line-height:1.4}
+.rhythm{margin-top:20px;font-size:18px;color:var(--muted)}
+
+/* big result */
+.big{background:var(--navy);color:#fff}
+.big h2{color:#fff}
+.bigq{border:4px solid var(--gold);border-radius:16px;padding:24px 18px;font-size:clamp(26px,6.4vw,36px);font-weight:900;line-height:1.3;color:var(--gold)}
+.bigq .who{color:#cfd9e8;font-size:16px;font-weight:400;margin-top:10px}
+.big p{color:#e6ecf5}
+
+/* skeptic */
+.skeptic .q{text-align:center}
+
+/* your meeting */
+.meet{background:var(--mist)}
+.checks{list-style:none;padding:0;margin:20px auto 0;display:grid;gap:10px;max-width:520px;text-align:right}
+.checks li{background:#fff;border-radius:10px;padding:12px 16px;font-size:19px;border:1px solid #dde4ee;display:flex;gap:10px;align-items:flex-start}
+.checks li::before{content:"✓";color:#fff;background:var(--gold);border-radius:50%;min-width:28px;height:28px;display:grid;place-items:center;font-weight:900;font-size:16px;margin-top:2px}
+
+/* sign */
+.sign img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid var(--gold);display:block;margin:0 auto 12px}
+.sign .name{font-size:24px;font-weight:800;color:var(--navy)}
+.sign .role{font-size:17px;color:var(--muted)}
+footer{font-size:14px;color:var(--muted);padding-block:20px 30px}
+@media (prefers-reduced-motion:no-preference){.play{transition:transform .2s}.play:hover{transform:scale(1.08)}}
+
+.video.tall{aspect-ratio:9/16;max-width:380px;margin-inline:auto}
+.vlabel{font-size:20px;font-weight:800;color:var(--navy);margin:0 0 12px}
+.hero .vlabel{color:var(--gold)}
+.nums{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:18px 0}
+.nums span{background:var(--navy);color:var(--gold);font-weight:900;font-size:34px;padding:10px 22px;border-radius:12px;font-variant-numeric:tabular-nums}
+</style></head><body>
+<div class="pg" id="pg-ori" data-title="הסיפור של אורי" hidden>
+<section class="hero">
+  <div class="wrap">
+    <div class="pill">לפני פגישת המבדק שלכם</div>
+    <h1>המורה התקשרה<br>5 פעמים ביום<br><span>זה נגמר.</span></h1>
+    <p class="sub">מירב וישראל רבינוביץ מספרים<br>מה השתנה אצל הבן שלהם, אורי (כיתה ז')</p>
+    <div class="video" data-v="https://player.vimeo.com/video/1057092565" role="button" tabindex="0" aria-label="לצפייה בסרטון"><img src="https://aviram-heichal.github.io/moadon-page/mivdak/poster.jpg" alt="מירב וישראל רבינוביץ בראיון עם אבירם היכל"><button class="play" type="button" aria-label="לצפייה בסרטון"><svg viewBox="0 0 24 24" fill="#0f2747" aria-hidden="true"><path d="M20 12 6 21V3z"/></svg></button></div>
+    <p class="vnote">ראיון מלא, עם כתוביות.<br><b>טיפ:</b> תשימו אותו ברקע בערב, כמו פודקאסט.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>הם התחילו בדיוק איפה שאתם עכשיו</h2>
+    <p class="lead">גם מירב וישראל הגיעו קודם לפגישת מבדק.<br>
+    בפגישה ראינו מה באמת עוצר את אורי,<br>ובנינו לו תוכנית אישית.</p>
+    <p class="lead">בראיון הם מספרים בפתיחות נדירה<br>מה עבר עליהם, מה ניסו, ומה השתנה.<br>
+    <b>ככה תראו מבפנים איך תהליך כזה נראה.</b></p>
+  </div>
+</section>
+
+<section class="before">
+  <div class="wrap">
+    <h2>ככה זה נראה אצלם לפני</h2>
+    <div class="quotes">
+      <div class="q">ציונים מאוד מאוד נמוכים, וגם תלונות של מורים... שניקח אותו לאבחון, אולי הוא צריך כדור<span class="who">מירב וישראל, על סוף כיתה ו'</span></div>
+      <div class="q">כאילו לא עשינו כלום, כאילו פעם ראשונה הוא רואה את זה עוד פעם.<span class="who">על הישיבות על שיעורי הבית</span></div>
+      <div class="q">פעם זה היה חמש-שש טלפונים ביום.<span class="who">על הטלפונים מבית הספר</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>אז מה בעצם עשו עם אורי?</h2>
+    <p class="lead">ארבעה דברים שלא לומדים בבית הספר.<br>ובכל אחד מהם אפשר לראות את השינוי בבית.</p>
+    <div class="items">
+      <div class="item"><h3>תקשורת</h3>
+        <p class="what">קשר עין, להיות נוכח, להעביר מסר ברור.<br>אימונים, לא הרצאות.</p>
+        <div class="res"><small>והתוצאה בבית:</small><strong>״הוא יושב מולי ומסתכל לי בעיניים ומדבר איתי, ולא נבוך או בורח״</strong></div></div>
+      <div class="item"><h3>היגיון ואחריות</h3>
+        <p class="what">לחשוב לפני שעושים, לקבל החלטות טובות,<br>לקחת אחריות.</p>
+        <div class="res"><small>והתוצאה בבית:</small><strong>״כל דבר היה צריך אישור לשאול אותנו. עכשיו הוא רץ לבד על דברים.״</strong></div></div>
+      <div class="item"><h3>ללמוד כיצד ללמוד</h3>
+        <p class="what">להבין כל מילה עד הסוף,<br>כדי שהקושי לא נערם.</p>
+        <div class="res"><small>והתוצאה בבית:</small><strong>״אם יש משהו שלא מובן לו, הוא מברר.״</strong></div></div>
+      <div class="item"><h3>חשבון</h3>
+        <p class="what">ילד שבכיתה ו' לא ידע את לוח הכפל.<br>התחילו מהבסיס, ולימדו אחרת.</p>
+        <div class="res"><small>והתוצאה בבית:</small><strong>״בתוך עשרים שיעורים אורי נמצא ברמה של כיתה ז'. הוא קיבל 95 במבחן״</strong></div></div>
+    </div>
+    <p class="rhythm">פעם-פעמיים בשבוע, במשך כחצי שנה.<br>חלק פרונטלי וחלק בזום.</p>
+  </div>
+</section>
+
+<section class="big">
+  <div class="wrap">
+    <h2>והטלפונים מבית הספר?</h2>
+    <div class="bigq">״זה ירד ב-90 ומשהו אחוז...<br>כמעט 100 אחוז זה ירד.״<span class="who">מירב וישראל רבינוביץ</span></div>
+  </div>
+</section>
+
+<section class="skeptic">
+  <div class="wrap">
+    <h2>ואם יש לכם קצת ספקות?</h2>
+    <p class="lead">זה טבעי. גם לישראל היו.</p>
+    <div class="quotes">
+      <div class="q">בשיעורים הראשונים שהלכתי הייתי מאוד מאוד סקפטי... ולאט לאט ראיתי איך זה משפיע גם עליי<span class="who">ישראל</span></div>
+      <div class="q">ואנחנו ממש שמחים שהלכנו על זה ביג טיים עד הסוף.<span class="who">מירב</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="meet">
+  <div class="wrap">
+    <h2>ועכשיו, התור שלכם</h2>
+    <p class="lead">בפגישת המבדק נבדוק מה באמת עוצר את הילד שלכם,<br>ונבנה לו תוכנית שמתאימה בדיוק לו.</p>
+    <p class="lead"><b>כדי שנפיק מהפגישה את המקסימום:</b></p>
+    <ul class="checks">
+      <li>תשריינו שעתיים וחצי, בלי לחץ של זמן.<br>החלק של הילד הוא כ-30 עד 45 דקות.</li>
+      <li>שני ההורים והילד יחד באותו חדר.</li>
+      <li>יש אחים קטנים? תדאגו מראש שמישהו יהיה איתם, כדי שלא יהיו הפרעות.</li>
+      <li>מול מסך מחשב, לא סמארטפון ולא טאבלט.</li>
+      <li>אינטרנט טוב, ונכנסים 5 דקות לפני.</li>
+      <li>כולם שבעים וערניים, בלי מתוקים לפני.</li>
+    </ul>
+    <p class="lead" style="margin-top:18px">את קישור הזום תקבלו לפני הפגישה, במייל ובקבוצת הווטסאפ.</p>
+  </div>
+</section>
+
+<section class="sign">
+  <div class="wrap">
+    <img src="https://aviram-heichal.github.io/moadon-page/mivdak/aviram_hero.jpg" alt="אבירם היכל">
+    <p class="lead">מחכים לראות אתכם,</p>
+    <div class="name">אבירם היכל והצוות 💙</div>
+    <div class="role">העוצמה בחינוך</div>
+  </div>
+</section>
+<footer class="wrap">הידע שלנו חדש, וכלים מעשיים שאפשר להתחיל בהם כבר מהיום.</footer>
+</div>
+<div class="pg" id="pg-livna" data-title="הסיפור של אלדד" hidden>
+<section class="hero">
+  <div class="wrap">
+    <div class="pill">לפני פגישת המבדק שלכם</div>
+    <h1>כולם אומרים לי<br><span>זה ילד אחר</span></h1>
+    <p class="sub">לבנה מספרת על הבן שלה, אלדד,<br>ועל השינוי בבית ובבית הספר</p>
+    <div class="video tall" data-v="https://player.vimeo.com/video/1238839998?h=67d9a3ad5c" role="button" tabindex="0" aria-label="לצפייה בסרטון"><img src="https://aviram-heichal.github.io/moadon-page/mivdak/livna.jpg" alt="לבנה בראיון עם אבירם היכל"><button class="play" type="button" aria-label="לצפייה בסרטון"><svg viewBox="0 0 24 24" fill="#0f2747" aria-hidden="true"><path d="M20 12 6 21V3z"/></svg></button></div>
+    <p class="vnote">5 דקות, עם כתוביות.<br><b>תקשיבו לה עד הסוף.</b></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>גם לבנה התחילה בפגישה כמו שלכם</h2>
+    <div class="quotes"><div class="q">אתה ישבת עם הילד, שאלת אותו מספר שאלות, ואחר כך הסברת לנו על כל התהליך שאנחנו הולכים לעבור.<span class="who">לבנה, על הפגישה הראשונה</span></div></div>
+  </div>
+</section>
+
+<section class="before">
+  <div class="wrap">
+    <h2>ככה זה נראה אצלם לפני</h2>
+    <div class="quotes">
+      <div class="q">אלדד התחיל להתפרע ולא להשתתף בשיעורים ולהעיף דברים על המורים.<span class="who">לבנה, על כיתה א</span></div>
+      <div class="q">היו מזעיקים אותי הרבה מהעבודה.<span class="who">לבנה</span></div>
+      <div class="q">ואין, אין עם מי לתקשר כאן בכלל.<span class="who">לבנה</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>אז מה בעצם עשו עם אלדד?</h2>
+    <p class="lead">אלדד עבד עם מירי, מאמנת מהצוות שלנו,<br>על תקשורת ואחריות. ולבנה למדה יחד איתו.</p>
+    <div class="items">
+      <div class="item"><h3>להקשיב ולהעביר מסר</h3><p class="what">להקשיב באמת, לבקש דבר קטן ופשוט,<br>ולהעביר אותו נכון.</p><div class="res"><small>והתוצאה בבית:</small><strong>״וברגע שהוא הבין אותי, אין גבולות. באמת, הוא עושה, אפילו לפעמים בלי שאני אבקש.״</strong></div></div>
+      <div class="item"><h3>ביטחון להביע את עצמו</h3><p class="what">לתת לו את הביטחון<br>להוציא את המילה, את השאלה.</p><div class="res"><small>והתוצאה בבית:</small><strong>״היום הוא אומר את זה יפה: אני לא מבין, אני צריך עזרה״</strong></div></div>
+      <div class="item"><h3>יחסים בבית</h3><p class="what">מה שהשתנה בתקשורת<br>הגיע גם לאחים.</p><div class="res"><small>והתוצאה בבית:</small><strong>״הילד משחק עם האח שלו בצורה נפלאה. אין ביניהם ריב.״</strong></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="big">
+  <div class="wrap">
+    <h2>ובבר מצווה?</h2>
+    <div class="bigq">״כל האורחים ששמעו אותו<br>לא האמינו שזה אותו ילד בכלל.״<span class="who">לבנה</span></div>
+    <p style="margin-top:18px">״המורות כל הזמן מתקשרות להגיד לי<br>על כל ההישגים שלו, על השינויים שלו.״</p>
+  </div>
+</section>
+
+<section class="skeptic">
+  <div class="wrap">
+    <h2>ומה היא אומרת להורים אחרים?</h2>
+    <div class="quotes"><div class="q">יש פתרון, הוא אפשרי.<span class="who">לבנה</span></div></div>
+  </div>
+</section>
+<section class="meet">
+  <div class="wrap">
+    <h2>ועכשיו, התור שלכם</h2>
+    <p class="lead">בפגישת המבדק נבדוק מה באמת עוצר את הילד שלכם,<br>ונבנה לו תוכנית שמתאימה בדיוק לו.</p>
+    <p class="lead"><b>כדי שנפיק מהפגישה את המקסימום:</b></p>
+    <ul class="checks">
+      <li>תשריינו שעתיים וחצי, בלי לחץ של זמן.<br>החלק של הילד הוא כ-30 עד 45 דקות.</li>
+      <li>שני ההורים והילד יחד באותו חדר.</li>
+      <li>יש אחים קטנים? תדאגו מראש שמישהו יהיה איתם, כדי שלא יהיו הפרעות.</li>
+      <li>מול מסך מחשב, לא סמארטפון ולא טאבלט.</li>
+      <li>אינטרנט טוב, ונכנסים 5 דקות לפני.</li>
+      <li>כולם שבעים וערניים, בלי מתוקים לפני.</li>
+    </ul>
+    <p class="lead" style="margin-top:18px">את קישור הזום תקבלו לפני הפגישה, במייל ובקבוצת הווטסאפ.</p>
+  </div>
+</section>
+
+<section class="sign">
+  <div class="wrap">
+    <img src="https://aviram-heichal.github.io/moadon-page/mivdak/aviram_hero.jpg" alt="אבירם היכל">
+    <p class="lead">מחכים לראות אתכם,</p>
+    <div class="name">אבירם היכל והצוות 💙</div>
+    <div class="role">העוצמה בחינוך</div>
+  </div>
+</section>
+<footer class="wrap">הידע שלנו חדש, וכלים מעשיים שאפשר להתחיל בהם כבר מהיום.</footer>
+</div>
+<div class="pg" id="pg-yasmin" data-title="הסיפור של אליה" hidden>
+<section class="hero">
+  <div class="wrap">
+    <div class="pill">לפני פגישת המבדק שלכם</div>
+    <h1>מאפס בחשבון<br><span>לציון של כמעט 100</span></h1>
+    <p class="sub">יסמין מספרת על הבן שלה, אליה (כיתה ו'),<br>ועל השינוי בלימודים ובבית</p>
+    <div class="video tall" data-v="https://www.youtube-nocookie.com/embed/bks3MKyTcDA?rel=0&playsinline=1" role="button" tabindex="0" aria-label="לצפייה בסרטון"><img src="https://aviram-heichal.github.io/moadon-page/mivdak/yasmin_tall.jpg" alt="יסמין מספרת על אליה"><button class="play" type="button" aria-label="לצפייה בסרטון"><svg viewBox="0 0 24 24" fill="#0f2747" aria-hidden="true"><path d="M20 12 6 21V3z"/></svg></button></div>
+    <p class="vnote">פחות משלוש דקות.<br><b>היא שלחה לנו את הסרטון הזה בעצמה.</b></p>
+  </div>
+</section>
+
+<section class="before">
+  <div class="wrap">
+    <h2>ככה זה התחיל</h2>
+    <div class="quotes">
+      <div class="q">הגיע עם ציונים אפס בחשבון, פשוט אפס.<span class="who">יסמין, על אליה בכיתה ו</span></div>
+      <div class="q">ואתה התעקשת איתי ואמרת לי שאין כזה דבר שהילד עם לקות למידה, יש איזושהי לקות בהוראה.<span class="who">יסמין, על השיחה הראשונה איתנו</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>אז מה בעצם עשו עם אליה?</h2>
+    <p class="lead">אליה עבד עם אדם, מאמן מהצוות שלנו.<br>והוא לא התחיל מהחומר של כיתה ו'.</p>
+    <div class="quotes"><div class="q">התחיל ממש מהיסוד ואמר לי, אימא אל תתייחסי לציונים.<span class="who">יסמין, על אדם</span></div></div>
+    <div class="items">
+      <div class="item"><h3>חשבון מהבסיס</h3><p class="what">סוגרים את הפערים מההתחלה,<br>ורק אז מתקדמים.</p><div class="res"><small>והתוצאה בבית:</small><strong>״מאפס הילד עלה לציון של כמעט 100, בהרבה נושאים הציון 100״</strong></div></div>
+      <div class="item"><h3>אחריות אישית</h3><p class="what">אימונים קצרים בבית,<br>שהילד עושה בעצמו.</p><div class="res"><small>והתוצאה בבית:</small><strong>״הוא פשוט מתיישב ועושה אותם בלי שאני אגיד לו״</strong></div></div>
+      <div class="item"><h3>ביטחון עצמי</h3><p class="what">ילד שמבין,<br>מפסיק לפחד מהמקצוע.</p><div class="res"><small>והתוצאה בבית:</small><strong>״ואליה מבחינת הביטחון העצמי, מבחינת היכולת לגשת למתמטיקה.״</strong></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="big">
+  <div class="wrap">
+    <h2>ובבית?</h2>
+    <div class="bigq">״כי אצלי בבית<br>שינית את החיים.״<span class="who">יסמין</span></div>
+  </div>
+</section>
+
+<section class="skeptic">
+  <div class="wrap">
+    <h2>ומה היא אומרת להורים שמתלבטים?</h2>
+    <div class="quotes"><div class="q">ממליצה בחום... אם יש איזשהו הורה אחד שמתלבט, יש לך את האישור המלא למסור לו את מספר הטלפון שלי<span class="who">יסמין</span></div></div>
+  </div>
+</section>
+<section class="meet">
+  <div class="wrap">
+    <h2>ועכשיו, התור שלכם</h2>
+    <p class="lead">בפגישת המבדק נבדוק מה באמת עוצר את הילד שלכם,<br>ונבנה לו תוכנית שמתאימה בדיוק לו.</p>
+    <p class="lead"><b>כדי שנפיק מהפגישה את המקסימום:</b></p>
+    <ul class="checks">
+      <li>תשריינו שעתיים וחצי, בלי לחץ של זמן.<br>החלק של הילד הוא כ-30 עד 45 דקות.</li>
+      <li>שני ההורים והילד יחד באותו חדר.</li>
+      <li>יש אחים קטנים? תדאגו מראש שמישהו יהיה איתם, כדי שלא יהיו הפרעות.</li>
+      <li>מול מסך מחשב, לא סמארטפון ולא טאבלט.</li>
+      <li>אינטרנט טוב, ונכנסים 5 דקות לפני.</li>
+      <li>כולם שבעים וערניים, בלי מתוקים לפני.</li>
+    </ul>
+    <p class="lead" style="margin-top:18px">את קישור הזום תקבלו לפני הפגישה, במייל ובקבוצת הווטסאפ.</p>
+  </div>
+</section>
+
+<section class="sign">
+  <div class="wrap">
+    <img src="https://aviram-heichal.github.io/moadon-page/mivdak/aviram_hero.jpg" alt="אבירם היכל">
+    <p class="lead">מחכים לראות אתכם,</p>
+    <div class="name">אבירם היכל והצוות 💙</div>
+    <div class="role">העוצמה בחינוך</div>
+  </div>
+</section>
+<footer class="wrap">הידע שלנו חדש, וכלים מעשיים שאפשר להתחיל בהם כבר מהיום.</footer>
+</div>
+<div class="pg" id="pg-dup" data-title="שכפול לפני המבדק" hidden>
+<section class="hero">
+  <div class="wrap">
+    <div class="pill">לפני פגישת המבדק שלכם</div>
+    <h1>שכפול<br><span>אחד הדברים הראשונים שנבדוק</span></h1>
+    <p class="sub">מה זה, ולמה זה כל כך חשוב<br>לכל דבר שהילד לומד</p>
+    <div class="video" data-v="https://player.vimeo.com/video/444976430" role="button" tabindex="0" aria-label="לצפייה בסרטון"><img src="https://aviram-heichal.github.io/moadon-page/mivdak/dup1.jpg" alt="אבירם היכל מסביר מה זה שכפול"><button class="play" type="button" aria-label="לצפייה בסרטון"><svg viewBox="0 0 24 24" fill="#0f2747" aria-hidden="true"><path d="M20 12 6 21V3z"/></svg></button></div>
+    <p class="vnote">5 דקות.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>למה דווקא שכפול?</h2>
+    <p class="lead">שכפול הוא היכולת של הילד<br>לחזור במדויק על מה ששמע.</p>
+    <p class="lead">כדי להבין משהו, צריך קודם לשכפל אותו.<br>ילד שקשה לו לשכפל יתקשה בקריאה, בלוח הכפל<br>ואפילו בהבנת הוראות פשוטות.</p>
+    <p class="lead"><b>ובדרך כלל אף אחד לא בודק את זה.</b></p>
+  </div>
+</section>
+
+<section class="before">
+  <div class="wrap">
+    <h2>רוצים לבדוק כבר עכשיו בבית?</h2>
+    <p class="lead">תגידו לילד 3 מספרים דו-ספרתיים,<br>ובקשו שיחזור אחריכם. למשל:</p>
+    <div class="nums"><span>36</span><span>51</span><span>93</span></div>
+    <p class="lead">חזר בקלות? נסו 4 מספרים.<br>נתקע? מצוין שגיליתם. על זה נעבוד בפגישה.</p>
+  </div>
+</section>
+
+<section class="meet">
+  <div class="wrap">
+    <h2>בפגישה נבדוק את זה יחד</h2>
+    <p class="lead">ונבנה תוכנית לפי מה שנמצא.<br><b>וזה רק ההתחלה...</b></p>
+    <p class="lead"><b>כדי שנפיק מהפגישה את המקסימום:</b></p>
+    <ul class="checks">
+      <li>תשריינו שעתיים וחצי, בלי לחץ של זמן.<br>החלק של הילד הוא כ-30 עד 45 דקות.</li>
+      <li>שני ההורים והילד יחד באותו חדר.</li>
+      <li>יש אחים קטנים? תדאגו מראש שמישהו יהיה איתם, כדי שלא יהיו הפרעות.</li>
+      <li>מול מסך מחשב, לא סמארטפון ולא טאבלט.</li>
+      <li>אינטרנט טוב, ונכנסים 5 דקות לפני.</li>
+      <li>כולם שבעים וערניים, בלי מתוקים לפני.</li>
+    </ul>
+    <p class="lead" style="margin-top:18px">את קישור הזום תקבלו לפני הפגישה, במייל ובקבוצת הווטסאפ.</p>
+  </div>
+</section>
+
+<section class="sign">
+  <div class="wrap">
+    <img src="https://aviram-heichal.github.io/moadon-page/mivdak/aviram_hero.jpg" alt="אבירם היכל">
+    <p class="lead">נתראה בקרוב:-)</p>
+    <div class="name">אבירם היכל והצוות 💙</div>
+    <div class="role">העוצמה בחינוך</div>
+  </div>
+</section>
+<footer class="wrap">הידע שלנו חדש, וכלים מעשיים שאפשר להתחיל בהם כבר מהיום.</footer>
+</div>
+<script>
+(function(){var m=document.querySelector('meta[name=viewport]');if(!m){m=document.createElement('meta');m.name='viewport';(document.head||document.documentElement).appendChild(m)}m.content='width=device-width,initial-scale=1,viewport-fit=cover'})();
+(function(){
+var done=0;function boot(){
+if(done||!document.getElementById('pg-ori'))return;done=1;
+function show(){
+  var k=(location.hash||'').replace('#','');
+  if(!document.getElementById('pg-'+k)) k='ori';
+  document.querySelectorAll('.pg').forEach(function(p){p.hidden=(p.id!=='pg-'+k)});
+  var p=document.getElementById('pg-'+k); document.title=p.getAttribute('data-title');
+  window.scrollTo(0,0);
+}
+document.querySelectorAll('.video[data-v]').forEach(function(v){
+  function go(){ if(v.querySelector('iframe')) return;
+    var u=v.getAttribute('data-v'); u+=(u.indexOf('?')>-1?'&':'?')+'autoplay=1&title=0&byline=0&portrait=0';
+    v.innerHTML='<iframe src="'+u+'" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="סרטון"></iframe>'; }
+  v.addEventListener('click',go);
+  v.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();go();} });
+});
+window.addEventListener('hashchange',show); show();
+}
+window.__stBoot=boot;
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+})();
+</script>
+</body></html>
